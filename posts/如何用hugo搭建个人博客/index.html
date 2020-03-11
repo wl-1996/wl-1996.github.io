@@ -26,25 +26,31 @@
     
     
     <meta property="og:title" content="如何用hugo搭建个人博客" />
-<meta property="og:description" content="今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-post-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1. 前提准备：  下载 hugo 到 D 盘的 Software 目录； 配置环境变量，把hugo添加进去； 在~/Desktop 里创建一个 Jirengu 目录；  2." />
+<meta property="og:description" content="今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-posts-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。
+ 正确的路径写法是 ![](/images/xxx.png)
+  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
 <meta property="article:published_time" content="2019-08-24T17:20:18+08:00" />
 <meta property="article:modified_time" content="2019-08-24T17:20:18+08:00" />
 <meta itemprop="name" content="如何用hugo搭建个人博客">
-<meta itemprop="description" content="今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-post-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1. 前提准备：  下载 hugo 到 D 盘的 Software 目录； 配置环境变量，把hugo添加进去； 在~/Desktop 里创建一个 Jirengu 目录；  2.">
+<meta itemprop="description" content="今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-posts-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。
+ 正确的路径写法是 ![](/images/xxx.png)
+  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1.">
 
 
 <meta itemprop="datePublished" content="2019-08-24T17:20:18&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-24T17:20:18&#43;08:00" />
-<meta itemprop="wordCount" content="163">
+<meta itemprop="wordCount" content="168">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何用hugo搭建个人博客"/>
-<meta name="twitter:description" content="今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-post-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1. 前提准备：  下载 hugo 到 D 盘的 Software 目录； 配置环境变量，把hugo添加进去； 在~/Desktop 里创建一个 Jirengu 目录；  2."/>
+<meta name="twitter:description" content="今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-posts-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。
+ 正确的路径写法是 ![](/images/xxx.png)
+  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1."/>
 
   </head>
 
@@ -171,7 +177,9 @@
 <h3 id="四-hugo-里插入图片时遇到了如下问题">四.hugo 里插入图片时遇到了如下问题：</h3>
 
 <ul>
-<li>我是在 content-post-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。</li>
+<li><p>我是在 content-posts-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。</p></li>
+
+<li><p>正确的路径写法是 <code>![](/images/xxx.png)</code></p></li>
 </ul>
 
 <h2 id="下面写一下第一次如何用-hugo-搭建个人博客-第二次就比较简单了">下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）：</h2>
@@ -208,7 +216,7 @@
 <li>运行：git remote add origin git@github.com:wl-1996/wl1996.github.io.git;这一行创建完远程仓库后会看到的，直接复制到命令行里即可</li>
 <li>运行 git push -u origin master；</li>
 <li>刷新 github，点击设置，在 Github Pages 里可以看到网址；如果没看到，就修改Source，改为master后就可以看到；</li>
-<li>可以修改 Github Pages 里的 Custom domain（前提是你买了域名）；</li>
+<li>可以修改 Github Pages 里的 Custom domain（前提是你买了域名并且进行了配置。注意如果用自己的域名，记得 修改 config.toml里的 baseURL）；</li>
 </ul>
 <ul class="pa0">
   

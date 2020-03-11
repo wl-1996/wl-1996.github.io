@@ -31,11 +31,13 @@
       <pubDate>Tue, 10 Mar 2020 13:59:51 +0800</pubDate>
       
       <guid>http://wangkuo.monster/posts/accounting-items/</guid>
-      <description> 项目落地过程： 1. figma制作设计稿，该项目有四个页面，分别是记账页，标签页，编辑标签页，和统计页。 2. 前置条件：  全局安装@vue/cli@4.1.2以上版本 安装Node.js v10以上版本 VSCode最新版或者WebStorm最新版、能FQ
- 安装@vue/cli@4.1.2: 命令行运行 yarn global add @vue/cli@4.1.2 或者 npm install &amp;ndash;global @vue/cli@4.1.2；安装成功后运行 vue&amp;ndash;version确认是否成功
- Node.js去官网下载，可以找历史发布版本，记得安装包是msi后缀文件好像，不确定
-  3. 创建项目： 命令行运行步骤：
- vue create Accounting-Items 注意运行该命令行后需要进行选项配置 cd Accounting-Items yarn serve  </description>
+      <description>项目创建过程： 1. figma制作设计稿 该项目有四个页面，分别是记账页，标签页，编辑标签页，和统计页。
+2. 前置条件：  全局安装@vue/cli@4.1.2 安装Node.js v10版本 VSCode最新版或者WebStorm最新版 能FQ  3. 安装Node.js 10 和 @vue/cli@4.1.2 一、安装 Node.js 10
+理论上来说只要你的版本是 10 以上（10、12）都可以，但保险起见，还是保持版本一致比较好。如果你是老手，可以使用 nvm 来安装 Node.js 10，与其他版本共存；新手请按照下面的步骤做
+ 运行 node &amp;ndash;versioin 查看版本，如果不是 10，请先卸载当前版本：进入控制面板点击卸载即可（Mac 用户使用 brew uninstall node） 去 Node.js 官网下载第 10 版的安装包 一路点击下一步，注意安装目录可以改，一定不要在路径中出现中文和空格  注意重装 Node.js 后，你以前用 npm 或 yarn 全局安装的命令可能都会消失不见，如果你需要，可以需要重新全局安装这些命令。
+npm install -g nrm --registry=https://registry.npm.taobao.org nrm use taobao  二、安装 @vue/cli@4.1.2
+如果你已经安装了其他版本的 @vue/cli ，请先卸载
+命令行运行vue --version 如果这个命令打印出一个版本号，而版本号又不是 4.</description>
     </item>
     
     <item>
@@ -470,7 +472,9 @@ img{ max-width:100%; }   table标签的用法  相关的标签有table/thead/tbo
       <pubDate>Sat, 24 Aug 2019 17:20:18 +0800</pubDate>
       
       <guid>http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-post-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1. 前提准备：  下载 hugo 到 D 盘的 Software 目录； 配置环境变量，把hugo添加进去； 在~/Desktop 里创建一个 Jirengu 目录；  2.</description>
+      <description>今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-posts-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。
+ 正确的路径写法是 ![](/images/xxx.png)
+  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1.</description>
     </item>
     
   </channel>
