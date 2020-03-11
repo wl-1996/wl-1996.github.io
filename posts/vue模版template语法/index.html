@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | Vue模版template语法</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="Vue模版template语法" />
+<meta property="og:description" content="模版 template 的三种写法： Vue 完整版，写在 HTML 里 &lt;div id=&quot;xxx&quot;&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt;  new Vue({ el: &quot;#xxx&quot;, data: { n: 0 }, //data可以改成函数 methods: { add() {} } });  Vue 完整版，写在选项里 &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;  new Vue({ template: ` &lt;div&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; `, //data可以改成函数 data: { n: 0 }, methods: { add() { this.n &#43;= 1; } } }).$mount(&quot;#app&quot;); // 注意一个细节：div#app 会被替代  Vue 非完整版，配合 xxx.vue 文件 &lt;template&gt; &lt;div&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { data() { return { n: 0 }; }, methods: { add() { this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/vue%E6%A8%A1%E7%89%88template%E8%AF%AD%E6%B3%95/" />
+<meta property="article:published_time" content="2020-01-03T19:48:07+08:00" />
+<meta property="article:modified_time" content="2020-01-03T19:48:07+08:00" />
+<meta itemprop="name" content="Vue模版template语法">
+<meta itemprop="description" content="模版 template 的三种写法： Vue 完整版，写在 HTML 里 &lt;div id=&quot;xxx&quot;&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt;  new Vue({ el: &quot;#xxx&quot;, data: { n: 0 }, //data可以改成函数 methods: { add() {} } });  Vue 完整版，写在选项里 &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;  new Vue({ template: ` &lt;div&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; `, //data可以改成函数 data: { n: 0 }, methods: { add() { this.n &#43;= 1; } } }).$mount(&quot;#app&quot;); // 注意一个细节：div#app 会被替代  Vue 非完整版，配合 xxx.vue 文件 &lt;template&gt; &lt;div&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { data() { return { n: 0 }; }, methods: { add() { this.">
+
+
+<meta itemprop="datePublished" content="2020-01-03T19:48:07&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-03T19:48:07&#43;08:00" />
+<meta itemprop="wordCount" content="266">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue模版template语法"/>
+<meta name="twitter:description" content="模版 template 的三种写法： Vue 完整版，写在 HTML 里 &lt;div id=&quot;xxx&quot;&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt;  new Vue({ el: &quot;#xxx&quot;, data: { n: 0 }, //data可以改成函数 methods: { add() {} } });  Vue 完整版，写在选项里 &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;  new Vue({ template: ` &lt;div&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; `, //data可以改成函数 data: { n: 0 }, methods: { add() { this.n &#43;= 1; } } }).$mount(&quot;#app&quot;); // 注意一个细节：div#app 会被替代  Vue 非完整版，配合 xxx.vue 文件 &lt;template&gt; &lt;div&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;&#43;1&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { data() { return { n: 0 }; }, methods: { add() { this."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/vue%E6%A8%A1%E7%89%88template%E8%AF%AD%E6%B3%95/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/vue%E6%A8%A1%E7%89%88template%E8%AF%AD%E6%B3%95/&amp;text=Vue%e6%a8%a1%e7%89%88template%e8%af%ad%e6%b3%95" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/vue%E6%A8%A1%E7%89%88template%E8%AF%AD%E6%B3%95/&amp;title=Vue%e6%a8%a1%e7%89%88template%e8%af%ad%e6%b3%95" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">Vue模版template语法</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-03T19:48:07&#43;08:00">January 3, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="模版-template-的三种写法">模版 template 的三种写法：</h2>
+
+<h3 id="vue-完整版-写在-html-里">Vue 完整版，写在 HTML 里</h3>
+
+<pre><code class="language-html">&lt;div id=&quot;xxx&quot;&gt;
+  {{n}}
+  &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-javascript">new Vue({
+  el: &quot;#xxx&quot;,
+  data: { n: 0 }, //data可以改成函数
+  methods: {
+    add() {}
+  }
+});
+</code></pre>
+
+<h3 id="vue-完整版-写在选项里">Vue 完整版，写在选项里</h3>
+
+<pre><code class="language-html">&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+<pre><code class="language-javascript">new Vue({
+  template: `
+      &lt;div&gt;
+        {{n}}
+        &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt;
+      &lt;/div&gt;
+    `,
+  //data可以改成函数
+  data: {
+    n: 0
+  },
+  methods: {
+    add() {
+      this.n += 1;
+    }
+  }
+}).$mount(&quot;#app&quot;);
+// 注意一个细节：div#app 会被替代
+</code></pre>
+
+<h3 id="vue-非完整版-配合-xxx-vue-文件">Vue 非完整版，配合 xxx.vue 文件</h3>
+
+<pre><code>&lt;template&gt;
+  &lt;div&gt;
+    {{n}}
+    &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+  export default {
+    data() {
+      return {
+        n: 0
+      };
+    },
+    methods: {
+      add() {
+        this.n += 1;
+      }
+    }
+  };
+&lt;/script&gt;
+
+&lt;style&gt;
+  /* 这里写css内容 */
+&lt;/style&gt;
+</code></pre>
+
+<pre><code class="language-javascript">import Xxx from &quot;./xxx.vue&quot;;
+// Xxx是一个 options 对象
+new Vue({
+  render: h =&gt; h(Xxx)
+}).$mount(&quot;#app&quot;);
+</code></pre>
+
+<h2 id="模版-template-里有哪些语法">模版 template 里有哪些语法？</h2>
+
+<h3 id="展示内容">展示内容：</h3>
+
+<p>1.表达式：</p>
+
+<pre><code class="language-xml">{{ object.a }} //选项里的data里的object对象的a属性
+{{ n+1 }} //运算，加减乘除运算都可以，不支持if...else
+{{ fn(n) }} //调用methods里的fn函数
+
+//下边的写法基本没人用，大家都用花括号写法
+&lt;div v-text=&quot;表达式&quot;&gt;&lt;/div&gt; //与两个花括号的写法是一样的，可替代花括号的写法
+</code></pre>
+
+<p>2.HTML 内容：</p>
+
+<p>假设 <code>data.x</code> 值为 <code>&lt;strong&gt;hi&lt;/strong&gt;</code>, 那么<code>&lt;div v-html=&quot;x&quot;&gt;&lt;/div&gt;</code>即可显示粗体的 hi</p>
+
+<p>3.假如你就想展示 {{ n }},那么这么写:</p>
+
+<pre><code class="language-xml">//因为 v-pre 不会对模版进行编译
+&lt;div v-pre&gt;{{ n }}&lt;/div&gt;
+</code></pre>
+
+<h3 id="绑定属性">绑定属性：</h3>
+
+<p>绑定 src：</p>
+
+<pre><code class="language-xml">&lt;img v-bind:src=&quot;x&quot; /&gt; //x的值是一个url，data里的x
+//也可简写为 &lt;img :src=&quot;x&quot; /&gt;
+</code></pre>
+
+<p>绑定对象：</p>
+
+<pre><code class="language-xml">//注意这里可以把 '100px' 写成 100
+&lt;div :style=&quot;{border:'1px solid red',height:100}&quot;&gt;&lt;/div&gt;
+</code></pre>
+
+<h3 id="绑定事件">绑定事件：</h3>
+
+<p>v-on:事件名</p>
+
+<pre><code class="language-xml">// 点击之后，Vue会运行add()
+&lt;button v-on:click=&quot;add&quot;&gt;+1&lt;/button&gt;
+// 点击之后，Vue会运行xxx(1)，不点击不运行
+&lt;button v-on:click=&quot;xxx(1)&quot;&gt;xxx&lt;/button&gt;
+// 点击之后，Vue会运行n+=1
+&lt;button v-on:click=&quot;n+=1&quot;&gt;n+=1&lt;/button&gt;
+</code></pre>
+
+<p>缩写：<code>&lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt;</code></p>
+
+<h3 id="条件判断">条件判断：</h3>
+
+<p>if&hellip;else</p>
+
+<pre><code class="language-xml">//如果x&gt;0，就显示这个div
+&lt;div v-if=&quot;x&gt;0&quot;&gt;x大于0&lt;/div&gt;
+//如果x === 0 ,就显示这个div
+&lt;div v-else-if=&quot;x===0&quot;&gt;x为0&lt;/div&gt;
+//如果x小于0，就显示这个div
+&lt;div v-else&gt;x小于0&lt;/div&gt;
+</code></pre>
+
+<h3 id="循环">循环：</h3>
+
+<p>for(value,key) in 对象或数组</p>
+
+<pre><code class="language-xml">//数组的例子：
+&lt;ul&gt;
+  &lt;li v-for=&quot;(u,index) in users&quot; :key=&quot;index&quot;&gt;
+    索引：{{index}} 值：{{u.name}}
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+//对象的例子
+&lt;ul&gt;
+  &lt;li v-for=&quot;(value,name) in obj&quot; :key=&quot;name&quot;&gt;
+    属性名：{{name}},属性值：{{value}}
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<h3 id="显示-隐藏">显示、隐藏</h3>
+
+<p>v-show:</p>
+
+<pre><code class="language-xml">//如果表达式为真，这个div就显示，否则不显示div
+&lt;div v-show=&quot;n%2===0&quot;&gt;n是偶数&lt;/div&gt;
+</code></pre>
+
+<p>近似等于：</p>
+
+<pre><code class="language-xml">//注意，看的见得元素display不只有block，
+//比如，table的display为table；
+//li的display为list-item
+&lt;div :style=&quot;{display:n%2===0 ? 'block' : 'none'}&quot;&gt;n是偶数&lt;/div&gt;
+</code></pre>
+
+<h2 id="总结">总结：</h2>
+
+<p>Vue 模版主要特点有：</p>
+
+<ol>
+<li>使用 XML 语法（不是 HTML）</li>
+<li>使用<code>{{}}</code> 插入表达式</li>
+<li>使用 v-html v-on v-bind 等指令操作 DOM</li>
+<li>使用 v-if v-for 等指令实现条件判断和循环</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

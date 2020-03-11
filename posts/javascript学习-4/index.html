@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | JavaScript学习-4</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JavaScript学习-4" />
+<meta property="og:description" content="作用域 函数能封闭住定义域 一个变量如果定义在了一个 function 里面，那么这个变量就是一个局部变量，只有这个 function 里面有定义。出了这个 function ，就如同没有定义过一样。代码示例：
+function fn(){ var a = 1;// 定义在一个函数里面的变量，局部变量，只有在函数里面有定义。 console.log(&quot;我是函数里面的语句，我认识 a 值为 &quot; &#43; a); } fn(); console.log(&quot;我是函数里面的语句，我不认识 a &quot; &#43; a);// 这行会报错，因为 a 作用于函数内部，这里提取不到 a 的值。  a 被var在了 function 里面，所以现在这个 a 变量只有在红框范围内有定义：JavaScript 变量作用域非常的简单，没有块级作用域，管理作用域的只有一个东西：函数。
+如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：
+var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义： function fn(){ console.log(&quot;我是函数里面的语句，我认识全局变量 a 值为 &quot; &#43; a); } fn(); console.log(&quot;函数外面的语句也认识 a 值为 &quot; &#43; a);  总结一下：
+ 定义在 function 里面的变量叫做局部变量； 定义在全局范围内的，没有写在任何 function 里面的，叫做全局变量。   作用域链 当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-4/" />
+<meta property="article:published_time" content="2019-12-10T12:01:33+08:00" />
+<meta property="article:modified_time" content="2019-12-10T12:01:33+08:00" />
+<meta itemprop="name" content="JavaScript学习-4">
+<meta itemprop="description" content="作用域 函数能封闭住定义域 一个变量如果定义在了一个 function 里面，那么这个变量就是一个局部变量，只有这个 function 里面有定义。出了这个 function ，就如同没有定义过一样。代码示例：
+function fn(){ var a = 1;// 定义在一个函数里面的变量，局部变量，只有在函数里面有定义。 console.log(&quot;我是函数里面的语句，我认识 a 值为 &quot; &#43; a); } fn(); console.log(&quot;我是函数里面的语句，我不认识 a &quot; &#43; a);// 这行会报错，因为 a 作用于函数内部，这里提取不到 a 的值。  a 被var在了 function 里面，所以现在这个 a 变量只有在红框范围内有定义：JavaScript 变量作用域非常的简单，没有块级作用域，管理作用域的只有一个东西：函数。
+如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：
+var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义： function fn(){ console.log(&quot;我是函数里面的语句，我认识全局变量 a 值为 &quot; &#43; a); } fn(); console.log(&quot;函数外面的语句也认识 a 值为 &quot; &#43; a);  总结一下：
+ 定义在 function 里面的变量叫做局部变量； 定义在全局范围内的，没有写在任何 function 里面的，叫做全局变量。   作用域链 当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例：">
+
+
+<meta itemprop="datePublished" content="2019-12-10T12:01:33&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-10T12:01:33&#43;08:00" />
+<meta itemprop="wordCount" content="804">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript学习-4"/>
+<meta name="twitter:description" content="作用域 函数能封闭住定义域 一个变量如果定义在了一个 function 里面，那么这个变量就是一个局部变量，只有这个 function 里面有定义。出了这个 function ，就如同没有定义过一样。代码示例：
+function fn(){ var a = 1;// 定义在一个函数里面的变量，局部变量，只有在函数里面有定义。 console.log(&quot;我是函数里面的语句，我认识 a 值为 &quot; &#43; a); } fn(); console.log(&quot;我是函数里面的语句，我不认识 a &quot; &#43; a);// 这行会报错，因为 a 作用于函数内部，这里提取不到 a 的值。  a 被var在了 function 里面，所以现在这个 a 变量只有在红框范围内有定义：JavaScript 变量作用域非常的简单，没有块级作用域，管理作用域的只有一个东西：函数。
+如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：
+var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义： function fn(){ console.log(&quot;我是函数里面的语句，我认识全局变量 a 值为 &quot; &#43; a); } fn(); console.log(&quot;函数外面的语句也认识 a 值为 &quot; &#43; a);  总结一下：
+ 定义在 function 里面的变量叫做局部变量； 定义在全局范围内的，没有写在任何 function 里面的，叫做全局变量。   作用域链 当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例："/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-4/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-4/&amp;text=JavaScript%e5%ad%a6%e4%b9%a0-4" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-4/&amp;title=JavaScript%e5%ad%a6%e4%b9%a0-4" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">JavaScript学习-4</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-10T12:01:33&#43;08:00">December 10, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="作用域">作用域</h2>
+
+<h3 id="函数能封闭住定义域">函数能封闭住定义域</h3>
+
+<p>一个变量如果定义在了一个 function 里面，那么这个变量就是一个局部变量，只有这个 function 里面有定义。出了这个 function ，就如同没有定义过一样。代码示例：</p>
+
+<pre><code class="language-javascript">function fn(){
+    var a = 1;// 定义在一个函数里面的变量，局部变量，只有在函数里面有定义。
+    console.log(&quot;我是函数里面的语句，我认识 a 值为 &quot; + a);
+}
+
+fn();
+console.log(&quot;我是函数里面的语句，我不认识 a &quot; + a);// 这行会报错，因为 a 作用于函数内部，这里提取不到 a 的值。
+</code></pre>
+
+<p>a 被var在了 function 里面，所以现在这个 a 变量只有在红框范围内有定义：<img src="/images/zuoyongyu.png" alt="" /></p>
+
+<hr />
+
+<p>JavaScript 变量作用域非常的简单，没有块级作用域，管理作用域的只有一个东西：函数。</p>
+
+<hr />
+
+<p>如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：</p>
+
+<pre><code class="language-javascript">var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义：
+
+function fn(){
+    console.log(&quot;我是函数里面的语句，我认识全局变量 a 值为 &quot; + a);
+}
+fn();
+console.log(&quot;函数外面的语句也认识 a 值为 &quot; + a);
+</code></pre>
+
+<hr />
+
+<p>总结一下：</p>
+
+<ol>
+<li>定义在 <strong>function 里面</strong>的变量叫做局部变量；</li>
+<li>定义在<strong>全局范围内的</strong>，<strong>没有写在任何 function 里面的</strong>，叫做全局变量。
+<br /></li>
+</ol>
+
+<h3 id="作用域链">作用域链</h3>
+
+<p>当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例：</p>
+
+<pre><code class="language-javascript">function outer(){
+    var a = 1;// a的作用域就是outer
+    inner();// 调用inner函数
+    function inner(){
+        var b = 2;// b的作用域就是inner
+        console.log(a);// 输出1，a在本层没有定义，会去上层找a
+        console.log(b);// 输出2，b在本层定义了
+    }
+}
+
+outer();
+console.log(a);// 报错，因为a的作用域在outer函数内部
+</code></pre>
+
+<hr />
+
+<p>多层嵌套，如果有同名的变量，那么就会发生“遮蔽效应”：</p>
+
+<pre><code class="language-javascript">var a = 1;// 这里声明了一个全局变量
+function fn(){
+    var a = 5;// 这里声明了一个局部变量，把外层的a给遮蔽了，在函数内部看不见外层的a了
+    console.log(a);// 输出5，因为变量a在当前作用域已经找到
+}
+fn();
+console.log(a);// 输出1，变量a在当前作用域找（不进到函数fn内部）
+</code></pre>
+
+<hr />
+
+<p>作用域链：一个变量在使用的时候得几呢？就会在当前层去寻找它的定义，如果找不到，就找上一层，直到找到全局变量，如果全局变量也没有，就报错。</p>
+
+<pre><code class="language-javascript">var a = 1;// 全局变量
+var b = 2;// 全局变量
+function outer(){
+    var a = 3;// 遮蔽了外层的a，这个a是局部变量
+    function inner(){
+        var b = 4;// 遮蔽了外层的b，这个b是局部变量
+        console.log(a);// 输出 3，在上一层找到的
+        console.log(b);// 输出4，在本层找到的
+    }
+    inner();// 调用函数
+    console.log(a);// 输出3，在本层找到的
+    console.log(b);// 输出2，在上一层找到的
+}
+outer();// 调用函数
+console.log(a);// 输出全局变量 1
+console.log(b);// 输出全局变量 2
+</code></pre>
+
+<h3 id="不写-var-就自动变成全局变量了">不写 var 就自动变成全局变量了</h3>
+
+<p>代码示例：</p>
+
+<pre><code class="language-javascript">function fn(){
+    a = 1;// a在第一次赋值的时候，由于没有写 var ，变为了全局变量，相当于在最开始程序自己加了：var a
+}
+
+fn();
+console.log(a);
+</code></pre>
+
+<p>这是JS的一个机理，如果遇见了一个标识符，从来没有 var 过，并且还赋值了（<code>abs = 123</code>）;那么就会自动帮你在全局范围内定义：<code>var abs</code>;由此可见，变量要老老实实写 var 。</p>
+
+<h3 id="函数的参数-会默认定义为这个函数的局部变量">函数的参数，会默认定义为这个函数的局部变量</h3>
+
+<pre><code class="language-javascript">function fn(a,b,c,d){
+
+}
+</code></pre>
+
+<p>a,b,c,d 就是一个 fn 内部的局部变量，出了 fn 就没有定义。</p>
+
+<h3 id="全局变量的作用">全局变量的作用</h3>
+
+<p>全局变量有两个功能：</p>
+
+<p>功能1：通信，共同操作同一个变量</p>
+
+<p>下边两个函数同时操作同一个变量，一个增加，一个减少，函数和函数通信。</p>
+
+<pre><code class="language-javascript">var num = 0;// 全局变量 num
+
+function add(){
+    num++;
+}
+function remove(){
+    num--
+}
+</code></pre>
+
+<hr />
+
+<p>功能2：累加，重复调用函数的时候，不会重置</p>
+
+<pre><code class="language-javascript">var num = 0;
+function baoshu(){
+    num++;
+    console.log(num);
+}
+
+baoshu();// 输出1
+baoshu();// 输出2 
+baoshu();// 输出3
+</code></pre>
+
+<p>上边的 num 变量如果定义在函数baoshu里面的话，每次执行该函数就会把 num 重置为 0,也即是输出三次1：</p>
+
+<pre><code class="language-javascript">function baoshu(){
+    var num = 0;
+    num++;
+    console.log(num);
+}
+
+baoshu();// 输出1
+baoshu();// 输出1
+baoshu();// 输出1
+</code></pre>
+
+<h3 id="函数的定义也有作用域">函数的定义也有作用域</h3>
+
+<pre><code class="language-javascript">// 这个函数返回 a 的平方加 b 的平方
+function pingfanghe(a,b){
+    return pingfang(a) + pingfang(b);
+    // 这个函数返回 m 的平方
+    function pingfang(m){
+        return Math.pow(m,2);
+    }
+}
+// 现在求 4 的平方，想输出16，但是会报错
+pingfang(4);// 会报错，因为全局作用域下，没有一个函数叫做 pingfang
+</code></pre>
+
+<p>公式：</p>
+
+<pre><code class="language-javascript">function 大{
+    function 小{
+
+    }
+    小();// 可以运行
+}
+
+小();// 不能运行，因为小函数定义在大函数里面，离开大函数没有作用域
+</code></pre>
+
+<h2 id="闭包">闭包</h2>
+
+<h3 id="什么是闭包">什么是闭包</h3>
+
+<p>任何的培训机构，任何的书，讲闭包，一定是下面的案例：</p>
+
+<pre><code class="language-javascript">function outer(){
+    var a = 333;
+    function inner(){
+        console.log(a);
+    }
+    return inner;// 调用outer函数时会返回inner函数
+}
+
+var inn = outer();// 把inner函数赋值给变量 inn
+inn();// 调用 inn 函数，此时就会控制台打印出a的值，为 333
+</code></pre>
+
+<hr />
+
+<p>推导过程：我们之前已经学习过，inner()这个函数不能在outer函数外部调用，因为outer外面没有inner的定义：</p>
+
+<pre><code class="language-javascript">function outer(){
+    var a = 888;
+    function inner(){
+        console.log(a);
+    }
+}
+
+inner();// 会报错，因为函数inner的作用域在outer内部
+</code></pre>
+
+<p>但是我们现在就想在全局作用域下，运行outer 内部的inner函数，那么我们就必须想一些别的奇奇怪怪的方法。有一个简单可行的方法，就是让outer自己return inner函数：</p>
+
+<pre><code class="language-javascript">function outer(){
+    var a = 333;
+    function inner(){
+        console.log(a);
+    }
+    return inner;// outer 返回了 inner的引用
+}
+
+var inn = outer();// 调用outer时会返回inner的引用，即把inner函数赋值给变量 inn
+inn();// 执行inn(),即调用了inner函数。此时会打印出a，可以看出全局作用域下并没有声明变量 a。但是没关系，因为函数闭包，能够把定义函数时的作用域一起记住，也就是能够记住 var a = 333;从而能够顺利输出 333.
+</code></pre>
+
+<p>这个例子就说明了，inner 函数能够持久保存自己定义时的所处环境，并且即使自己在其它的环境被调用的时候，依然可以访问自己定义时所处环境的值。</p>
+
+<hr />
+
+<p>一个函数可以把它自己内部的语句，和自己声明时所处的作用域一起封装成一个密闭的环境，我们称为“闭包”（Closures）:<img src="/images/closures.png" alt="" /></p>
+
+<hr />
+
+<p>总结：</p>
+
+<p><strong>每个函数都是闭包，每个函数天生都能够记忆自己定义时所处的作用域环境</strong>。但是，我们必须将这个函数，挪到别的作用域，才能更好的观察闭包。这样才能实验它有没有把作用域给“记住”。</p>
+
+<p><strong>我们发现，把一个函数从它定义的那个作用域，挪走，运行。嘿，这个函数居然能够记忆住定义时的那个作用域。不管函数走到哪里，定义时的作用域就带到了哪里。这就是闭包。</strong></p>
+
+<p>闭包在工作中是一个用来防止产生隐患的事情，而不是加以利用的性质。</p>
+
+<p>因为我们总喜欢在函数定义的环境中运行函数。从来不会把函数往外挪。那为啥学习闭包，防止一些隐患，面试绝对考。</p>
+
+<h3 id="闭包的性质">闭包的性质</h3>
+
+<p>每次重新引用函数的时候，闭包是全新的。</p>
+
+<pre><code class="language-javascript">function outer(){
+    var count = 0;
+    function inner(){
+        count++;
+        console.log(count);
+    }
+    return inner;
+}
+
+var inn1 = outer();
+var inn2 = outer();
+
+inn1();// 输出 1
+inn1();// 输出 2
+inn1();// 输出 3
+inn1();// 输出 4
+inn2();// 输出 1
+inn2();// 输出 2
+inn1();// 输出 5
+</code></pre>
+
+<p>无论它在何处被调用，它总是能访问它定义时所处作用域中的全部变量。</p>
+
+<h2 id="数组">数组</h2>
+
+<h3 id="数组概念">数组概念</h3>
+
+<p>数组（array）是一个有序的数据集合，说白了数组就是一组数。</p>
+
+<pre><code class="language-javascript">var arr = [16,33,23,12,53]
+</code></pre>
+
+<p>变量 arr 就是一个数组变量，里面存储的不是一个数字，而是一组数。可以使用下标或称为索引值 index 来精确访问数组中的某一个项，下标从0开始。代码示例：</p>
+
+<pre><code class="language-javascript">console.log(arr[0]);// 输出16
+console.log(arr[1]);// 输出33
+console.log(arr[4]);// 输出53
+</code></pre>
+
+<hr />
+
+<p>数组中并不规定保存相同类型的项，<strong>但实际应用中，我们一般还是将相同类型的项保存在其中。</strong>  例如下面的数组中，存储的内容类型都是不一样的，但是是合法的：</p>
+
+<pre><code class="language-javascript">var arr = [1,&quot;哈哈&quot;,true,undefined,&quot;么么哒&quot;];
+</code></pre>
+
+<hr />
+
+<p>数组有一个属性，就是 length ，英语是长度的意思，表示这个数组的项的个数。</p>
+
+<p>先说说什么是“属性”，数组是对象，对象有属性，属性就是描述这个对象的特点、特性、特征。用点操作符来表示一个对象的属性：</p>
+
+<pre><code class="language-javascript">var arr = [34,563,4576,334,46,433];
+alert(arr.length);// 输出6，因为数组里一共有 6 项
+</code></pre>
+
+<hr />
+
+<p>数组的最后一项的下标是：arr.length - 1</p>
+
+<pre><code class="language-javascript">var arr = [1,5,6,7,81,9];
+console.log(arr[arr.length - 1]);// 输出 9
+</code></pre>
+
+<hr />
+
+<p>数组的最大下标是 arr.length - 1 ，尝试输出一个大于这个数字的下标会输出什么呢？</p>
+
+<p>答案是：会输出 undefined</p>
+
+<hr />
+
+<p>可以跳跃指定数组：<code>arr[66] = 88;</code> 那么此时其他没有指定的项就是 undefined。这个时候 <code>arr.length;</code> 的值为67，因为我们刚才设置了下标为 66 的项，强制“拉长”了数组。</p>
+
+<hr />
+
+<p>写一个小于数组元素数量的长度会缩短数组，写 0 会彻底清空数组。例如我们写 <code>arr.length = 2;</code> 的话，这个数组就会只剩下两项： <code>a[0]</code> 和 <code>a[1]</code> ,其他的项就丢失了。</p>
+
+<h3 id="数组的遍历">数组的遍历</h3>
+
+<p>用 for 循环语句来遍历一个数组，应该这么写：</p>
+
+<pre><code class="language-javascript">for(var i = 0; i&lt;=arr.length - 1; i++){
+
+}
+</code></pre>
+
+<h3 id="数组是一个引用类型">数组是一个引用类型</h3>
+
+<pre><code class="language-javascript">var arr = [1,2,3,4];
+console.log(typeof arr);// 输出 object
+</code></pre>
+
+<p>用 typeof 来检测数组类型，会输出 object。因为数组是对象</p>
+
+<hr />
+
+<p>保存数组的变量，实际上保存的是数组的内存地址：</p>
+
+<pre><code class="language-javascript">var a = [1,2,3,4];
+var b = a;
+b[0] = 88;// 修改的是数组 b 下标为 0 的项
+console.log(a);// 打印出a数组后你会发现a数组下标为 0 的项也变为了 88
+</code></pre>
+
+<p>下边的示意图可以很好的解释这个现象：<img src="/images/array.png" alt="" /></p>
+
+<hr />
+
+<p>下边两个数组看起来完全一样，但是并不 ==：</p>
+
+<pre><code class="language-javascript">var a = [1,2,3];
+var b = [1,2,3];
+console.log(a == b);// 输出 false
+</code></pre>
+
+<p>这两个数组的内容、长度、项的位置完全一样，但是为什么不相等呢？ 这是因为<strong>引用类型</strong>比较的是地址，变量a和变量b指向的位置不一样，不能判相等。</p>
+
+<hr />
+
+<p>如果a里面存储的是基本类型，那么语句b=a就是把a的值赋值一份给b。如果a里面存储的是引用类型，那么b将指向a现在指向的位置，a的值不会赋值一份，a、b指向同一个地方。</p>
+
+<h3 id="数组的常见方法">数组的常见方法</h3>
+
+<p>数组是对象，现在你要知道对象都有属性和方法。</p>
+
+<p>属性已经介绍了，数组有length属性。属性就是描述对象的特点的，比如“性别”、“姓名”、“身高”</p>
+
+<p>方法就是对象能够执行的事情。比如“吃饭”、“睡觉”、“打dota”
+我们现在就要来学数组能执行什么方法。</p>
+
+<p>数组的常见方法有这几种，如图所示：<img src="/images/array2.png" alt="" /></p>
+
+<hr />
+
+<p><strong>数组的头尾操作 pop()、push()、shift()、unshift()</strong></p>
+
+<p>push() 方法，在数组的末位添加项目，可以添加 1 个，也可以添加多个。</p>
+
+<pre><code class="language-javascript">var arr = [&quot;东&quot;,&quot;西&quot;,&quot;南&quot;,&quot;北&quot;];
+arr.push(&quot;中&quot;,&quot;发&quot;,&quot;白&quot;);
+console.log(arr);
+</code></pre>
+
+<p>输出：<img src="/images/array-push.png" alt="" /></p>
+
+<hr />
+
+<p>pop()方法，删除数组的最后一项，只能删除最后一项，无法删除多项。能够返回被删除的元素。</p>
+
+<hr />
+
+<ol>
+<li>push 尾插</li>
+<li>pop 尾删</li>
+<li>unshift 头插</li>
+<li>shift 头插
+<br /></li>
+</ol>
+
+<hr />
+
+<hr />
+
+<p><strong>数组的合并与拆分 concat()、slice()</strong></p>
+
+<p>concat() 方法就是合并两个数组:</p>
+
+<pre><code class="language-javascript">var arr1 = [&quot;东&quot;,&quot;西&quot;,&quot;南&quot;,&quot;北&quot;];
+var arr2 = [&quot;一条&quot;,&quot;二条&quot;];
+
+arr1.concat(arr2);// 这里有一个超级大坑，concat是把 arr1 和 arr2 合并为一个新数组返回
+console.log(arr1);// arr1 不变
+</code></pre>
+
+<p>因为concat是把 arr1 和 arr2 合并为一个新数组返回，所以必须赋值：</p>
+
+<pre><code class="language-javascript">arr1 = arr1.concat(arr2);
+</code></pre>
+
+<p>concat() 的参数非常灵活，可以是数组变量、数组字面量、散的值也行：</p>
+
+<pre><code class="language-javascript">var arr1 = [&quot;东&quot;,&quot;西&quot;,&quot;南&quot;,&quot;北&quot;];
+var arr2 = [&quot;一条&quot;,&quot;二条&quot;];
+
+arr = arr.concat(arr2,[&quot;一筒&quot;,&quot;八条&quot;],&quot;幺鸡&quot;);
+console.log(arr1);
+</code></pre>
+
+<p>输出：<img src="/images/concat.png" alt="" /></p>
+
+<hr />
+
+<p>slice()方法可从已有的数组中返回选定的元素。</p>
+
+<pre><code class="language-javascript">var arr = [&quot;东&quot;,&quot;西&quot;,&quot;南&quot;,&quot;北&quot;,&quot;中&quot;,&quot;发&quot;,&quot;白&quot;];
+var arr2 = arr.slice(1,4); //截取下标为1、2、3的为一个新数组返回
+console.log(arr2);   //[&quot;西&quot;, &quot;南&quot;, &quot;北&quot;]
+</code></pre>
+
+<p>arr.slice(start,end) 返回一个新的数组，包含从 start 到 end （不包括 end）的元素。</p>
+
+<p>只有开头：</p>
+
+<pre><code class="language-javascript">var arr = [&quot;东&quot;,&quot;西&quot;,&quot;南&quot;,&quot;北&quot;,&quot;中&quot;,&quot;发&quot;,&quot;白&quot;];
+var arr2 = arr.slice(3); //  从下标为3的项目开始截取后面全部了
+console.log(arr2); // [&quot;北&quot;, &quot;中&quot;, &quot;发&quot;, &quot;白&quot;]
+</code></pre>
+
+<p>slice(a,b)取出了b-a项</p>
+
+<hr />
+
+<hr />
+
+<p><strong>多功能splice()插入、删除、替换</strong></p>
+
+<p>我们先确认一个事情，<code>arr.splice(3,2,&quot;斑马&quot;,&quot;骆驼&quot;);</code>
+一旦应用，arr立即改变。并不需要重新复制，换句话说，这个函数不返回新的数组。</p>
+
+<pre><code class="language-javascript">var arr = [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;];
+arr.splice(3,2,&quot;X&quot;,&quot;Y&quot;,&quot;Z&quot;,&quot;思密达&quot;); //从数组下标为3开始这项，连数2项，改为……
+console.log(arr);
+</code></pre>
+
+<p>输出：<img src="/images/splice.png" alt="" /></p>
+
+<pre><code class="language-javascript">// ***************插入一些项 ***************
+var arr = [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;];
+arr.splice(2,0,&quot;嘻嘻&quot;,&quot;哈哈&quot;);// 插入到下标为2的项前，不删除项目
+console.log(arr);
+</code></pre>
+
+<p>输出：<img src="/images/splice2.png" alt="" /></p>
+
+<hr />
+
+<p>splice依据参数的多少，和参数是什么，有多功能。现在你要能反应过来。</p>
+
+<p>删除数组的最后8项:</p>
+
+<pre><code class="language-javascript">arr.pop();
+arr.pop();
+arr.pop();
+arr.pop();
+arr.pop();
+arr.pop();
+arr.pop();
+arr.pop();
+</code></pre>
+
+<p>简化为：</p>
+
+<pre><code class="language-javascript">for(var i = 1 ; i &lt;= 8 ; i++){
+arr.pop();
+}
+</code></pre>
+
+<p>也可以：</p>
+
+<pre><code class="language-javascript">arr.splice(-8)
+</code></pre>
+
+<hr />
+
+<hr />
+
+<p><strong>逆序reverse();</strong></p>
+
+<p>reverse()方法就是立即让数组倒置：</p>
+
+<pre><code class="language-javascript">var arr = [&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;,&quot;F&quot;,&quot;G&quot;];
+arr.reverse(); //不需要赋值
+console.log(arr); //[&quot;G&quot;, &quot;F&quot;, &quot;E&quot;, &quot;D&quot;, &quot;C&quot;, &quot;B&quot;, &quot;A&quot;]
+</code></pre>
+
+<hr />
+
+<hr />
+
+<p><strong>排序 sort()</strong></p>
+
+<p>sort() 方法排序：</p>
+
+<pre><code class="language-javascript">var arr = [&quot;G&quot;,&quot;A&quot;,&quot;C&quot;,&quot;B&quot;,&quot;I&quot;,&quot;H&quot;,&quot;G&quot;,&quot;I&quot;,&quot;B&quot;];
+arr.sort();
+console.log(arr);
+</code></pre>
+
+<p>输出：<img src="/images/sort.png" alt="" /></p>
+
+<hr />
+
+<pre><code class="language-javascript">//sort函数默认是按照字符顺序排的，隐式将数字转为string
+//比字符编码顺序
+var arr = [23,435,456,23,2,345,2,32,11,324,32,43,65,667,78,43];
+arr.sort();
+console.log(arr);
+</code></pre>
+
+<p>输出：<img src="/images/sort2.png" alt="" /></p>
+
+<p>可以看出上边的排序输出的结果不是我们想要的，那么如果解决该问题：</p>
+
+<p>sort()里面有一个参数，这个参数是一个函数。</p>
+
+<pre><code class="language-javascript">arr.sort(function(a,b){
+    //如果a要放在b前面，那么返回负数
+    //如果a要放在b后面，那么返回正数
+    //如果a和b不区分大小，那么返回0
+    if(a &lt; b){
+	return -1;
+    }else if(a &gt; b){
+	return 1;
+    }else if(a == b){
+	return 0;
+    }
+});
+</code></pre>
+
+<hr />
+
+<hr />
+
+<p><strong>转为字符串</strong></p>
+
+<pre><code class="language-javascript">var arr = [1,2,3,4,5,6,7];
+var str = arr.join(&quot;★&quot;);
+console.log(str);
+</code></pre>
+
+<p>输出：<img src="/images/arr-join.png" alt="" /></p>
+
+<p>语法：</p>
+
+<pre><code class="language-javascript">var str = arr.join(分隔符);
+</code></pre>
+
+<p>如果不写分隔符，那么等价于用逗号分开:</p>
+
+<pre><code class="language-javascript">var arr = [1,2,3,4,5,6,7];
+var str = arr.join();
+console.log(str);	
+</code></pre>
+
+<p>输出：<img src="/images/join.png" alt="" /></p>
+
+<h2 id="字符串的常见属性和方法">字符串的常见属性和方法</h2>
+
+<p>String 对象属性：<img src="/images/string.png" alt="" /></p>
+
+<p>String 对象方法：</p>
+
+<p><img src="/images/string2.png" alt="" /></p>
+
+<p><img src="/images/string3.png" alt="" /></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

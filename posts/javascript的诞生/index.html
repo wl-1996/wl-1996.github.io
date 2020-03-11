@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | JavaScript的诞生</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JavaScript的诞生" />
+<meta property="og:description" content="JavaScript 的诞生 JavaScript 的历史  它最初由 Netscape(网景公司) 的 Brendan Eich 设计。JavaScript 是甲骨文公司的注册商标。Ecma【欧洲计算机制造商协会（European Computer Manufacturers Association）】 国际以 JavaScript 为基础制定了 ECMAScript 标准。JavaScript 也可以用于其他场合，如服务器端编程。完整的 JavaScript 实现包含三个部分：ECMAScript，文档对象模型，浏览器对象模型。 Netscape 在最初将其脚本语言命名为 LiveScript，后来 Netscape 在与 Sun 合作之后将其改名为 JavaScript。JavaScript 最初受 Java 启发而开始设计的，目的之一就是“看上去像 Java”，因此语法上有类似之处，一些名称和命名规范也借自 Java。 但 JavaScript 的主要设计原则源自 Self 和 Scheme。 JavaScript 与 Java 名称上的近似，是当时 Netscape 为了营销考虑与 Sun 微系统达成协议的结果。 为了取得技术优势，微软推出了 JScript 来迎战 JavaScript 的脚本语言。为了互用性，Ecma 国际（前身为欧洲计算机制造商协会）创建了 ECMA-262 标准（ECMAScript）。两者都属于 ECMAScript 的实现。 尽管 JavaScript 作为给非程序人员的脚本语言，而非作为给程序人员的脚本语言来推广和宣传，但是 JavaScript 具有非常丰富的特性。 发展初期，JavaScript 的标准并未确定，同期有 Netscape 的 JavaScript，微软的 JScript 和 CEnvi 的 ScriptEase 三足鼎立。1997 年，在 ECMA（欧洲计算机制造商协会）的协调下，由 Netscape、Sun、微软、Borland 组成的工作组确定统一标准：ECMA-262。  JavaScript 诞生记  以下内容引用自《阮一峰的网络日志》" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" />
+<meta property="article:published_time" content="2019-09-16T17:17:54+08:00" />
+<meta property="article:modified_time" content="2019-09-16T17:17:54+08:00" />
+<meta itemprop="name" content="JavaScript的诞生">
+<meta itemprop="description" content="JavaScript 的诞生 JavaScript 的历史  它最初由 Netscape(网景公司) 的 Brendan Eich 设计。JavaScript 是甲骨文公司的注册商标。Ecma【欧洲计算机制造商协会（European Computer Manufacturers Association）】 国际以 JavaScript 为基础制定了 ECMAScript 标准。JavaScript 也可以用于其他场合，如服务器端编程。完整的 JavaScript 实现包含三个部分：ECMAScript，文档对象模型，浏览器对象模型。 Netscape 在最初将其脚本语言命名为 LiveScript，后来 Netscape 在与 Sun 合作之后将其改名为 JavaScript。JavaScript 最初受 Java 启发而开始设计的，目的之一就是“看上去像 Java”，因此语法上有类似之处，一些名称和命名规范也借自 Java。 但 JavaScript 的主要设计原则源自 Self 和 Scheme。 JavaScript 与 Java 名称上的近似，是当时 Netscape 为了营销考虑与 Sun 微系统达成协议的结果。 为了取得技术优势，微软推出了 JScript 来迎战 JavaScript 的脚本语言。为了互用性，Ecma 国际（前身为欧洲计算机制造商协会）创建了 ECMA-262 标准（ECMAScript）。两者都属于 ECMAScript 的实现。 尽管 JavaScript 作为给非程序人员的脚本语言，而非作为给程序人员的脚本语言来推广和宣传，但是 JavaScript 具有非常丰富的特性。 发展初期，JavaScript 的标准并未确定，同期有 Netscape 的 JavaScript，微软的 JScript 和 CEnvi 的 ScriptEase 三足鼎立。1997 年，在 ECMA（欧洲计算机制造商协会）的协调下，由 Netscape、Sun、微软、Borland 组成的工作组确定统一标准：ECMA-262。  JavaScript 诞生记  以下内容引用自《阮一峰的网络日志》">
+
+
+<meta itemprop="datePublished" content="2019-09-16T17:17:54&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-16T17:17:54&#43;08:00" />
+<meta itemprop="wordCount" content="613">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript的诞生"/>
+<meta name="twitter:description" content="JavaScript 的诞生 JavaScript 的历史  它最初由 Netscape(网景公司) 的 Brendan Eich 设计。JavaScript 是甲骨文公司的注册商标。Ecma【欧洲计算机制造商协会（European Computer Manufacturers Association）】 国际以 JavaScript 为基础制定了 ECMAScript 标准。JavaScript 也可以用于其他场合，如服务器端编程。完整的 JavaScript 实现包含三个部分：ECMAScript，文档对象模型，浏览器对象模型。 Netscape 在最初将其脚本语言命名为 LiveScript，后来 Netscape 在与 Sun 合作之后将其改名为 JavaScript。JavaScript 最初受 Java 启发而开始设计的，目的之一就是“看上去像 Java”，因此语法上有类似之处，一些名称和命名规范也借自 Java。 但 JavaScript 的主要设计原则源自 Self 和 Scheme。 JavaScript 与 Java 名称上的近似，是当时 Netscape 为了营销考虑与 Sun 微系统达成协议的结果。 为了取得技术优势，微软推出了 JScript 来迎战 JavaScript 的脚本语言。为了互用性，Ecma 国际（前身为欧洲计算机制造商协会）创建了 ECMA-262 标准（ECMAScript）。两者都属于 ECMAScript 的实现。 尽管 JavaScript 作为给非程序人员的脚本语言，而非作为给程序人员的脚本语言来推广和宣传，但是 JavaScript 具有非常丰富的特性。 发展初期，JavaScript 的标准并未确定，同期有 Netscape 的 JavaScript，微软的 JScript 和 CEnvi 的 ScriptEase 三足鼎立。1997 年，在 ECMA（欧洲计算机制造商协会）的协调下，由 Netscape、Sun、微软、Borland 组成的工作组确定统一标准：ECMA-262。  JavaScript 诞生记  以下内容引用自《阮一峰的网络日志》"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/&amp;text=JavaScript%e7%9a%84%e8%af%9e%e7%94%9f" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/&amp;title=JavaScript%e7%9a%84%e8%af%9e%e7%94%9f" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">JavaScript的诞生</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-09-16T17:17:54&#43;08:00">September 16, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="javascript-的诞生">JavaScript 的诞生</h1>
+
+<h2 id="javascript-的历史">JavaScript 的历史</h2>
+
+<ol>
+<li>它最初由 Netscape(网景公司) 的 Brendan Eich 设计。JavaScript 是甲骨文公司的注册商标。Ecma【欧洲计算机制造商协会（European Computer Manufacturers Association）】 国际以 JavaScript 为基础制定了 ECMAScript 标准。JavaScript 也可以用于其他场合，如服务器端编程。完整的 JavaScript 实现包含三个部分：<strong>ECMAScript</strong>，<strong>文档对象模型</strong>，<strong>浏览器对象模型</strong>。</li>
+<li>Netscape 在最初将其脚本语言命名为 LiveScript，后来 Netscape 在与 Sun 合作之后将其改名为 JavaScript。JavaScript 最初受 Java 启发而开始设计的，目的之一就是“看上去像 Java”，因此语法上有类似之处，一些名称和命名规范也借自 Java。</li>
+<li>但 JavaScript 的主要设计原则源自 <strong>Self</strong> 和 <strong>Scheme</strong>。</li>
+<li>JavaScript 与 Java 名称上的近似，是当时 Netscape 为了营销考虑与 Sun 微系统达成协议的结果。</li>
+<li>为了取得技术优势，微软推出了 JScript 来迎战 JavaScript 的脚本语言。为了互用性，Ecma 国际（前身为欧洲计算机制造商协会）创建了 ECMA-262 标准（ECMAScript）。两者都属于 ECMAScript 的实现。</li>
+<li>尽管 JavaScript 作为给非程序人员的脚本语言，而非作为给程序人员的脚本语言来推广和宣传，但是 JavaScript 具有非常丰富的特性。</li>
+<li>发展初期，JavaScript 的标准并未确定，同期有 Netscape 的 JavaScript，微软的 JScript 和 CEnvi 的 ScriptEase 三足鼎立。1997 年，在 ECMA（欧洲计算机制造商协会）的协调下，由 Netscape、Sun、微软、Borland 组成的工作组确定统一标准：ECMA-262。</li>
+</ol>
+
+<h2 id="javascript-诞生记">JavaScript 诞生记</h2>
+
+<blockquote>
+<p>以下内容引用自《阮一峰的网络日志》</p>
+</blockquote>
+
+<p><strong>1.</strong>&ldquo;1994 年，网景公司（Netscape）发布了 Navigator 浏览器 0.9 版。这是历史上第一个比较成熟的网络浏览器，轰动一时。但是，这个版本的浏览器只能用来浏览，不具备与访问者互动的能力。&hellip;&hellip;网景公司急需一种网页脚本语言，使得浏览器可以与网页互动。&rdquo;</p>
+
+<p><strong>2.</strong>网页脚本语言到底是什么语言？网景公司当时有两个选择：一个是采用现有的语言，比如 Perl、Python、Tcl、Scheme 等等，允许它们直接嵌入网页；另一个是发明一种全新的语言。</p>
+
+<p>这两个选择各有利弊。第一个选择，有利于充分利用现有代码和程序员资源，推广起来比较容易；第二个选择，有利于开发出完全适用的语言，实现起来比较容易。</p>
+
+<p>到底采用哪一个选择，网景公司内部争执不下，管理层一时难以下定决心。</p>
+
+<p><strong>3.</strong>就在这时，发生了另外一件大事：1995 年 Sun 公司将 Oak 语言改名为 Java，正式向市场推出。</p>
+
+<p>Sun 公司大肆宣传，许诺这种语言可以&rdquo;一次编写，到处运行&rdquo;（Write Once, Run Anywhere），它看上去很可能成为未来的主宰。</p>
+
+<p>网景公司动了心，决定与 Sun 公司结成联盟。它不仅允许 Java 程序以 applet（小程序）的形式，直接在浏览器中运行；甚至还考虑直接将 Java 作为脚本语言嵌入网页，只是因为这样会使 HTML 网页过于复杂，后来才不得不放弃。</p>
+
+<p>总之，当时的形势就是，网景公司的整个管理层，都是 Java 语言的信徒，Sun 公司完全介入网页脚本语言的决策。因此，Javascript 后来就是网景和 Sun 两家公司一起携手推向市场的，这种语言被命名为&rdquo;Java+script&rdquo;并不是偶然的。</p>
+
+<p><strong>4.</strong>此时，34 岁的系统程序员 Brendan Eich 登场了。1995 年 4 月，网景公司录用了他。</p>
+
+<p>Brendan Eich 的主要方向和兴趣是函数式编程，网景公司招聘他的目的，是研究将 Scheme 语言作为网页脚本语言的可能性。Brendan Eich 本人也是这样想的，以为进入新公司后，会主要与 Scheme 语言打交道。</p>
+
+<p>仅仅一个月之后，1995 年 5 月，网景公司做出决策，未来的网页脚本语言必须&rdquo;看上去与 Java 足够相似&rdquo;，但是比 Java 简单，使得非专业的网页作者也能很快上手。这个决策实际上将 Perl、Python、Tcl、Scheme 等非面向对象编程的语言都排除在外了。</p>
+
+<p>Brendan Eich 被指定为这种&rdquo;简化版 Java 语言&rdquo;的设计师。</p>
+
+<p><strong>5.</strong>但是，他对 Java 一点兴趣也没有。为了应付公司安排的任务，他只用 10 天时间就把 Javascript 设计出来了。</p>
+
+<p>由于设计时间太短，语言的一些细节考虑得不够严谨，导致后来很长一段时间，Javascript 写出来的程序混乱不堪。如果 Brendan Eich 预见到，未来这种语言会成为互联网第一大语言，全世界有几百万学习者，他会不会多花一点时间呢？</p>
+
+<p>总的来说，他的设计思路是这样的：</p>
+
+<ul>
+<li>借鉴 C 语言的基本语法；</li>
+<li>借鉴 Java 语言的数据类型和内存管理；</li>
+<li>借鉴 Scheme 语言，将函数提升到&rdquo;第一等公民&rdquo;（first class）的地位；</li>
+<li>借鉴 Self 语言，使用基于原型（prototype）的继承机制。
+所以，<strong>Javascript 语言实际上是两种语言风格的混合产物&mdash;-（简化的）函数式编程+（简化的）面向对象编程</strong>。这是由 Brendan Eich（函数式编程）与网景公司（面向对象编程）共同决定的。</li>
+</ul>
+
+<p><strong>6.</strong>多年以后，Brendan Eich 还是看不起 Java。</p>
+
+<p>他说：</p>
+
+<blockquote>
+<blockquote>
+<p>&ldquo;Java（对 Javascript）的影响，主要是把数据分成基本类型（primitive）和对象类型（object）两种，比如字符串和字符串对象，以及引入了 Y2K 问题。这真是不幸啊。&rdquo;</p>
+
+<p>把基本数据类型包装成对象，这样做是否可取，这里暂且不论。Y2K 问题则是直接与 Java 有关。根据设想，Date.getYear()返回的应该是年份的最后两位：</p>
+</blockquote>
+</blockquote>
+
+<pre><code class="language-javascript">var date1 = new Date(1999, 0, 1);
+var year1 = date1.getYear();
+alert(year1); // 99
+</code></pre>
+
+<p>但是实际上：</p>
+
+<pre><code class="language-javascript">var date2 = new Date(2000, 0, 1);
+var year2 = date2.getYear();
+alert(year2); // 100
+</code></pre>
+
+<p>如果用这个函数生成年份，某些网页可能出现&rdquo;19100&rdquo;这样的结果。这个问题完全来源于 Java，因为 Javascript 的日期类直接采用了 java.util.Date 函数库。Brendan Eich 显然很不满意这个结果，这导致后来不得不添加了一个返回四位数年份的 Date.getFullYear()函数。</p>
+
+<p>如果不是公司的决策，Brendan Eich 绝不可能把 Java 作为 Javascript 设计的原型。作为设计者，他一点也不喜欢自己的这个作品：</p>
+
+<blockquote>
+<blockquote>
+<p>&ldquo;与其说我爱 Javascript，不如说我恨它。它是 C 语言和 Self 语言一夜情的产物。十八世纪英国文学家约翰逊博士说得好：&rsquo;它的优秀之处并非原创，它的原创之处并不优秀。&rsquo;（the part that is good is not original, and the part that is original is not good.）&rdquo;</p>
+</blockquote>
+
+<p>以上内容引用自《阮一峰的网络日志》</p>
+</blockquote>
+
+<h2 id="javascript-的-10-个设计缺陷">JavaScript 的 10 个设计缺陷</h2>
+
+<blockquote>
+<p>以下内容引用自《阮一峰的网络日志》</p>
+</blockquote>
+
+<p>前几篇文章，我经常说 Javascript 的设计不够严谨，有很多失误。</p>
+
+<p>今天的这一篇，前半部分就谈为什么会这样，后半部分将列举 Javascript 的 10 个设计缺陷。</p>
+
+<p>我参考的文献主要是 Douglas Crockford 的专著《Javascript 语言精粹》（JavaScript: The Good Parts）和 Fredrik Holmström 的文章《我对 Javascript 的抱怨》（My gripes with Javascript）。</p>
+
+<p><img src="../../images/2.jpg" alt="" />;</p>
+
+<h3 id="一-为什么-javascript-有设计缺陷">一、为什么 Javascript 有设计缺陷？</h3>
+
+<p>这里有三个客观原因，导致 Javascript 的设计不够完善。</p>
+
+<p><img src="../../images/3.jpg" alt="" />;</p>
+
+<ol>
+<li><p>设计阶段过于仓促:</p>
+
+<ul>
+<li>Javascript 的设计，其实只用了十天。而且，设计师是为了向公司交差，本人并不愿意这样设计（参见《Javascript 诞生记》）。</li>
+<li>另一方面，这种语言的设计初衷，是为了解决一些简单的网页互动（比如，检查&rdquo;用户名&rdquo;是否填写），并没有考虑复杂应用的需要。设计者做梦也想不到，Javascript 将来可以写出像 Gmail 这种极其庞大复杂的网页。</li>
+</ul></li>
+
+<li><p>没有先例</p>
+
+<ul>
+<li>Javascript 同时结合了函数式编程和面向对象编程的特点，这很可能是历史上的第一例。而且直到今天为止，Javascript 仍然是世界上唯一使用 Prototype 继承模型的主要语言。这使得它没有设计先例可以参考。</li>
+</ul></li>
+
+<li><p>过早的标准化</p>
+
+<ul>
+<li>Javascript 的发展非常快，根本没有时间调整设计。</li>
+<li>1995 年 5 月，设计方案定稿；10 月，解释器开发成功；12 月，向市场推出，立刻被广泛接受，全世界的用户大量使用。Javascript 缺乏一个从小到大、慢慢积累用户的过程，而是连续的爆炸式扩散增长。大量的既成网页和业余网页设计者的参与，使得调整语言规格困难重重。</li>
+
+<li><p>更糟的是，Javascript 的规格还 s 没来及调整，就固化了。</p></li>
+
+<li><p>1996 年 8 月，微软公司强势介入，宣布推出自己的脚本语言 Jscript；11 月，为了压制微软，网景公司决定申请 Javascript 的国际标准；1997 年 6 月，第一个国际标准 ECMA-262 正式颁布。</p></li>
+
+<li><p>也就是说，Javascript 推出一年半之后，国际标准就问世了。设计缺陷还没有充分暴露就成了标准。相比之下，C 语言问世将近 20 年之后，国际标准才颁布。</p></li>
+</ul></li>
+</ol>
+
+<h3 id="二-javascript-的-10-个设计缺陷">二、Javascript 的 10 个设计缺陷</h3>
+
+<p><img src="../../images/4.jpg" alt="" /></p>
+
+<ol>
+<li><p>不适合开发大型程序</p>
+
+<ul>
+<li>Javascript 没有名称空间（namespace），很难模块化；没有如何将代码分布在多个文件的规范；允许同名函数的重复定义，后面的定义可以覆盖前面的定义，很不利于模块化加载。</li>
+</ul></li>
+
+<li><p>非常小的标准库</p>
+
+<ul>
+<li>Javascript 提供的标准函数库非常小，只能完成一些基本操作，很多功能都不具备。</li>
+</ul></li>
+
+<li><p>null 和 undefined</p>
+
+<ul>
+<li><p>null 属于对象（object）的一种，意思是该对象为空；undefined 则是一种数据类型，表示未定义。</p></li>
+
+<li><p>两者非常容易混淆，但是含义完全不同。</p>
+
+<pre><code class="language-javascript">typeof null; // object
+typeof undefined; // undefined
+</code></pre>
+
+<pre><code class="language-javascript">var foo;
+alert(foo == null); // true
+alert(foo == undefined); // true
+alert(foo === null); // false
+alert(foo === undefined); // true
+</code></pre></li>
+
+<li><p>在编程实践中，null 几乎没用，根本不应该设计它。</p></li>
+</ul></li>
+
+<li><p>全局变量难以控制</p>
+
+<ul>
+<li><p>Javascript 的全局变量，在所有模块中都是可见的；任何一个函数内部都可以生成全局变量，这大大加剧了程序的复杂性。</p>
+
+<pre><code class="language-javascript">  a = 1;
+  (function() {
+    b = 2;
+    alert(a);
+  })(); // 1
+  alert(b); //2
+</code></pre></li>
+</ul></li>
+
+<li><p>自动插入行尾分号</p>
+
+<ul>
+<li>Javascript 的所有语句，都必须以分号结尾。但是，如果你忘记加分号，解释器并不报错，而是为你自动加上分号。有时候，这会导致一些难以发现的错误。</li>
+
+<li><p>比如，下面这个函数根本无法达到预期的结果，返回值不是一个对象，而是 undefined。</p>
+
+<pre><code class="language-javascript">function(){
+return
+　　{
+　　　　i=1
+　　};
+}
+</code></pre></li>
+
+<li><p>原因是解释器自动在 return 语句后面加上了分号。</p>
+
+<pre><code class="language-javascript">function(){
+return;
+　 {
+　　　 i=1
+　 };
+}
+</code></pre></li>
+</ul></li>
+
+<li><p>加号运算符</p>
+
+<ul>
+<li><p>+号作为运算符，有两个含义，可以表示数字与数字的和，也可以表示字符与字符的连接。</p>
+
+<pre><code class="language-javascript">alert(1 + 10); // 11
+alert(&quot;1&quot; + &quot;10&quot;); // 110
+</code></pre></li>
+
+<li><p>如果一个操作项是字符，另一个操作项是数字，则数字自动转化为字符。</p>
+
+<pre><code class="language-javascript">alert(1 + &quot;10&quot;); // 110
+alert(&quot;10&quot; + 1); // 101
+</code></pre></li>
+
+<li><p>这样的设计，不必要地加剧了运算的复杂性，完全可以另行设置一个字符连接的运算符。</p></li>
+</ul></li>
+
+<li><p>NaN</p>
+
+<ul>
+<li><p>NaN 是一种数字，表示超出了解释器的极限。它有一些很奇怪的特性：</p>
+
+<pre><code class="language-javascript">NaN === NaN; //false
+NaN !== NaN; //true
+alert(1 + NaN); // NaN
+</code></pre></li>
+
+<li><p>与其设计 NaN，不如解释器直接报错，反而有利于简化程序。</p></li>
+</ul></li>
+
+<li><p>数组和对象的区分</p>
+
+<ul>
+<li><p>由于 Javascript 的数组也属于对象（object），所以要区分一个对象到底是不是数组，相当麻烦。Douglas Crockford 的代码是这样的：</p>
+
+<pre><code class="language-javascript">if (
+  arr &amp;&amp;
+  typeof arr === &quot;object&quot; &amp;&amp;
+  typeof arr.length === &quot;number&quot; &amp;&amp;
+  !arr.propertyIsEnumerable(&quot;length&quot;)
+) {
+  alert(&quot;arr is an array&quot;);
+}
+</code></pre></li>
+</ul></li>
+
+<li><p>== 和 ===</p>
+
+<ul>
+<li><p>==用来判断两个值是否相等。当两个值类型不同时，会发生自动转换，得到的结果非常不符合直觉。</p>
+
+<pre><code class="language-javascript">&quot;&quot; == &quot;0&quot;; // false
+0 == &quot;&quot;; // true
+0 == &quot;0&quot;; // true
+false == &quot;false&quot;; // false
+false == &quot;0&quot;; // true
+false == undefined; // false
+false == null; // false
+null == undefined; // true
+&quot; \t\r\n&quot; == 0; // true
+</code></pre></li>
+
+<li><p>因此，推荐任何时候都使用&rdquo;===&ldquo;（精确判断）比较符。</p></li>
+</ul></li>
+
+<li><p>基本类型的包装对象</p>
+
+<ul>
+<li><p>Javascript 有三种基本数据类型：字符串、数字和布尔值。它们都有相应的建构函数，可以生成字符串对象、数字对象和布尔值对象。</p>
+
+<pre><code class="language-javascript">new Boolean(false);
+new Number(1234);
+new String(&quot;Hello World&quot;);
+</code></pre></li>
+
+<li><p>与基本数据类型对应的对象类型，作用很小，造成的混淆却很大。</p>
+
+<pre><code>alert( typeof 1234); // number
+alert( typeof new Number(1234)); // object
+</code></pre></li>
+
+<li><p>关于 Javascript 的更多怪异行为，请参见 Javascript Garden 和 wtfjs.com。</p></li>
+</ul></li>
+</ol>
+
+<h3 id="三-如何看待-javascript-的设计缺陷">三、如何看待 Javascript 的设计缺陷？</h3>
+
+<p>既然 Javascript 有缺陷，数量还不少，那么它是不是一种很糟糕的语言？有没有前途？</p>
+
+<p>回答是 Javascript 并不算糟糕，相反它的编程能力很强大，前途很光明。</p>
+
+<p>首先，如果遵守良好的编程规范，加上第三方函数库的帮助，Javascript 的这些缺陷大部分可以回避。</p>
+
+<p>其次，Javascript 目前是网页编程的唯一语言，只要互联网继续发展，它就必然一起发展。目前，许多新项目大大扩展了它的用途，node.js 使得 Javascript 可以用于后端的服务器编程，coffeeScript 使你可以用 python 和 ruby 的语法，撰写 Javascript。</p>
+
+<p>最后，只要发布新版本的语言标准（比如 ECMAscript 5），就可以弥补这些设计缺陷。当然，标准的发布和标准的实现是两回事，上述的很多缺陷也许会一直伴随到 Javascript 存在的最后一天。</p>
+
+<p>（完）</p>
+
+<blockquote>
+<p>&ndash;以上内容引用自《阮一峰的网络日志》</p>
+</blockquote>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

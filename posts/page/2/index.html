@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客 </title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="个人博客" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="个人博客" />
+      
+    
+    
+    <meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://example.org/posts/" />
+
+<meta property="og:updated_time" content="2020-03-10T17:13:07+08:00" />
+<meta itemprop="name" content="Posts">
+<meta itemprop="description" content="">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content=""/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Posts
+        </h1>
+        
+      </div>
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/%E5%B0%8F%E6%80%BB%E7%BB%93/" class="link black dim">
+        小总结
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      什么是闭包？闭包的用途是什么？闭包的缺点是什么？ 什么是闭包： 如果一个函数用到了外部的变量，那么这个函数加这个变量就叫做闭包，代码示例如下：
+function f1() { let a = 2; function f2() { console.log(a); } }  上边的函数 f2 用到了外部的变量 a，函数 f2 加上变量 a 就叫做闭包。
+闭包的用途： 闭包的用途很多，最大用途有两个：第一是从外部读取局部变量，第二是让这些变量的值始终保持在内存中。下边详细解释这两种用途：
+用途 1：从外部读取局部变量 代码示例：
+function f1() { let n = 110; function f2() { alert(n); } }  在上面的代码中，函数 f2 被包括在函数 f1 内部，这时 f1 内部的所有局部变量，对 f2 都是可见的。但是反过来不行，函数 f2 的局部变量，对 f1 就是不可见的。
+那么问题来了，既然 f2 可以读取 f1 中的局部变量，那么只要把 f2 作为返回值，我们不就可以在 f1 外部读取它的内部变量了么？这样就解决了之前在函数外部无法读取函数内的局部变量的问题。 代码示例：
+function f1() { let n = 110; function f2() { alert(n); } return f2; } let haha = f1(); //调用f1函数，返回f2函数的引用给哈哈 haha(); //调用haha也就是调用了f2，弹出110  用途 2：让局部变量的值始终保持在内存中 代码示例：
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-5/" class="link black dim">
+        JavaScript学习-5
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      IIFE IIFE 就是 immediately invoked function expression,即 立即调用函数表达式/即时调用函数表达式。
+MDN定义：IIFE（ 立即调用函数表达式）是一个在定义时就会立即执行的 JavaScript 函数。
+shaoshanhuan定义：如果一个函数，在定义的时候，我们就想直接调用它，就是一个IIFE。代码示例：
+(function(){ alert(&quot;哈哈&quot;) } )()  IIIFE里面的函数，都是匿名函数。因为用这种方法定义的函数，名字是无效的，不能在其他的地方通过函数名调用这个函数。
+结合数组观察闭包 数组中，什么都能放。能放 string、能放数字、更能放函数。
+下面的例子就是经典的数组与闭包的结合：
+var arr = []; //空数组 // 用循环语句去填充数组里面的每个项 for(var i = 0; i&lt;=10; i++){ arr[i] = function(){ alert(i); //我们在这里，试图每个函数弹出自己的序号 } } // 循环语句执行完毕，arr 里面就有了11个函数了，每个函数都是弹出i的值 arr[6](); //弹出11 arr[9](); //弹出11 arr[10](); //弹出11  上边的代码弹出的都是11，而不是预想中的6、9、10。原因就是每个函数定义的时候，都产生闭包，函数就认识 i 了，而不是说把 i 这个值复制一份记忆住，而是动态的、有呼吸、有生命的认识这个 i ，i在调用的时候得几了，这个函数认为 i 就是几。
+所以在调用的时候，i 已经变为了11，所以每个函数都弹出11了。
+解决办法：
+for(var i = 0; i&lt;=10; i++){ (function(m){ arr[m] = function(){ alert(m) } })(i) }  每个arr在赋值的时候，都是在一个IIFE里面，IIFE里面是作用域隔离的，所以即使变量名都是 m ，但是视为“不同国家的m”，每个arr里面的小函数，都只能看见自己的m值。m值纵然改变，那也察觉不到
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-4/" class="link black dim">
+        JavaScript学习-4
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      作用域 函数能封闭住定义域 一个变量如果定义在了一个 function 里面，那么这个变量就是一个局部变量，只有这个 function 里面有定义。出了这个 function ，就如同没有定义过一样。代码示例：
+function fn(){ var a = 1;// 定义在一个函数里面的变量，局部变量，只有在函数里面有定义。 console.log(&quot;我是函数里面的语句，我认识 a 值为 &quot; + a); } fn(); console.log(&quot;我是函数里面的语句，我不认识 a &quot; + a);// 这行会报错，因为 a 作用于函数内部，这里提取不到 a 的值。  a 被var在了 function 里面，所以现在这个 a 变量只有在红框范围内有定义：JavaScript 变量作用域非常的简单，没有块级作用域，管理作用域的只有一个东西：函数。
+如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：
+var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义： function fn(){ console.log(&quot;我是函数里面的语句，我认识全局变量 a 值为 &quot; + a); } fn(); console.log(&quot;函数外面的语句也认识 a 值为 &quot; + a);  总结一下：
+ 定义在 function 里面的变量叫做局部变量； 定义在全局范围内的，没有写在任何 function 里面的，叫做全局变量。   作用域链 当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例：
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-3/" class="link black dim">
+        JavaScript学习-3
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      循环语句后续，函数等知识 for 循环里的 break语句 break语句的用途就是：我已经找到我要的答案了，我不需要进行更多的循环了的时候用。代码示例如下：
+for(var i = 1; i&lt;=10; i++){ console.log(i); if(i == 5){ break; //找到5，然后终止for循环。 } }  break语句只能中断最内层循环，外层循环还在继续，代码示例：
+for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.log(i,j) if(j == 5){ break; //当 j == 5 的时候，终止内层for循环，外层继续。 } } }  如果你就想用 break 终止外层的 for 循环，那么要给外层for循环加标签，代码示例：
+waiceng : for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.log(i,j) if(j == 5){ break waiceng; //此时中断的就是外层的for循环 } } }  上边的语法虽然有，但是工作中很少用到，非常偏门，了解即可。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-2/" class="link black dim">
+        JavaScript学习-2
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      js 运算符  种类
+ 数学运算符  + - * / %  比较运算符  &gt; &gt; = &lt; &lt;= == 等于 != 不等于 === 全等于 !== 不全等于  逻辑运算符:注意有短路逻辑  逻辑非 ! 逻辑与 &amp;&amp; 逻辑或 ||  赋值运算符  = += -= *= /= %= ++ &ndash;   运算符优先顺序
+  ++ -- ！贴身的 →→→ 数学 →→→ 比较 →→→ 逻辑 →→→ 赋值
+ 注意逻辑 且与或 的短路逻辑
+ 运算符的复习，快速判断输出结果
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-1/" class="link black dim">
+        JavaScript学习-1
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JavaScript简介  前端三层
+ 结构层 HTML 从语义的角度描述页面的结构 样式层 CSS 从审美角度装饰页面 行为层 JavaScript 从交互的角度提升用户体验  发明者
+ 1995年网景公司(Netscape)的工程师Brendan Eich创造了JavaScript   历史版本
+ 1997年诞生ECMAScript第一版 1999年更新诞生了ECMAScript第三版 由于委员会内部分歧，第四版流产
+ 2009年12月发布ECMAScript第五版 2015年6月发布ECMAScript第六版  JavaScript从丑小鸭到白天鹅的发展历程
+ 2003年：牛皮鲜，页面上漂浮的广告、弹窗广告；所以当时的浏览器就推出一个功能，禁用广告，实际上本质就是禁用JavaScript。页面上的特效，都特别俗，比如鼠标后面跟随的星星，然后工程师对JS的感觉就是不用学习，生搬硬套，大量的“效果宝盒”软件，一套就有各种特效了。没有人琢磨语言特性。 2004年：谷歌打开了Ajax这个潘多拉的盒子，从此JavaScript被人重视，很多人开始学习JS语言。当时问世了两本JS巨作《犀牛书》、《高级程序设计》 2007年：三层分离，iPhone发布，人们开始重视用户体验。大家发现了，JavaScript是web页面中制作交互效果唯一的语言，所以把JS的重视程度，提到了相当高的一个地位。招聘信息里面开始出现独立的“JS工程师”职位了，之前都是后台工程师捎带脚写写JS。 2008年：Chrome浏览器发布，V8引擎加快了JS的解析，之前的浏览器解析JS的时候卡顿卡顿的，动画效果是蹦蹦的。在Chrome里，它的引擎叫做V8，运行JS很流畅。 2009年：jQuery变得流行，解决了浏览器兼容问题，制作页面效果变得简单，越来越多的初学者愿意学习JavaScript。 2010年：Canvas画布技术得到众多浏览器支持，可以用Canvas替代Flash了，并且能制作小游戏，比如偷菜、停车小游戏。 2011年：Node.js得到广泛应用，实际上就是把JavaScript运行在了服务器上，单线程非阻塞，能够让企业用最小的成本实现后台网站，比如之前4万的服务器都卡，现在用了node之后，4000的机器都很流畅。 2012年：HTML5+CSS3的流行，也带火了JavaScript。 2013年：hybrid app模式开始流行。就是做手机app的时候，老板们发现要雇佣三队人马，ios、安卓、windows phone。花三份工资，并且产品还不好迭代。所以人们发明了用网页技术开发手机App的技术，叫做web app。hybrid app就是混合app，同时结合web技术和原生开发技术。省钱，好迭代。 2015年：ECMA6发布，叫做ECMA2015。重量级的改变，把语言的特性颠覆性的一个增强。  JavaScript总体比较好学
+ 好学的点：
+ JavaScript是有界面效果：不像C语言，黑底白字，很枯燥的。 JavaScript的语法来源于C和Java：有C和Java的经验同学好学很多。 JavaScript是弱变量类型的语言，动态数据类型语言。 JavaScript运行在宿主环境（即浏览器）中，不关心内存，垃圾回收。  不好学的点：
+ 兼容性问题： IE8是个怪胎，很多东西都不一样，所以就要写兼容写法，不怕造轮子，多写几遍 花式写法很多，抽象：从简单入手，细细品味代码 太多细节：认真写自己的笔记，自己做实验;   学习方法
+ 要多去“品”程序，多去思考内在逻辑，读懂每一行代码！ JS机械重复性的劳动几乎为0，基本都是创造性的劳动。HTML、CSS都是重复的劳动，margin、padding挤来挤去。 永远不要背程序，每一个程序都必须自己会写。   Hello World 这事儿吧，挺有意思，就是学习任何的语言，我们都喜欢在屏幕上直接输出一点什么，当做最简单、最基本的案例。输出什么大家随意，但是很多人都习惯输出“hello world”，世界你好。感觉自己很有情怀的样子。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" class="link black dim">
+        浏览器渲染机制
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       浏览器渲染机制：  解析HTML标签，构建DOM树； 解析CSS，构建CSSOM树； 把DOM和CSSOM合并成一个渲染树； 布局（文档流，盒模型，计算大小和位置）； 绘制（边框颜色，文字颜色，阴影等）； 如图所示：  DOM+BOM+Repaint+Reflow(Relayout)  DOM-文档对象模型  浏览器提供的一系列能操作网页结构的API；  BOM-浏览器对象模型（Browser Object Model）  浏览器提供的一系列和页面结构无关但和浏览器其他功能相关的API； 比如说获取当前浏览器的历史记录/你的地理位置/浏览器类型/窗口大小等；  从URL输入浏览器到页面展现发生了什么？ Repaint:绘制页面发生变化的部分； Reflow/Relayout:重新计算元素的几何尺寸，位置(即重新布局)；  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/css%E7%90%90%E7%A2%8E%E7%9F%A5%E8%AF%86/" class="link black dim">
+        Css琐碎知识
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      css 小知识 琐碎布局经验  z-index 对没有定位的元素无用，只有定位的元素才可以用z-index: 2; 元素不脱标的情况下margin:0 auto;才有用,即只有标准流才能用marign: 0 atuto;。此外position: relative;并不脱标，保留原坑，所以相对定位的元素可以用margin: 0 auto;居中 插入一张通栏的大图：  方法一：直插法-直接插入图片:  方法二：用背景图片做  绝对定位的盒子已经脱离标准流了，不能自动撑满父亲，因此一定要写宽度; 同一层级后定位的元素会压住先定位的元素； 邵说不要用 margin 踹它的父亲，这样做不好，应该用老爸的 padding 挤走儿子； 绝对定位的元素无视父亲的 padding； display: none;与visibility: hidden的区别：  display: none;会放弃原来的位置，如同标签没有写； visibility: hidden;不会放弃原来的位置，只是把元素隐藏掉；   几种定位的区别  position: static;  默认的定位方式  position: relative;相对定位  适用轻微偏移的场景；比如“图标因为本身的设计问题导致无法居中”； 未脱离标准流，保留原来的位置； 参考点是原来的位置；  position: absolute;绝对定位  适用出现元素重叠，放置任意位置的场景； 脱离普通流，不保留原来的位置； 参考点是向上层找非 static 的定位元素； 不会产生边距合并现象； 绝对定位的元素收缩，需要设置宽度； 给行内元素设置绝对定位后就有了块级的特性，可以设置宽高，类似于浮动的元素；  position: fixed;固定定位  使用需持续固定在浏览器某位置的场景，比如“企业站窗口底部的联系我，某些固定在页面顶部的导航条”； 脱离普通流，不保留原来的位置； 参考点是浏览器屏幕视口； 一定要设置 top/bottom，否则可能无法展示；  position: sticky;  可以理解为相对定位和固定定位的混合，元素在跨越特定阀值前为相对定位，之后为固定定位； 一定要设置 top/bottom，否则可能无法展示；   伪类与伪元素  伪类一个冒号，伪元素两个冒号； 伪元素的样式一定要加上:
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/hugo/" class="link black dim">
+        Hugo
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       hugo 博客生成器  hugo 是世界上最快的博客生成器，用 Go 语言实现；  hugo 网址是: hugo  JS 实现的博客生成器叫做 Hexo，不如 hugo 好用；  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://example.org/posts/mvc/" class="link black dim">
+        MVC
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      MVC 以及相关知识 什么是模块化？ 背景：当我们在 coding 一个 web 应用时, 代码量肯定不少。然而把全部逻辑都写在一个 JS 文件里面会引起巨大的混乱, 稍有编程常识的人都会马上意识到这是一个需要解决的问题。 通常我们将自己的项目代码模块化, 即把应用拆为各自高度独立的模块, 模块间可以通过接口来通信, 有时甚至不需要通信. 然后将各个模块引入到一个文件里使用即可。
+简言之：模块化编程就是通过组合一些相对独立可复用的模块来进行功能的实现，其最核心的两部分是定义模块和引入模块：
+ 定义模块时，每个模块内部的执行逻辑是不被外部感知的，只是导出（暴露）部分方法和数据； 引入模块时，同步/异步去加载待引入的代码，执行并获取到其暴露的方法和数据；  MVC 与模块化的联系：在模块化后, 有人从后端里搬来一个 MVC 的概念, 把 web 应用也划分为了三个部分(Model, View, Controller).
+简言之：为了解决编写web应用代码混乱的问题，需要对代码进行模块化，而模块化又引出了MVC的概念。
+MVC 模式代表 Model-View-Controller(模型-视图-控制器)模式
+Model - 操作数据 Model 层的代码负责获取到 web 应用所需要的数据, 在一些场景下还要负责处理数据的改动(增, 删, 改, 查)
+const Model = { data: { x: 20 }, update(data) { Object.assign(Model.data, data); } };  View View 层负责用户能看见的部分, 比如页面的模板, 渲染函数等.
+const View = { html: ` &lt;h1&gt;hello&lt;/h1&gt; `, render() { // render the template }, mount() {} };  Controller Controller 层负责 View 和 Model 都不处理的部分.
+    </div>
+  </div>
+</div>
+</div>
+      
+    </section>
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+    <a href="/posts/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/posts/page/2/">2</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/4/">4</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/posts/page/3/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/posts/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+</article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

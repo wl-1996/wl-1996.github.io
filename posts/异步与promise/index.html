@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | 异步与Promise</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="异步与Promise" />
+<meta property="og:description" content="异步与 Promise 同步、异步、回调的概念与关系  什么是同步？
+ 如果能直接拿到结果，就是同步 例如：你在医院挂号，你拿到号才会离开窗口 同步任务可能消耗 10ms，也可能需要 3 秒 总之不拿到结果你是不会离开做别的事情的  什么是异步？
+ 如果不能直接拿到结果，就是异步 例如：你在餐厅门口等位，人太多，你拿到号可以去逛街 什么时候才能真正吃饭呢？ 你可以每十分钟去餐厅问一下——这是轮询 你也可以扫码用微信接收通知——这是回调  异步举例-以 AJAX 为例
+ request.send()之后，并不能直接得到 response 不信可以 console.log(request.response)试试 必须等到 readyState 变为 4 后，浏览器回头调用 request.onreadystatechange 函数 我们才能得到 request.response 这跟餐厅给你发送微信提醒的过程是类似的  什么是回调 callback
+ 写了却不调用，给别人调用的函数，就是回调 你写给自己用的函数不是回调，你写给别人用的函数才是回调 request.onreadystatechange 就是我写给浏览器调用的，意思就是你（浏览器）回头调用一下这个函数  回调举例
+ 把函数 1 给另一个函数 2 调用：
+function f1(){ } function f2(fn) { fn() } f2(f1)     分析：  我调用 f1 没有？答：没有 我把 f1 传给 f2（别人）了么？答：传了 f2 调用 f1 没有？答：f2 调用了 f1 那么 f1 是不是我写给 f2 调用的函数？答：是 所以 f1 是回调    异步和回调的关系" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/" />
+<meta property="article:published_time" content="2019-11-07T11:00:29+08:00" />
+<meta property="article:modified_time" content="2019-11-07T11:00:29+08:00" />
+<meta itemprop="name" content="异步与Promise">
+<meta itemprop="description" content="异步与 Promise 同步、异步、回调的概念与关系  什么是同步？
+ 如果能直接拿到结果，就是同步 例如：你在医院挂号，你拿到号才会离开窗口 同步任务可能消耗 10ms，也可能需要 3 秒 总之不拿到结果你是不会离开做别的事情的  什么是异步？
+ 如果不能直接拿到结果，就是异步 例如：你在餐厅门口等位，人太多，你拿到号可以去逛街 什么时候才能真正吃饭呢？ 你可以每十分钟去餐厅问一下——这是轮询 你也可以扫码用微信接收通知——这是回调  异步举例-以 AJAX 为例
+ request.send()之后，并不能直接得到 response 不信可以 console.log(request.response)试试 必须等到 readyState 变为 4 后，浏览器回头调用 request.onreadystatechange 函数 我们才能得到 request.response 这跟餐厅给你发送微信提醒的过程是类似的  什么是回调 callback
+ 写了却不调用，给别人调用的函数，就是回调 你写给自己用的函数不是回调，你写给别人用的函数才是回调 request.onreadystatechange 就是我写给浏览器调用的，意思就是你（浏览器）回头调用一下这个函数  回调举例
+ 把函数 1 给另一个函数 2 调用：
+function f1(){ } function f2(fn) { fn() } f2(f1)     分析：  我调用 f1 没有？答：没有 我把 f1 传给 f2（别人）了么？答：传了 f2 调用 f1 没有？答：f2 调用了 f1 那么 f1 是不是我写给 f2 调用的函数？答：是 所以 f1 是回调    异步和回调的关系">
+
+
+<meta itemprop="datePublished" content="2019-11-07T11:00:29&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-07T11:00:29&#43;08:00" />
+<meta itemprop="wordCount" content="300">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="异步与Promise"/>
+<meta name="twitter:description" content="异步与 Promise 同步、异步、回调的概念与关系  什么是同步？
+ 如果能直接拿到结果，就是同步 例如：你在医院挂号，你拿到号才会离开窗口 同步任务可能消耗 10ms，也可能需要 3 秒 总之不拿到结果你是不会离开做别的事情的  什么是异步？
+ 如果不能直接拿到结果，就是异步 例如：你在餐厅门口等位，人太多，你拿到号可以去逛街 什么时候才能真正吃饭呢？ 你可以每十分钟去餐厅问一下——这是轮询 你也可以扫码用微信接收通知——这是回调  异步举例-以 AJAX 为例
+ request.send()之后，并不能直接得到 response 不信可以 console.log(request.response)试试 必须等到 readyState 变为 4 后，浏览器回头调用 request.onreadystatechange 函数 我们才能得到 request.response 这跟餐厅给你发送微信提醒的过程是类似的  什么是回调 callback
+ 写了却不调用，给别人调用的函数，就是回调 你写给自己用的函数不是回调，你写给别人用的函数才是回调 request.onreadystatechange 就是我写给浏览器调用的，意思就是你（浏览器）回头调用一下这个函数  回调举例
+ 把函数 1 给另一个函数 2 调用：
+function f1(){ } function f2(fn) { fn() } f2(f1)     分析：  我调用 f1 没有？答：没有 我把 f1 传给 f2（别人）了么？答：传了 f2 调用 f1 没有？答：f2 调用了 f1 那么 f1 是不是我写给 f2 调用的函数？答：是 所以 f1 是回调    异步和回调的关系"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/&amp;text=%e5%bc%82%e6%ad%a5%e4%b8%8ePromise" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/&amp;title=%e5%bc%82%e6%ad%a5%e4%b8%8ePromise" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">异步与Promise</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-07T11:00:29&#43;08:00">November 7, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="异步与-promise">异步与 Promise</h1>
+
+<h2 id="同步-异步-回调的概念与关系">同步、异步、回调的概念与关系</h2>
+
+<ol>
+<li><p>什么是同步？</p>
+
+<ul>
+<li>如果能直接拿到结果，就是同步</li>
+<li>例如：你在医院挂号，你拿到号才会离开窗口</li>
+<li>同步任务可能消耗 10ms，也可能需要 3 秒</li>
+<li>总之不拿到结果你是不会离开做别的事情的</li>
+</ul></li>
+
+<li><p>什么是异步？</p>
+
+<ul>
+<li>如果不能直接拿到结果，就是异步</li>
+<li>例如：你在餐厅门口等位，人太多，你拿到号可以去逛街</li>
+<li>什么时候才能真正吃饭呢？</li>
+<li>你可以每十分钟去餐厅问一下——这是轮询</li>
+<li>你也可以扫码用微信接收通知——这是回调</li>
+</ul></li>
+
+<li><p>异步举例-以 AJAX 为例</p>
+
+<ul>
+<li>request.send()之后，并不能直接得到 response</li>
+<li>不信可以 console.log(request.response)试试</li>
+<li>必须等到 readyState 变为 4 后，浏览器回头调用 request.onreadystatechange 函数</li>
+<li>我们才能得到 request.response</li>
+<li>这跟餐厅给你发送微信提醒的过程是类似的</li>
+</ul></li>
+
+<li><p>什么是回调 callback</p>
+
+<ul>
+<li>写了却不调用，给别人调用的函数，就是回调</li>
+<li>你写给自己用的函数不是回调，你<strong>写给别人用</strong>的函数才是回调</li>
+<li>request.onreadystatechange 就是我写给浏览器调用的，意思就是你（浏览器）回头调用一下这个函数</li>
+</ul></li>
+
+<li><p>回调举例</p>
+
+<ul>
+<li><p>把函数 1 给另一个函数 2 调用：</p>
+
+<pre><code class="language-javaScript">function f1(){
+}
+function f2(fn) {
+    fn()
+}
+f2(f1)
+</code></pre></li>
+</ul></li>
+</ol>
+
+<ul>
+<li>分析：
+
+<ul>
+<li>我调用 f1 没有？答：没有</li>
+<li>我把 f1 传给 f2（别人）了么？答：传了</li>
+<li>f2 调用 f1 没有？答：f2 调用了 f1</li>
+<li>那么 f1 是不是我写给 f2 调用的函数？答：是</li>
+<li>所以 f1 是回调</li>
+</ul></li>
+</ul>
+
+<ol>
+<li><p>异步和回调的关系</p>
+
+<ol>
+<li>关联
+
+<ul>
+<li>异步任务需要在得到结果时通知 JS 来拿结果</li>
+<li>怎么通知呢？</li>
+<li>可以让 JS 写一个函数地址（电话号码）给浏览器</li>
+<li>异步任务完成时浏览器调用该函数地址即可（拨打电话）</li>
+<li>同时把结果作为参数传给该函数（电话里说可以来吃了）</li>
+<li>这个函数是我写给浏览器调用的，所以是回调函数</li>
+</ul></li>
+<li>区别
+
+<ul>
+<li>异步任务需要用到回调函数来通知结果，也可以不用回调函数（用轮询）</li>
+<li>同样回调函数不一定只用在异步任务里，还可以用在同步任务里；</li>
+<li><code>array.forEach(n=&gt;console.log(n))</code>就是同步回调(括号里边的是回调)</li>
+</ul></li>
+</ol></li>
+
+<li><p>怎么判断一个函数是同步还是异步？</p>
+
+<ul>
+<li>如果一个函数的返回值处于以下三个东西内部，那么这个函数就是异步函数：
+
+<ul>
+<li>setTimeout</li>
+<li>AJAX</li>
+<li>AddEventListener</li>
+<li>还有其他 API 是异步的，后边另行说明</li>
+</ul></li>
+<li>只有傻逼前端才把 AJAX 设置为同步的，这样做会使请求期间页面卡住</li>
+</ul></li>
+
+<li><p>摇骰子</p>
+
+<ul>
+<li><p>举例：</p>
+
+<pre><code class="language-javaScript">function shakeDice(){
+    setTimeout(()=&gt;{    //箭头函数
+        return parseInt(Math.random()*6) + 1
+    },1000)
+    //return undefined
+}
+</code></pre></li>
+
+<li><p>分析：</p>
+
+<ul>
+<li>shakeDice()函数没有写 return，那就是 return undefined</li>
+<li>箭头函数里有 return，返回真正的结果</li>
+<li>所以这就是一个异步函数/异步任务</li>
+</ul></li>
+</ul></li>
+
+<li><p>总结</p>
+
+<ul>
+<li>异步任务不能直接拿到结果（同步任务可以直接拿到结果）</li>
+<li>所以我们传一个回调函数给异步任务</li>
+<li>异步任务完成时调用回调函数</li>
+<li>调用的时候把结果作为参数</li>
+</ul></li>
+</ol>
+
+<h2 id="promise">Promise</h2>
+
+<ol>
+<li><p>为什么要用 Promise？</p>
+
+<ul>
+<li>为了解决“异步任务有两个结果（成功或失败）的问题”；</li>
+<li>传统解决方法有两种：
+
+<ol>
+<li>方法一：回调接受两个参数；</li>
+<li>方法二：搞两个回调；</li>
+</ol></li>
+
+<li><p>而这两种传统方法都不可避免的存在一些问题：</p>
+
+<ol>
+<li>不规范，名称五花八门，有人用 success+error,有人用 success+fail,有人用 done+fail</li>
+<li>容易出现回调地狱，代码变得看不懂</li>
+<li>很难进行错误处理</li>
+
+<li><p>回调地狱举例：</p>
+
+<pre><code class="language-javaScript">//假设getUser是一个异步函数，接受回调函数
+getUser(user=&gt;{
+    getGroups(user,(groups)=&gt;{
+        groups.forEach((g)=&gt;{
+            g.filter(x=&gt;x.ownerId === user.id)
+             .forEach(x=&gt;console.log(x))
+        })
+    })
+})//这还只是四层回调，你能想像20层回调么？
+</code></pre></li>
+</ol></li>
+</ul></li>
+</ol>
+
+<p><img src="../../images/bodongquan.png" alt="" /></p>
+
+<ol>
+<li><p>未使用 Promise 方法的代码：</p>
+
+<pre><code class="language-javaScript">ajax = (method,url,options)=&gt;{
+    //析构赋值，相当于：const success = options.success;const fail = options.fail;
+    const{success,fail} = options
+    const request = new XMLHttpRequest()//创建对象
+    request.open(method,url)//调用open方法
+    //监听对象的 onreadystatechange 事件：
+    request.onreadystatechange = ()=&gt;{
+        if(request.readyState === 4){
+            //成功就调用 success,失败就调用fail
+            if(request.status &lt; 400){
+                success.call(null,request.response)
+            }else if(request.status &gt;=400){
+                fail.call(null,request,request.status)
+            }
+        }
+    }
+    request.send()//发送请求
+}
+
+ajax('get','/xxx',{
+    //左边是 function 缩写，右边是箭头函数：
+    success(response){},fail:(request,status)=&gt;{}
+})
+</code></pre></li>
+
+<li><p>使用了 Promise 方法的代码：</p>
+
+<pre><code class="language-javaScript">ajax = (method,url,options)=&gt;{
+    return new Promise((resolve,reject)=&gt;{
+        //析构赋值，相当于：const success = options.success;const fail = options.fail;
+        const{success,fail} = options
+        const request = new XMLHttpRequest()//创建对象
+        request.open(method,url)//调用open方法
+        //监听对象的 onreadystatechange 事件：
+        request.onreadystatechange = ()=&gt;{
+            if(request.readyState === 4){
+                //成功就调用 resolve,失败就调用reject
+                if(request.status &lt; 400){
+                    resolve.call(null,request.response)
+                }else if(request.status &gt;=400){
+                    reject.call(null,request)
+                }
+            }
+        }
+        request.send()//发送请求
+    })
+}
+
+ajax('get','/xxx').then((response)=&gt;{},(request,status)=&gt;{})
+</code></pre></li>
+
+<li><p>背下这五个单词即可：</p>
+
+<pre><code>return new Promise((resolve,reject)=&gt;{})
+</code></pre></li>
+
+<li><p>小结：</p>
+
+<ol>
+<li>第一步：
+
+<ul>
+<li>return new Promise((resolve,reject)=&gt;{&hellip;})</li>
+<li>任务成功则调用 resolve(result)</li>
+<li>任务失败则调用 reject(error)</li>
+<li>resolve 和 reject 会再去调用成功和失败函数</li>
+</ul></li>
+<li>第二步：
+
+<ul>
+<li>使用.then(success,fail)传入成功和失败的函数</li>
+</ul></li>
+</ol></li>
+</ol>
+
+<h2 id="其他知识">其他知识</h2>
+
+<ol>
+<li>我们封装的 ajax 的缺点
+
+<ul>
+<li>post 无法上传数据</li>
+<li>不能设置请求头</li>
+<li>怎么解决呢？——使用 jQuery.ajax 或者 axios(这个库比 jQuery 逼格高)</li>
+</ul></li>
+<li>封装！封装！封装！
+
+<ul>
+<li>初级程序员学习 API(包括 Vue/React 的 API)</li>
+<li>中级程序员学习如何封装</li>
+<li>高级程序员造轮子</li>
+</ul></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | 《浅析URL》</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="《浅析URL》" />
+<meta property="og:description" content="浅析 URL 网络和 IP  李爵士发明的三样东西: WWW=URL&#43;HTTP&#43;HTML URL:Uniform Resource Locator; HTTP:HyperText Transfer Protocol; HTML:HyperText Markup Language; IP：Internet Protocol; IP 主要约定了两件事：  如何定位一台设备； 如何封装数据报文，以跟其他设备交流；  IP 分为内网和外网，内网和外网通过路由器联系到一起； 如何获取外网 IP？  从电信租用宽带，一年一千多； 买一个路由器，然后用电脑和手机连接路由器广播出来的 wifi； 只要路由器连上电信的服务器，那么路由器就会有一个【外网 IP】，比如【14.17.32.211】就是一个外网 IP，这就是你在互联网中的地址； 如果重启路由器，那么可能被分配一个【外网 IP】，也就是说你的路由器没有固定的【外网 IP】； 但是有个问题，你的路由器的外网 IP 如果是 14.17.32.211，那么你的手机和电脑的 IP 又是什么呢？——答案是【内网 IP】；  内网 IP：  路由器会在你的家里创建一个内网，内网中的设备使用内网 IP，一般来说这个 IP 的格式都是 192.168.xxx.xxx; 一般路由器会给自己分配一个好记的内网 IP，如 192.168.1.1； 然后路由器会给内网中的不同设备分配不同的内网 IP，如给电脑分配 192.168.1.2，给手机分配 192.168.1.3，以此类推；  路由器的功能：  简单说就是内网和外网的桥梁，将内网和外网联系起来； 内网和外网都是相互隔绝的，内网中的设备不能访问外网，外网中的设备也不能访问内网。而有了路由器就可以使内网和外网相互访问，但是这个访问也是只能通过路由器进行，内网和外网唯一的联通点就是路由器； 路由器有时候也被叫做：网关；  几个特殊的 IP：  127." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/%E6%B5%85%E6%9E%90url/" />
+<meta property="article:published_time" content="2019-09-14T10:22:40+08:00" />
+<meta property="article:modified_time" content="2019-09-14T10:22:40+08:00" />
+<meta itemprop="name" content="《浅析URL》">
+<meta itemprop="description" content="浅析 URL 网络和 IP  李爵士发明的三样东西: WWW=URL&#43;HTTP&#43;HTML URL:Uniform Resource Locator; HTTP:HyperText Transfer Protocol; HTML:HyperText Markup Language; IP：Internet Protocol; IP 主要约定了两件事：  如何定位一台设备； 如何封装数据报文，以跟其他设备交流；  IP 分为内网和外网，内网和外网通过路由器联系到一起； 如何获取外网 IP？  从电信租用宽带，一年一千多； 买一个路由器，然后用电脑和手机连接路由器广播出来的 wifi； 只要路由器连上电信的服务器，那么路由器就会有一个【外网 IP】，比如【14.17.32.211】就是一个外网 IP，这就是你在互联网中的地址； 如果重启路由器，那么可能被分配一个【外网 IP】，也就是说你的路由器没有固定的【外网 IP】； 但是有个问题，你的路由器的外网 IP 如果是 14.17.32.211，那么你的手机和电脑的 IP 又是什么呢？——答案是【内网 IP】；  内网 IP：  路由器会在你的家里创建一个内网，内网中的设备使用内网 IP，一般来说这个 IP 的格式都是 192.168.xxx.xxx; 一般路由器会给自己分配一个好记的内网 IP，如 192.168.1.1； 然后路由器会给内网中的不同设备分配不同的内网 IP，如给电脑分配 192.168.1.2，给手机分配 192.168.1.3，以此类推；  路由器的功能：  简单说就是内网和外网的桥梁，将内网和外网联系起来； 内网和外网都是相互隔绝的，内网中的设备不能访问外网，外网中的设备也不能访问内网。而有了路由器就可以使内网和外网相互访问，但是这个访问也是只能通过路由器进行，内网和外网唯一的联通点就是路由器； 路由器有时候也被叫做：网关；  几个特殊的 IP：  127.">
+
+
+<meta itemprop="datePublished" content="2019-09-14T10:22:40&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-14T10:22:40&#43;08:00" />
+<meta itemprop="wordCount" content="241">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="《浅析URL》"/>
+<meta name="twitter:description" content="浅析 URL 网络和 IP  李爵士发明的三样东西: WWW=URL&#43;HTTP&#43;HTML URL:Uniform Resource Locator; HTTP:HyperText Transfer Protocol; HTML:HyperText Markup Language; IP：Internet Protocol; IP 主要约定了两件事：  如何定位一台设备； 如何封装数据报文，以跟其他设备交流；  IP 分为内网和外网，内网和外网通过路由器联系到一起； 如何获取外网 IP？  从电信租用宽带，一年一千多； 买一个路由器，然后用电脑和手机连接路由器广播出来的 wifi； 只要路由器连上电信的服务器，那么路由器就会有一个【外网 IP】，比如【14.17.32.211】就是一个外网 IP，这就是你在互联网中的地址； 如果重启路由器，那么可能被分配一个【外网 IP】，也就是说你的路由器没有固定的【外网 IP】； 但是有个问题，你的路由器的外网 IP 如果是 14.17.32.211，那么你的手机和电脑的 IP 又是什么呢？——答案是【内网 IP】；  内网 IP：  路由器会在你的家里创建一个内网，内网中的设备使用内网 IP，一般来说这个 IP 的格式都是 192.168.xxx.xxx; 一般路由器会给自己分配一个好记的内网 IP，如 192.168.1.1； 然后路由器会给内网中的不同设备分配不同的内网 IP，如给电脑分配 192.168.1.2，给手机分配 192.168.1.3，以此类推；  路由器的功能：  简单说就是内网和外网的桥梁，将内网和外网联系起来； 内网和外网都是相互隔绝的，内网中的设备不能访问外网，外网中的设备也不能访问内网。而有了路由器就可以使内网和外网相互访问，但是这个访问也是只能通过路由器进行，内网和外网唯一的联通点就是路由器； 路由器有时候也被叫做：网关；  几个特殊的 IP：  127."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/%E6%B5%85%E6%9E%90url/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/%E6%B5%85%E6%9E%90url/&amp;text=%e3%80%8a%e6%b5%85%e6%9e%90URL%e3%80%8b" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/%E6%B5%85%E6%9E%90url/&amp;title=%e3%80%8a%e6%b5%85%e6%9e%90URL%e3%80%8b" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">《浅析URL》</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-09-14T10:22:40&#43;08:00">September 14, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="浅析-url">浅析 URL</h1>
+
+<h2 id="网络和-ip">网络和 IP</h2>
+
+<ol>
+<li>李爵士发明的三样东西:
+WWW=URL+HTTP+HTML</li>
+<li>URL:Uniform Resource Locator;
+HTTP:HyperText Transfer Protocol;
+HTML:HyperText Markup Language;
+IP：Internet Protocol;</li>
+<li>IP 主要约定了两件事：
+
+<ol>
+<li>如何定位一台设备；</li>
+<li>如何封装数据报文，以跟其他设备交流；</li>
+</ol></li>
+<li>IP 分为内网和外网，内网和外网通过路由器联系到一起；</li>
+<li>如何获取外网 IP？
+
+<ol>
+<li>从电信租用宽带，一年一千多；</li>
+<li>买一个路由器，然后用电脑和手机连接路由器广播出来的 wifi；</li>
+<li>只要路由器连上电信的服务器，那么路由器就会有一个【外网 IP】，比如【14.17.32.211】就是一个外网 IP，这就是你在互联网中的地址；</li>
+<li>如果重启路由器，那么可能被分配一个【外网 IP】，也就是说你的路由器没有固定的【外网 IP】；</li>
+<li>但是有个问题，你的路由器的外网 IP 如果是 14.17.32.211，那么你的手机和电脑的 IP 又是什么呢？——答案是【内网 IP】；</li>
+</ol></li>
+<li>内网 IP：
+
+<ol>
+<li>路由器会在你的家里创建一个内网，内网中的设备使用内网 IP，一般来说这个 IP 的格式都是 192.168.xxx.xxx;</li>
+<li>一般路由器会给自己分配一个好记的内网 IP，如 192.168.1.1；</li>
+<li>然后路由器会给内网中的不同设备分配不同的内网 IP，如给电脑分配 192.168.1.2，给手机分配 192.168.1.3，以此类推；</li>
+</ol></li>
+<li>路由器的功能：
+
+<ol>
+<li>简单说就是内网和外网的桥梁，将内网和外网联系起来；</li>
+<li>内网和外网都是相互隔绝的，内网中的设备不能访问外网，外网中的设备也不能访问内网。而有了路由器就可以使内网和外网相互访问，但是这个访问也是只能通过路由器进行，内网和外网唯一的联通点就是路由器；</li>
+<li>路由器有时候也被叫做：网关；</li>
+</ol></li>
+<li>几个特殊的 IP：
+
+<ul>
+<li>127.0.0.1 表示自己；</li>
+<li>localhost 通过 hosts 指定为自己；</li>
+<li>0.0.0.0 不表示任何设备；</li>
+</ul></li>
+</ol>
+
+<h2 id="端口">端口</h2>
+
+<ol>
+<li>一台机器可以提供很多服务，每个服务一个号码，这个号码就叫端口号：port；</li>
+<li>打个比喻：麦当劳有两个窗口，一号快餐，二号咖啡。你去快餐窗口点咖啡会被拒绝，让你去另一个咖啡窗口，因为你去错了窗口；</li>
+<li>要提供 HTTP 服务最好使用 80 端口；
+要提供 HTTPS 服务最好使用 443 端口；
+要提供 FTP 服务最好使用 21 端口；</li>
+<li>一共有 65535 个端口，基本够用；</li>
+<li>端口使用还有什么规则？
+
+<ul>
+<li>0——1023 号端口是留给系统使用的；</li>
+<li>你只有拥有了管理员权限后，才能使用这 1024 个端口；</li>
+<li>其他端口可以给普通用户使用；</li>
+<li>比如 http-server 默认使用 8080 端口；</li>
+<li>一个端口被占用，你就只能换一个端口；</li>
+</ul></li>
+<li>总而言之，IP 和端口缺一不可；</li>
+</ol>
+
+<h2 id="域名-路径-查询参数-锚点">域名、路径、查询参数、锚点</h2>
+
+<ol>
+<li>域名是什么？
+
+<ul>
+<li>比如 qq.com 就是一个域名，域名就是对 IP 的别称；</li>
+</ul></li>
+<li>如何查看某个域名对应什么 IP？
+
+<ul>
+<li>命令行输入：ping baidu.com 或者 ping qq.com 即可查看百度和 QQ 对应的 IP 是什么；</li>
+<li>命令行输入：nslookup baidu.com 可以查看百度域名对应的所有 IP；
+<img src="../../images/5.png" alt="" />;</li>
+</ul></li>
+<li>域名和 IP 的对应关系？
+
+<ul>
+<li>一个域名可以对应不同 IP，这叫均衡负载，防止一台机器扛不住；</li>
+<li>一个 IP 可以对应不同域名，这叫共享主机，穷开发者会这么做；</li>
+</ul></li>
+<li>域名和 IP 是怎么对应起来的?
+
+<ul>
+<li>通过 DNS：Domain Name System（域名服务器）；</li>
+</ul></li>
+<li>当输入 xiedaimala.com 的时候是一个什么样的请求过程？
+
+<ol>
+<li>浏览器会向电信/联通提供的 DNS 服务器询问 xiedaimala.com 对应什么 IP；</li>
+<li>电信/联通会回答一个 IP；</li>
+<li>然后 Chrome 才会向对应的 <sup>80</sup>&frasl;<sub>443</sub> 端口发送请求；</li>
+<li>请求内容是查看 xiedaimala.com 的首页；</li>
+</ol></li>
+<li>xiedaimala.com 和 www.xiedaimala.com 不是同一个域名：
+
+<ol>
+<li>com 是顶级域名；</li>
+<li>xiedaimala.com 是二级域名；</li>
+<li>www.xiedaimala.com 是三级域名；</li>
+<li>他们是父子关系；</li>
+<li>例如 github.io 把子域名 xxx.github.io 免费给大家使用；</li>
+<li>所以你应该知道 www.xiedaimala.com 和 xiedaimala.com 可以不是同一家公司，也可以是同一家公司；</li>
+</ol></li>
+<li>如何请求不同的页面？路径可以做到：
+
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML">https://developer.mozilla.org/zh-CN/docs/Web/HTML</a>;</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">https://developer.mozilla.org/zh-CN/docs/Web/CSS</a>;</li>
+</ul></li>
+<li>如何请求同一个页面的不同内容？查询参数可以做到：
+
+<ul>
+<li>www.baidu.com/s?wd=hi;</li>
+<li>www.baidu.com/s?wd=hello;</li>
+</ul></li>
+<li>如何请求同一个页面，同一个内容的不同位置？锚点可以做到：
+
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS#参考书；">https://developer.mozilla.org/zh-CN/docs/Web/CSS#参考书；</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS#教程；">https://developer.mozilla.org/zh-CN/docs/Web/CSS#教程；</a></li>
+<li>注意锚点看起来有中文，实际不支持中文；</li>
+</ul></li>
+<li>UR L 由什么组成？</li>
+</ol>
+
+<ul>
+<li>协议+域名或 IP+端口号+路径+查询字符串+锚点；</li>
+<li>url 举例：<a href="https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5">https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5</a>;</li>
+<li>就算没写端口，你也应该知道端口。https 默认端口是 443；</li>
+</ul>
+
+<h2 id="curl-命令">curl 命令</h2>
+
+<ol>
+<li><p>用 curl 可以发 HTTP 请求，比如：</p>
+
+<ul>
+<li>curl -v <a href="http://baidu.com">http://baidu.com</a>;</li>
+<li>curl -s -v &ndash;<a href="https://www.baidu.com">https://www.baidu.com</a>;
+<img src="../../images/6.png" alt="" />;
+<img src="../../images/7.png" alt="" />;</li>
+</ul></li>
+
+<li><p>理解以下概念(上边有图)：</p>
+
+<ul>
+<li>url 会被 curl 工具重写，先请求 DNS 获得 IP；</li>
+<li>先进行 TCP 链接，TCP 连接成功后，开始发送 HTTP 请求；</li>
+<li>请求内容看一眼；</li>
+<li>响应内容看一眼；</li>
+<li>响应结束后，关闭 TCP 连接（命令行里看不出来）；</li>
+<li>真正结束；</li>
+</ul></li>
+
+<li><p>HTTP：规定请求的格式是什么，响应的格式是什么</p></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

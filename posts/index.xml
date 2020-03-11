@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 个人博客</title>
+    <link>http://example.org/posts/</link>
+    <description>Recent content in Posts on 个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Tue, 10 Mar 2020 17:13:07 +0800</lastBuildDate>
+    
+	<atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WebStorm使用教程</title>
+      <link>http://example.org/posts/webstorm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Tue, 10 Mar 2020 17:13:07 +0800</pubDate>
+      
+      <guid>http://example.org/posts/webstorm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+      <description>配置终端  打开设置，进入 Tools =&amp;gt; Terminal 将 Shell Path 改为你的 bash.exe 的绝对路径，比如我的路径是 C:\自己找路径\cmder\vendor\git-for-windows\bin\bash.exe，如下图（如果找不对路径，可以使用 everything 软件搜索 bash.exe，从搜索结果里找和我的路径近似的）
+ 建议 cmder 用户将提示符从 λ 改为 $（Git bash 用户请跳过此步骤），用 VSCode 打开文件 C:\自己找路径\cmder\vendor\git-for-windows\etc\profile.d\git-prompt.sh，改其中第 36 行，将 λ 改为 $
+ 此时就可以打开 WebStorm 的终端了
+  配置 git  打开设置，进入 Version Control =&amp;gt; Git 将 Path to Git 改为 git.exe 的绝对路径，比如我的路径是 C:\请自己找到对应的目录\cmder\vendor\git-for-windows\bin\git.exe，如下图
+  查看快捷键  按两下 Shift，你会得到一个搜索框，这个搜索框可以搜索任何东西 在搜索框里输入你想要的功能名称，比如 reformat （代码格式化），然后你就看到对应的操作（Action） Action 后面就跟着对应的快捷键
+ 不过这个方式的缺点是只能搜英文，所以可以看第二个方式：查看菜单栏，快捷键就写在菜单栏每一项 Action 的后面</description>
+    </item>
+    
+    <item>
+      <title>Accounting Items</title>
+      <link>http://example.org/posts/accounting-items/</link>
+      <pubDate>Tue, 10 Mar 2020 13:59:51 +0800</pubDate>
+      
+      <guid>http://example.org/posts/accounting-items/</guid>
+      <description> 项目落地过程： 1. figma制作设计稿，该项目有四个页面，分别是记账页，标签页，编辑标签页，和统计页。 2. 前置条件：  全局安装@vue/cli@4.1.2以上版本 安装Node.js v10以上版本 VSCode最新版或者WebStorm最新版、能FQ
+ 安装@vue/cli@4.1.2: 命令行运行 yarn global add @vue/cli@4.1.2 或者 npm install &amp;ndash;global @vue/cli@4.1.2；安装成功后运行 vue&amp;ndash;version确认是否成功
+ Node.js去官网下载，可以找历史发布版本，记得安装包是msi后缀文件好像，不确定
+  3. 创建项目： 命令行运行步骤：
+ vue create Accounting-Items 注意运行该命令行后需要进行选项配置 cd Accounting-Items yarn serve  </description>
+    </item>
+    
+    <item>
+      <title>JQuery学习-3</title>
+      <link>http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-3/</link>
+      <pubDate>Wed, 08 Jan 2020 15:29:26 +0800</pubDate>
+      
+      <guid>http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-3/</guid>
+      <description>stop()方法 表示停止当前的 animate 动画，但是不清除队列，立即执行后面的 animate 动画：
+$(&amp;quot;div&amp;quot;).stop(); //等价于$(“div”).stop(false,false);  停止当前的 animate 动画，并且清除队列，盒子留在了此时的位置：
+$(&amp;quot;div&amp;quot;).stop(true); //等价于$(“div”).stop(true,false);  瞬间完成当前的 animate 动画，并且清除队列：
+$(&amp;quot;div&amp;quot;).stop(true, true);  瞬间完成当前的 animate 动画，但是不清楚队列，立即执行后面的动画：
+$(&amp;quot;div&amp;quot;).stop(false, true);  公式：
+stop(是否清除队列, 是否瞬间完成当前动画);  如果没有写 true 或者 false，默认是 false
+节点 节点类型 任何 HTML 元素，都有 nodeType 属性，值有 1~11 个，但是我们只要记住 5 个常用的即可：
+1：元素节点
+3：文本节点
+8：注释节点
+9：document 节点
+10：DTD
+代码示例：
+&amp;lt;!-- 注意下边代码不能换行，否则有兼容性问题，下节节点关系再说 --&amp;gt; &amp;lt;div id=&amp;quot;box&amp;gt;文本&amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;!-- 这是注释 --&amp;gt;&amp;lt;/div&amp;gt;  let box = document.getElementById(&amp;quot;box&amp;quot;) alert(box.nodeType) //1 alert(box.childNodes[0].nodeType) //3 alert(box.</description>
+    </item>
+    
+    <item>
+      <title>JQuery学习-2</title>
+      <link>http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-2/</link>
+      <pubDate>Sun, 05 Jan 2020 15:32:55 +0800</pubDate>
+      
+      <guid>http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-2/</guid>
+      <description>CSS 函数 CSS 函数可以读样式，也可以设样式。
+读样式，可以读取计算后样式，写一个参数，是不是驼峰都可以，但是必须加引号：
+$(&amp;quot;p:first&amp;quot;).css(&amp;quot;background-color&amp;quot;); $(&amp;quot;p:first&amp;quot;).css(&amp;quot;backgroundColor&amp;quot;);  设置样式，有两种语法，如果你只想设置一个样式，逗号隔开 k 和 v：
+$(&amp;quot;p:odd&amp;quot;).css(&amp;quot;backgroundColor&amp;quot;, &amp;quot;blue&amp;quot;);  如果想设置很多样式，就写 JSON：javascript $(&amp;quot;p:odd&amp;quot;).css(JSON);
+$(&amp;quot;p:lt(4)&amp;quot;).css({ width: 20, height: 20, backgroundColor: &amp;quot;red&amp;quot; });  特别的，还支持+=写法：$(&amp;quot;p:eq(5)&amp;quot;).css(&amp;quot;width&amp;quot;,&amp;quot;+=20px&amp;quot;)
+animate 函数 animate 函数负责处理动画，语法是：$(&amp;quot;选择器&amp;quot;).animate(终点JSON,动画时间,回调函数);
+$(&amp;quot;p&amp;quot;).animate({ left: 1000 }, 2000, function() { $(this).css(&amp;quot;background-color&amp;quot;, &amp;quot;red&amp;quot;); });  jQuery 默认有一个处理机制，叫做动画排队。当一个元素接收到了两个 animate 命令之后，后面的 animate 函数会排队等待执行：
+$(&amp;quot;p&amp;quot;).animate({ left: 1000 }, 2000); $(&amp;quot;p&amp;quot;).animate({ top: 400 }, 2000);  上边代码的顺序是：先 2000 毫秒横着跑，然后 2000 毫秒竖着跑。动画总时长 4000。
+如果想让元素斜着跑，就是同时变化 left 和 top ，就写在同一个 JSON 里面：$(&amp;quot;p&amp;quot;).</description>
+    </item>
+    
+    <item>
+      <title>Vue模版template语法</title>
+      <link>http://example.org/posts/vue%E6%A8%A1%E7%89%88template%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Fri, 03 Jan 2020 19:48:07 +0800</pubDate>
+      
+      <guid>http://example.org/posts/vue%E6%A8%A1%E7%89%88template%E8%AF%AD%E6%B3%95/</guid>
+      <description>模版 template 的三种写法： Vue 完整版，写在 HTML 里 &amp;lt;div id=&amp;quot;xxx&amp;quot;&amp;gt; {{n}} &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;+1&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt;  new Vue({ el: &amp;quot;#xxx&amp;quot;, data: { n: 0 }, //data可以改成函数 methods: { add() {} } });  Vue 完整版，写在选项里 &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;  new Vue({ template: ` &amp;lt;div&amp;gt; {{n}} &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;+1&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; `, //data可以改成函数 data: { n: 0 }, methods: { add() { this.n += 1; } } }).$mount(&amp;quot;#app&amp;quot;); // 注意一个细节：div#app 会被替代  Vue 非完整版，配合 xxx.vue 文件 &amp;lt;template&amp;gt; &amp;lt;div&amp;gt; {{n}} &amp;lt;button @click=&amp;quot;add&amp;quot;&amp;gt;+1&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data() { return { n: 0 }; }, methods: { add() { this.</description>
+    </item>
+    
+    <item>
+      <title>Vue中的.sync修饰符</title>
+      <link>http://example.org/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
+      <pubDate>Fri, 03 Jan 2020 19:40:27 +0800</pubDate>
+      
+      <guid>http://example.org/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
+      <description>Vue 中的.sync 修饰符有什么用？ 概述： .sync 就是一个语法糖，它会被扩展为一个自动更新父组件属性的 v-on 监听器。
+示例代码：
+&amp;lt;Child :money.sync=&amp;quot;total&amp;quot; /&amp;gt;  会被扩展为：
+&amp;lt;!-- :money=&amp;quot;total&amp;quot; 的意思是把变量total的值赋给money --&amp;gt; &amp;lt;!-- 后半句的意思是 当儿子组件中更新了 money 时，这个变化会同步给父组件的 total ，父组件通过 $event 获取这个儿子组件中的变化--&amp;gt; &amp;lt;Child :money=&amp;quot;total&amp;quot; v-on:update:money=&amp;quot;total = $event&amp;quot;/&amp;gt;  当子组件需要更新 money 的值时，它需要显示地触发一个更新事件：
+&amp;lt;!-- 当按钮被点击时会更新money，这些变化会被父亲组件获取到 --&amp;gt; &amp;lt;button @click=&amp;quot;$emit(&#39;update:money&#39;, money - 100)&amp;quot;&amp;gt;  例子： 猛一看不明白，下边我么通过一个实例（儿子打电话（触发事件）向爸爸要钱）来说明这个代码到底是怎么运用的。
+main.js 文件：
+import Vue from &amp;quot;vue&amp;quot;; import App from &amp;quot;./App.vue&amp;quot;; Vue.config.productionTip = false; new Vue({ render: h =&amp;gt; h(App) }).$mount(&amp;quot;#app&amp;quot;);  App.vue 文件：</description>
+    </item>
+    
+    <item>
+      <title>Computed和watch</title>
+      <link>http://example.org/posts/computed%E5%92%8Cwatch/</link>
+      <pubDate>Thu, 02 Jan 2020 11:01:18 +0800</pubDate>
+      
+      <guid>http://example.org/posts/computed%E5%92%8Cwatch/</guid>
+      <description>computed 被计算出来的属性就是计算属性
+例 1-用户名展示： // 引入完整版的vue,方便讲解 import Vue from &amp;quot;vue/dist/vue.js&amp;quot;; Vue.config.productionTip = false; new Vue({ data: { user: { email: &amp;quot;741341649@qq.com&amp;quot;, nickname: &amp;quot;wangxiaokuo&amp;quot;, phone: &amp;quot;18790342745&amp;quot; } }, computed: { displayName: { get() { const user = this.user; return user.nickname || user.email || user.phone; }, set(value) { this.user.nickname = value; } } }, template: ` &amp;lt;div&amp;gt; {{displayName}} &amp;lt;div&amp;gt; {{displayName}} &amp;lt;button @click=&amp;quot;displayName=&#39;lili&#39;&amp;quot; &amp;gt;点我设置新的名字&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; ` }).$mount(&amp;quot;#app&amp;quot;);  页面：例 2-列表展示： import Vue from &amp;quot;vue/dist/vue.</description>
+    </item>
+    
+    <item>
+      <title>Vue 数据响应式</title>
+      <link>http://example.org/posts/vue-%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/</link>
+      <pubDate>Wed, 01 Jan 2020 10:32:45 +0800</pubDate>
+      
+      <guid>http://example.org/posts/vue-%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/</guid>
+      <description>什么是响应式？
+我打你一拳，你会喊疼，那你就是响应式的。也就是说如果一个物体能对外界的刺激做出反应，它就是响应式的。
+Vue 的 data 是响应式的：
+在 vm 示例：const vm = new Vue({data:{n:0}})中，
+我如果修改了 vm.n,那么 UI 中的 n 就会响应我，
+Vue 2 通过 Object.defineProperty 来实现数据响应式。
+数据响应式原理：
+当把 options.data 传给 Vue 之后：
+ data 会被 Vue 监听 data 会被 Vue 实例代理 每次对 data 的读写都会被 Vue 监控 Vue 会在 data 变化时更新 UI  Vue 有 bug，代码示例：
+import Vue from &amp;quot;vue/dist/vue.js&amp;quot;; // import App from &amp;quot;./App.vue&amp;quot;; Vue.config.productionTip = false; new Vue({ data: { obj: { a: 0 } }, template: ` &amp;lt;div&amp;gt; {{obj.</description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>http://example.org/posts/vue/</link>
+      <pubDate>Sat, 28 Dec 2019 21:24:44 +0800</pubDate>
+      
+      <guid>http://example.org/posts/vue/</guid>
+      <description>英文文档：https://vuejs.org/index.html
+中文文档：https://cn.vuejs.org/index.html
+Vue 的中英文文档都是尤雨溪写的
+Vue 有完整版和只包含运行时版（非完整版），这两种版本的区别概括如下图所示：
+术语：
+完整版：同时包含编译器和运行时的版本。
+编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。
+运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。
+运行时+编译器 vs.只包含运行时：
+如果你需要在客户端编译模板 (比如传入一个字符串给 template 选项，或挂载到一个元素上并以其 DOM 内部的 HTML 作为模板)，就将需要加上编译器，即完整版：
+// 需要编译器 new Vue({ template: &amp;quot;&amp;lt;div&amp;gt;{{ hi }}&amp;lt;/div&amp;gt;&amp;quot; }); // 不需要编译器 new Vue({ render(h) { return h(&amp;quot;div&amp;quot;, this.hi); } });  当使用 vue-loader 或 vueify 的时候，*.vue 文件内部的模板会在构建时预编译成 JavaScript。你在最终打好的包里实际上是不需要编译器的，所以只用运行时版本即可。
+因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名：
+webpack:
+module.exports = { // ... resolve: { alias: { vue$: &amp;quot;vue/dist/vue.esm.js&amp;quot; // 用 webpack 1 时需用 &#39;vue/dist/vue.</description>
+    </item>
+    
+    <item>
+      <title>Webpack 上</title>
+      <link>http://example.org/posts/webpack-%E4%B8%8A/</link>
+      <pubDate>Fri, 27 Dec 2019 11:43:37 +0800</pubDate>
+      
+      <guid>http://example.org/posts/webpack-%E4%B8%8A/</guid>
+      <description>webpack-上 学习 webpack 需要的前置知识： ES6 的使用：
+ let/const/箭头函数/&amp;hellip;/new/class/Promise 继承/this/原型  CSS 语法和布局
+MVC 概念：
+Model/View/Controller/EventHub
+工具的使用：
+ VSCode 或 WebStorm 终端命令行 npm/yarn/http-server/parcel/git  webpack 用途和基本命令行 webpack 是干嘛的？
+ 转译代码（ES6 转为 ES5，SCSS 转为 CSS） 构建 build 代码压缩 代码分析  查看 webpack 信息和版本：
+命令行运行 npm info webpack
+要安装最新版本或特定版本，请运行以下命令之一：
+npm install &amp;ndash;save-dev webpack
+npm install &amp;ndash;save-dev webpack@
+如果你使用 webpack 4+ 版本，你还需要安装 CLI:
+npm install &amp;ndash;save-dev webpack-cli
+全局安装：
+npm install &amp;ndash;global webpack
+webpack-dev-server 用于本地预览</description>
+    </item>
+    
+    <item>
+      <title>小总结</title>
+      <link>http://example.org/posts/%E5%B0%8F%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 25 Dec 2019 11:51:29 +0800</pubDate>
+      
+      <guid>http://example.org/posts/%E5%B0%8F%E6%80%BB%E7%BB%93/</guid>
+      <description>什么是闭包？闭包的用途是什么？闭包的缺点是什么？ 什么是闭包： 如果一个函数用到了外部的变量，那么这个函数加这个变量就叫做闭包，代码示例如下：
+function f1() { let a = 2; function f2() { console.log(a); } }  上边的函数 f2 用到了外部的变量 a，函数 f2 加上变量 a 就叫做闭包。
+闭包的用途： 闭包的用途很多，最大用途有两个：第一是从外部读取局部变量，第二是让这些变量的值始终保持在内存中。下边详细解释这两种用途：
+用途 1：从外部读取局部变量 代码示例：
+function f1() { let n = 110; function f2() { alert(n); } }  在上面的代码中，函数 f2 被包括在函数 f1 内部，这时 f1 内部的所有局部变量，对 f2 都是可见的。但是反过来不行，函数 f2 的局部变量，对 f1 就是不可见的。
+那么问题来了，既然 f2 可以读取 f1 中的局部变量，那么只要把 f2 作为返回值，我们不就可以在 f1 外部读取它的内部变量了么？这样就解决了之前在函数外部无法读取函数内的局部变量的问题。 代码示例：
+function f1() { let n = 110; function f2() { alert(n); } return f2; } let haha = f1(); //调用f1函数，返回f2函数的引用给哈哈 haha(); //调用haha也就是调用了f2，弹出110  用途 2：让局部变量的值始终保持在内存中 代码示例：</description>
+    </item>
+    
+    <item>
+      <title>JavaScript学习-5</title>
+      <link>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-5/</link>
+      <pubDate>Tue, 17 Dec 2019 09:29:21 +0800</pubDate>
+      
+      <guid>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-5/</guid>
+      <description>IIFE IIFE 就是 immediately invoked function expression,即 立即调用函数表达式/即时调用函数表达式。
+MDN定义：IIFE（ 立即调用函数表达式）是一个在定义时就会立即执行的 JavaScript 函数。
+shaoshanhuan定义：如果一个函数，在定义的时候，我们就想直接调用它，就是一个IIFE。代码示例：
+(function(){ alert(&amp;quot;哈哈&amp;quot;) } )()  IIIFE里面的函数，都是匿名函数。因为用这种方法定义的函数，名字是无效的，不能在其他的地方通过函数名调用这个函数。
+结合数组观察闭包 数组中，什么都能放。能放 string、能放数字、更能放函数。
+下面的例子就是经典的数组与闭包的结合：
+var arr = []; //空数组 // 用循环语句去填充数组里面的每个项 for(var i = 0; i&amp;lt;=10; i++){ arr[i] = function(){ alert(i); //我们在这里，试图每个函数弹出自己的序号 } } // 循环语句执行完毕，arr 里面就有了11个函数了，每个函数都是弹出i的值 arr[6](); //弹出11 arr[9](); //弹出11 arr[10](); //弹出11  上边的代码弹出的都是11，而不是预想中的6、9、10。原因就是每个函数定义的时候，都产生闭包，函数就认识 i 了，而不是说把 i 这个值复制一份记忆住，而是动态的、有呼吸、有生命的认识这个 i ，i在调用的时候得几了，这个函数认为 i 就是几。
+所以在调用的时候，i 已经变为了11，所以每个函数都弹出11了。
+解决办法：
+for(var i = 0; i&amp;lt;=10; i++){ (function(m){ arr[m] = function(){ alert(m) } })(i) }  每个arr在赋值的时候，都是在一个IIFE里面，IIFE里面是作用域隔离的，所以即使变量名都是 m ，但是视为“不同国家的m”，每个arr里面的小函数，都只能看见自己的m值。m值纵然改变，那也察觉不到</description>
+    </item>
+    
+    <item>
+      <title>JavaScript学习-4</title>
+      <link>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-4/</link>
+      <pubDate>Tue, 10 Dec 2019 12:01:33 +0800</pubDate>
+      
+      <guid>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-4/</guid>
+      <description>作用域 函数能封闭住定义域 一个变量如果定义在了一个 function 里面，那么这个变量就是一个局部变量，只有这个 function 里面有定义。出了这个 function ，就如同没有定义过一样。代码示例：
+function fn(){ var a = 1;// 定义在一个函数里面的变量，局部变量，只有在函数里面有定义。 console.log(&amp;quot;我是函数里面的语句，我认识 a 值为 &amp;quot; + a); } fn(); console.log(&amp;quot;我是函数里面的语句，我不认识 a &amp;quot; + a);// 这行会报错，因为 a 作用于函数内部，这里提取不到 a 的值。  a 被var在了 function 里面，所以现在这个 a 变量只有在红框范围内有定义：JavaScript 变量作用域非常的简单，没有块级作用域，管理作用域的只有一个东西：函数。
+如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：
+var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义： function fn(){ console.log(&amp;quot;我是函数里面的语句，我认识全局变量 a 值为 &amp;quot; + a); } fn(); console.log(&amp;quot;函数外面的语句也认识 a 值为 &amp;quot; + a);  总结一下：
+ 定义在 function 里面的变量叫做局部变量； 定义在全局范围内的，没有写在任何 function 里面的，叫做全局变量。   作用域链 当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例：</description>
+    </item>
+    
+    <item>
+      <title>JavaScript学习-3</title>
+      <link>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-3/</link>
+      <pubDate>Mon, 09 Dec 2019 09:24:23 +0800</pubDate>
+      
+      <guid>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-3/</guid>
+      <description>循环语句后续，函数等知识 for 循环里的 break语句 break语句的用途就是：我已经找到我要的答案了，我不需要进行更多的循环了的时候用。代码示例如下：
+for(var i = 1; i&amp;lt;=10; i++){ console.log(i); if(i == 5){ break; //找到5，然后终止for循环。 } }  break语句只能中断最内层循环，外层循环还在继续，代码示例：
+for(var i = 1; i&amp;lt;=10; i++){ for(var j = 1; j&amp;lt;=10; j++){ console.log(i,j) if(j == 5){ break; //当 j == 5 的时候，终止内层for循环，外层继续。 } } }  如果你就想用 break 终止外层的 for 循环，那么要给外层for循环加标签，代码示例：
+waiceng : for(var i = 1; i&amp;lt;=10; i++){ for(var j = 1; j&amp;lt;=10; j++){ console.log(i,j) if(j == 5){ break waiceng; //此时中断的就是外层的for循环 } } }  上边的语法虽然有，但是工作中很少用到，非常偏门，了解即可。</description>
+    </item>
+    
+    <item>
+      <title>JavaScript学习-2</title>
+      <link>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-2/</link>
+      <pubDate>Fri, 06 Dec 2019 15:46:06 +0800</pubDate>
+      
+      <guid>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-2/</guid>
+      <description>js 运算符  种类
+ 数学运算符  + - * / %  比较运算符  &amp;gt; &amp;gt; = &amp;lt; &amp;lt;= == 等于 != 不等于 === 全等于 !== 不全等于  逻辑运算符:注意有短路逻辑  逻辑非 ! 逻辑与 &amp;amp;&amp;amp; 逻辑或 ||  赋值运算符  = += -= *= /= %= ++ &amp;ndash;   运算符优先顺序
+  ++ -- ！贴身的 →→→ 数学 →→→ 比较 →→→ 逻辑 →→→ 赋值
+ 注意逻辑 且与或 的短路逻辑
+ 运算符的复习，快速判断输出结果</description>
+    </item>
+    
+    <item>
+      <title>JavaScript学习-1</title>
+      <link>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-1/</link>
+      <pubDate>Tue, 03 Dec 2019 09:33:03 +0800</pubDate>
+      
+      <guid>http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-1/</guid>
+      <description>JavaScript简介  前端三层
+ 结构层 HTML 从语义的角度描述页面的结构 样式层 CSS 从审美角度装饰页面 行为层 JavaScript 从交互的角度提升用户体验  发明者
+ 1995年网景公司(Netscape)的工程师Brendan Eich创造了JavaScript   历史版本
+ 1997年诞生ECMAScript第一版 1999年更新诞生了ECMAScript第三版 由于委员会内部分歧，第四版流产
+ 2009年12月发布ECMAScript第五版 2015年6月发布ECMAScript第六版  JavaScript从丑小鸭到白天鹅的发展历程
+ 2003年：牛皮鲜，页面上漂浮的广告、弹窗广告；所以当时的浏览器就推出一个功能，禁用广告，实际上本质就是禁用JavaScript。页面上的特效，都特别俗，比如鼠标后面跟随的星星，然后工程师对JS的感觉就是不用学习，生搬硬套，大量的“效果宝盒”软件，一套就有各种特效了。没有人琢磨语言特性。 2004年：谷歌打开了Ajax这个潘多拉的盒子，从此JavaScript被人重视，很多人开始学习JS语言。当时问世了两本JS巨作《犀牛书》、《高级程序设计》 2007年：三层分离，iPhone发布，人们开始重视用户体验。大家发现了，JavaScript是web页面中制作交互效果唯一的语言，所以把JS的重视程度，提到了相当高的一个地位。招聘信息里面开始出现独立的“JS工程师”职位了，之前都是后台工程师捎带脚写写JS。 2008年：Chrome浏览器发布，V8引擎加快了JS的解析，之前的浏览器解析JS的时候卡顿卡顿的，动画效果是蹦蹦的。在Chrome里，它的引擎叫做V8，运行JS很流畅。 2009年：jQuery变得流行，解决了浏览器兼容问题，制作页面效果变得简单，越来越多的初学者愿意学习JavaScript。 2010年：Canvas画布技术得到众多浏览器支持，可以用Canvas替代Flash了，并且能制作小游戏，比如偷菜、停车小游戏。 2011年：Node.js得到广泛应用，实际上就是把JavaScript运行在了服务器上，单线程非阻塞，能够让企业用最小的成本实现后台网站，比如之前4万的服务器都卡，现在用了node之后，4000的机器都很流畅。 2012年：HTML5+CSS3的流行，也带火了JavaScript。 2013年：hybrid app模式开始流行。就是做手机app的时候，老板们发现要雇佣三队人马，ios、安卓、windows phone。花三份工资，并且产品还不好迭代。所以人们发明了用网页技术开发手机App的技术，叫做web app。hybrid app就是混合app，同时结合web技术和原生开发技术。省钱，好迭代。 2015年：ECMA6发布，叫做ECMA2015。重量级的改变，把语言的特性颠覆性的一个增强。  JavaScript总体比较好学
+ 好学的点：
+ JavaScript是有界面效果：不像C语言，黑底白字，很枯燥的。 JavaScript的语法来源于C和Java：有C和Java的经验同学好学很多。 JavaScript是弱变量类型的语言，动态数据类型语言。 JavaScript运行在宿主环境（即浏览器）中，不关心内存，垃圾回收。  不好学的点：
+ 兼容性问题： IE8是个怪胎，很多东西都不一样，所以就要写兼容写法，不怕造轮子，多写几遍 花式写法很多，抽象：从简单入手，细细品味代码 太多细节：认真写自己的笔记，自己做实验;   学习方法
+ 要多去“品”程序，多去思考内在逻辑，读懂每一行代码！ JS机械重复性的劳动几乎为0，基本都是创造性的劳动。HTML、CSS都是重复的劳动，margin、padding挤来挤去。 永远不要背程序，每一个程序都必须自己会写。   Hello World 这事儿吧，挺有意思，就是学习任何的语言，我们都喜欢在屏幕上直接输出一点什么，当做最简单、最基本的案例。输出什么大家随意，但是很多人都习惯输出“hello world”，世界你好。感觉自己很有情怀的样子。</description>
+    </item>
+    
+    <item>
+      <title>浏览器渲染机制</title>
+      <link>http://example.org/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Fri, 29 Nov 2019 18:01:26 +0800</pubDate>
+      
+      <guid>http://example.org/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/</guid>
+      <description> 浏览器渲染机制：  解析HTML标签，构建DOM树； 解析CSS，构建CSSOM树； 把DOM和CSSOM合并成一个渲染树； 布局（文档流，盒模型，计算大小和位置）； 绘制（边框颜色，文字颜色，阴影等）； 如图所示：  DOM+BOM+Repaint+Reflow(Relayout)  DOM-文档对象模型  浏览器提供的一系列能操作网页结构的API；  BOM-浏览器对象模型（Browser Object Model）  浏览器提供的一系列和页面结构无关但和浏览器其他功能相关的API； 比如说获取当前浏览器的历史记录/你的地理位置/浏览器类型/窗口大小等；  从URL输入浏览器到页面展现发生了什么？ Repaint:绘制页面发生变化的部分； Reflow/Relayout:重新计算元素的几何尺寸，位置(即重新布局)；  </description>
+    </item>
+    
+    <item>
+      <title>Css琐碎知识</title>
+      <link>http://example.org/posts/css%E7%90%90%E7%A2%8E%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Thu, 28 Nov 2019 17:09:36 +0800</pubDate>
+      
+      <guid>http://example.org/posts/css%E7%90%90%E7%A2%8E%E7%9F%A5%E8%AF%86/</guid>
+      <description>css 小知识 琐碎布局经验  z-index 对没有定位的元素无用，只有定位的元素才可以用z-index: 2; 元素不脱标的情况下margin:0 auto;才有用,即只有标准流才能用marign: 0 atuto;。此外position: relative;并不脱标，保留原坑，所以相对定位的元素可以用margin: 0 auto;居中 插入一张通栏的大图：  方法一：直插法-直接插入图片:  方法二：用背景图片做  绝对定位的盒子已经脱离标准流了，不能自动撑满父亲，因此一定要写宽度; 同一层级后定位的元素会压住先定位的元素； 邵说不要用 margin 踹它的父亲，这样做不好，应该用老爸的 padding 挤走儿子； 绝对定位的元素无视父亲的 padding； display: none;与visibility: hidden的区别：  display: none;会放弃原来的位置，如同标签没有写； visibility: hidden;不会放弃原来的位置，只是把元素隐藏掉；   几种定位的区别  position: static;  默认的定位方式  position: relative;相对定位  适用轻微偏移的场景；比如“图标因为本身的设计问题导致无法居中”； 未脱离标准流，保留原来的位置； 参考点是原来的位置；  position: absolute;绝对定位  适用出现元素重叠，放置任意位置的场景； 脱离普通流，不保留原来的位置； 参考点是向上层找非 static 的定位元素； 不会产生边距合并现象； 绝对定位的元素收缩，需要设置宽度； 给行内元素设置绝对定位后就有了块级的特性，可以设置宽高，类似于浮动的元素；  position: fixed;固定定位  使用需持续固定在浏览器某位置的场景，比如“企业站窗口底部的联系我，某些固定在页面顶部的导航条”； 脱离普通流，不保留原来的位置； 参考点是浏览器屏幕视口； 一定要设置 top/bottom，否则可能无法展示；  position: sticky;  可以理解为相对定位和固定定位的混合，元素在跨越特定阀值前为相对定位，之后为固定定位； 一定要设置 top/bottom，否则可能无法展示；   伪类与伪元素  伪类一个冒号，伪元素两个冒号； 伪元素的样式一定要加上:</description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://example.org/posts/hugo/</link>
+      <pubDate>Thu, 28 Nov 2019 10:11:23 +0800</pubDate>
+      
+      <guid>http://example.org/posts/hugo/</guid>
+      <description> hugo 博客生成器  hugo 是世界上最快的博客生成器，用 Go 语言实现；  hugo 网址是: hugo  JS 实现的博客生成器叫做 Hexo，不如 hugo 好用；  </description>
+    </item>
+    
+    <item>
+      <title>MVC</title>
+      <link>http://example.org/posts/mvc/</link>
+      <pubDate>Wed, 27 Nov 2019 16:32:37 +0800</pubDate>
+      
+      <guid>http://example.org/posts/mvc/</guid>
+      <description>MVC 以及相关知识 什么是模块化？ 背景：当我们在 coding 一个 web 应用时, 代码量肯定不少。然而把全部逻辑都写在一个 JS 文件里面会引起巨大的混乱, 稍有编程常识的人都会马上意识到这是一个需要解决的问题。 通常我们将自己的项目代码模块化, 即把应用拆为各自高度独立的模块, 模块间可以通过接口来通信, 有时甚至不需要通信. 然后将各个模块引入到一个文件里使用即可。
+简言之：模块化编程就是通过组合一些相对独立可复用的模块来进行功能的实现，其最核心的两部分是定义模块和引入模块：
+ 定义模块时，每个模块内部的执行逻辑是不被外部感知的，只是导出（暴露）部分方法和数据； 引入模块时，同步/异步去加载待引入的代码，执行并获取到其暴露的方法和数据；  MVC 与模块化的联系：在模块化后, 有人从后端里搬来一个 MVC 的概念, 把 web 应用也划分为了三个部分(Model, View, Controller).
+简言之：为了解决编写web应用代码混乱的问题，需要对代码进行模块化，而模块化又引出了MVC的概念。
+MVC 模式代表 Model-View-Controller(模型-视图-控制器)模式
+Model - 操作数据 Model 层的代码负责获取到 web 应用所需要的数据, 在一些场景下还要负责处理数据的改动(增, 删, 改, 查)
+const Model = { data: { x: 20 }, update(data) { Object.assign(Model.data, data); } };  View View 层负责用户能看见的部分, 比如页面的模板, 渲染函数等.
+const View = { html: ` &amp;lt;h1&amp;gt;hello&amp;lt;/h1&amp;gt; `, render() { // render the template }, mount() {} };  Controller Controller 层负责 View 和 Model 都不处理的部分.</description>
+    </item>
+    
+    <item>
+      <title>异步与Promise</title>
+      <link>http://example.org/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/</link>
+      <pubDate>Thu, 07 Nov 2019 11:00:29 +0800</pubDate>
+      
+      <guid>http://example.org/posts/%E5%BC%82%E6%AD%A5%E4%B8%8Epromise/</guid>
+      <description>异步与 Promise 同步、异步、回调的概念与关系  什么是同步？
+ 如果能直接拿到结果，就是同步 例如：你在医院挂号，你拿到号才会离开窗口 同步任务可能消耗 10ms，也可能需要 3 秒 总之不拿到结果你是不会离开做别的事情的  什么是异步？
+ 如果不能直接拿到结果，就是异步 例如：你在餐厅门口等位，人太多，你拿到号可以去逛街 什么时候才能真正吃饭呢？ 你可以每十分钟去餐厅问一下——这是轮询 你也可以扫码用微信接收通知——这是回调  异步举例-以 AJAX 为例
+ request.send()之后，并不能直接得到 response 不信可以 console.log(request.response)试试 必须等到 readyState 变为 4 后，浏览器回头调用 request.onreadystatechange 函数 我们才能得到 request.response 这跟餐厅给你发送微信提醒的过程是类似的  什么是回调 callback
+ 写了却不调用，给别人调用的函数，就是回调 你写给自己用的函数不是回调，你写给别人用的函数才是回调 request.onreadystatechange 就是我写给浏览器调用的，意思就是你（浏览器）回头调用一下这个函数  回调举例
+ 把函数 1 给另一个函数 2 调用：
+function f1(){ } function f2(fn) { fn() } f2(f1)     分析：  我调用 f1 没有？答：没有 我把 f1 传给 f2（别人）了么？答：传了 f2 调用 f1 没有？答：f2 调用了 f1 那么 f1 是不是我写给 f2 调用的函数？答：是 所以 f1 是回调    异步和回调的关系</description>
+    </item>
+    
+    <item>
+      <title>AJAX</title>
+      <link>http://example.org/posts/ajax/</link>
+      <pubDate>Thu, 07 Nov 2019 09:05:11 +0800</pubDate>
+      
+      <guid>http://example.org/posts/ajax/</guid>
+      <description>AJAX-Asynchronous JavaScript And XML 简介：  用 JS 发请求和收响应，这就是 AJAX 的全部内容 AJAX 是浏览器上的功能：  浏览器可以发请求，收响应 浏览器在 window 上加了一个 XMLHttpRequest 函数 用这个构造函数（类）可以构造出一个对象 JS 通过它实现发请求，收响应    使用方法：  准备一个服务器：  使用 server.js 作为我们的服务器 下载或复制代码即可用 node server.js 8888 启动 添加 index.html/man.js 两个路由  加载 html/css/js/xml 的四个标准步骤：
+ 创建 HttpRequest 对象（全称是 XMLHttpRequest） 调用对象的 open 方法 监听对象的 onreadystatechange 事件——在事件处理函数里操作 HTML 文件内容/CSS 文件内容/JS 文件内容/responseXML 调用对象的 send 方法（发送请求）——具体代码请打开 MDN 用 CRM 大法，或者看我的个人博客：https://github.com/wl-1996/ajax-1 代码如下：
+getHTML.onclick = () =&amp;gt; { const request = new XMLHttpRequest();//创建对象 request.</description>
+    </item>
+    
+    <item>
+      <title>JQuery学习-1</title>
+      <link>http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-1/</link>
+      <pubDate>Fri, 01 Nov 2019 10:46:28 +0800</pubDate>
+      
+      <guid>http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-1/</guid>
+      <description>jQuery 要知道的重要一件事是jQuery 只是一个 JavaScript 库。jQuery 的所有功能都可以通过 JavaScript 进行访问，因此对 JavaScript 的深入了解对于理解，构建和调试代码至关重要。随着时间的流逝，定期使用 jQuery 可以提高您对 JavaScript 的熟练程度。
+目前，互联网上最好的 jQuery 入门教材，是 Rebecca Murphey 写的《jQuery 基础》（jQuery Fundamentals）。在 Google 里搜索&amp;rdquo;jQuery 培训&amp;rdquo;，此书排在第一位。jQuery 官方团队已经同意，把此书作为官方教程的基础。
+jQuery 的基本设计思想和主要用法，就是&amp;rdquo;选择某个网页元素，然后对其进行某种操作&amp;ldquo;。_这是它区别于其他 Javascript 库的根本特点_。
+jQuery 如何获取元素 使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+ 选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myID的网页元素 $(&#39;.myClass&#39;) //选择class为myClass的元素 $(&#39;input[name=first]&#39;) //选择name属性等于first的input元素  选择表达式也可以是 jQuery 特有的表达式：
+$(&#39;a:first&#39;) //选择第一个a元素 $(&#39;a:last&#39;) //选择最后一个a元素 $(&#39;tr:odd&#39;) //选择表格下标是奇数的行 $(&#39;p:even&#39;) //选择下标为偶数的p $(&#39;#myForm:input&#39;) //选择表单中的input元素 $(&#39;div:animated&#39;) //选择当前处于动画状态的div元素 $(&#39;div:eq(3)&#39;) //选择下标为3的div元素 $(&#39;div:gt(3)&#39;) //选择下标大于3的div元素 $(&#39;div:lt(3)&#39;) //选择下标小于3的div元素   改变结果集 jQuery设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，从而缩小选择的结果</description>
+    </item>
+    
+    <item>
+      <title>DOM</title>
+      <link>http://example.org/posts/dom/</link>
+      <pubDate>Tue, 29 Oct 2019 15:14:10 +0800</pubDate>
+      
+      <guid>http://example.org/posts/dom/</guid>
+      <description>基本概念  学习 DOM 需要什么知识？  理解简单的 JS 语法，如变量、if else、循环 会背 JS 的其中数据类型-四基两空一对象：number,string,bool,symbol,null,undefined,object 知道 JS 的五个 falsy 值：0、NaN、null、undefined、&amp;rdquo;&amp;rdquo; 知道函数是对象，数组也是对象 会用 div 和 span 标签 会简单的 CSS 布局  网页其实就是一棵树-DOM（文档对象模型）树  例如这段代码 对应的 DOM 树就是：  JS 如何操作这棵树？  浏览器往 window 上加一个 document 即可 JS 用 document 操作网页，这就是 Document Object Model 文档对象模型  DOM 获取元素，也叫标签  window.id 或者直接 id document.getElementById(&amp;lsquo;div&amp;rsquo;) document.getElementsByTagName(&amp;lsquo;div&amp;rsquo;)[0] document.getElementsByClassName(&amp;lsquo;red&amp;rsquo;)[0] document.querySelector(&amp;lsquo;#div&amp;rsquo;) document.querySelectorAll(&amp;lsquo;.red&amp;rsquo;)[0]  注意  工作中用 document.querySelector 和 document.</description>
+    </item>
+    
+    <item>
+      <title>JS函数的执行时间</title>
+      <link>http://example.org/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Wed, 16 Oct 2019 11:08:19 +0800</pubDate>
+      
+      <guid>http://example.org/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4/</guid>
+      <description>JS 函数的执行时间 下边这段代码为什么会打印出 6 个 6？ let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }  因为设置了 Timeout,在执行 for 循环过程中，不会打印出 i 的值，当 i=6 时，跳出 for 循环，此时会打印出 i 的值，打印 6 次，此时 i = 6，因此会打印出 6 个 6。
+写出让上边这段代码打印出 0,1,2,3,4,5 的方法 for(let i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }  即在 for 循环内部声明变量 let i = 0,此时就会打印出 0,1,2,3,4,5
+其他打印出 0,1,2,3,4,5 的方法？ 可以用立即执行函数：
+let i; for(i = 0; i&amp;lt;6; i++){ //这个匿名函数生成了闭包的效果，新建了一个作用域，这个作用域接收到每次循环的i值保存了下来，即使循环结束，闭包形成的作用域也不会被销毁 (function(i){ setTimeout(function () { console.</description>
+    </item>
+    
+    <item>
+      <title>JS对象基本语法</title>
+      <link>http://example.org/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 02 Oct 2019 21:47:38 +0800</pubDate>
+      
+      <guid>http://example.org/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>《JS 对象基本用法》 声明对象的两种语法  let obj = {&amp;lsquo;name&amp;rsquo;: &amp;lsquo;frank&amp;rsquo;,&amp;lsquo;age&amp;rsquo;:18} let obj = new Object({&amp;lsquo;name&amp;rsquo;:&amp;lsquo;frank&amp;rsquo;}) console.log({&amp;lsquo;name&amp;rsquo;:&amp;lsquo;frank&amp;rsquo;,&amp;lsquo;age&amp;rsquo;:18}) 细节：  键名是字符串，不是标识符，可以包含任意字符； 引号可以省略，省略之后就只能写标识符； 就算引号省略了，键名还是字符串（重要）；  所有的属性名都会自动变成字符串，即使声明对象时不加引号，属性名也会自动变成字符串：
+let obj = { 1:&#39;a&#39;, 3.2:&#39;b&#39;, le2:true, le-2:true, .234:true, 0xFF:true }; Object.keys(obj) =&amp;gt;[&amp;quot;1&amp;quot;,&amp;quot;100&amp;quot;,&amp;quot;255&amp;quot;,&amp;quot;3.2&amp;quot;,&amp;quot;0.01&amp;quot;,&amp;quot;0.234&amp;quot;]  如何用变量做属性名，之前都是用常量做属性名：
+ let p1 = &amp;lsquo;name&amp;rsquo; let obj = {p1:&amp;lsquo;frank&amp;rsquo;}这样写，属性名为&amp;rsquo;p1&amp;rsquo; let obj = {[p1]:&amp;lsquo;frank&amp;rsquo;}这样写，属性名为&amp;rsquo;name&amp;rsquo; 不加[]的属性名会自动变成字符串，加了[]则会当作变量求值，值如果不是字符串，则会自动变成字符串  隐藏属性：
+ JS 中每一个对象都有一个隐藏属性 这个隐藏属性储存着其共有属性组成的对象的地址 这个共有属性组成的对象叫做原型 也就是说，隐藏属性储存着原型的地址  隐藏属性代码示例：
+var obj = {}  obj.toString()//居然不报错，因为obj的隐藏属性对应的对象上有toString()   如何删除对象的属性  delete obj.</description>
+    </item>
+    
+    <item>
+      <title>JS数据类型</title>
+      <link>http://example.org/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Sat, 28 Sep 2019 16:22:17 +0800</pubDate>
+      
+      <guid>http://example.org/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>JS 数据类型 相关知识概述  都是一，为什么要分数字 1 和字符串&amp;rsquo;1&amp;rsquo;?  功能不同：  数字是数字，字符串是字符串，要严谨； 数字能加减乘除，字符串不行； 字符串能表示电话号码，数字不行；  存储形式不同：  JS 中，数字是用 64 位浮点数的形式存储的； JS 中，字符串实用类似 UTF8 形式存储的(UCS-2);   如何存数字？  十进制转二进制即可  用 0~127 表示所有符号：  0 表示结束字符； 10 表示换行； 13 表示回车； 32 表示空格； 33-47 表示标点； 48-57 表示数字符号； 65-90 表示大写字母； 97-122 表示小写字母； 127 表示删除键；  Unicode  优点：  已经收录 13 万字符（大于 16 位），全世界通用； 以后还会继续扩充，不会停止； 最新版只添加了一个字&amp;ndash;令和的合体字；  缺点：  两个字节不够用，每个字符都要用三个及以上字节； 这样所有的文件都扩大 50%，不划算；    数字 number  写法：  整数写法：1 小数写法：0.</description>
+    </item>
+    
+    <item>
+      <title>JS基本语法</title>
+      <link>http://example.org/posts/js%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Thu, 26 Sep 2019 11:47:31 +0800</pubDate>
+      
+      <guid>http://example.org/posts/js%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>JS 基本语法 什么是表达式和语句  表达式：  1+2 表达式的值为 3； add(1,2)表达式的值为函数的返回值； console.log 表达式的值为函数本身； console.log(3)表达式的值为多少?  语句：  var a=1 是一个语句；  表达式和语句的区别？  表达式一般都有值，语句可能有也可能没有值； 语句一般会改变环境(声明、赋值)； 上面两句话并不是绝对的；  大小写敏感：  var a 和 var A 是不同的； object 与 Object 是不同的； function 和 Function 是不同的；  空格：  大部分空格没有实际意义； var a=1 和 var a = 1 没有区别；加回车大部分时候也不影响； 只有一个地方不能加回车，那就是 return 后面；   标识符的规则  规则：  第一个字符，可以是 Unicode 字母或者\$或者_或者中文； 后面的字符，除了上面所说，还可以有数字；  变量名是标识符：  var _=1; var \$=2; var_=6; var 你好=&amp;ldquo;hi&amp;rdquo;;  注释的分类：  不好的注释：  把代码翻译成中文； 过时的注释； 发泄不满的注释；  好的注释：  踩坑注释； 为什么代码会写的这么奇怪，遇到什么 bug；   区块 block</description>
+    </item>
+    
+    <item>
+      <title>JavaScript的诞生</title>
+      <link>http://example.org/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
+      <pubDate>Mon, 16 Sep 2019 17:17:54 +0800</pubDate>
+      
+      <guid>http://example.org/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
+      <description>JavaScript 的诞生 JavaScript 的历史  它最初由 Netscape(网景公司) 的 Brendan Eich 设计。JavaScript 是甲骨文公司的注册商标。Ecma【欧洲计算机制造商协会（European Computer Manufacturers Association）】 国际以 JavaScript 为基础制定了 ECMAScript 标准。JavaScript 也可以用于其他场合，如服务器端编程。完整的 JavaScript 实现包含三个部分：ECMAScript，文档对象模型，浏览器对象模型。 Netscape 在最初将其脚本语言命名为 LiveScript，后来 Netscape 在与 Sun 合作之后将其改名为 JavaScript。JavaScript 最初受 Java 启发而开始设计的，目的之一就是“看上去像 Java”，因此语法上有类似之处，一些名称和命名规范也借自 Java。 但 JavaScript 的主要设计原则源自 Self 和 Scheme。 JavaScript 与 Java 名称上的近似，是当时 Netscape 为了营销考虑与 Sun 微系统达成协议的结果。 为了取得技术优势，微软推出了 JScript 来迎战 JavaScript 的脚本语言。为了互用性，Ecma 国际（前身为欧洲计算机制造商协会）创建了 ECMA-262 标准（ECMAScript）。两者都属于 ECMAScript 的实现。 尽管 JavaScript 作为给非程序人员的脚本语言，而非作为给程序人员的脚本语言来推广和宣传，但是 JavaScript 具有非常丰富的特性。 发展初期，JavaScript 的标准并未确定，同期有 Netscape 的 JavaScript，微软的 JScript 和 CEnvi 的 ScriptEase 三足鼎立。1997 年，在 ECMA（欧洲计算机制造商协会）的协调下，由 Netscape、Sun、微软、Borland 组成的工作组确定统一标准：ECMA-262。  JavaScript 诞生记  以下内容引用自《阮一峰的网络日志》</description>
+    </item>
+    
+    <item>
+      <title>JS全解 JavaScript概览</title>
+      <link>http://example.org/posts/js%E5%85%A8%E8%A7%A3-javascript%E6%A6%82%E8%A7%88/</link>
+      <pubDate>Mon, 16 Sep 2019 13:18:49 +0800</pubDate>
+      
+      <guid>http://example.org/posts/js%E5%85%A8%E8%A7%A3-javascript%E6%A6%82%E8%A7%88/</guid>
+      <description>[JS 全解]JavaScript 概览 学 JavaScript 需要什么？ 软要求  逻辑能力：  示例：JS 的数据类型有 number/string/null/undefined/bool/symbol/object 七种。而 JS 的函数不是 number/string/null/undefined/bool/symbol 中的任意一种。那么可以得出 JS 的函数是第七种 object，这就是逻辑能力。  质疑自己的能力；
+ 大部分时候，错的都是你自己； 回想一下你犯了多少错误？
+ 拼错单词； 多写了空格、少写了空格； 把 O 看成 0，把 0 看成 O； 把 iOS 写成 IOS 或者 ios；  这不是粗心大意，这是人类不可克服的问题，通过 double-check 可以缓解；
+  抽象思维；
+ 什么是抽象思维？比如以下三个事件：你定了一份报纸、你关注了偶像明星蔡徐坤的微博、你用 JS 监听了一个按钮的点击事件。这三件事拥有共同的模式：发布订阅模式，这就是抽象思维。 好处：抽象思维使你的代码能解决更多的问题，而不是兵来将挡水来土掩，比如 Vue 和 React 的作者；   硬要求  足够的代码量：  1000 行-新手； 10000 行-熟手； 50000 行-专业选手； 如何统计自己的代码行数？  命令行运行 yarn global add cloc(安装统计插件)； cloc &amp;ndash;VCS=git .</description>
+    </item>
+    
+    <item>
+      <title>《浅析URL》</title>
+      <link>http://example.org/posts/%E6%B5%85%E6%9E%90url/</link>
+      <pubDate>Sat, 14 Sep 2019 10:22:40 +0800</pubDate>
+      
+      <guid>http://example.org/posts/%E6%B5%85%E6%9E%90url/</guid>
+      <description>浅析 URL 网络和 IP  李爵士发明的三样东西: WWW=URL+HTTP+HTML URL:Uniform Resource Locator; HTTP:HyperText Transfer Protocol; HTML:HyperText Markup Language; IP：Internet Protocol; IP 主要约定了两件事：  如何定位一台设备； 如何封装数据报文，以跟其他设备交流；  IP 分为内网和外网，内网和外网通过路由器联系到一起； 如何获取外网 IP？  从电信租用宽带，一年一千多； 买一个路由器，然后用电脑和手机连接路由器广播出来的 wifi； 只要路由器连上电信的服务器，那么路由器就会有一个【外网 IP】，比如【14.17.32.211】就是一个外网 IP，这就是你在互联网中的地址； 如果重启路由器，那么可能被分配一个【外网 IP】，也就是说你的路由器没有固定的【外网 IP】； 但是有个问题，你的路由器的外网 IP 如果是 14.17.32.211，那么你的手机和电脑的 IP 又是什么呢？——答案是【内网 IP】；  内网 IP：  路由器会在你的家里创建一个内网，内网中的设备使用内网 IP，一般来说这个 IP 的格式都是 192.168.xxx.xxx; 一般路由器会给自己分配一个好记的内网 IP，如 192.168.1.1； 然后路由器会给内网中的不同设备分配不同的内网 IP，如给电脑分配 192.168.1.2，给手机分配 192.168.1.3，以此类推；  路由器的功能：  简单说就是内网和外网的桥梁，将内网和外网联系起来； 内网和外网都是相互隔绝的，内网中的设备不能访问外网，外网中的设备也不能访问内网。而有了路由器就可以使内网和外网相互访问，但是这个访问也是只能通过路由器进行，内网和外网唯一的联通点就是路由器； 路由器有时候也被叫做：网关；  几个特殊的 IP：  127.</description>
+    </item>
+    
+    <item>
+      <title>CSS知识总结</title>
+      <link>http://example.org/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Fri, 13 Sep 2019 15:39:11 +0800</pubDate>
+      
+      <guid>http://example.org/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      <description>hello,好久不见 浏览器渲染原理： 步骤：  根据 HTML 构建 HTML 树（DOM）; 根据 CSS 构建 CSS 树（CSSOM）; 将两棵树合并成一颗渲染树（render tree）; Layout 布局（文档流、盒模型、计算大小和位置）; Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）;  如何更新样式？&amp;ndash;一般我们用 JS 来更新样式  比如div.style.background=&#39;red&#39;; 比如div.style.display=&#39;none&#39;; 比如div.classList.add(&#39;red&#39;); 比如div.remove()直接删掉节点;  三种更新方式：  JS/CSS&amp;gt;样式&amp;gt;布局&amp;gt;绘制&amp;gt;合成（全走）； JS/CSS&amp;gt;样式&amp;gt;绘制&amp;gt;合成（跳过布局 layout）； JS/CSS&amp;gt;样式&amp;gt;合成（跳过布局 layout 和绘制 paint）；  CSS 动画的两种写法（transition 和 animation）： 第一种是使用 transform 和 transition 属性；  详情见[https://wangkuo.monster/Beating-heart/index.html];  第二种是使用 animation 属性设置；  详情见[https://wangkuo.monster/Beating-heart/index2.html]; @keyframes 的写法有两种：
+ from to 写法：
+@keyframes slidein { from { transform: translateX(0%); } to { transform: translateX(100%); } }  百分数写法：</description>
+    </item>
+    
+    <item>
+      <title>HTML常用标签</title>
+      <link>http://example.org/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Fri, 06 Sep 2019 18:13:05 +0800</pubDate>
+      
+      <guid>http://example.org/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      <description> hello,好久不见 今天学习了《HTML全解》HTML重难点这部分视频，最近私事较多，已经落后大家很多了，刚回来学习，要马上跟上进度。
+a标签的用法  属性有href/target/download/rel=noopener； a标签的作用是： 跳转外部页面/跳转内部锚点/跳转到邮箱或者电话； a的href属性取值有四种：  网址：https://google.com，http://google.com，//google.com，第三种写法最简单； 路径：/a/b/c以及a/b/c，index.html以及./index.html; 伪协议：javascript：代码。mailto：邮箱。tel：手机号。 id：href=#xxx  a的target的取值：  内置名字：_blank，_top,_parent,_self; 程序员命名：window的name,iframe的name;  a的download：  作用：不是打开页面，而是下载页面； 问题：不是所有的浏览器都支持，尤其是手机浏览器可能不支持；   img标签的用法  作用：发出get请求，展示一张图片； 属性有alt/height/width/src; 时间有onload/onerror； 图片过大时候如何在手机端实现自适应？——在css样式里加上:
+img{ max-width:100%; }   table标签的用法  相关的标签有table/thead/tbody/tfoot/tr(行)/td(数据)/th(标题); 相关的样式有table-layout（调整列宽）/border-collapse（设置单元格之间有无缝隙）/border-spacing（设置单元格之间缝隙大小）;  input标签的用法  有以下属性：text-文本框/color-颜色/password-密码框/radio-单选框/checkbox-复选框/file-上传文件/hidden-表示看不见的输入； 其中单选框属性(radio)需要设置相同的名字才是单选，否则就是可以都选中：
+&amp;lt;input name=&amp;quot;gender&amp;quot; type=&amp;quot;radio&amp;quot; /&amp;gt;男 &amp;lt;input name=&amp;quot;gender&amp;quot; type=&amp;quot;radio&amp;quot; /&amp;gt;女  上传文件属性（file），如果向上传多个文件需要加上multiple：
+&amp;lt;input type=&amp;quot;file&amp;quot; multiple /&amp;gt;   </description>
+    </item>
+    
+    <item>
+      <title>HTML入门笔记</title>
+      <link>http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 26 Aug 2019 21:20:53 +0800</pubDate>
+      
+      <guid>http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>HTML 入门笔记 [HTML 全解]HTML 概览 一.WWW 的历史  html 是李爵士 1990 年左右发明的，他的英文名字是 Tim Berners-Lee; 李爵士写了第一个浏览器、第一个服务器、发明了 HTML、HTTP、URL，用自己写的浏览器访问了自己写的服务器; WWW 指的是万维网，英文是 world wide web; WWW=URL+HTTP+HTML; html:hypertext markup language;http:一种传输协议；url：uniform resource locator; 万维网与互联网的关系：万维网是基于互联网实现的，输入地址就能看到网页的 1 个网络；  二.HTML 语法  看维基百科，不要看百度知道； HTML 是结构化标记语言； Markdown 也是标记语言，在 markdown 里加 url 应该这么加：百度； html 最初只有 18 个标签，但是现在有 110 个标签； 不要看 w3school，该网站落后并且有很多错误不及时更新。看 mdn，因为有错误会及时得到纠正； h5 是什么？就是手机上可以看得页面，跟 html5 没关系，不用 html5 一样可以做出在手机上可以看的页面； 查资料有两种方式：mdn 和 html 文档，html 文档晦涩难懂，不推荐； W3C 是 html 的标准制定者； 记得 CRM 学习法：copy+run+modify； 如果面试官问你英文是什么意思，你就把它翻译成中文即可； &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>如何用hugo搭建个人博客</title>
+      <link>http://example.org/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sat, 24 Aug 2019 17:20:18 +0800</pubDate>
+      
+      <guid>http://example.org/posts/%E5%A6%82%E4%BD%95%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>今天学习了以下几个内容：  用 hugo 搭建个人博客并上传到 github； 域名购买，视频里讲了两种购买方式，一种是 namesilo，另一种是阿里云。原本想在阿里云买，结果阿里云太贵，没办法，等有钱了再用阿里云的域名吧； 域名的配置，配置出 namesilo 的四个 A 就可以了，然后用命令行：nslookup wangkuo.monster 检测是否配置成功； hugo 里插入图片；  今天的学习不太顺利，其中四个内容都在操作过程中遇到了问题： 一.搭建个人博客时遇到了如下问题  运行 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke 时老是不成功，试了多次最后终于成功了，而且非常慢，估计是 git 命令行没有翻墙的原因，回头我需要配置一下命令行的翻墙；  二.域名购买时遇到了如下问题  购买域名需要设置隐私设置，不小心设置成了 whois privacy，应该设置成 no privacy。这导致后来在 github 仓库里自定义域名（Custom domain）时一直提示错误：  三.域名配置时遇到了以下问题  配置完 4 个 A 后在命令行里输入 nslookup wangkuo.monster 检测时一直出不来配置的四个地址，试了好多次，最后我把 cmder 重启后再运行该命令行就成功返回了配置的四个地址；  四.hugo 里插入图片时遇到了如下问题：  我是在 content-post-如何用hugo搭建个人博客.md 里插入图片，图片是 static-images-2.png，我第一次插入时的地址多写了一个/号，发现预览不出来（markdown preview）。然后我去掉最前边的/号就可以了。  下面写一下第一次如何用 hugo 搭建个人博客（第二次就比较简单了）： 1. 前提准备：  下载 hugo 到 D 盘的 Software 目录； 配置环境变量，把hugo添加进去； 在~/Desktop 里创建一个 Jirengu 目录；  2.</description>
+    </item>
+    
+  </channel>
+</rss>

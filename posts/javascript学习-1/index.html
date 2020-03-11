@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | JavaScript学习-1</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JavaScript学习-1" />
+<meta property="og:description" content="JavaScript简介  前端三层
+ 结构层 HTML 从语义的角度描述页面的结构 样式层 CSS 从审美角度装饰页面 行为层 JavaScript 从交互的角度提升用户体验  发明者
+ 1995年网景公司(Netscape)的工程师Brendan Eich创造了JavaScript   历史版本
+ 1997年诞生ECMAScript第一版 1999年更新诞生了ECMAScript第三版 由于委员会内部分歧，第四版流产
+ 2009年12月发布ECMAScript第五版 2015年6月发布ECMAScript第六版  JavaScript从丑小鸭到白天鹅的发展历程
+ 2003年：牛皮鲜，页面上漂浮的广告、弹窗广告；所以当时的浏览器就推出一个功能，禁用广告，实际上本质就是禁用JavaScript。页面上的特效，都特别俗，比如鼠标后面跟随的星星，然后工程师对JS的感觉就是不用学习，生搬硬套，大量的“效果宝盒”软件，一套就有各种特效了。没有人琢磨语言特性。 2004年：谷歌打开了Ajax这个潘多拉的盒子，从此JavaScript被人重视，很多人开始学习JS语言。当时问世了两本JS巨作《犀牛书》、《高级程序设计》 2007年：三层分离，iPhone发布，人们开始重视用户体验。大家发现了，JavaScript是web页面中制作交互效果唯一的语言，所以把JS的重视程度，提到了相当高的一个地位。招聘信息里面开始出现独立的“JS工程师”职位了，之前都是后台工程师捎带脚写写JS。 2008年：Chrome浏览器发布，V8引擎加快了JS的解析，之前的浏览器解析JS的时候卡顿卡顿的，动画效果是蹦蹦的。在Chrome里，它的引擎叫做V8，运行JS很流畅。 2009年：jQuery变得流行，解决了浏览器兼容问题，制作页面效果变得简单，越来越多的初学者愿意学习JavaScript。 2010年：Canvas画布技术得到众多浏览器支持，可以用Canvas替代Flash了，并且能制作小游戏，比如偷菜、停车小游戏。 2011年：Node.js得到广泛应用，实际上就是把JavaScript运行在了服务器上，单线程非阻塞，能够让企业用最小的成本实现后台网站，比如之前4万的服务器都卡，现在用了node之后，4000的机器都很流畅。 2012年：HTML5&#43;CSS3的流行，也带火了JavaScript。 2013年：hybrid app模式开始流行。就是做手机app的时候，老板们发现要雇佣三队人马，ios、安卓、windows phone。花三份工资，并且产品还不好迭代。所以人们发明了用网页技术开发手机App的技术，叫做web app。hybrid app就是混合app，同时结合web技术和原生开发技术。省钱，好迭代。 2015年：ECMA6发布，叫做ECMA2015。重量级的改变，把语言的特性颠覆性的一个增强。  JavaScript总体比较好学
+ 好学的点：
+ JavaScript是有界面效果：不像C语言，黑底白字，很枯燥的。 JavaScript的语法来源于C和Java：有C和Java的经验同学好学很多。 JavaScript是弱变量类型的语言，动态数据类型语言。 JavaScript运行在宿主环境（即浏览器）中，不关心内存，垃圾回收。  不好学的点：
+ 兼容性问题： IE8是个怪胎，很多东西都不一样，所以就要写兼容写法，不怕造轮子，多写几遍 花式写法很多，抽象：从简单入手，细细品味代码 太多细节：认真写自己的笔记，自己做实验;   学习方法
+ 要多去“品”程序，多去思考内在逻辑，读懂每一行代码！ JS机械重复性的劳动几乎为0，基本都是创造性的劳动。HTML、CSS都是重复的劳动，margin、padding挤来挤去。 永远不要背程序，每一个程序都必须自己会写。   Hello World 这事儿吧，挺有意思，就是学习任何的语言，我们都喜欢在屏幕上直接输出一点什么，当做最简单、最基本的案例。输出什么大家随意，但是很多人都习惯输出“hello world”，世界你好。感觉自己很有情怀的样子。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-1/" />
+<meta property="article:published_time" content="2019-12-03T09:33:03+08:00" />
+<meta property="article:modified_time" content="2019-12-03T09:33:03+08:00" />
+<meta itemprop="name" content="JavaScript学习-1">
+<meta itemprop="description" content="JavaScript简介  前端三层
+ 结构层 HTML 从语义的角度描述页面的结构 样式层 CSS 从审美角度装饰页面 行为层 JavaScript 从交互的角度提升用户体验  发明者
+ 1995年网景公司(Netscape)的工程师Brendan Eich创造了JavaScript   历史版本
+ 1997年诞生ECMAScript第一版 1999年更新诞生了ECMAScript第三版 由于委员会内部分歧，第四版流产
+ 2009年12月发布ECMAScript第五版 2015年6月发布ECMAScript第六版  JavaScript从丑小鸭到白天鹅的发展历程
+ 2003年：牛皮鲜，页面上漂浮的广告、弹窗广告；所以当时的浏览器就推出一个功能，禁用广告，实际上本质就是禁用JavaScript。页面上的特效，都特别俗，比如鼠标后面跟随的星星，然后工程师对JS的感觉就是不用学习，生搬硬套，大量的“效果宝盒”软件，一套就有各种特效了。没有人琢磨语言特性。 2004年：谷歌打开了Ajax这个潘多拉的盒子，从此JavaScript被人重视，很多人开始学习JS语言。当时问世了两本JS巨作《犀牛书》、《高级程序设计》 2007年：三层分离，iPhone发布，人们开始重视用户体验。大家发现了，JavaScript是web页面中制作交互效果唯一的语言，所以把JS的重视程度，提到了相当高的一个地位。招聘信息里面开始出现独立的“JS工程师”职位了，之前都是后台工程师捎带脚写写JS。 2008年：Chrome浏览器发布，V8引擎加快了JS的解析，之前的浏览器解析JS的时候卡顿卡顿的，动画效果是蹦蹦的。在Chrome里，它的引擎叫做V8，运行JS很流畅。 2009年：jQuery变得流行，解决了浏览器兼容问题，制作页面效果变得简单，越来越多的初学者愿意学习JavaScript。 2010年：Canvas画布技术得到众多浏览器支持，可以用Canvas替代Flash了，并且能制作小游戏，比如偷菜、停车小游戏。 2011年：Node.js得到广泛应用，实际上就是把JavaScript运行在了服务器上，单线程非阻塞，能够让企业用最小的成本实现后台网站，比如之前4万的服务器都卡，现在用了node之后，4000的机器都很流畅。 2012年：HTML5&#43;CSS3的流行，也带火了JavaScript。 2013年：hybrid app模式开始流行。就是做手机app的时候，老板们发现要雇佣三队人马，ios、安卓、windows phone。花三份工资，并且产品还不好迭代。所以人们发明了用网页技术开发手机App的技术，叫做web app。hybrid app就是混合app，同时结合web技术和原生开发技术。省钱，好迭代。 2015年：ECMA6发布，叫做ECMA2015。重量级的改变，把语言的特性颠覆性的一个增强。  JavaScript总体比较好学
+ 好学的点：
+ JavaScript是有界面效果：不像C语言，黑底白字，很枯燥的。 JavaScript的语法来源于C和Java：有C和Java的经验同学好学很多。 JavaScript是弱变量类型的语言，动态数据类型语言。 JavaScript运行在宿主环境（即浏览器）中，不关心内存，垃圾回收。  不好学的点：
+ 兼容性问题： IE8是个怪胎，很多东西都不一样，所以就要写兼容写法，不怕造轮子，多写几遍 花式写法很多，抽象：从简单入手，细细品味代码 太多细节：认真写自己的笔记，自己做实验;   学习方法
+ 要多去“品”程序，多去思考内在逻辑，读懂每一行代码！ JS机械重复性的劳动几乎为0，基本都是创造性的劳动。HTML、CSS都是重复的劳动，margin、padding挤来挤去。 永远不要背程序，每一个程序都必须自己会写。   Hello World 这事儿吧，挺有意思，就是学习任何的语言，我们都喜欢在屏幕上直接输出一点什么，当做最简单、最基本的案例。输出什么大家随意，但是很多人都习惯输出“hello world”，世界你好。感觉自己很有情怀的样子。">
+
+
+<meta itemprop="datePublished" content="2019-12-03T09:33:03&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-03T09:33:03&#43;08:00" />
+<meta itemprop="wordCount" content="446">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript学习-1"/>
+<meta name="twitter:description" content="JavaScript简介  前端三层
+ 结构层 HTML 从语义的角度描述页面的结构 样式层 CSS 从审美角度装饰页面 行为层 JavaScript 从交互的角度提升用户体验  发明者
+ 1995年网景公司(Netscape)的工程师Brendan Eich创造了JavaScript   历史版本
+ 1997年诞生ECMAScript第一版 1999年更新诞生了ECMAScript第三版 由于委员会内部分歧，第四版流产
+ 2009年12月发布ECMAScript第五版 2015年6月发布ECMAScript第六版  JavaScript从丑小鸭到白天鹅的发展历程
+ 2003年：牛皮鲜，页面上漂浮的广告、弹窗广告；所以当时的浏览器就推出一个功能，禁用广告，实际上本质就是禁用JavaScript。页面上的特效，都特别俗，比如鼠标后面跟随的星星，然后工程师对JS的感觉就是不用学习，生搬硬套，大量的“效果宝盒”软件，一套就有各种特效了。没有人琢磨语言特性。 2004年：谷歌打开了Ajax这个潘多拉的盒子，从此JavaScript被人重视，很多人开始学习JS语言。当时问世了两本JS巨作《犀牛书》、《高级程序设计》 2007年：三层分离，iPhone发布，人们开始重视用户体验。大家发现了，JavaScript是web页面中制作交互效果唯一的语言，所以把JS的重视程度，提到了相当高的一个地位。招聘信息里面开始出现独立的“JS工程师”职位了，之前都是后台工程师捎带脚写写JS。 2008年：Chrome浏览器发布，V8引擎加快了JS的解析，之前的浏览器解析JS的时候卡顿卡顿的，动画效果是蹦蹦的。在Chrome里，它的引擎叫做V8，运行JS很流畅。 2009年：jQuery变得流行，解决了浏览器兼容问题，制作页面效果变得简单，越来越多的初学者愿意学习JavaScript。 2010年：Canvas画布技术得到众多浏览器支持，可以用Canvas替代Flash了，并且能制作小游戏，比如偷菜、停车小游戏。 2011年：Node.js得到广泛应用，实际上就是把JavaScript运行在了服务器上，单线程非阻塞，能够让企业用最小的成本实现后台网站，比如之前4万的服务器都卡，现在用了node之后，4000的机器都很流畅。 2012年：HTML5&#43;CSS3的流行，也带火了JavaScript。 2013年：hybrid app模式开始流行。就是做手机app的时候，老板们发现要雇佣三队人马，ios、安卓、windows phone。花三份工资，并且产品还不好迭代。所以人们发明了用网页技术开发手机App的技术，叫做web app。hybrid app就是混合app，同时结合web技术和原生开发技术。省钱，好迭代。 2015年：ECMA6发布，叫做ECMA2015。重量级的改变，把语言的特性颠覆性的一个增强。  JavaScript总体比较好学
+ 好学的点：
+ JavaScript是有界面效果：不像C语言，黑底白字，很枯燥的。 JavaScript的语法来源于C和Java：有C和Java的经验同学好学很多。 JavaScript是弱变量类型的语言，动态数据类型语言。 JavaScript运行在宿主环境（即浏览器）中，不关心内存，垃圾回收。  不好学的点：
+ 兼容性问题： IE8是个怪胎，很多东西都不一样，所以就要写兼容写法，不怕造轮子，多写几遍 花式写法很多，抽象：从简单入手，细细品味代码 太多细节：认真写自己的笔记，自己做实验;   学习方法
+ 要多去“品”程序，多去思考内在逻辑，读懂每一行代码！ JS机械重复性的劳动几乎为0，基本都是创造性的劳动。HTML、CSS都是重复的劳动，margin、padding挤来挤去。 永远不要背程序，每一个程序都必须自己会写。   Hello World 这事儿吧，挺有意思，就是学习任何的语言，我们都喜欢在屏幕上直接输出一点什么，当做最简单、最基本的案例。输出什么大家随意，但是很多人都习惯输出“hello world”，世界你好。感觉自己很有情怀的样子。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-1/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-1/&amp;text=JavaScript%e5%ad%a6%e4%b9%a0-1" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-1/&amp;title=JavaScript%e5%ad%a6%e4%b9%a0-1" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">JavaScript学习-1</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-03T09:33:03&#43;08:00">December 3, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="javascript简介">JavaScript简介</h2>
+
+<ol>
+<li><p>前端三层</p>
+
+<ul>
+<li>结构层 HTML 从语义的角度描述页面的结构</li>
+<li>样式层 CSS  从审美角度装饰页面</li>
+<li>行为层 JavaScript 从交互的角度提升用户体验</li>
+</ul></li>
+
+<li><p>发明者</p>
+
+<ul>
+<li>1995年网景公司(Netscape)的工程师Brendan Eich创造了JavaScript</li>
+</ul>
+
+<p><img src="/images/Brendan Eich.png" alt="JS之父" /></p></li>
+
+<li><p>历史版本</p>
+
+<ul>
+<li>1997年诞生ECMAScript第一版</li>
+<li>1999年更新诞生了ECMAScript第三版</li>
+<li>由于委员会内部分歧，第四版流产<br /></li>
+<li>2009年12月发布ECMAScript第五版</li>
+<li>2015年6月发布ECMAScript第六版</li>
+</ul></li>
+
+<li><p>JavaScript从丑小鸭到白天鹅的发展历程</p>
+
+<ul>
+<li>2003年：牛皮鲜，页面上漂浮的广告、弹窗广告；所以当时的浏览器就推出一个功能，禁用广告，实际上本质就是禁用JavaScript。页面上的特效，都特别俗，比如鼠标后面跟随的星星，然后工程师对JS的感觉就是不用学习，生搬硬套，大量的“效果宝盒”软件，一套就有各种特效了。没有人琢磨语言特性。</li>
+<li>2004年：谷歌打开了Ajax这个潘多拉的盒子，从此JavaScript被人重视，很多人开始学习JS语言。当时问世了两本JS巨作<strong>《犀牛书》</strong>、<strong>《高级程序设计》</strong></li>
+<li>2007年：三层分离，iPhone发布，人们开始<strong>重视用户体验</strong>。大家发现了，JavaScript是<strong>web页面中制作交互效果唯一的语言</strong>，所以把JS的重视程度，提到了相当高的一个地位。招聘信息里面开始出现独立的“JS工程师”职位了，之前都是后台工程师捎带脚写写JS。</li>
+<li>2008年：Chrome浏览器发布，<strong>V8引擎</strong>加快了JS的解析，之前的浏览器解析JS的时候卡顿卡顿的，动画效果是蹦蹦的。在Chrome里，它的引擎叫做V8，运行JS很流畅。</li>
+<li>2009年：<strong>jQuery</strong>变得流行，解决了浏览器兼容问题，制作页面效果变得简单，越来越多的初学者愿意学习JavaScript。</li>
+<li>2010年：<strong>Canvas画布技术</strong>得到众多浏览器支持，可以用Canvas替代Flash了，并且能制作小游戏，比如偷菜、停车小游戏。</li>
+<li>2011年：<strong>Node.js</strong>得到广泛应用，实际上就是把JavaScript运行在了服务器上，<strong>单线程非阻塞</strong>，能够让企业用最小的成本实现后台网站，比如之前4万的服务器都卡，现在用了node之后，4000的机器都很流畅。</li>
+<li>2012年：<strong>HTML5+CSS3</strong>的流行，也带火了JavaScript。</li>
+<li>2013年：<strong>hybrid app模式</strong>开始流行。就是做手机app的时候，老板们发现要雇佣三队人马，ios、安卓、windows phone。花三份工资，并且产品还不好迭代。所以人们发明了用网页技术开发手机App的技术，叫做web app。hybrid app就是混合app，同时结合web技术和原生开发技术。省钱，好迭代。</li>
+<li>2015年：<strong>ECMA6</strong>发布，叫做<strong>ECMA2015</strong>。重量级的改变，把语言的特性颠覆性的一个增强。</li>
+</ul></li>
+
+<li><p>JavaScript总体比较好学</p>
+
+<ul>
+<li><p>好学的点：</p>
+
+<ol>
+<li>JavaScript是有界面效果：不像C语言，黑底白字，很枯燥的。</li>
+<li>JavaScript的语法来源于C和Java：有C和Java的经验同学好学很多。</li>
+<li>JavaScript是弱变量类型的语言，动态数据类型语言。</li>
+<li>JavaScript运行在宿主环境<strong>（即浏览器）</strong>中，不关心内存，垃圾回收。</li>
+</ol></li>
+
+<li><p>不好学的点：</p>
+
+<ol>
+<li>兼容性问题： <strong>IE8</strong>是个怪胎，很多东西都不一样，所以就要写兼容写法，不怕造轮子，多写几遍</li>
+<li>花式写法很多，抽象：从简单入手，细细品味代码</li>
+<li>太多细节：认真写自己的笔记，自己做实验;</li>
+</ol></li>
+</ul></li>
+
+<li><p>学习方法</p>
+
+<ol>
+<li>要多去“品”程序，多去思考内在逻辑，读懂每一行代码！</li>
+<li>JS机械<strong>重复性的劳动几乎为0</strong>，基本都是创造性的劳动。HTML、CSS都是重复的劳动，margin、padding挤来挤去。</li>
+<li>永远不要背程序，每一个程序都必须自己会写。</li>
+</ol></li>
+</ol>
+
+<h2 id="hello-world">Hello World</h2>
+
+<p>这事儿吧，挺有意思，就是学习任何的语言，我们都喜欢在屏幕上直接输出一点什么，当做最简单、最基本的案例。输出什么大家随意，但是很多人都习惯输出“hello world”，世界你好。感觉自己很有情怀的样子。</p>
+
+<ol>
+<li>alert()语句：<code>alert(&quot;Hello World&quot;)</code></li>
+<li>每条语句之后用<strong>;</strong>结尾。注意，所有的符号都是英文的符号，不要使用中文！</li>
+<li>程序是顺序执行的，任何程序都是这样。<img src="/images/9.png" alt="" /></li>
+
+<li><p>控制台：<img src="/images/console.png" alt="" /></p>
+
+<p>控制台是Chrome浏览器“检查”里面的功能，快捷键是F12。英文叫做console。程序的所有未捕获的错误，都会在控制台中输出。控制台是调试程序的一个利器。</p></li>
+
+<li><p>行文特性</p>
+
+<p>JavaScript语句和语句之间的换行、空格、缩进都不敏感。<img src="/images/hangwen.png" alt="" /></p>
+
+<p>语句后面的分号，不是必须写的，如果语句是一行一行写的，那么分号是没有必要的。但是压缩页面的时候，语句结尾的分号，非常重要。</p>
+
+<p>我们把页面做好之后，通常都会进行压缩，用软件把所有的空格、换行都去掉。此时，语句末尾的分号显得非常重要，如果去掉分号，将不能执行。</p></li>
+
+<li><p>注释</p>
+
+<p>给人看的东西，对读程序是一个提示作用。<img src="/images/zhushi.png" alt="" /></p></li>
+</ol>
+
+<h2 id="字面量">字面量</h2>
+
+<h3 id="数字的字面量">数字的字面量</h3>
+
+<p>数字的字面量，就是这个数字自己，并不需要任何的符号来界定这个数字。</p>
+
+<p>JavaScript中，数字的字面量可以有三种进制：</p>
+
+<ol>
+<li>10进制</li>
+
+<li><p>8进制：如果以<strong>0</strong>开头、或者以<strong>0o</strong>开头、或者以<strong>0O</strong>开头的都是8进制，8进制只能用<strong>0~7</strong>来表示</p>
+
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+    //以0开头，所以就是八进制；显示的时候会以十进制显示
+    //3*8+6=30
+    console.log(036);  //30
+    console.log(044);  //36
+    console.log(010);  //8
+    console.log(0o36); //30
+    console.log(0O36); //30
+&lt;/script&gt;
+</code></pre>
+
+<p>注意，八进制只能出现0~7这8中字符，如果表示不合法，那么JS将自动的认为你输入错了，从而用十进制进行显示：
+<img src="/images/bajinzhi.png" alt="" /></p>
+
+<p>但是以0o开头、0O开头的数字，如果后面写错了，控制台报错！
+<img src="/images/bajinzhi2.png" alt="" /></p></li>
+
+<li><p>16进制：如果以<strong>0x</strong>开头的都是十六进制</p>
+
+<pre><code class="language-javascript">console.log(0xff);  //255
+console.log(0x2b);  //43
+console.log(0x11);  //17
+</code></pre>
+
+<p>如果后面有错误的写法，那么控制台报错：
+<img src="/images/shiliujinzhi.png" alt="" /></p></li>
+
+<li><p>总结：</p>
+
+<p>下面的输出结果都是15：</p>
+
+<pre><code class="language-javascript">console.log(15);
+console.log(017);
+console.log(0o17);
+console.log(0O17);
+console.log(0xf);
+</code></pre>
+
+<p>下面的输出结果都是负15：</p>
+
+<pre><code class="language-javascript">console.log(-15);
+console.log(-017);
+console.log(-0o17);
+console.log(-0O17);
+console.log(-0xf);
+</code></pre></li>
+
+<li><p>小数的字面量也很简单，就是数学上的点。计算机世界中，小数称为<strong>“浮点数”</strong></p>
+
+<p>允许使用e来表示乘以10的几次幂：</p>
+
+<pre><code class="language-javascript">console.log(-3.1415926);//-3.1415926
+console.log(.315);//0.315 如果整数位数是0，可以不写
+console.log(5e5);//500000
+console.log(5.6e5);//560000
+console.log(1e-4);//0.0001
+console.log(.1e-3);//0.0001
+</code></pre>
+
+<p><strong>只有十进制有</strong>小数的字面量，八进制、十六进制没有小数的字面量。</p></li>
+
+<li><p>最后学习两个特殊的字面量</p>
+
+<ul>
+<li><p>Infinity 无穷大</p>
+
+<pre><code>console.log(3e456498794465465)
+</code></pre>
+
+<p>控制台会显示：<img src="/images/infinity.png" alt="" />
+至于多大的数字能生成无穷大，不同浏览器不一样，不要管。</p></li>
+
+<li><p>-Infinity 负无穷大</p>
+
+<pre><code>console.log(-3e456498794465465)
+</code></pre>
+
+<p>控制台会显示：<img src="/images/infinity2.png" alt="" /></p></li>
+
+<li><p><strong>NaN</strong> 英语全名叫做not a number，不是一个数。比较哲学的是，这个“不是一个数”是一个数字字面量。</p>
+
+<pre><code>console.log(0/0)
+</code></pre>
+
+<p>控制台会显示：<img src="/images/NaN.png" alt="" />
+总结一下，数字字面量有整数字面量（十进制、16进制、八进制），浮点数字面量（要记住e），Infinity，NaN</p></li>
+</ul></li>
+</ol>
+
+<h3 id="字符串的字面量">字符串的字面量</h3>
+
+<p>字符串是一个术语，就是人类说的语句、词。</p>
+
+<p>字符串的字面量，必须用<strong>双引号、单引号</strong>包裹起来。字符串被限定在同种引号之间；也即，必须是<strong>成对</strong>单引号或<strong>成对</strong>双引号。</p>
+
+<ol>
+<li>如果一个数字，用引号引起来，那么就是字符串了：<code>console.log(&quot;3&quot;)</code></li>
+
+<li><p>转义字符：</p>
+
+<ul>
+<li><code>\n</code> 回车换行</li>
+<li><code>\t</code> tab缩进</li>
+
+<li><pre><code class="language-javascript">alert(&quot;你好\n啊\n我很爱你\n啊&quot;);
+</code></pre>
+
+<p>输出效果：<img src="/images/zhuanyizifu.png" alt="" /></p></li>
+
+<li><p>可以用<code>\&quot;</code>来表达引号: <code>console.log(&quot;老师说你像\&quot;考拉\&quot;一样漂亮&quot;)</code></p></li>
+
+<li><p>也可以用<code>\\</code>来表达\号：<code>console.log(&quot;c:\\a\\b.jpg&quot;)</code></p></li>
+</ul></li>
+</ol>
+
+<h2 id="变量">变量</h2>
+
+<h3 id="整体感知">整体感知：</h3>
+
+<p>变量（Variables）,和高中代数学习的x、y、z很像，它们不是字母，而是蕴含值的符号。</p>
+
+<pre><code class="language-javascript">&lt;script&gt;
+    var a;  //定义一个变量
+    a = 100;  //赋值
+    console.log(a);  //输出变量
+&lt;/script&gt;
+</code></pre>
+
+<p>我们使用<strong>var</strong>关键字来定义变量，所谓的关键字就是一些<strong>有特殊功能的小词语</strong>，关键字后面要有空格。</p>
+
+<h3 id="变量必须先声明-定义-才能使用">变量必须先声明（定义）才能使用：</h3>
+
+<p>变量的名称就是标识符（identifiers），任何标识符的命名都要遵守一定的<strong>规则</strong>：</p>
+
+<ul>
+<li>js语言中，一个标识符可以由字母、下划线(_)、美元符($)、数字(0-9)组成，但是<strong>不能以数字开头</strong></li>
+<li>js是区分大小写的，即A和a不是同一个变量</li>
+<li>标识符不能是js的<strong>保留字</strong>和<strong>关键字</strong></li>
+<li><strong>保留字</strong>是系统里面的有用途的字，有这些：
+
+<ul>
+<li><strong>abstract、boolean、byte、char、class、const、debugger、double、enum、export、extends、fimal、float
+goto、implements、import、int、interface、long、mative、package、private、protected、public、short、static、super、synchronized、throws、transient、volatile</strong></li>
+</ul></li>
+</ul>
+
+<p>非法标识符举例：</p>
+
+<pre><code class="language-javascript">var 123a;  //不能数字开头
+var 12_a;  //不能数字开头
+var abc@163;  //不能有特殊符号，符号只能有_和$
+var abc￥;  //不能有特殊符号，符号只能有_和$
+var var;  //不能是关键字
+var class;  //不能是保留字
+</code></pre>
+
+<h3 id="变量的赋值">变量的赋值：</h3>
+
+<p>变量的赋值用等号，等号就是赋值的符号，在JS中等号<strong>没有其他的含义，等号就是赋值</strong>。等号右边的值给左边，<strong>等号右边的值不变</strong>。</p>
+
+<p>如果一个变量，仅仅被var了，但是没有被赋初值呢，此时这个变量的值就是<strong>undefined</strong>：</p>
+
+<pre><code class="language-javascript">var m;
+console.log(m)  //输出undefined
+</code></pre>
+
+<p>实际上我们已经var了这个m，已经定义了这个m，只不过这就是浏览器的一个规矩，如果这个变量没有被赋初值，那么这个变量就视为没有“定义完成”。值就是undefined</p>
+
+<h3 id="变量声明的提升">变量声明的提升:</h3>
+
+<p>这是js特有的一个特点，其他语言都没有这个特点。有些程序员挺反感这个特点的。</p>
+
+<p>我们现在先去改变变量的值，然后定义变量，由于JS有一个机制，叫做变量声明的提升，所以现在程序在执行前会已经看见这个程序中有一行定义变量，所以就会提升到程序开头去运行：</p>
+
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+    a = 100;
+    var a;  //这行定义变量会自动提升到所有语句之前
+    console.log(a);
+&lt;/script&gt;
+</code></pre>
+
+<p>记住，js只能提升变量的声明，而不能提升变量的赋初值：</p>
+
+<pre><code class="language-javascript">console.log(a);
+var a = 100;  //输出undefined
+</code></pre>
+
+<p>等价于：</p>
+
+<pre><code class="language-javascript">var a;  //变量声明自动提升到第一行
+console.log(a);
+a = 100;  //但是赋初值还留在原地
+</code></pre>
+
+<h3 id="不写var的情况">不写var的情况：</h3>
+
+<pre><code class="language-javascript">abc = 123;
+console.log(abc);  //输出123
+</code></pre>
+
+<p>定义abc的时候没有写var，程序没有报错，说明这个abc变量真的已经被定义成功了。现在你看不出来var和不var的区别，感觉都是成功的，但是日后你就会知道<strong>不写var定义了一个全局变量，作用域是不能控制的</strong>。</p>
+
+<h3 id="用逗号来隔开多个变量的定义">用逗号来隔开多个变量的定义：</h3>
+
+<pre><code>var a = 7,b = 9,c = 10;
+</code></pre>
+
+<p>逗号这个表示法，只能用于变量的连续定义，不要瞎用。</p>
+
+<h3 id="变量的类型">变量的类型：</h3>
+
+<p>基本类型 5 种：</p>
+
+<ol>
+<li>number  数字类型</li>
+<li>string  字符串类型</li>
+<li>boolean  布尔类型，仅有 true 和 false</li>
+<li>null  这个值自己是一种类型</li>
+<li>undefined  一个变量只var过，没有赋初值，它的默认值是undefined;这个值自己是一种类型</li>
+</ol>
+
+<p>引用类型：以后再说</p>
+
+<p><code>typeof</code>关键字：用来检测一个变量的类型：</p>
+
+<pre><code>var a = 100;
+console.log(typeof a);  //输出 number
+</code></pre>
+
+<p><strong>所有的数字都是 number 类型</strong>：</p>
+
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    //下面定义的变量都是number类型
+    var a = 100;
+    var b = 234243245345;
+    var c = -345345435435;
+    var d = 345.3245234;
+    var e = .5e6;
+    var f = 0xff;
+    var g = 017;
+    var h = Infinity;
+    var i = NaN;
+
+    console.log(typeof a);
+    console.log(typeof b);
+    console.log(typeof c);
+    console.log(typeof d);
+    console.log(typeof e);
+    console.log(typeof f);
+    console.log(typeof g);
+    console.log(typeof h);
+    console.log(typeof i);
+&lt;/script&gt;
+</code></pre>
+
+<p>JS中所有的数字都是number类型的，不在细分为整形int、浮点型float这些乱七八糟的东西。</p>
+
+<p>number类型的东西：所有数字（不分正负、不分整浮、不分大小、不分进制）、Infinity、NaN。</p>
+
+<p><strong>string类型：</strong></p>
+
+<pre><code class="language-javascript">//下面定义的变量都是string类型
+var m1 = &quot;哈哈&quot;;
+var m2 = &quot;123&quot;;	
+var m3 = &quot;&quot;;  //空字符串，也是字符串
+console.log(typeof m1);
+console.log(typeof m2);
+console.log(typeof m3);
+</code></pre>
+
+<h3 id="变量类型的转换">变量类型的转换：</h3>
+
+<p>先来学习一个语句，这个语句和 alert 差不多，也是弹窗，弹的是输入框：</p>
+
+<pre><code class="language-javascript">prompt(&quot;请输入您的电话号码&quot;,&quot;139&quot;);
+</code></pre>
+
+<p>弹框如图所示：<img src="/images/prompt.png" alt="" /></p>
+
+<p>用prompt接收的任何东西都是字符串，哪怕用户输入了一个数字，也是字符串的数字。</p>
+
+<p>这些小功能，<strong>就叫做程序给我们提供的API</strong>，每个API都有自己不同的语法。</p>
+
+<ol>
+<li><p>parseInt()</p>
+
+<ul>
+<li>parseInt就是<strong>将一个string转为一个整数</strong>，不四舍五入，直接截取整数部分。如果这个string有乱七八糟的东西，那么就截取前面数字部分。</li>
+
+<li><p>parseInt()不仅仅能够将一个 string 转为整数，更能进行一个进制的转换，把任何进制的数字，都换为10进制。进制和要转换的字符串，用逗号隔开。</p>
+
+<pre><code class="language-javascript">//下面的运算结果都是 15
+parseInt(15,10)
+parseInt(17,8)
+parseInt(1111,2)
+parseInt(&quot;0xf&quot;,16)
+parseInt(&quot;f&quot;,16)
+parseInt(16,9)
+parseInt(&quot;15e6&quot;,10)
+parseInt(&quot;15*6&quot;,10)
+</code></pre></li>
+
+<li><p>parseInt如果不能转，那么就返回NaN：</p>
+
+<pre><code class="language-javascript">parseInt(&quot;Hello&quot;,8);
+parseInt(&quot;546&quot;,2);
+parseInt(&quot;三百六十五&quot;)
+</code></pre></li>
+</ul></li>
+
+<li><p>parseFloat()</p>
+
+<ul>
+<li>parseFloat就是将字符串转为浮点数</li>
+
+<li><p>尽可能的将一个字符串转为浮点数，浮点数之后如果有乱七八糟的内容，直接舍弃</p>
+
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;&gt;
+var a = &quot;123.67.88&quot;;
+var b = parseFloat(a);
+console.log(b);  //控制台输出 123.67
+&lt;/script&gt;
+</code></pre></li>
+</ul></li>
+
+<li><p>number → string:</p>
+
+<ul>
+<li><p>将一个数字，与一个空字符串进行连字符运算，那么就是自动转为字符串了。</p>
+
+<pre><code class="language-javascript">var a = 123;
+var b = a + &quot;&quot;;
+console.log(b);  //输出字符串 123
+console.log(typeof b);  //控制台输出 string
+</code></pre></li>
+</ul></li>
+</ol>
+
+<h2 id="数学运算符">数学运算符</h2>
+
+<ol>
+<li>+ 加法</li>
+<li>- 减法</li>
+<li>* 乘法</li>
+<li>/ 除法</li>
+<li>% 取余数</li>
+<li>() 括号</li>
+</ol>
+
+<p>乘方API: <code>Math.pow(3,4)</code> <strong>表示3的4次方</strong></p>
+
+<p>根号API: <code>Math.sqrt(81)</code> <strong>表示81开根号</strong></p>
+
+<h2 id="总结今天学习的所有-api">总结今天学习的所有 API：</h2>
+
+<ol>
+<li>alert(&ldquo;哈哈&rdquo;);</li>
+<li>prompt(&ldquo;请输入数字&rdquo;,&ldquo;默认值&rdquo;);</li>
+<li>console.log(&ldquo;哈哈&rdquo;);</li>
+<li>parseInt(&ldquo;123&rdquo;,8);</li>
+<li>parseFloat(&ldquo;123&rdquo;);</li>
+<li>Math.pow(3,4);</li>
+<li>Math.sqrt(81);</li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

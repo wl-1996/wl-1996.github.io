@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | DOM</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="DOM" />
+<meta property="og:description" content="基本概念  学习 DOM 需要什么知识？  理解简单的 JS 语法，如变量、if else、循环 会背 JS 的其中数据类型-四基两空一对象：number,string,bool,symbol,null,undefined,object 知道 JS 的五个 falsy 值：0、NaN、null、undefined、&rdquo;&rdquo; 知道函数是对象，数组也是对象 会用 div 和 span 标签 会简单的 CSS 布局  网页其实就是一棵树-DOM（文档对象模型）树  例如这段代码 对应的 DOM 树就是：  JS 如何操作这棵树？  浏览器往 window 上加一个 document 即可 JS 用 document 操作网页，这就是 Document Object Model 文档对象模型  DOM 获取元素，也叫标签  window.id 或者直接 id document.getElementById(&lsquo;div&rsquo;) document.getElementsByTagName(&lsquo;div&rsquo;)[0] document.getElementsByClassName(&lsquo;red&rsquo;)[0] document.querySelector(&lsquo;#div&rsquo;) document.querySelectorAll(&lsquo;.red&rsquo;)[0]  注意  工作中用 document.querySelector 和 document." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/dom/" />
+<meta property="article:published_time" content="2019-10-29T15:14:10+08:00" />
+<meta property="article:modified_time" content="2019-10-29T15:14:10+08:00" />
+<meta itemprop="name" content="DOM">
+<meta itemprop="description" content="基本概念  学习 DOM 需要什么知识？  理解简单的 JS 语法，如变量、if else、循环 会背 JS 的其中数据类型-四基两空一对象：number,string,bool,symbol,null,undefined,object 知道 JS 的五个 falsy 值：0、NaN、null、undefined、&rdquo;&rdquo; 知道函数是对象，数组也是对象 会用 div 和 span 标签 会简单的 CSS 布局  网页其实就是一棵树-DOM（文档对象模型）树  例如这段代码 对应的 DOM 树就是：  JS 如何操作这棵树？  浏览器往 window 上加一个 document 即可 JS 用 document 操作网页，这就是 Document Object Model 文档对象模型  DOM 获取元素，也叫标签  window.id 或者直接 id document.getElementById(&lsquo;div&rsquo;) document.getElementsByTagName(&lsquo;div&rsquo;)[0] document.getElementsByClassName(&lsquo;red&rsquo;)[0] document.querySelector(&lsquo;#div&rsquo;) document.querySelectorAll(&lsquo;.red&rsquo;)[0]  注意  工作中用 document.querySelector 和 document.">
+
+
+<meta itemprop="datePublished" content="2019-10-29T15:14:10&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-29T15:14:10&#43;08:00" />
+<meta itemprop="wordCount" content="383">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DOM"/>
+<meta name="twitter:description" content="基本概念  学习 DOM 需要什么知识？  理解简单的 JS 语法，如变量、if else、循环 会背 JS 的其中数据类型-四基两空一对象：number,string,bool,symbol,null,undefined,object 知道 JS 的五个 falsy 值：0、NaN、null、undefined、&rdquo;&rdquo; 知道函数是对象，数组也是对象 会用 div 和 span 标签 会简单的 CSS 布局  网页其实就是一棵树-DOM（文档对象模型）树  例如这段代码 对应的 DOM 树就是：  JS 如何操作这棵树？  浏览器往 window 上加一个 document 即可 JS 用 document 操作网页，这就是 Document Object Model 文档对象模型  DOM 获取元素，也叫标签  window.id 或者直接 id document.getElementById(&lsquo;div&rsquo;) document.getElementsByTagName(&lsquo;div&rsquo;)[0] document.getElementsByClassName(&lsquo;red&rsquo;)[0] document.querySelector(&lsquo;#div&rsquo;) document.querySelectorAll(&lsquo;.red&rsquo;)[0]  注意  工作中用 document.querySelector 和 document."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/dom/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/dom/&amp;text=DOM" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/dom/&amp;title=DOM" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">DOM</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-10-29T15:14:10&#43;08:00">October 29, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="基本概念">基本概念</h2>
+
+<ol>
+<li>学习 DOM 需要什么知识？
+
+<ul>
+<li>理解简单的 JS 语法，如变量、if else、循环</li>
+<li>会背 JS 的其中数据类型-四基两空一对象：number,string,bool,symbol,null,undefined,object</li>
+<li>知道 JS 的五个 falsy 值：0、NaN、null、undefined、&rdquo;&rdquo;</li>
+<li>知道函数是对象，数组也是对象</li>
+<li>会用 div 和 span 标签</li>
+<li>会简单的 CSS 布局</li>
+</ul></li>
+<li>网页其实就是一棵树-DOM（文档对象模型）树
+
+<ul>
+<li>例如这段代码<img src="../../images/code.png" alt="这是代码" /></li>
+<li>对应的 DOM 树就是：<img src="../../images/DOM tree.png" alt="" /></li>
+</ul></li>
+<li>JS 如何操作这棵树？
+
+<ul>
+<li>浏览器往 window 上加一个 document 即可</li>
+<li>JS 用 document 操作网页，这就是 Document Object Model 文档对象模型</li>
+</ul></li>
+<li>DOM 获取元素，也叫标签
+
+<ul>
+<li>window.id 或者直接 id</li>
+<li>document.getElementById(&lsquo;div&rsquo;)</li>
+<li>document.getElementsByTagName(&lsquo;div&rsquo;)[0]</li>
+<li>document.getElementsByClassName(&lsquo;red&rsquo;)[0]</li>
+<li>document.querySelector(&lsquo;#div&rsquo;)</li>
+<li>document.querySelectorAll(&lsquo;.red&rsquo;)[0]</li>
+</ul></li>
+<li>注意
+
+<ul>
+<li>工作中用 document.querySelector 和 document.querySelectorAll</li>
+<li>做 demo 可以直接用 window.id 或者 id,但是同事可能不知道这个方法</li>
+<li>要兼容 IE 的可怜虫才用 getElement(s)ByXXX</li>
+</ul></li>
+<li>获取特定元素
+
+<ul>
+<li>获取 html 元素:document.documentElement</li>
+<li>获取 head 元素:document.head</li>
+<li>获取 body 元素：document.body</li>
+<li>获取窗口：window</li>
+<li>获取所有元素：document.all</li>
+<li>document.all 是个奇葩，是第 6 个 falsy 值</li>
+</ul></li>
+<li>获取到的元素是什么？-是一个对象，它有六层原型：
+
+<ul>
+<li><img src="../../images/six prototype.png" alt="" /></li>
+</ul></li>
+<li>节点 Node 包括以下几种
+
+<ul>
+<li>1 表示元素 Element，也叫标签 Tag</li>
+<li>3 表示文本 Text</li>
+<li>8 表示注释 Comment</li>
+<li>9 表示文档 Document</li>
+<li>11 表示文档片段 DocumentFragment</li>
+<li>记住 1 和 3 即可</li>
+</ul></li>
+</ol>
+
+<h2 id="节点的增删改查-程序员的宿命就是增删改查">节点的增删改查-程序员的宿命就是增删改查</h2>
+
+<h3 id="增">增</h3>
+
+<ol>
+<li>创建一个标签节点
+
+<ul>
+<li>let div1 = document.createElement(&lsquo;div&rsquo;)</li>
+<li>document.createElement(&lsquo;style&rsquo;)</li>
+<li>document.createElement(&lsquo;script&rsquo;)</li>
+<li>document.createElement(&lsquo;li&rsquo;)</li>
+</ul></li>
+<li>创建一个文本节点
+
+<ul>
+<li>text1 = document.createTextNode(&lsquo;你好&rsquo;)</li>
+</ul></li>
+<li>标签里面插入文本
+
+<ul>
+<li>div1.appendChild(text1)</li>
+<li>div1.innerText = &lsquo;你好&rsquo; 或者 div1.textContent = &lsquo;你好&rsquo;</li>
+<li>但是不能用 div1.appendChild(&lsquo;你好&rsquo;)</li>
+</ul></li>
+<li>插入页面中
+
+<ul>
+<li>你创建的标签默认处于 JS 线程中</li>
+<li>你必须把它插到 head 或者 body 里面，它才会生效</li>
+<li>document.body.appendChild(div1)</li>
+<li>或者已在页面中的元素.appendChild(div1)</li>
+</ul></li>
+
+<li><p>页面中有 div#test1 和 div#test2</p>
+
+<pre><code class="language-javaScript">let div = document.createElement(&quot;div&quot;);
+test1.appendChild(div);
+test2.appendChild(div);
+</code></pre>
+
+<ul>
+<li>请问最终 div 出现在哪里？</li>
+<li>答：test2 里面，一个元素不能出现在两个地方，除非复制一份</li>
+</ul></li>
+</ol>
+
+<h3 id="删">删</h3>
+
+<ol>
+<li>两种方法
+
+<ul>
+<li>旧方法：parentNode.removeChild(childNode)</li>
+<li>新方法： childNode.remove()</li>
+</ul></li>
+<li>如果一个 node 被移出页面（DOM 树），那么它还可以再次回到页面中么？
+
+<ul>
+<li>可以，因为只是移出到内存中，并未被删除，可以重新添加该节点</li>
+</ul></li>
+</ol>
+
+<h3 id="改属性">改属性</h3>
+
+<ol>
+<li>写标准属性
+
+<ul>
+<li>改 class: div.className = &lsquo;red blue&rsquo;(会覆盖之前的类)</li>
+<li>改 class: div.classList.add(&lsquo;red&rsquo;)(不会覆盖之前的)</li>
+<li>改 style: div.style = &lsquo;width:100px;color:blue;&rsquo;</li>
+<li>改 style 的一部分: div.style.width = &lsquo;200px&rsquo;</li>
+<li>大小写: div.style.backgroundColor = &lsquo;white&rsquo;</li>
+<li>改 data-*属性: div.dataSet.x = &lsquo;frank&rsquo;</li>
+</ul></li>
+<li>读标准属性
+
+<ul>
+<li>div.classList / a.href</li>
+<li>div.getAttribute(&lsquo;class&rsquo;) / a.getAttribute(&lsquo;href&rsquo;)</li>
+<li>两种方法都可以，但值可能稍微有些不同</li>
+</ul></li>
+</ol>
+
+<h3 id="改事件处理函数">改事件处理函数</h3>
+
+<ol>
+<li>div.onclick 默认为 null
+
+<ul>
+<li>默认点击 div 不会有任何事情发生</li>
+<li>但是如果你把 div.onclick 改为一个函数 fn</li>
+<li>那么点击 div 的时候，浏览器就会调用这个函数</li>
+<li>并且是这样调用的 fn.call(div,event)</li>
+<li>div 会被当作 this</li>
+<li>event 则包含了点击时间的所有信息，如坐标</li>
+</ul></li>
+<li>div.addEventListener
+
+<ul>
+<li>是 div.onclick 的升级版，之后的课程单独讲</li>
+</ul></li>
+</ol>
+
+<h3 id="改内容">改内容</h3>
+
+<ol>
+<li>改文本内容
+
+<ul>
+<li>div.innerText = &lsquo;xxx&rsquo;</li>
+<li>div.textContent = &lsquo;xxx&rsquo;</li>
+<li>两者几乎没有区别</li>
+</ul></li>
+<li>改 HTML 内容
+
+<ul>
+<li>div.innerHTML = &lsquo;<strong>重要内容</strong>&lsquo;</li>
+</ul></li>
+<li>改标签
+
+<ul>
+<li>div.innerHTML = &ldquo;//先清空</li>
+<li>div.appendChild(div2)//再加内容</li>
+</ul></li>
+<li>改爸爸
+
+<ul>
+<li>newParent.appendChild(div)//直接这样就可以了，直接从原来的地方消失</li>
+</ul></li>
+</ol>
+
+<h3 id="查">查</h3>
+
+<ol>
+<li>查爸爸：node.parentNode 或者 node.parentElement</li>
+<li>查爷爷：node.parentNode.parentNode</li>
+<li>查子代：node.childNodes 或者 node.children</li>
+<li>查兄弟姐妹：
+
+<ul>
+<li>node.parentNode.childNodes(还要排除自己)</li>
+<li>node.parentNode.children(还要排除自己)</li>
+</ul></li>
+<li>查看老大：node.firstChild</li>
+<li>查看老幺：node.lastChild</li>
+<li>查看上一个哥哥/姐姐: node.previousSibling</li>
+<li>查看下一个弟弟/妹妹： node.nextSibling</li>
+</ol>
+
+<h2 id="dom-操作是跨线程的">DOM 操作是跨线程的</h2>
+
+<ol>
+<li>浏览器分为渲染引擎和 JS 引擎</li>
+<li>各线程各司其职
+
+<ul>
+<li>JS 引擎不能操作页面，只能操作 JS</li>
+<li>渲染引擎不能操作 JS，只能操作页面</li>
+<li>document.body.appendChild(div1)</li>
+<li>这句 JS 是如何改变页面的？</li>
+</ul></li>
+<li>跨线程通信
+
+<ul>
+<li>当浏览器发现 JS 在 body 里面加了个 div1 对象</li>
+<li>浏览器就会通知渲染引擎在页面里也新增一个 div 元素</li>
+<li>新增的 div 元素所有属性都照抄 div1 对象</li>
+</ul></li>
+<li>插入新标签的完整过程
+
+<ul>
+<li>在 div1 放入页面之前：你对 div1 所有的操作都属于 JS 线程内的操作</li>
+<li>把 div1 放入页面之时：浏览器会发现 JS 的意图，就会通知渲染线程在页面中渲染 div1 对应的元素</li>
+<li>把 div1 放入页面之后
+
+<ul>
+<li>你对 div1 的操作都有可能会触发重新渲染</li>
+<li>div1.id = &lsquo;newId&rsquo;可能会重新渲染，也可能不会</li>
+<li>div1.title = &lsquo;nes&rsquo;可能会重新渲染，也可能不会</li>
+<li>如果你连续对 div1 多次操作，浏览器可能会合并成一次操作，也可能不会</li>
+</ul></li>
+</ul></li>
+<li>属性同步
+
+<ul>
+<li>标准属性
+
+<ul>
+<li>对 div1 的标准属性的修改，会被浏览器同步到页面中</li>
+<li>比如 id、className、title</li>
+</ul></li>
+<li>data-*属性
+
+<ul>
+<li>同上</li>
+</ul></li>
+<li>非标准属性
+
+<ul>
+<li>对非标准属性的修改，则只会停留在 JS 线程中</li>
+<li>不会同步到页面里</li>
+</ul></li>
+<li>启示
+
+<ul>
+<li>如果你有自定义属性，又想被同步到页面中，请使用 <strong>data-x</strong> 作为前缀</li>
+</ul></li>
+</ul></li>
+<li>Property v.s. Attribute
+
+<ul>
+<li>JS 线程中 div1 的所有属性，叫做 div1 的 property</li>
+<li>渲染引擎中 div1 对应标签的属性，叫做 attribute</li>
+<li>区别：
+
+<ul>
+<li>大部分时候，同名的 property 和 attribute 值相等</li>
+<li>但如果不是标准属性，那么它俩只会在一开始时相等</li>
+<li>但注意 attribute 只支持字符串</li>
+<li>而 property 支持字符串、布尔等类型</li>
+</ul></li>
+</ul></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

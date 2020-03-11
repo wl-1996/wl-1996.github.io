@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | JQuery学习-1</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JQuery学习-1" />
+<meta property="og:description" content="jQuery 要知道的重要一件事是jQuery 只是一个 JavaScript 库。jQuery 的所有功能都可以通过 JavaScript 进行访问，因此对 JavaScript 的深入了解对于理解，构建和调试代码至关重要。随着时间的流逝，定期使用 jQuery 可以提高您对 JavaScript 的熟练程度。
+目前，互联网上最好的 jQuery 入门教材，是 Rebecca Murphey 写的《jQuery 基础》（jQuery Fundamentals）。在 Google 里搜索&rdquo;jQuery 培训&rdquo;，此书排在第一位。jQuery 官方团队已经同意，把此书作为官方教程的基础。
+jQuery 的基本设计思想和主要用法，就是&rdquo;选择某个网页元素，然后对其进行某种操作&ldquo;。_这是它区别于其他 Javascript 库的根本特点_。
+jQuery 如何获取元素 使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+ 选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myID的网页元素 $(&#39;.myClass&#39;) //选择class为myClass的元素 $(&#39;input[name=first]&#39;) //选择name属性等于first的input元素  选择表达式也可以是 jQuery 特有的表达式：
+$(&#39;a:first&#39;) //选择第一个a元素 $(&#39;a:last&#39;) //选择最后一个a元素 $(&#39;tr:odd&#39;) //选择表格下标是奇数的行 $(&#39;p:even&#39;) //选择下标为偶数的p $(&#39;#myForm:input&#39;) //选择表单中的input元素 $(&#39;div:animated&#39;) //选择当前处于动画状态的div元素 $(&#39;div:eq(3)&#39;) //选择下标为3的div元素 $(&#39;div:gt(3)&#39;) //选择下标大于3的div元素 $(&#39;div:lt(3)&#39;) //选择下标小于3的div元素   改变结果集 jQuery设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，从而缩小选择的结果" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-1/" />
+<meta property="article:published_time" content="2019-11-01T10:46:28+08:00" />
+<meta property="article:modified_time" content="2019-11-01T10:46:28+08:00" />
+<meta itemprop="name" content="JQuery学习-1">
+<meta itemprop="description" content="jQuery 要知道的重要一件事是jQuery 只是一个 JavaScript 库。jQuery 的所有功能都可以通过 JavaScript 进行访问，因此对 JavaScript 的深入了解对于理解，构建和调试代码至关重要。随着时间的流逝，定期使用 jQuery 可以提高您对 JavaScript 的熟练程度。
+目前，互联网上最好的 jQuery 入门教材，是 Rebecca Murphey 写的《jQuery 基础》（jQuery Fundamentals）。在 Google 里搜索&rdquo;jQuery 培训&rdquo;，此书排在第一位。jQuery 官方团队已经同意，把此书作为官方教程的基础。
+jQuery 的基本设计思想和主要用法，就是&rdquo;选择某个网页元素，然后对其进行某种操作&ldquo;。_这是它区别于其他 Javascript 库的根本特点_。
+jQuery 如何获取元素 使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+ 选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myID的网页元素 $(&#39;.myClass&#39;) //选择class为myClass的元素 $(&#39;input[name=first]&#39;) //选择name属性等于first的input元素  选择表达式也可以是 jQuery 特有的表达式：
+$(&#39;a:first&#39;) //选择第一个a元素 $(&#39;a:last&#39;) //选择最后一个a元素 $(&#39;tr:odd&#39;) //选择表格下标是奇数的行 $(&#39;p:even&#39;) //选择下标为偶数的p $(&#39;#myForm:input&#39;) //选择表单中的input元素 $(&#39;div:animated&#39;) //选择当前处于动画状态的div元素 $(&#39;div:eq(3)&#39;) //选择下标为3的div元素 $(&#39;div:gt(3)&#39;) //选择下标大于3的div元素 $(&#39;div:lt(3)&#39;) //选择下标小于3的div元素   改变结果集 jQuery设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，从而缩小选择的结果">
+
+
+<meta itemprop="datePublished" content="2019-11-01T10:46:28&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-01T10:46:28&#43;08:00" />
+<meta itemprop="wordCount" content="237">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JQuery学习-1"/>
+<meta name="twitter:description" content="jQuery 要知道的重要一件事是jQuery 只是一个 JavaScript 库。jQuery 的所有功能都可以通过 JavaScript 进行访问，因此对 JavaScript 的深入了解对于理解，构建和调试代码至关重要。随着时间的流逝，定期使用 jQuery 可以提高您对 JavaScript 的熟练程度。
+目前，互联网上最好的 jQuery 入门教材，是 Rebecca Murphey 写的《jQuery 基础》（jQuery Fundamentals）。在 Google 里搜索&rdquo;jQuery 培训&rdquo;，此书排在第一位。jQuery 官方团队已经同意，把此书作为官方教程的基础。
+jQuery 的基本设计思想和主要用法，就是&rdquo;选择某个网页元素，然后对其进行某种操作&ldquo;。_这是它区别于其他 Javascript 库的根本特点_。
+jQuery 如何获取元素 使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+ 选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myID的网页元素 $(&#39;.myClass&#39;) //选择class为myClass的元素 $(&#39;input[name=first]&#39;) //选择name属性等于first的input元素  选择表达式也可以是 jQuery 特有的表达式：
+$(&#39;a:first&#39;) //选择第一个a元素 $(&#39;a:last&#39;) //选择最后一个a元素 $(&#39;tr:odd&#39;) //选择表格下标是奇数的行 $(&#39;p:even&#39;) //选择下标为偶数的p $(&#39;#myForm:input&#39;) //选择表单中的input元素 $(&#39;div:animated&#39;) //选择当前处于动画状态的div元素 $(&#39;div:eq(3)&#39;) //选择下标为3的div元素 $(&#39;div:gt(3)&#39;) //选择下标大于3的div元素 $(&#39;div:lt(3)&#39;) //选择下标小于3的div元素   改变结果集 jQuery设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，从而缩小选择的结果"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-1/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-1/&amp;text=JQuery%e5%ad%a6%e4%b9%a0-1" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/jquery%E5%AD%A6%E4%B9%A0-1/&amp;title=JQuery%e5%ad%a6%e4%b9%a0-1" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">JQuery学习-1</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-01T10:46:28&#43;08:00">November 1, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="jquery">jQuery</h1>
+
+<p>要知道的重要一件事是<strong>jQuery 只是一个 JavaScript 库</strong>。jQuery 的所有功能都可以通过 JavaScript 进行访问，因此对 JavaScript 的深入了解对于理解，构建和调试代码至关重要。随着时间的流逝，定期使用 jQuery 可以提高您对 JavaScript 的熟练程度。</p>
+
+<p>目前，互联网上最好的 jQuery 入门教材，是 Rebecca Murphey 写的《<strong>jQuery 基础</strong>》<strong>（jQuery Fundamentals）</strong>。在 Google 里搜索&rdquo;jQuery 培训&rdquo;，此书排在第一位。jQuery 官方团队已经同意，把此书作为官方教程的基础。</p>
+
+<p>jQuery 的基本设计思想和主要用法，就是&rdquo;<strong>选择某个网页元素，然后对其进行某种操作</strong>&ldquo;。_这是它区别于其他 Javascript 库的根本特点_。</p>
+
+<h2 id="jquery-如何获取元素">jQuery 如何获取元素</h2>
+
+<p>使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为<code>$</code>），然后得到被选中的元素。</p>
+
+<ol>
+<li><p>选择表达式可以是 CSS 选择器：</p>
+
+<pre><code class="language-javaScript">$(document)            //选择整个文档对象
+$('#myId')             //选择ID为myID的网页元素
+$('.myClass')          //选择class为myClass的元素
+$('input[name=first]') //选择name属性等于first的input元素
+</code></pre></li>
+
+<li><p>选择表达式也可以是 jQuery 特有的表达式：</p>
+
+<pre><code class="language-javaScript">$('a:first')          //选择第一个a元素
+$('a:last')           //选择最后一个a元素
+$('tr:odd')           //选择表格下标是奇数的行
+$('p:even')           //选择下标为偶数的p
+$('#myForm:input')    //选择表单中的input元素
+$('div:animated')     //选择当前处于动画状态的div元素
+$('div:eq(3)')        //选择下标为3的div元素
+$('div:gt(3)')        //选择下标大于3的div元素
+$('div:lt(3)')        //选择下标小于3的div元素
+</code></pre></li>
+</ol>
+
+<h2 id="改变结果集">改变结果集</h2>
+
+<p>jQuery<strong>设计思想之二</strong>，就是提供各种强大的<strong>过滤器</strong>，对结果集进行筛选，从而缩小选择的结果</p>
+
+<pre><code class="language-javaScript">$('div').has('p');            //选择包含p元素的div元素
+$('div').not('.myClass);      //选择class不等于myClass的div元素
+$('div').filter('.myClass');  //选择class等于myClass的div元素
+$('div').first();             //选择第一个div元素
+$('div').eq(5);               //选择下标为5也就是第六个div元素
+</code></pre>
+
+<p>有时，我们需要从结果集出发，移动到附近的相关元素，jQuery 也提供了在 DOM 树上的移动方法:</p>
+
+<pre><code class="language-javaScript">$('div').next('p');       //选择div元素后面的第一个p元素
+$('div').parent();        //选择div元素的父元素
+$('div').closest('form'); //选择距离div最近的form父元素
+$('div').children();      //选择div的所有子元素
+$('div').siblings();      //选择div的兄弟姐妹
+</code></pre>
+
+<h2 id="jquery-的链式操作是怎样的">jQuery 的链式操作是怎样的</h2>
+
+<p>jQuery<strong>设计思想之三</strong>，就是最终选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来，比如：</p>
+
+<ul>
+<li><code>('div').find('h3').eq(2).html('Hello')</code></li>
+
+<li><p>上边的链式操作分开就是下面这样：</p>
+
+<pre><code class="language-javaScript">$('div')           //找到div元素
+ .find('h3')       //再选择div里的h3元素
+  .eq(2)           //再选择第三个h3元素
+   .html('Hello'); //将它的内容改为Hello
+</code></pre></li>
+</ul>
+
+<p>这是 jQuery 最令人称道、最方便的特点。它的原理在于<strong>每一步的 jQuery 操作</strong>，返回的都是一个<strong>jQuery 对象</strong>，所以不同操作可以连在一起。</p>
+
+<p>jQuery 还提供了.end()方法，使得结果集可以后退一步：</p>
+
+<pre><code class="language-javaScript">$('div')
+  .find('h3')
+    .eq(2)
+      .html('Hello')
+        .end()            //退回到选中所有h3元素的那一步
+          .eq(0)          //选中第一个h3元素
+            .html('Word); //将它的内容改为Word
+</code></pre>
+
+<h2 id="元素的取值和赋值">元素的取值和赋值</h2>
+
+<p>操作网页元素，<strong>最常见的需求</strong>是取得它们的值，或者对它们进行赋值。</p>
+
+<p>jQuery<strong>设计思想之四</strong>，就是使用同一个函数，来完成取值（getter）和赋值（setter），即&rdquo;取值器&rdquo;与&rdquo;赋值器&rdquo;合一。到底是取值还是赋值，由函数的参数决定。</p>
+
+<p>例如：</p>
+
+<pre><code class="language-javaScript">$('h1').html();        //html()没有参数，表示取出h1的值
+$('h1').html('Hello'); //html()有参数'Hello',表示对h1进行赋值
+</code></pre>
+
+<p>常见的取值和赋值函数如下：</p>
+
+<pre><code class="language-javaScript">.html()   //取出或设置html内容
+.text()   //取出或设置text内容
+.attr()   //取出或设置某个属性的值
+.width()  //取出或设置某个元素的宽度
+.height() //取出或设置某个元素的高度
+.val()    //取出或设置某个表单元素的值
+</code></pre>
+
+<p>需要注意的是，如果结果集包含多个元素，那么赋值的时候，将对其中所有的元素赋值；取值的时候，则是只取出第一个元素的值。<code>.text()</code>例外，它取出所有元素的 text 内容。</p>
+
+<h2 id="jquery-如何移动元素">jQuery 如何移动元素</h2>
+
+<p>jQuery<strong>设计思想之五</strong>，就是提供两组方法，来操作元素在网页中的位置移动。一组方法是直接移动该元素，另一组方法是移动其他元素，使得目标元素达到我们想要的位置。</p>
+
+<p>假定我们选中了一个 div 元素，需要把它移动到 p 元素后面。</p>
+
+<p>第一种方法是使用.insertAfter()，把 div 元素移动 p 元素后面：</p>
+
+<pre><code class="language-javaScript">$('div').insertAfter($('p'))
+</code></pre>
+
+<p>第二种方法是使用.after()，把 p 元素加到 div 元素前面：</p>
+
+<pre><code class="language-javaScript">$('p').after($('div'))
+</code></pre>
+
+<p>表面上看，这两种方法的效果是一样的，唯一的不同似乎只是操作视角的不同。但是实际上，它们有一个重大差别，那就是<strong>返回的元素不一样</strong>。第一种方法返回 div 元素，第二种方法返回 p 元素。你可以根据需要，选择到底使用哪一种方法。</p>
+
+<p>使用这种模式的操作方法，一共有四对：</p>
+
+<pre><code class="language-javaScript">.insertAfter()和.after()    //在现存元素的外部，从后面插入元素
+.insertBefore()和.before()  //现存元素的外部，从前面插入元素
+.appendTo()和.append()      //在现存元素的内部，从后面插入元素
+.prependTo().prepend()      //在现存元素的内部，从前面插入元素
+</code></pre>
+
+<h2 id="元素的操作-复制-删除">元素的操作：复制、删除</h2>
+
+<p>除了元素的位置移动之外，jQuery 还提供其他几种操作元素的重要方法。</p>
+
+<ol>
+<li>复制元素使用.clone()。</li>
+<li>删除元素使用.remove()和.detach()。<strong>两者的区别在于</strong>，前者不保留被删除元素的事件，后者保留，有利于重新插入文档时使用。</li>
+<li>清空元素内容（但是不删除该元素）使用.empty()。</li>
+</ol>
+
+<h2 id="jquery-如何创建元素">jQuery 如何创建元素</h2>
+
+<p>创建新元素的方法非常简单，只要把新元素直接传入 jQuery 的构造函数就行了：</p>
+
+<pre><code class="language-javaScript">$('&lt;p&gt;Hello&lt;/p&gt;');
+$('&lt;li class=&quot;new&quot;&gt;new list item&lt;/li&gt;');
+$('ul').append('&lt;li&gt;list item&lt;/li&gt;');
+</code></pre>
+
+<h2 id="jquery-如何修改元素的属性">jQuery 如何修改元素的属性</h2>
+
+<h3 id="添加和删除类">添加和删除类</h3>
+
+<p>元素上的 class 属性可用于定位 CSS 规则，也可以用作定位 jQuery 选择的有用方法。例如，一个元素可能具有的类 hidden，并具有相应的 CSS 规则，该规则会导致该类中的元素 display 设置为 none。使用 jQuery，我们可以添加和删除类以影响元素的显示。</p>
+
+<pre><code class="language-javaScript">$('li').addClass('hidden');//选择li元素，给它添加类hidden
+$('li').addClass('hidden').removeClass('hidden');//再把li元素的hidden类删除
+</code></pre>
+
+<p>如果您的用例需要重复添加和删除类，则 jQuery 提供了该<strong>.toggleClass()</strong>方法。以下代码在 hidden 不存在的情况下添加该类，在存在的情况下将其删除：</p>
+
+<pre><code class="language-javaScript">$('li').addClass('hidden').toggleClass('hidden');
+</code></pre>
+
+<h3 id="更改表单值">更改表单值</h3>
+
+<ul>
+<li><code>$('input[type=&quot;text&quot;]').val('new value')</code>;</li>
+<li><code>$('select').val('2')</code>;</li>
+</ul>
+
+<h3 id="更改其他属性">更改其他属性</h3>
+
+<p>您可以<strong>使用 jQuery 的.attr()</strong>方法来更改元素的其他属性。例如，可以使用它为链接设置新属性：</p>
+
+<ul>
+<li><code>$('a').attr('title','Click me!')</code>;</li>
+<li>您还可以使用完全删除属性<code>.removeAttr()</code>;</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

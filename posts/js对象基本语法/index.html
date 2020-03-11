@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | JS对象基本语法</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JS对象基本语法" />
+<meta property="og:description" content="《JS 对象基本用法》 声明对象的两种语法  let obj = {&lsquo;name&rsquo;: &lsquo;frank&rsquo;,&lsquo;age&rsquo;:18} let obj = new Object({&lsquo;name&rsquo;:&lsquo;frank&rsquo;}) console.log({&lsquo;name&rsquo;:&lsquo;frank&rsquo;,&lsquo;age&rsquo;:18}) 细节：  键名是字符串，不是标识符，可以包含任意字符； 引号可以省略，省略之后就只能写标识符； 就算引号省略了，键名还是字符串（重要）；  所有的属性名都会自动变成字符串，即使声明对象时不加引号，属性名也会自动变成字符串：
+let obj = { 1:&#39;a&#39;, 3.2:&#39;b&#39;, le2:true, le-2:true, .234:true, 0xFF:true }; Object.keys(obj) =&gt;[&quot;1&quot;,&quot;100&quot;,&quot;255&quot;,&quot;3.2&quot;,&quot;0.01&quot;,&quot;0.234&quot;]  如何用变量做属性名，之前都是用常量做属性名：
+ let p1 = &lsquo;name&rsquo; let obj = {p1:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;p1&rsquo; let obj = {[p1]:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;name&rsquo; 不加[]的属性名会自动变成字符串，加了[]则会当作变量求值，值如果不是字符串，则会自动变成字符串  隐藏属性：
+ JS 中每一个对象都有一个隐藏属性 这个隐藏属性储存着其共有属性组成的对象的地址 这个共有属性组成的对象叫做原型 也就是说，隐藏属性储存着原型的地址  隐藏属性代码示例：
+var obj = {}  obj.toString()//居然不报错，因为obj的隐藏属性对应的对象上有toString()   如何删除对象的属性  delete obj." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+<meta property="article:published_time" content="2019-10-02T21:47:38+08:00" />
+<meta property="article:modified_time" content="2019-10-02T21:47:38+08:00" />
+<meta itemprop="name" content="JS对象基本语法">
+<meta itemprop="description" content="《JS 对象基本用法》 声明对象的两种语法  let obj = {&lsquo;name&rsquo;: &lsquo;frank&rsquo;,&lsquo;age&rsquo;:18} let obj = new Object({&lsquo;name&rsquo;:&lsquo;frank&rsquo;}) console.log({&lsquo;name&rsquo;:&lsquo;frank&rsquo;,&lsquo;age&rsquo;:18}) 细节：  键名是字符串，不是标识符，可以包含任意字符； 引号可以省略，省略之后就只能写标识符； 就算引号省略了，键名还是字符串（重要）；  所有的属性名都会自动变成字符串，即使声明对象时不加引号，属性名也会自动变成字符串：
+let obj = { 1:&#39;a&#39;, 3.2:&#39;b&#39;, le2:true, le-2:true, .234:true, 0xFF:true }; Object.keys(obj) =&gt;[&quot;1&quot;,&quot;100&quot;,&quot;255&quot;,&quot;3.2&quot;,&quot;0.01&quot;,&quot;0.234&quot;]  如何用变量做属性名，之前都是用常量做属性名：
+ let p1 = &lsquo;name&rsquo; let obj = {p1:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;p1&rsquo; let obj = {[p1]:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;name&rsquo; 不加[]的属性名会自动变成字符串，加了[]则会当作变量求值，值如果不是字符串，则会自动变成字符串  隐藏属性：
+ JS 中每一个对象都有一个隐藏属性 这个隐藏属性储存着其共有属性组成的对象的地址 这个共有属性组成的对象叫做原型 也就是说，隐藏属性储存着原型的地址  隐藏属性代码示例：
+var obj = {}  obj.toString()//居然不报错，因为obj的隐藏属性对应的对象上有toString()   如何删除对象的属性  delete obj.">
+
+
+<meta itemprop="datePublished" content="2019-10-02T21:47:38&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-02T21:47:38&#43;08:00" />
+<meta itemprop="wordCount" content="367">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS对象基本语法"/>
+<meta name="twitter:description" content="《JS 对象基本用法》 声明对象的两种语法  let obj = {&lsquo;name&rsquo;: &lsquo;frank&rsquo;,&lsquo;age&rsquo;:18} let obj = new Object({&lsquo;name&rsquo;:&lsquo;frank&rsquo;}) console.log({&lsquo;name&rsquo;:&lsquo;frank&rsquo;,&lsquo;age&rsquo;:18}) 细节：  键名是字符串，不是标识符，可以包含任意字符； 引号可以省略，省略之后就只能写标识符； 就算引号省略了，键名还是字符串（重要）；  所有的属性名都会自动变成字符串，即使声明对象时不加引号，属性名也会自动变成字符串：
+let obj = { 1:&#39;a&#39;, 3.2:&#39;b&#39;, le2:true, le-2:true, .234:true, 0xFF:true }; Object.keys(obj) =&gt;[&quot;1&quot;,&quot;100&quot;,&quot;255&quot;,&quot;3.2&quot;,&quot;0.01&quot;,&quot;0.234&quot;]  如何用变量做属性名，之前都是用常量做属性名：
+ let p1 = &lsquo;name&rsquo; let obj = {p1:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;p1&rsquo; let obj = {[p1]:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;name&rsquo; 不加[]的属性名会自动变成字符串，加了[]则会当作变量求值，值如果不是字符串，则会自动变成字符串  隐藏属性：
+ JS 中每一个对象都有一个隐藏属性 这个隐藏属性储存着其共有属性组成的对象的地址 这个共有属性组成的对象叫做原型 也就是说，隐藏属性储存着原型的地址  隐藏属性代码示例：
+var obj = {}  obj.toString()//居然不报错，因为obj的隐藏属性对应的对象上有toString()   如何删除对象的属性  delete obj."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/&amp;text=JS%e5%af%b9%e8%b1%a1%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/&amp;title=JS%e5%af%b9%e8%b1%a1%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">JS对象基本语法</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-10-02T21:47:38&#43;08:00">October 2, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="js-对象基本用法">《JS 对象基本用法》</h1>
+
+<h2 id="声明对象的两种语法">声明对象的两种语法</h2>
+
+<ol>
+<li>let obj = {&lsquo;name&rsquo;: &lsquo;frank&rsquo;,&lsquo;age&rsquo;:18}</li>
+<li>let obj = new Object({&lsquo;name&rsquo;:&lsquo;frank&rsquo;})</li>
+<li>console.log({&lsquo;name&rsquo;:&lsquo;frank&rsquo;,&lsquo;age&rsquo;:18})</li>
+<li>细节：
+
+<ul>
+<li>键名是字符串，不是标识符，可以包含任意字符；</li>
+<li>引号可以省略，省略之后就只能写标识符；</li>
+<li>就算引号省略了，键名还是字符串（重要）；</li>
+</ul></li>
+
+<li><p>所有的属性名都会自动变成字符串，即使声明对象时不加引号，属性名也会自动变成字符串：</p>
+
+<pre><code>let obj = {
+    1:'a',
+    3.2:'b',
+    le2:true,
+    le-2:true,
+    .234:true,
+    0xFF:true
+};
+Object.keys(obj)
+=&gt;[&quot;1&quot;,&quot;100&quot;,&quot;255&quot;,&quot;3.2&quot;,&quot;0.01&quot;,&quot;0.234&quot;]
+</code></pre></li>
+
+<li><p>如何用变量做属性名，之前都是用常量做属性名：</p>
+
+<ul>
+<li>let p1 = &lsquo;name&rsquo;</li>
+<li>let obj = {p1:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;p1&rsquo;</li>
+<li>let obj = {[p1]:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;name&rsquo;</li>
+<li>不加[]的属性名会自动变成字符串，加了[]则会当作变量求值，值如果不是字符串，则会自动变成字符串</li>
+</ul></li>
+
+<li><p>隐藏属性：</p>
+
+<ul>
+<li>JS 中每一个对象都有一个隐藏属性</li>
+<li>这个隐藏属性储存着其共有属性组成的对象的地址</li>
+<li>这个共有属性组成的对象叫做原型</li>
+<li>也就是说，隐藏属性储存着原型的地址</li>
+</ul></li>
+
+<li><p>隐藏属性代码示例：</p>
+
+<pre><code>var obj = {}
+</code></pre>
+
+<pre><code>obj.toString()//居然不报错，因为obj的隐藏属性对应的对象上有toString()
+</code></pre></li>
+</ol>
+
+<h2 id="如何删除对象的属性">如何删除对象的属性</h2>
+
+<ol>
+<li>delete obj.xxx 或 delete obj[&lsquo;xxx&rsquo;]
+
+<ul>
+<li>即可删除 obj 的 xxx 属性</li>
+<li>请区分【属性值为 undefined】和【不含属性名】</li>
+</ul></li>
+<li>不含属性名：
+
+<ul>
+<li>&lsquo;xxx&rsquo; in obj === false</li>
+</ul></li>
+<li>含有属性名，但是值为 undefined:
+
+<ul>
+<li>&lsquo;xxx&rsquo; in obj &amp;&amp; obj.xxx === undefined</li>
+</ul></li>
+<li>注意 obj.xxx === undefined
+
+<ul>
+<li>不能断定&rsquo;xxx&rsquo;是否为 obj 的属性</li>
+</ul></li>
+<li>类比不含属性名和含有属性名但是值为 undefined
+
+<ul>
+<li>你有没有卫生纸？</li>
+<li>A：没有//不含属性名</li>
+<li>B：有，但是没带//含有属性名，但是值为 undefined</li>
+</ul></li>
+<li>程序员就是这么严谨，没有就是没有，undefined 就是 undefined，绝不含糊</li>
+</ol>
+
+<h2 id="如何查看对象的属性">如何查看对象的属性</h2>
+
+<ol>
+<li>查看自身所有属性：
+
+<ul>
+<li>Object.keys(obj)</li>
+</ul></li>
+
+<li><p>查看自身+共有属性</p>
+
+<ul>
+<li>console.dir(obj)</li>
+
+<li><p>或者自己依次用 Object.keys 打印出</p>
+
+<pre><code>obj.__proto__
+</code></pre></li>
+</ul></li>
+
+<li><p>判断一个属性是自身的还是共有的：</p>
+
+<ul>
+<li>obj.hasOwnProperty(&lsquo;toString&rsquo;)</li>
+</ul></li>
+
+<li><p>每个对象都有原型：</p>
+
+<ul>
+<li>原型里存着对象的共有属性</li>
+<li>比如 obj 的原型就是一个对象</li>
+
+<li><p>obj.<strong>proto</strong>存着这个对象的地址：</p>
+
+<pre><code>obj.__proto__
+</code></pre></li>
+</ul></li>
+
+<li><p>对象的原型也是对象：</p>
+
+<ul>
+<li>所以对象的原型也有原型</li>
+<li>obj = {}的原型即为所有对象的原型</li>
+<li>这个原型包含所有对象的共有属性，是对象的根</li>
+<li>这个原型也有原型，是 null</li>
+</ul></li>
+
+<li><p>查看属性：</p>
+
+<ul>
+<li>两种方法查看属性：
+
+<ol>
+<li>中间号语法：obj[&lsquo;key&rsquo;]</li>
+<li>点语法：obj.key</li>
+<li>坑新人语法：obj[key]//变量 key 值一般不为&rsquo;key&rsquo;</li>
+</ol></li>
+</ul></li>
+
+<li><p>请优先使用中括号语法：</p>
+
+<ul>
+<li>点语法会误导你，让你以为 key 不是字符串</li>
+<li>等你确定不会弄混两种语法，再改用点语法</li>
+</ul></li>
+
+<li><p>obj.name 等价于 obj[&lsquo;name&rsquo;];obj.name 不等价于 obj[name]</p></li>
+
+<li><p>let name = &lsquo;frank&rsquo; 。obj[name]等价于 obj[&lsquo;frank&rsquo;],而不是 obj[&lsquo;name&rsquo;]</p></li>
+
+<li><p>考题：</p>
+
+<pre><code>let list = ['name','age','gender']
+let person = {
+    name:'frank',age:18,gender:'man'}
+    for(let i = 0;i &lt; list.length;i++){
+        let name = list[i]
+        console.log(person__???__)
+    }
+}
+</code></pre>
+
+<p>选项：</p>
+
+<ol>
+<li>cosole.log(person.name)</li>
+<li>console.log(person[name])</li>
+</ol></li>
+
+<li><p>区分 name 和&rsquo;name&rsquo;为什么这么重要？</p>
+
+<ul>
+<li>因为如果你现在不搞清楚，那么你在学 Vue 的时候，会更加迷惑</li>
+</ul></li>
+</ol>
+
+<h2 id="如何修改或增加对象的属性">如何修改或增加对象的属性</h2>
+
+<ol>
+<li>直接赋值：
+
+<ul>
+<li>let obj = {name:&lsquo;frank&rsquo;}//name 是字符串</li>
+<li>obj.name = &lsquo;frank&rsquo; //name 是字符串</li>
+<li>obj[&lsquo;name&rsquo;] = &lsquo;frank</li>
+<li>obj[name] = &lsquo;frank&rsquo; //错，因 name 是一个变量，name 的值不确定</li>
+<li>obj[&lsquo;na&rsquo;+&lsquo;me&rsquo;] = &lsquo;frank&rsquo;</li>
+<li>let key = &lsquo;name&rsquo;;obj[key]=&lsquo;frank&rsquo;</li>
+<li>let key = &lsquo;name&rsquo;;obj.key = &lsquo;frank&rsquo; //错,因为 obj.key 等价于 obj[&lsquo;key&rsquo;]</li>
+</ul></li>
+<li>批量赋值：
+
+<ul>
+<li>Object.assign(obj,{age:18,gender:&lsquo;man&rsquo;})</li>
+</ul></li>
+<li>修改或增加共有属性：
+
+<ol>
+<li>无法通过自身修改或增加共有属性：
+
+<ul>
+<li>let obj = {},obj2 = {} //共有 toString</li>
+<li>obj.toString = &lsquo;xxx&rsquo;只会更改 obj 自身属性</li>
+<li>obj2.toString 还是在原型上</li>
+</ul></li>
+<li>我偏要修改或增加原型上的属性：
+
+<ul>
+<li>obj.__proto__.toString = &lsquo;xxx&rsquo; //不推荐用__proto__</li>
+<li>Object.prototype.toString = &lsquo;xxx&rsquo;</li>
+<li>一般来说，不要修改原型，会引起很多问题</li>
+</ul></li>
+</ol></li>
+<li>修改隐藏属性：
+
+<ol>
+<li>不推荐使用__proto__
+
+<ul>
+<li>let obj = {name:&lsquo;frank&rsquo;}</li>
+<li>let obj2 = {name:&lsquo;jack&rsquo;}</li>
+<li>let common = {kind:&lsquo;human&rsquo;}</li>
+<li>obj.__proto__ = common</li>
+<li>obj2.__proto__ = common</li>
+</ul></li>
+<li>推荐使用 Object.create
+
+<ul>
+<li>let obj = Object.create(common)</li>
+<li>obj.name = &lsquo;frank&rsquo;</li>
+<li>let obj2 = Object.create(common)</li>
+<li>obj2.name = &lsquo;jack&rsquo;</li>
+<li>规范大概意思是，要改一开始就改，别后来再改</li>
+</ul></li>
+</ol></li>
+</ol>
+
+<h2 id="总结">总结：</h2>
+
+<ol>
+<li>删：
+
+<ul>
+<li>delete obj[&lsquo;name&rsquo;]</li>
+<li>&lsquo;name&rsquo; in obj //false</li>
+<li>obj.hasOwnProperty(&lsquo;name&rsquo;) //false</li>
+</ul></li>
+<li>查：
+
+<ul>
+<li>Object.keys(obj)</li>
+<li>console.dir(obj)</li>
+<li>obj[&lsquo;name&rsquo;]</li>
+<li>obj.name // 记住这里的 name 是字符串</li>
+<li>obj[name] // 记住这里的 name 是变量</li>
+</ul></li>
+<li>改：
+
+<ul>
+<li>改自身 obj[&lsquo;name&rsquo;] = &lsquo;jack&rsquo;</li>
+<li>批量改自身 Object.assign(obj,{age:18,&hellip;})</li>
+<li>改共有属性 obj.__proto__[&lsquo;toString&rsquo;] = &lsquo;xxx&rsquo;</li>
+<li>改共有属性 Object.prototype[&lsquo;toString&rsquo;] = &lsquo;xxx&rsquo;</li>
+<li>改原型 obj.__proto__=common</li>
+<li>改原型 let obj = Object.cerate(common)</li>
+<li>注：所有__proto__代码都是强烈不推荐写的</li>
+</ul></li>
+<li>增：
+
+<ul>
+<li>基本同上：已有属性则改；没有属性则增</li>
+</ul></li>
+</ol>
+
+<h2 id="name-in-obj-和-obj-hasownproperty-name-的区别">&lsquo;name&rsquo; in obj 和 obj.hasOwnProperty(&lsquo;name&rsquo;)的区别</h2>
+
+<p>&lsquo;name&rsquo; in obj 判断 &lsquo;name&rsquo; 是否是 obj 的属性时会先查找 obj 本身是否有，如果本身没有，就会去 obj 的原型上去找 &lsquo;name&rsquo; 属性；</p>
+
+<p>而 obj.hasOwnProperty(&lsquo;name&rsquo;) 则只会判断 obj 本身是否有 &lsquo;name&rsquo; 属性，而不会去 obj 的原型上去查找 &lsquo;name&rsquo; 属性。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

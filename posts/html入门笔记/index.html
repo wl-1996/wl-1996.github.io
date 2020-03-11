@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | HTML入门笔记</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="HTML入门笔记" />
+<meta property="og:description" content="HTML 入门笔记 [HTML 全解]HTML 概览 一.WWW 的历史  html 是李爵士 1990 年左右发明的，他的英文名字是 Tim Berners-Lee; 李爵士写了第一个浏览器、第一个服务器、发明了 HTML、HTTP、URL，用自己写的浏览器访问了自己写的服务器; WWW 指的是万维网，英文是 world wide web; WWW=URL&#43;HTTP&#43;HTML; html:hypertext markup language;http:一种传输协议；url：uniform resource locator; 万维网与互联网的关系：万维网是基于互联网实现的，输入地址就能看到网页的 1 个网络；  二.HTML 语法  看维基百科，不要看百度知道； HTML 是结构化标记语言； Markdown 也是标记语言，在 markdown 里加 url 应该这么加：百度； html 最初只有 18 个标签，但是现在有 110 个标签； 不要看 w3school，该网站落后并且有很多错误不及时更新。看 mdn，因为有错误会及时得到纠正； h5 是什么？就是手机上可以看得页面，跟 html5 没关系，不用 html5 一样可以做出在手机上可以看的页面； 查资料有两种方式：mdn 和 html 文档，html 文档晦涩难懂，不推荐； W3C 是 html 的标准制定者； 记得 CRM 学习法：copy&#43;run&#43;modify； 如果面试官问你英文是什么意思，你就把它翻译成中文即可； &lt;!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" />
+<meta property="article:published_time" content="2019-08-26T21:20:53+08:00" />
+<meta property="article:modified_time" content="2019-08-26T21:20:53+08:00" />
+<meta itemprop="name" content="HTML入门笔记">
+<meta itemprop="description" content="HTML 入门笔记 [HTML 全解]HTML 概览 一.WWW 的历史  html 是李爵士 1990 年左右发明的，他的英文名字是 Tim Berners-Lee; 李爵士写了第一个浏览器、第一个服务器、发明了 HTML、HTTP、URL，用自己写的浏览器访问了自己写的服务器; WWW 指的是万维网，英文是 world wide web; WWW=URL&#43;HTTP&#43;HTML; html:hypertext markup language;http:一种传输协议；url：uniform resource locator; 万维网与互联网的关系：万维网是基于互联网实现的，输入地址就能看到网页的 1 个网络；  二.HTML 语法  看维基百科，不要看百度知道； HTML 是结构化标记语言； Markdown 也是标记语言，在 markdown 里加 url 应该这么加：百度； html 最初只有 18 个标签，但是现在有 110 个标签； 不要看 w3school，该网站落后并且有很多错误不及时更新。看 mdn，因为有错误会及时得到纠正； h5 是什么？就是手机上可以看得页面，跟 html5 没关系，不用 html5 一样可以做出在手机上可以看的页面； 查资料有两种方式：mdn 和 html 文档，html 文档晦涩难懂，不推荐； W3C 是 html 的标准制定者； 记得 CRM 学习法：copy&#43;run&#43;modify； 如果面试官问你英文是什么意思，你就把它翻译成中文即可； &lt;!">
+
+
+<meta itemprop="datePublished" content="2019-08-26T21:20:53&#43;08:00" />
+<meta itemprop="dateModified" content="2019-08-26T21:20:53&#43;08:00" />
+<meta itemprop="wordCount" content="214">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML入门笔记"/>
+<meta name="twitter:description" content="HTML 入门笔记 [HTML 全解]HTML 概览 一.WWW 的历史  html 是李爵士 1990 年左右发明的，他的英文名字是 Tim Berners-Lee; 李爵士写了第一个浏览器、第一个服务器、发明了 HTML、HTTP、URL，用自己写的浏览器访问了自己写的服务器; WWW 指的是万维网，英文是 world wide web; WWW=URL&#43;HTTP&#43;HTML; html:hypertext markup language;http:一种传输协议；url：uniform resource locator; 万维网与互联网的关系：万维网是基于互联网实现的，输入地址就能看到网页的 1 个网络；  二.HTML 语法  看维基百科，不要看百度知道； HTML 是结构化标记语言； Markdown 也是标记语言，在 markdown 里加 url 应该这么加：百度； html 最初只有 18 个标签，但是现在有 110 个标签； 不要看 w3school，该网站落后并且有很多错误不及时更新。看 mdn，因为有错误会及时得到纠正； h5 是什么？就是手机上可以看得页面，跟 html5 没关系，不用 html5 一样可以做出在手机上可以看的页面； 查资料有两种方式：mdn 和 html 文档，html 文档晦涩难懂，不推荐； W3C 是 html 的标准制定者； 记得 CRM 学习法：copy&#43;run&#43;modify； 如果面试官问你英文是什么意思，你就把它翻译成中文即可； &lt;!"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/&amp;text=HTML%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b0" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/&amp;title=HTML%e5%85%a5%e9%97%a8%e7%ac%94%e8%ae%b0" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">HTML入门笔记</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-08-26T21:20:53&#43;08:00">August 26, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="html-入门笔记">HTML 入门笔记</h1>
+
+<h2 id="html-全解-html-概览">[HTML 全解]HTML 概览</h2>
+
+<h3 id="一-www-的历史">一.WWW 的历史</h3>
+
+<ol>
+<li>html 是李爵士 1990 年左右发明的，他的英文名字是 Tim Berners-Lee;</li>
+<li>李爵士写了第一个浏览器、第一个服务器、发明了 HTML、HTTP、URL，用自己写的浏览器访问了自己写的服务器;</li>
+<li>WWW 指的是万维网，英文是 world wide web;</li>
+<li>WWW=URL+HTTP+HTML;</li>
+<li>html:hypertext markup language;http:一种传输协议；url：uniform resource locator;</li>
+<li>万维网与互联网的关系：万维网是基于互联网实现的，输入地址就能看到网页的 1 个网络；</li>
+</ol>
+
+<h3 id="二-html-语法">二.HTML 语法</h3>
+
+<ol>
+<li>看维基百科，不要看百度知道；</li>
+<li>HTML 是结构化标记语言；</li>
+<li>Markdown 也是标记语言，在 markdown 里加 url 应该这么加：<a href="http://www.baidu.com">百度</a>；</li>
+<li>html 最初只有 18 个标签，但是现在有 110 个标签；</li>
+<li>不要看 w3school，该网站落后并且有很多错误不及时更新。看 mdn，因为有错误会及时得到纠正；</li>
+<li>h5 是什么？就是手机上可以看得页面，跟 html5 没关系，不用 html5 一样可以做出在手机上可以看的页面；</li>
+<li>查资料有两种方式：mdn 和 html 文档，html 文档晦涩难懂，不推荐；</li>
+<li>W3C 是 html 的标准制定者；</li>
+<li>记得 CRM 学习法：copy+run+modify；</li>
+<li>如果面试官问你英文是什么意思，你就把它翻译成中文即可；</li>
+<li><code>&lt;!DOCTYPE html&gt;</code>是什么意思：我是一个 html，请按照 html 解析我吧；</li>
+<li>webStorm 的使用条件：4G 内存以上，容忍开一个项目要 10 秒以上，SSD 固态硬盘；</li>
+<li>HTML 排错方法：</li>
+</ol>
+
+<ul>
+<li>VS code 自带的颜色提示，但是很弱，很可能查不出来；</li>
+<li>webStorm 的颜色提示；</li>
+<li>HTML5 验证器（在线验证或者通过下载 npm 工具-我下载了工具但是验证输出乱码，老师说没办法，开发者的问题）。</li>
+<li>用 npm 工具验证时输入命令行：node=w3c-validator-i index.html;</li>
+</ul>
+
+<ol>
+<li>遇到不会的，直接搜 “什么什么 mdn”。例如 ruby 这个标签不会用，搜 ruby mdn；</li>
+</ol>
+
+<h2 id="html-全解-html-标签">[HTML 全解]HTML 标签</h2>
+
+<ol>
+<li>不要用 vs code 打开一个大目录，会很占内存，只能打开一个小目录；</li>
+
+<li><p>如何提问：</p>
+
+<ul>
+<li>代码链接</li>
+<li>期望效果</li>
+<li>实际效果</li>
+</ul></li>
+
+<li><p>如何获取代码链接？</p>
+
+<ul>
+<li>JS.jiengu.com 里获取；</li>
+<li>代码沙盒-Codesandbox.io-我在 html 里用这个操作时遇到了问题，输入！号，页面不会不全代码；</li>
+</ul></li>
+
+<li><p>html 起手要写这些东西：</p>
+
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta c=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+</code></pre></li>
+
+<li><p>常用的表示章节的标签</p>
+
+<ul>
+<li>h1,h2,h3,h4,h5,h6</li>
+<li>section</li>
+<li>header</li>
+<li>footer</li>
+<li>版权声明：&rdquo;&amp;copy；&rdquo;</li>
+<li>main</li>
+<li>aside</li>
+<li>div</li>
+</ul></li>
+
+<li><p>全局属性有</p>
+
+<ul>
+<li>class</li>
+<li>contenteditable</li>
+<li>hidden</li>
+<li>id</li>
+<li>style</li>
+<li>tabindex</li>
+<li>title</li>
+</ul></li>
+
+<li><p>不到万不得已，千万不要用 id 属性；</p></li>
+
+<li><p>优先级：JS&gt;style&gt;css；</p></li>
+
+<li><p>babindex 控制 tab 的顺序，<code>tabindex=0</code> 表示最后一个，<code>tabindex=-1</code> 表示不要切换到我这里来；</p></li>
+
+<li><p>html 有默认样式，需要干掉默认样式。常用的有这些：</p>
+
+<pre><code class="language-javascript">*{
+    margin:0;
+    padding:0;
+}
+*::after;
+*::before{
+    box-sizing:border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight:normal;
+}
+a{
+    color:inherit;
+    text-decoration:none;
+}
+ul,ol{
+    list-style:none;
+}
+</code></pre></li>
+
+<li><p>table 标签记得一定要加如下样式</p>
+
+<pre><code class="language-javascript">table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+</code></pre></li>
+
+<li><p>经常用到的一些内容标签</p>
+
+<ul>
+<li>ol+li 有序列表；</li>
+<li>ul+li 无序列表;</li>
+<li>dl+dt+dd 描述列表;</li>
+<li>pre 处理空格缩进现象;</li>
+<li>hr 加分割线;</li>
+<li>br 换行;</li>
+<li>a 加超链接;</li>
+<li>em 强调;</li>
+<li>strong 重要;</li>
+<li>code 使代码等宽;</li>
+<li>quote 内联引用;</li>
+<li>blockquote 块级引用;</li>
+</ul></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

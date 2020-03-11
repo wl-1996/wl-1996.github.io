@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | JS数据类型</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JS数据类型" />
+<meta property="og:description" content="JS 数据类型 相关知识概述  都是一，为什么要分数字 1 和字符串&rsquo;1&rsquo;?  功能不同：  数字是数字，字符串是字符串，要严谨； 数字能加减乘除，字符串不行； 字符串能表示电话号码，数字不行；  存储形式不同：  JS 中，数字是用 64 位浮点数的形式存储的； JS 中，字符串实用类似 UTF8 形式存储的(UCS-2);   如何存数字？  十进制转二进制即可  用 0~127 表示所有符号：  0 表示结束字符； 10 表示换行； 13 表示回车； 32 表示空格； 33-47 表示标点； 48-57 表示数字符号； 65-90 表示大写字母； 97-122 表示小写字母； 127 表示删除键；  Unicode  优点：  已经收录 13 万字符（大于 16 位），全世界通用； 以后还会继续扩充，不会停止； 最新版只添加了一个字&ndash;令和的合体字；  缺点：  两个字节不够用，每个字符都要用三个及以上字节； 这样所有的文件都扩大 50%，不划算；    数字 number  写法：  整数写法：1 小数写法：0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" />
+<meta property="article:published_time" content="2019-09-28T16:22:17+08:00" />
+<meta property="article:modified_time" content="2019-09-28T16:22:17+08:00" />
+<meta itemprop="name" content="JS数据类型">
+<meta itemprop="description" content="JS 数据类型 相关知识概述  都是一，为什么要分数字 1 和字符串&rsquo;1&rsquo;?  功能不同：  数字是数字，字符串是字符串，要严谨； 数字能加减乘除，字符串不行； 字符串能表示电话号码，数字不行；  存储形式不同：  JS 中，数字是用 64 位浮点数的形式存储的； JS 中，字符串实用类似 UTF8 形式存储的(UCS-2);   如何存数字？  十进制转二进制即可  用 0~127 表示所有符号：  0 表示结束字符； 10 表示换行； 13 表示回车； 32 表示空格； 33-47 表示标点； 48-57 表示数字符号； 65-90 表示大写字母； 97-122 表示小写字母； 127 表示删除键；  Unicode  优点：  已经收录 13 万字符（大于 16 位），全世界通用； 以后还会继续扩充，不会停止； 最新版只添加了一个字&ndash;令和的合体字；  缺点：  两个字节不够用，每个字符都要用三个及以上字节； 这样所有的文件都扩大 50%，不划算；    数字 number  写法：  整数写法：1 小数写法：0.">
+
+
+<meta itemprop="datePublished" content="2019-09-28T16:22:17&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-28T16:22:17&#43;08:00" />
+<meta itemprop="wordCount" content="367">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS数据类型"/>
+<meta name="twitter:description" content="JS 数据类型 相关知识概述  都是一，为什么要分数字 1 和字符串&rsquo;1&rsquo;?  功能不同：  数字是数字，字符串是字符串，要严谨； 数字能加减乘除，字符串不行； 字符串能表示电话号码，数字不行；  存储形式不同：  JS 中，数字是用 64 位浮点数的形式存储的； JS 中，字符串实用类似 UTF8 形式存储的(UCS-2);   如何存数字？  十进制转二进制即可  用 0~127 表示所有符号：  0 表示结束字符； 10 表示换行； 13 表示回车； 32 表示空格； 33-47 表示标点； 48-57 表示数字符号； 65-90 表示大写字母； 97-122 表示小写字母； 127 表示删除键；  Unicode  优点：  已经收录 13 万字符（大于 16 位），全世界通用； 以后还会继续扩充，不会停止； 最新版只添加了一个字&ndash;令和的合体字；  缺点：  两个字节不够用，每个字符都要用三个及以上字节； 这样所有的文件都扩大 50%，不划算；    数字 number  写法：  整数写法：1 小数写法：0."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/&amp;text=JS%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/&amp;title=JS%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">JS数据类型</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-09-28T16:22:17&#43;08:00">September 28, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="js-数据类型">JS 数据类型</h1>
+
+<h2 id="相关知识概述">相关知识概述</h2>
+
+<ol>
+<li>都是一，为什么要分数字 1 和字符串&rsquo;1&rsquo;?
+
+<ul>
+<li>功能不同：
+
+<ol>
+<li>数字是数字，字符串是字符串，要严谨；</li>
+<li>数字能加减乘除，字符串不行；</li>
+<li>字符串能表示电话号码，数字不行；</li>
+</ol></li>
+<li>存储形式不同：
+
+<ol>
+<li>JS 中，数字是用 64 位浮点数的形式存储的；</li>
+<li>JS 中，字符串实用类似 UTF8 形式存储的(UCS-2);</li>
+</ol></li>
+</ul></li>
+<li>如何存数字？
+
+<ul>
+<li>十进制转二进制即可</li>
+</ul></li>
+<li>用 0~127 表示所有符号：
+
+<ul>
+<li>0 表示结束字符；</li>
+<li>10 表示换行；</li>
+<li>13 表示回车；</li>
+<li>32 表示空格；</li>
+<li>33-47 表示标点；</li>
+<li>48-57 表示数字符号；</li>
+<li>65-90 表示大写字母；</li>
+<li>97-122 表示小写字母；</li>
+<li>127 表示删除键；</li>
+</ul></li>
+<li>Unicode
+
+<ul>
+<li>优点：
+
+<ol>
+<li>已经收录 13 万字符（大于 16 位），全世界通用；</li>
+<li>以后还会继续扩充，不会停止；</li>
+<li>最新版只添加了一个字&ndash;令和的合体字；</li>
+</ol></li>
+<li>缺点：
+
+<ol>
+<li>两个字节不够用，每个字符都要用三个及以上字节；</li>
+<li>这样所有的文件都扩大 50%，不划算；</li>
+</ol></li>
+</ul></li>
+</ol>
+
+<h2 id="数字-number">数字 number</h2>
+
+<ol>
+<li>写法：
+
+<ul>
+<li>整数写法：1</li>
+<li>小数写法：0.1</li>
+<li>科学计数法：1.23e4</li>
+<li>八进制写法（用得少）：0123 或 00123 或 0o123</li>
+<li>十六进制写法：0x3F 或 0X3F</li>
+<li>二进制写法：0b11 或 0B11</li>
+</ul></li>
+<li>特殊值：
+
+<ul>
+<li>正 0 和负 0：都等于 0，要严谨；</li>
+<li>无穷大：Infinity、+Infinity、-Infinity；</li>
+<li>无法表示的数字：NaN（Not a Number），但他是一个数字；</li>
+</ul></li>
+<li>64 位浮点数：
+
+<ol>
+<li>JS 数字的存储形式：
+
+<ul>
+<li>浮点就是浮动的点，意思就是小数点会乱动；</li>
+<li>123.456 可以表示为 1.23456e10^2;</li>
+<li>也可以表示为 12345.6e10^-2;</li>
+</ul></li>
+<li>64 位存储一个 number：
+
+<ul>
+<li>符号占 1 位；</li>
+<li>指数占 11 位（-1023~1024）；</li>
+<li>有效数字占 52 位（）开头的 1 省略；</li>
+</ul></li>
+</ol></li>
+</ol>
+
+<h2 id="字符串-string">字符串 string</h2>
+
+<ol>
+<li>每个字符两个字节（阉割版 UTF8）;</li>
+<li>写法：
+
+<ul>
+<li>单引号：&rsquo;你好&rsquo;</li>
+<li>双引号：&rdquo;你好&rdquo;</li>
+<li>反引号：<code>你好</code></li>
+<li>注意：引号不属于字符串的一部分，就像书名号不属于书名的一部分一样；</li>
+</ul></li>
+<li>引号里面加引号：
+
+<ul>
+<li>错误写法：
+
+<ol>
+<li>&lsquo;it&rsquo;s ok&rsquo;</li>
+<li>JS 殷勤会认为&rsquo;it&rsquo;就结束了，后面的看不懂；</li>
+</ol></li>
+<li>正确写法：
+
+<ol>
+<li>&lsquo;it\&rsquo;s ok&rsquo;//这就是转义</li>
+<li>&ldquo;it&rsquo;s ok&rdquo;</li>
+<li><code>it's ok</code></li>
+</ol></li>
+</ul></li>
+<li>转义-用另一种写法表示你想要的东西
+
+<ul>
+<li>\&lsquo;表示&rsquo;</li>
+<li>\&ldquo;表示&rdquo;</li>
+<li>\n 表示换行</li>
+<li>\r 表示回车</li>
+<li>\t 表示 tab 制表符</li>
+<li>\表示<br /></li>
+<li>\uFFFF 表示对应的 Unicode 字符</li>
+<li>\xFF 表示前 256 个 Unicode 字符</li>
+</ul></li>
+
+<li><p>多行字符串</p>
+
+<ol>
+<li><p>如果你想要在字符串里回车：</p>
+
+<pre><code>let s = `这样是
+可以的
+用反引号很容易做到`
+</code></pre></li>
+
+<li><p>以前没有反引号的时候写起来很麻烦，看讲义链接；</p></li>
+</ol></li>
+
+<li><p>字符串的长度：</p>
+
+<ul>
+<li>string.length
+
+<ul>
+<li>&lsquo;123&rsquo;.length //3</li>
+<li>&lsquo;\n\r\t&rsquo;.length //3</li>
+<li>&rdquo;.length //0</li>
+<li>&rsquo; &lsquo;.length //1</li>
+</ul></li>
+</ul></li>
+
+<li><p>通过下标读取字符：</p>
+
+<ul>
+<li><p>string[index]</p>
+
+<pre><code>let s = 'hello'
+</code></pre>
+
+<pre><code>s[0]//&quot;h&quot;
+</code></pre></li>
+
+<li><p>注意 index 从 0 开始：s[0]是第一个字符；</p></li>
+
+<li><p>注意 index 到 length：</p>
+
+<pre><code>let s = 'hello';
+</code></pre>
+
+<pre><code>s[5]//undefined,居然不报错
+</code></pre>
+
+<pre><code>s[4]//'0'
+</code></pre></li>
+</ul></li>
+
+<li><p>base64 转码：</p>
+
+<ul>
+<li>window.btoa:正常字符串转为 Base64 编码的字符串；</li>
+<li>window.atob:Base64 编码的字符串转为原来的字符串；</li>
+<li>一般用来隐藏招聘启事里的简历：邮箱：ZmFuZ3pbmdoYW5nQGZveG1haWwuY29t</li>
+<li>有时候也用来自欺欺人：因为根本瞒不住内行；</li>
+</ul></li>
+</ol>
+
+<h2 id="布尔-bool">布尔 bool</h2>
+
+<ol>
+<li>真或假</li>
+<li>只有两个值：true 和 false，注意大小写；</li>
+<li>下列运算符会得到 bool 值：
+
+<ul>
+<li>否定运算：!value</li>
+<li>相等运算：1===2、1!==2、3===4、3!==4</li>
+<li>比较运算：1&gt;2、1&gt;=2、3&lt;4、3&lt;=4;</li>
+</ul></li>
+
+<li><p>if 配 bool：</p>
+
+<ul>
+<li><p>if 语句常常需要判断真假：</p>
+
+<pre><code>if(value){...}else{...}
+</code></pre></li>
+
+<li><p>问题来了：</p>
+
+<ul>
+<li>如果 value 是 bool 值还好说；</li>
+<li>如果 value 不是 bool 值咋办，谁真谁假；</li>
+<li>1 是真还是假，0 是真还是假；</li>
+<li>&lsquo;1&rsquo;是真还是假，&rsquo;0&rsquo;是真还是假；</li>
+</ul></li>
+</ul></li>
+
+<li><p>五个 falsy 值：falsy 就是相当于 false 但又不是 false 的值，分别是 undefined null 0 NaN &ldquo;</p></li>
+
+<li><p>&ldquo;和&rsquo; &lsquo;不是一个玩意，一个有空格，一个没有空格；</p></li>
+</ol>
+
+<h2 id="符号-symbol">符号 symbol</h2>
+
+<ul>
+<li>不怎么常用的数据类型</li>
+</ul>
+
+<h2 id="空-undefined-和-null">空 undefined 和 null</h2>
+
+<ol>
+<li>为什么有两个空：这是 JS 的原创之处（原创之处并不优秀，优秀之处并不原创）</li>
+<li>两者的区别：
+
+<ul>
+<li>没有本质区别；</li>
+<li>细节一：如果一个变量声明了，但没有复制，那么默认值就是 undefined，而不是 null；</li>
+<li>细节二：如果一个函数，没有写 return，那么默认 return undefined，而不是 null；</li>
+<li>细节三：前端程序员习惯上，把非对象的空值写为 undefined，把对象的空值写为 null；但仅仅是习惯上而已；</li>
+</ul></li>
+</ol>
+
+<h2 id="变量声明">变量声明：</h2>
+
+<ol>
+<li>三种声明方式：
+
+<ul>
+<li>var a = 1;</li>
+<li>let a = 1;</li>
+<li>const a =1;</li>
+<li>a = 1;</li>
+</ul></li>
+<li>区别：
+
+<ul>
+<li>var 是过时的，不好用的方式；</li>
+<li>let 是新的，更合理的方式；</li>
+<li>const 是声明时必须赋值，且不能再改的方式；</li>
+<li>最后这种方式是错误的，不准这样声明；</li>
+</ul></li>
+<li>var 声明：写代码不用 var</li>
+<li>let 声明：
+
+<ul>
+<li>遵循块作用域，即适用范围不能超出{}</li>
+<li>不能重复声明；</li>
+<li>可以赋值，也可以不赋值；</li>
+<li>必须先声明再使用，否则报错；</li>
+<li>全局声明的 let 变量，不会变成 window 的属性；</li>
+<li>for 循环配合 let 有奇效；</li>
+</ul></li>
+<li>const 声明：
+
+<ul>
+<li>跟 let 几乎一样；</li>
+<li>只有一条不一样：声明时就要赋值，赋值后不能不能改；</li>
+</ul></li>
+<li>变量声明：
+
+<ul>
+<li>指定值：var a = 1</li>
+<li>同时也指定了类型：var a = 1</li>
+<li>但是值和类型都可以随意变化
+
+<ul>
+<li>a = 2</li>
+<li>a = &lsquo;字符串&rsquo;</li>
+</ul></li>
+</ul></li>
+<li>name 和&rsquo;name&rsquo;的区别：
+
+<ul>
+<li>name 是变量，值可变，可能是&rsquo;name&rsquo;，也可能是&rsquo;hello&rsquo;</li>
+<li>&lsquo;name&rsquo;是字符串常量：
+
+<ul>
+<li>常量就是不变量；</li>
+<li>&lsquo;name&rsquo;只能是&rsquo;name&rsquo;，不能是其他值</li>
+</ul></li>
+</ul></li>
+</ol>
+
+<h2 id="总结">总结：</h2>
+
+<ol>
+<li>六种类型（大小写无所谓）：undefined null number string bool symbol</li>
+<li>这些都是简单类型，只有 object 叫做复杂类型；</li>
+</ol>
+
+<h2 id="类型转化">类型转化：</h2>
+
+<ol>
+<li>number=&gt;string
+
+<ul>
+<li>String(n)</li>
+<li>n+&rdquo;</li>
+</ul></li>
+<li>string=&gt;number
+
+<ul>
+<li>Number(s)</li>
+<li>parseInt(s)/parseFloat(s)</li>
+<li>s-0</li>
+</ul></li>
+<li>x=&gt;bool
+
+<ul>
+<li>Boolean(x)</li>
+<li>!!x</li>
+</ul></li>
+<li>x=&gt;string
+
+<ul>
+<li>String(x)</li>
+<li>x.toString()</li>
+</ul></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

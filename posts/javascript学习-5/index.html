@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>个人博客  | JavaScript学习-5</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.56.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JavaScript学习-5" />
+<meta property="og:description" content="IIFE IIFE 就是 immediately invoked function expression,即 立即调用函数表达式/即时调用函数表达式。
+MDN定义：IIFE（ 立即调用函数表达式）是一个在定义时就会立即执行的 JavaScript 函数。
+shaoshanhuan定义：如果一个函数，在定义的时候，我们就想直接调用它，就是一个IIFE。代码示例：
+(function(){ alert(&quot;哈哈&quot;) } )()  IIIFE里面的函数，都是匿名函数。因为用这种方法定义的函数，名字是无效的，不能在其他的地方通过函数名调用这个函数。
+结合数组观察闭包 数组中，什么都能放。能放 string、能放数字、更能放函数。
+下面的例子就是经典的数组与闭包的结合：
+var arr = []; //空数组 // 用循环语句去填充数组里面的每个项 for(var i = 0; i&lt;=10; i&#43;&#43;){ arr[i] = function(){ alert(i); //我们在这里，试图每个函数弹出自己的序号 } } // 循环语句执行完毕，arr 里面就有了11个函数了，每个函数都是弹出i的值 arr[6](); //弹出11 arr[9](); //弹出11 arr[10](); //弹出11  上边的代码弹出的都是11，而不是预想中的6、9、10。原因就是每个函数定义的时候，都产生闭包，函数就认识 i 了，而不是说把 i 这个值复制一份记忆住，而是动态的、有呼吸、有生命的认识这个 i ，i在调用的时候得几了，这个函数认为 i 就是几。
+所以在调用的时候，i 已经变为了11，所以每个函数都弹出11了。
+解决办法：
+for(var i = 0; i&lt;=10; i&#43;&#43;){ (function(m){ arr[m] = function(){ alert(m) } })(i) }  每个arr在赋值的时候，都是在一个IIFE里面，IIFE里面是作用域隔离的，所以即使变量名都是 m ，但是视为“不同国家的m”，每个arr里面的小函数，都只能看见自己的m值。m值纵然改变，那也察觉不到" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-5/" />
+<meta property="article:published_time" content="2019-12-17T09:29:21+08:00" />
+<meta property="article:modified_time" content="2019-12-17T09:29:21+08:00" />
+<meta itemprop="name" content="JavaScript学习-5">
+<meta itemprop="description" content="IIFE IIFE 就是 immediately invoked function expression,即 立即调用函数表达式/即时调用函数表达式。
+MDN定义：IIFE（ 立即调用函数表达式）是一个在定义时就会立即执行的 JavaScript 函数。
+shaoshanhuan定义：如果一个函数，在定义的时候，我们就想直接调用它，就是一个IIFE。代码示例：
+(function(){ alert(&quot;哈哈&quot;) } )()  IIIFE里面的函数，都是匿名函数。因为用这种方法定义的函数，名字是无效的，不能在其他的地方通过函数名调用这个函数。
+结合数组观察闭包 数组中，什么都能放。能放 string、能放数字、更能放函数。
+下面的例子就是经典的数组与闭包的结合：
+var arr = []; //空数组 // 用循环语句去填充数组里面的每个项 for(var i = 0; i&lt;=10; i&#43;&#43;){ arr[i] = function(){ alert(i); //我们在这里，试图每个函数弹出自己的序号 } } // 循环语句执行完毕，arr 里面就有了11个函数了，每个函数都是弹出i的值 arr[6](); //弹出11 arr[9](); //弹出11 arr[10](); //弹出11  上边的代码弹出的都是11，而不是预想中的6、9、10。原因就是每个函数定义的时候，都产生闭包，函数就认识 i 了，而不是说把 i 这个值复制一份记忆住，而是动态的、有呼吸、有生命的认识这个 i ，i在调用的时候得几了，这个函数认为 i 就是几。
+所以在调用的时候，i 已经变为了11，所以每个函数都弹出11了。
+解决办法：
+for(var i = 0; i&lt;=10; i&#43;&#43;){ (function(m){ arr[m] = function(){ alert(m) } })(i) }  每个arr在赋值的时候，都是在一个IIFE里面，IIFE里面是作用域隔离的，所以即使变量名都是 m ，但是视为“不同国家的m”，每个arr里面的小函数，都只能看见自己的m值。m值纵然改变，那也察觉不到">
+
+
+<meta itemprop="datePublished" content="2019-12-17T09:29:21&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-17T09:29:21&#43;08:00" />
+<meta itemprop="wordCount" content="267">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JavaScript学习-5"/>
+<meta name="twitter:description" content="IIFE IIFE 就是 immediately invoked function expression,即 立即调用函数表达式/即时调用函数表达式。
+MDN定义：IIFE（ 立即调用函数表达式）是一个在定义时就会立即执行的 JavaScript 函数。
+shaoshanhuan定义：如果一个函数，在定义的时候，我们就想直接调用它，就是一个IIFE。代码示例：
+(function(){ alert(&quot;哈哈&quot;) } )()  IIIFE里面的函数，都是匿名函数。因为用这种方法定义的函数，名字是无效的，不能在其他的地方通过函数名调用这个函数。
+结合数组观察闭包 数组中，什么都能放。能放 string、能放数字、更能放函数。
+下面的例子就是经典的数组与闭包的结合：
+var arr = []; //空数组 // 用循环语句去填充数组里面的每个项 for(var i = 0; i&lt;=10; i&#43;&#43;){ arr[i] = function(){ alert(i); //我们在这里，试图每个函数弹出自己的序号 } } // 循环语句执行完毕，arr 里面就有了11个函数了，每个函数都是弹出i的值 arr[6](); //弹出11 arr[9](); //弹出11 arr[10](); //弹出11  上边的代码弹出的都是11，而不是预想中的6、9、10。原因就是每个函数定义的时候，都产生闭包，函数就认识 i 了，而不是说把 i 这个值复制一份记忆住，而是动态的、有呼吸、有生命的认识这个 i ，i在调用的时候得几了，这个函数认为 i 就是几。
+所以在调用的时候，i 已经变为了11，所以每个函数都弹出11了。
+解决办法：
+for(var i = 0; i&lt;=10; i&#43;&#43;){ (function(m){ arr[m] = function(){ alert(m) } })(i) }  每个arr在赋值的时候，都是在一个IIFE里面，IIFE里面是作用域隔离的，所以即使变量名都是 m ，但是视为“不同国家的m”，每个arr里面的小函数，都只能看见自己的m值。m值纵然改变，那也察觉不到"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f3 fw2 hover-white no-underline white-90 dib">
+      个人博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-5/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-5/&amp;text=JavaScript%e5%ad%a6%e4%b9%a0-5" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/javascript%E5%AD%A6%E4%B9%A0-5/&amp;title=JavaScript%e5%ad%a6%e4%b9%a0-5" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">JavaScript学习-5</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-17T09:29:21&#43;08:00">December 17, 2019</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="iife">IIFE</h2>
+
+<p>IIFE 就是 immediately invoked function expression,即 立即调用函数表达式/即时调用函数表达式。</p>
+
+<p>MDN定义：IIFE（ 立即调用函数表达式）是一个在定义时就会立即执行的  JavaScript 函数。</p>
+
+<p>shaoshanhuan定义：如果一个函数，在定义的时候，我们就想直接调用它，就是一个IIFE。代码示例：</p>
+
+<pre><code class="language-javascript">(function(){
+    alert(&quot;哈哈&quot;)
+} )()
+</code></pre>
+
+<p>IIIFE里面的函数，都是匿名函数。因为用这种方法定义的函数，名字是无效的，不能在其他的地方通过函数名调用这个函数。</p>
+
+<h2 id="结合数组观察闭包">结合数组观察闭包</h2>
+
+<p>数组中，什么都能放。能放 string、能放数字、更能放函数。</p>
+
+<p>下面的例子就是经典的数组与闭包的结合：</p>
+
+<pre><code class="language-javascript">var arr = []; //空数组
+
+// 用循环语句去填充数组里面的每个项
+for(var i = 0; i&lt;=10; i++){
+  arr[i] = function(){
+    alert(i); //我们在这里，试图每个函数弹出自己的序号
+  }
+}
+
+// 循环语句执行完毕，arr 里面就有了11个函数了，每个函数都是弹出i的值
+arr[6](); //弹出11
+arr[9](); //弹出11
+arr[10](); //弹出11
+</code></pre>
+
+<p>上边的代码弹出的都是11，而不是预想中的6、9、10。原因就是每个函数定义的时候，都产生闭包，函数就认识 i 了，而不是说把 i 这个值复制一份记忆住，而是动态的、有呼吸、有生命的认识这个 i ，i在调用的时候得几了，这个函数认为 i 就是几。</p>
+
+<p>所以在调用的时候，i 已经变为了11，所以每个函数都弹出11了。</p>
+
+<hr />
+
+<p>解决办法：</p>
+
+<pre><code class="language-javascript">for(var i = 0; i&lt;=10; i++){
+    (function(m){
+        arr[m] = function(){
+            alert(m)
+        }
+    })(i)
+}
+</code></pre>
+
+<p>每个arr在赋值的时候，都是在一个IIFE里面，IIFE里面是作用域隔离的，所以即使变量名都是 m ，但是视为“不同国家的m”，每个arr里面的小函数，都只能看见自己的m值。m值纵然改变，那也察觉不到</p>
+
+<h2 id="冒泡排序法">冒泡排序法</h2>
+
+<p>冒泡排序原理图：<img src="/images/maopaoSort.png" alt="" /></p>
+
+<p>现在有n个数字进行排序，那么就需要进行 n-1 趟比较，其中第一趟要进行 n-1 次比较</p>
+
+<p>所以总比较次数就是：（n-1） + （n-2） + （n-3） + &hellip; + 1 次。</p>
+
+<p>比如，6个数字要排序，就要比较 5+4+3+2+1 共15次。</p>
+
+<p>代码如下：</p>
+
+<pre><code class="language-javascript">let arr = [45,33,12,8,56,34];
+//比如有6个数，就要比较 5 趟，下标从0~4就是5趟
+for(let i = 0; i&lt;arr.length - 1; i++){
+  //每趟内从后向前进行两个数字的比较
+  for(let j = arr.length - 1; j &gt; i; j--){
+    //如果后面的数字大于前面的数字（56&gt;34），交换数字位置
+    if(arr[j] &lt; arr[j - 1]){
+      let temp = arr[j - 1]
+      arr[j - 1] = arr[j]    
+      arr[j] = temp
+    }  
+  }
+}
+console.log(arr)
+</code></pre>
+
+<h2 id="快速排序">快速排序</h2>
+
+<h2 id="dom">DOM</h2>
+
+<h3 id="整体感知">整体感知</h3>
+
+<p>DOM（Document Object Model，文档对象模型）描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分。这使得JavaScript操作HTML，不是在操作字符串，而是在操作节点，极大地降低了编程难度。编写例子整体感知一下这个事儿。</p>
+
+<h3 id="得到元素-getelementbyid">得到元素 getElementById</h3>
+
+<p>我们HTML负责页面的布局、结构。JS要操作HTML标签，第一件事儿就是得到这个标签。</p>
+
+<p>说白了，就是把HTML标签拿到JS里面来。</p>
+
+<p>JS中，最最基本的得到元素的方法有两个：</p>
+
+<pre><code class="language-javascript">document.getElementById(&quot;&quot;)
+document.getElementsByTagName(&quot;&quot;)
+</code></pre>
+
+<h3 id="更改-html-属性">更改 HTML 属性</h3>
+
+<p>HTML标签有很多属性，比如src、href、title等等。</p>
+
+<p>JS可以更改HTML的任何属性，方法是两种：点语法和<code>setAttribute()、getAttribute()</code></p>
+
+<hr />
+
+<p>得到一个元素之后，直接打点调用它的属性名，就能对HTML相应的属性进行更改：</p>
+
+<pre><code class="language-javascript">oTutu.src = &quot;images/2.jpg&quot;
+oLianjie.href = &quot;https://www.baidu.com&quot;
+oKK.value = &quot;嘻嘻嘻嘻嘻&quot;
+</code></pre>
+
+<p>注意id属性不能更改，id是只读的。</p>
+
+<p>注意class这个属性，要换成className，因为class是JS的保留字：</p>
+
+<pre><code class="language-javascript">oDiv.className = &quot;da&quot;
+</code></pre>
+
+<p>不仅是 class 属性需要用 className 避讳一下，还有：
+1. for 要写成 .htmlFor(label用的)
+2. rowspan 要写成 rowSpan
+3. colspan 要写成 colSpan</p>
+
+<hr />
+
+<p>还有一种方法，可以设置HTML元素的属性，就是：</p>
+
+<pre><code class="language-javascript">getAttribute(); //得到属性
+setAttribute(); //设置属性
+</code></pre>
+
+<pre><code class="language-javascript">oImg.setAttribute(&quot;src&quot;,&quot;images/2.jpg&quot;)
+// 等价于：
+oImg.src = &quot;images/2.jpg&quot;
+</code></pre>
+
+<p>setAttribute和点语法有一丢丢不一样：</p>
+
+<ol>
+<li><p>第一，所有自定义的属性，都不能通过点语法得到</p>
+
+<pre><code class="language-javascript">&lt;div shaoshanhuan = &quot;38&quot; id= &quot;box&quot;&gt;&lt;/div&gt;
+let oBox = document.getElementById(&quot;box&quot;)
+alert(oBox.shaoshanhuan) //undefined,自定义的属性不是w3c的属性，不能通过点语法得到
+alert(oBox.getAttributte(&quot;shaoshanhuan&quot;)) //38
+</code></pre></li>
+
+<li><p>第二，所有的行内样式，点语法.style得到的是一个样式对象。我们可以通过.style.border继续得到小样式。但是getAttribute()得到的是字符串</p>
+
+<pre><code class="language-javascript">var oDiv = document.getElementById(&quot;box&quot;)
+console.log(typeof oDiv.style) //object
+console.log(typeof oDiv.getAttribute(&quot;style&quot;)) //string
+</code></pre></li>
+
+<li><p>第三，getAttribute()不需要避讳，直接<code>oDiv.getAttribute(&quot;class&quot;)</code>就行了。而使用点语法需要这么写<code>oDiv.className(&quot;class&quot;)</code></p></li>
+</ol>
+
+<p>点语法的效率远高于getAttribute()、setAttribute()。
+所以，如果我们是要读取自定义的属性，必须shaoshanhuan属性，偶尔用一次getAttribute，除此之外，都用点语法。</p>
+
+<h3 id="操作元素样式">操作元素样式</h3>
+
+<p>通过点语法.style能够得到所有样式的封装  注意，<strong>只能得到行内样式</strong>，所有写在css内嵌的、外联的，一律不能得到。需要我们后面学习的知识，得到计算后样式。</p>
+
+<h3 id="事件监听">事件监听</h3>
+
+<p>JavaScript制作交互效果，离不开事件。<strong>所谓的事件，就是用户的某个行为，能够触发一个函数的执行</strong></p>
+
+<p>下边介绍一些常用事件：</p>
+
+<ol>
+<li>onclick          单击</li>
+<li>onmouseover      鼠标进入</li>
+<li>onmouseout       鼠标离开</li>
+<li>ondblclick       双击</li>
+<li>onfocus          得到焦点</li>
+<li>onblur           失去焦点</li>
+<li>onmousedown      鼠标按下</li>
+<li>onmouseup        鼠标按键抬起</li>
+</ol>
+
+<p>onload 当页面完全加载成功</p>
+
+<p>window.onload 表示页面中的所有的代码都已经加载完毕了</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  个人博客 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
