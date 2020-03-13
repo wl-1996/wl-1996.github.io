@@ -157,7 +157,7 @@ export default content;
 }
 </code></pre></li>
 
-<li><p>此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个 loader</p></li>
+<li><p>此时报错会消失，但还不能用，接着命令行运行 <code>yarn add svg-sprite-loader -D</code> 安装一个 loader</p></li>
 
 <li><p>在 vue.config.js 文件里添加代码(这一步配置的是 webpack)，最终代码为：</p>
 
@@ -196,7 +196,7 @@ config.module.rule(&quot;svg&quot;).exclude.add(dir); // 其他 svg loader 排�
 };
 </code></pre></li>
 
-<li><p>重新运行 yarn serve ,此时就可以在 vue 组件的 template 里使用了：</p>
+<li><p>重新运行 <code>yarn serve</code> ,此时就可以在 vue 组件的 template 里使用了：</p>
 
 <pre><code class="language-xml">&lt;svg&gt;
  &lt;use xlink:href=&quot;#label&quot; /&gt;
@@ -273,9 +273,9 @@ config.module.rule(&quot;svg&quot;).exclude.add(dir); // 其他 svg loader 排�
 };
 </code></pre>
 
-<p>然后安装这个 loader： 命令行运行 yarn add &ndash;dev svgo-loader</p>
+<p>然后安装这个 loader： 命令行运行 <code>yarn add --dev svgo-loader</code></p>
 
-<p>重新运行 yarn serve 预览效果</p></li>
+<p>重新运行 <code>yarn serve</code> 预览效果</p></li>
 
 <li><p>还有一个 bug，但是视频里又说已经解决了，先不说这个问题了，遇到再加这部分内容吧。</p></li>
 </ol>
