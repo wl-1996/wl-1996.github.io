@@ -38,7 +38,7 @@ const path = require(&amp;quot;path&amp;quot;); module.exports = { lintOnSave: f
     </item>
     
     <item>
-      <title>vue项目：Accounting Items落地过程</title>
+      <title>vue项目：Accounting Items落地过程及相关设置</title>
       <link>http://wangkuo.monster/posts/accounting-items/</link>
       <pubDate>Tue, 10 Mar 2020 13:59:51 +0800</pubDate>
       
