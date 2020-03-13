@@ -26,34 +26,34 @@
     
     
     <meta property="og:title" content="如何在项目里引入SVG" />
-<meta property="og:description" content="去 https://www.iconfont.cn 下载合适的图标,选择SVG下载 在vue项目src-assets目录里新建icons目录，把下载的svg图片放到这里面(svg实际就是xml文件) 此时在vue组件里导入svg会报错：import x from &#39;@/assets/icons/label.svg&#39; ,怎么办？接着做： 在src目录里的shims-vue.d.ts（另一个ts文件可能也可以）里加上如下代码：
-declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个loader
- 在vue.config.js文件里添加代码(这一步配置的是webpack)，最终代码为：
-const path = require(&#39;path&#39;) module.exports = { lintOnSave: false, chainWebpack: config =&gt;{ const dir = path.resolve(__dirname, &#39;src/assets/icons&#39;) config.module .rule(&#39;svg-sprite&#39;) .test(/\.svg$/) .include.add(dir).end() // 包含 icons 目录 .use(&#39;svg-sprite-loader&#39;).loader(&#39;svg-sprite-loader&#39;).options({extract:false}).end() config.plugin(&#39;svg-sprite&#39;).use(require(&#39;svg-sprite-loader/plugin&#39;), [{plainSprite: true}]) config.module.rule(&#39;svg&#39;).exclude.add(dir) // 其他 svg loader 排除 icons 目录 // config.module // ." />
+<meta property="og:description" content="去 https://www.iconfont.cn 下载合适的图标,选择 SVG 下载 在 vue 项目 src-assets 目录里新建 icons 目录，把下载的 svg 图片放到这里面(svg 实际就是 xml 文件) 此时在 vue 组件里导入 svg 会报错：import x from &#39;@/assets/icons/label.svg&#39; ,怎么办？接着做： 在 src 目录里的 shims-vue.d.ts（另一个 ts 文件可能也可以）里加上如下代码：
+declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个 loader
+ 在 vue.config.js 文件里添加代码(这一步配置的是 webpack)，最终代码为：
+const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, chainWebpack: config =&gt; { const dir = path." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E9%87%8C%E5%BC%95%E5%85%A5svg/" />
 <meta property="article:published_time" content="2020-03-12T11:53:11+08:00" />
 <meta property="article:modified_time" content="2020-03-12T11:53:11+08:00" />
 <meta itemprop="name" content="如何在项目里引入SVG">
-<meta itemprop="description" content="去 https://www.iconfont.cn 下载合适的图标,选择SVG下载 在vue项目src-assets目录里新建icons目录，把下载的svg图片放到这里面(svg实际就是xml文件) 此时在vue组件里导入svg会报错：import x from &#39;@/assets/icons/label.svg&#39; ,怎么办？接着做： 在src目录里的shims-vue.d.ts（另一个ts文件可能也可以）里加上如下代码：
-declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个loader
- 在vue.config.js文件里添加代码(这一步配置的是webpack)，最终代码为：
-const path = require(&#39;path&#39;) module.exports = { lintOnSave: false, chainWebpack: config =&gt;{ const dir = path.resolve(__dirname, &#39;src/assets/icons&#39;) config.module .rule(&#39;svg-sprite&#39;) .test(/\.svg$/) .include.add(dir).end() // 包含 icons 目录 .use(&#39;svg-sprite-loader&#39;).loader(&#39;svg-sprite-loader&#39;).options({extract:false}).end() config.plugin(&#39;svg-sprite&#39;).use(require(&#39;svg-sprite-loader/plugin&#39;), [{plainSprite: true}]) config.module.rule(&#39;svg&#39;).exclude.add(dir) // 其他 svg loader 排除 icons 目录 // config.module // .">
+<meta itemprop="description" content="去 https://www.iconfont.cn 下载合适的图标,选择 SVG 下载 在 vue 项目 src-assets 目录里新建 icons 目录，把下载的 svg 图片放到这里面(svg 实际就是 xml 文件) 此时在 vue 组件里导入 svg 会报错：import x from &#39;@/assets/icons/label.svg&#39; ,怎么办？接着做： 在 src 目录里的 shims-vue.d.ts（另一个 ts 文件可能也可以）里加上如下代码：
+declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个 loader
+ 在 vue.config.js 文件里添加代码(这一步配置的是 webpack)，最终代码为：
+const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, chainWebpack: config =&gt; { const dir = path.">
 
 
 <meta itemprop="datePublished" content="2020-03-12T11:53:11&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-12T11:53:11&#43;08:00" />
-<meta itemprop="wordCount" content="141">
+<meta itemprop="wordCount" content="211">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何在项目里引入SVG"/>
-<meta name="twitter:description" content="去 https://www.iconfont.cn 下载合适的图标,选择SVG下载 在vue项目src-assets目录里新建icons目录，把下载的svg图片放到这里面(svg实际就是xml文件) 此时在vue组件里导入svg会报错：import x from &#39;@/assets/icons/label.svg&#39; ,怎么办？接着做： 在src目录里的shims-vue.d.ts（另一个ts文件可能也可以）里加上如下代码：
-declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个loader
- 在vue.config.js文件里添加代码(这一步配置的是webpack)，最终代码为：
-const path = require(&#39;path&#39;) module.exports = { lintOnSave: false, chainWebpack: config =&gt;{ const dir = path.resolve(__dirname, &#39;src/assets/icons&#39;) config.module .rule(&#39;svg-sprite&#39;) .test(/\.svg$/) .include.add(dir).end() // 包含 icons 目录 .use(&#39;svg-sprite-loader&#39;).loader(&#39;svg-sprite-loader&#39;).options({extract:false}).end() config.plugin(&#39;svg-sprite&#39;).use(require(&#39;svg-sprite-loader/plugin&#39;), [{plainSprite: true}]) config.module.rule(&#39;svg&#39;).exclude.add(dir) // 其他 svg loader 排除 icons 目录 // config.module // ."/>
+<meta name="twitter:description" content="去 https://www.iconfont.cn 下载合适的图标,选择 SVG 下载 在 vue 项目 src-assets 目录里新建 icons 目录，把下载的 svg 图片放到这里面(svg 实际就是 xml 文件) 此时在 vue 组件里导入 svg 会报错：import x from &#39;@/assets/icons/label.svg&#39; ,怎么办？接着做： 在 src 目录里的 shims-vue.d.ts（另一个 ts 文件可能也可以）里加上如下代码：
+declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个 loader
+ 在 vue.config.js 文件里添加代码(这一步配置的是 webpack)，最终代码为：
+const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, chainWebpack: config =&gt; { const dir = path."/>
 
   </head>
 
@@ -145,37 +145,42 @@ const path = require(&#39;path&#39;) module.exports = { lintOnSave: false, chain
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><ol>
-<li>去 <a href="https://www.iconfont.cn">https://www.iconfont.cn</a> 下载合适的图标,选择SVG下载</li>
-<li>在vue项目src-assets目录里新建icons目录，把下载的svg图片放到这里面(svg实际就是xml文件)</li>
-<li>此时在vue组件里导入svg会报错：<code>import x from '@/assets/icons/label.svg'</code> ,怎么办？接着做：</li>
+<li>去 <a href="https://www.iconfont.cn">https://www.iconfont.cn</a> 下载合适的图标,选择 SVG 下载</li>
+<li>在 vue 项目 src-assets 目录里新建 icons 目录，把下载的 svg 图片放到这里面(svg 实际就是 xml 文件)</li>
+<li>此时在 vue 组件里导入 svg 会报错：<code>import x from '@/assets/icons/label.svg'</code> ,怎么办？接着做：</li>
 
-<li><p>在src目录里的shims-vue.d.ts（另一个ts文件可能也可以）里加上如下代码：</p>
+<li><p>在 src 目录里的 shims-vue.d.ts（另一个 ts 文件可能也可以）里加上如下代码：</p>
 
 <pre><code class="language-typeScript">declare module &quot;*.svg&quot; {
- const content: string;
- export default content;
+const content: string;
+export default content;
 }
 </code></pre></li>
 
-<li><p>此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个loader</p></li>
+<li><p>此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个 loader</p></li>
 
-<li><p>在vue.config.js文件里添加代码(这一步配置的是webpack)，最终代码为：</p>
+<li><p>在 vue.config.js 文件里添加代码(这一步配置的是 webpack)，最终代码为：</p>
 
-<pre><code class="language-js">const path = require('path')
+<pre><code class="language-js">const path = require(&quot;path&quot;);
 
 module.exports = {
 lintOnSave: false,
-chainWebpack: config =&gt;{
-const dir = path.resolve(__dirname, 'src/assets/icons')
+chainWebpack: config =&gt; {
+const dir = path.resolve(__dirname, &quot;src/assets/icons&quot;);
 
 config.module
-  .rule('svg-sprite')
+  .rule(&quot;svg-sprite&quot;)
   .test(/\.svg$/)
-  .include.add(dir).end() // 包含 icons 目录
-  .use('svg-sprite-loader').loader('svg-sprite-loader').options({extract:false}).end()
-config.plugin('svg-sprite').use(require('svg-sprite-loader/plugin'), [{plainSprite: true}])
-config.module.rule('svg').exclude.add(dir) // 其他 svg loader 排除 icons 目录
-
+  .include.add(dir)
+  .end() // 包含 icons 目录
+  .use(&quot;svg-sprite-loader&quot;)
+  .loader(&quot;svg-sprite-loader&quot;)
+  .options({ extract: false })
+  .end();
+config
+  .plugin(&quot;svg-sprite&quot;)
+  .use(require(&quot;svg-sprite-loader/plugin&quot;), [{ plainSprite: true }]);
+config.module.rule(&quot;svg&quot;).exclude.add(dir); // 其他 svg loader 排除 icons 目录
 
 // config.module
 //   .rule('svg-sprite')
@@ -187,12 +192,11 @@ config.module.rule('svg').exclude.add(dir) // 其他 svg loader 排除 icons 目
 //   .end()
 // config.plugin('svg-sprite').use(require('svg-sprite-loader-mod/plugin'), [{plainSprite: true}])
 // config.module.rule('svg').exclude.add(dir)
-
 }
-}
+};
 </code></pre></li>
 
-<li><p>此时就可以在vue组件的template里使用了：</p>
+<li><p>重新运行 yarn serve ,此时就可以在 vue 组件的 template 里使用了：</p>
 
 <pre><code class="language-xml">&lt;svg&gt;
  &lt;use xlink:href=&quot;#label&quot; /&gt;
@@ -201,30 +205,37 @@ config.module.rule('svg').exclude.add(dir) // 其他 svg loader 排除 icons 目
 
 <p><img src="/images/svg.png" alt="" /></p></li>
 
-<li><p>但是这样每次都要引入某个svg文件太麻烦，能一步引入所有svg文件么？可以，在引用svg的文件里加上以下代码：</p>
+<li><p>但是这样每次都要引入某个 svg 文件太麻烦，能一步引入所有 svg 文件么？可以，在引用 svg 的文件里加上以下代码：</p>
 
-<pre><code class="language-typescript">let importAll = (requireContext: __WebpackModuleApi.RequireContext) =&gt; requireContext.keys().forEach(requireContext);
+<pre><code class="language-typescript">let importAll = (requireContext: __WebpackModuleApi.RequireContext) =&gt;
+requireContext.keys().forEach(requireContext);
 
-try {importAll(require.context('../assets/icons', true, /\.svg$/));} catch (error) {console.log(error);}
+try {
+importAll(require.context(&quot;../assets/icons&quot;, true, /\.svg$/));
+} catch (error) {
+console.log(error);
+}
 </code></pre>
 
 <p><img src="/images/svg-2.png" alt="" /></p></li>
 
-<li><p>下载的svg可能默认有填充颜色，这样你就无法再变更svg的颜色，怎么办？</p>
+<li><p>下载的 svg 可能默认有填充颜色，这样你就无法再变更 svg 的颜色，怎么办？</p></li>
+</ol>
 
-<p>简单方法是找到svg文件，在文件里搜索 fill ，去掉 fill 即可，例如：<img src="/images/svg-3.png" alt="" /></p>
+<p>简单方法是找到 svg 文件，在文件里搜索 fill ，去掉 fill 即可，例如：<img src="/images/svg-3.png" alt="" /></p>
 
-<p>但是这种方法不好，当你有100个svg文件时，难道你要修改100次么？</p>
+<p>但是这种方法不好，当你有 100 个 svg 文件时，难道你要修改 100 次么？</p>
 
-<p>因此正确的方法是使用一个loader，即修改 vue.config.js 文件：</p>
+<p>因此正确的方法是使用一个 loader，即修改 vue.config.js 文件：</p>
 
-<pre><code class="language-javaScript">.use('svgo-loader').loader('svgo-loader')
-  .tap(options =&gt; ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]})).end()
+<pre><code class="language-javaScript">   .use('svgo-loader').loader('svgo-loader')
+     .tap(options =&gt; ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]})).end()
 </code></pre>
 
-<p>然后安装这个loader： 命令行运行 yarn add &ndash;dev svgo-loader</p></li>
+<p>然后安装这个 loader： 命令行运行 yarn add &ndash;dev svgo-loader</p>
 
-<li><p>还有一个bug，但是视频里又说已经解决了，先不说这个问题了，遇到再加这部分内容吧。</p></li>
+<ol>
+<li>还有一个 bug，但是视频里又说已经解决了，先不说这个问题了，遇到再加这部分内容吧。</li>
 </ol>
 <ul class="pa0">
   

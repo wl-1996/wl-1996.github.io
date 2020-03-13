@@ -104,10 +104,10 @@
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      去 https://www.iconfont.cn 下载合适的图标,选择SVG下载 在vue项目src-assets目录里新建icons目录，把下载的svg图片放到这里面(svg实际就是xml文件) 此时在vue组件里导入svg会报错：import x from '@/assets/icons/label.svg' ,怎么办？接着做： 在src目录里的shims-vue.d.ts（另一个ts文件可能也可以）里加上如下代码：
-declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个loader
- 在vue.config.js文件里添加代码(这一步配置的是webpack)，最终代码为：
-const path = require('path') module.exports = { lintOnSave: false, chainWebpack: config =&gt;{ const dir = path.resolve(__dirname, 'src/assets/icons') config.module .rule('svg-sprite') .test(/\.svg$/) .include.add(dir).end() // 包含 icons 目录 .use('svg-sprite-loader').loader('svg-sprite-loader').options({extract:false}).end() config.plugin('svg-sprite').use(require('svg-sprite-loader/plugin'), [{plainSprite: true}]) config.module.rule('svg').exclude.add(dir) // 其他 svg loader 排除 icons 目录 // config.module // .
+      去 https://www.iconfont.cn 下载合适的图标,选择 SVG 下载 在 vue 项目 src-assets 目录里新建 icons 目录，把下载的 svg 图片放到这里面(svg 实际就是 xml 文件) 此时在 vue 组件里导入 svg 会报错：import x from '@/assets/icons/label.svg' ,怎么办？接着做： 在 src 目录里的 shims-vue.d.ts（另一个 ts 文件可能也可以）里加上如下代码：
+declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个 loader
+ 在 vue.config.js 文件里添加代码(这一步配置的是 webpack)，最终代码为：
+const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, chainWebpack: config =&gt; { const dir = path.
     </div>
   </div>
 </div>
