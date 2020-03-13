@@ -219,8 +219,7 @@ console.log(error);
 
 <p><img src="/images/svg-2.png" alt="" /></p></li>
 
-<li><p>下载的 svg 可能默认有填充颜色，这样你就无法再变更 svg 的颜色，怎么办？</p></li>
-</ol>
+<li><p>下载的 svg 可能默认有填充颜色，这样你就无法再变更 svg 的颜色，怎么办？</p>
 
 <p>简单方法是找到 svg 文件，在文件里搜索 fill ，去掉 fill 即可，例如：<img src="/images/svg-3.png" alt="" /></p>
 
@@ -228,58 +227,57 @@ console.log(error);
 
 <p>因此正确的方法是使用一个 loader，即修改 vue.config.js 文件（上边第 6 步已经修改过了，这次是增加两行代码）：</p>
 
-<pre><code class="language-javaScript">   .use('svgo-loader').loader('svgo-loader')
-     .tap(options =&gt; ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]})).end()
+<pre><code class="language-javaScript">.use('svgo-loader').loader('svgo-loader')
+.tap(options =&gt; ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]})).end()
 </code></pre>
 
 <p>最终代码为：<img src="/images/svg-4.png" alt="" /></p>
 
-<pre><code class="language-javascript">   const path = require(&quot;path&quot;);
-   module.exports = {
-     lintOnSave: false,
-     chainWebpack: config =&gt; {
-       const dir = path.resolve(__dirname, &quot;src/assets/icons&quot;);
-       config.module
-         .rule(&quot;svg-sprite&quot;)
-         .test(/\.svg$/)
-         .include.add(dir)
-         .end() // 包含 icons 目录
-         .use(&quot;svg-sprite-loader&quot;)
-         .loader(&quot;svg-sprite-loader&quot;)
-         .options({ extract: false })
-         .end()
-         .use(&quot;svgo-loader&quot;)
-         .loader(&quot;svgo-loader&quot;)
-         .tap(options =&gt; ({
-           ...options,
-           plugins: [{ removeAttrs: { attrs: &quot;fill&quot; } }]
-         }))
-         .end();
-       config
-         .plugin(&quot;svg-sprite&quot;)
-         .use(require(&quot;svg-sprite-loader/plugin&quot;), [{ plainSprite: true }]);
-       config.module.rule(&quot;svg&quot;).exclude.add(dir); // 其他 svg loader 排除 icons 目录
+<pre><code class="language-javascript">const path = require(&quot;path&quot;);
+module.exports = {
+lintOnSave: false,
+chainWebpack: config =&gt; {
+const dir = path.resolve(__dirname, &quot;src/assets/icons&quot;);
+config.module
+  .rule(&quot;svg-sprite&quot;)
+  .test(/\.svg$/)
+  .include.add(dir)
+  .end() // 包含 icons 目录
+  .use(&quot;svg-sprite-loader&quot;)
+  .loader(&quot;svg-sprite-loader&quot;)
+  .options({ extract: false })
+  .end()
+  .use(&quot;svgo-loader&quot;)
+  .loader(&quot;svgo-loader&quot;)
+  .tap(options =&gt; ({
+    ...options,
+    plugins: [{ removeAttrs: { attrs: &quot;fill&quot; } }]
+  }))
+  .end();
+config
+  .plugin(&quot;svg-sprite&quot;)
+  .use(require(&quot;svg-sprite-loader/plugin&quot;), [{ plainSprite: true }]);
+config.module.rule(&quot;svg&quot;).exclude.add(dir); // 其他 svg loader 排除 icons 目录
 
-       // config.module
-       //   .rule('svg-sprite')
-       //   .test(/\.(svg)(\?.*)?$/)
-       //   .include.add(dir).end()
-       //   .use('svg-sprite-loader-mod').loader('svg-sprite-loader-mod').options({extract: false}).end()
-       //   .use('svgo-loader').loader('svgo-loader')
-       //   .tap(options =&gt; ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]}))
-       //   .end()
-       // config.plugin('svg-sprite').use(require('svg-sprite-loader-mod/plugin'), [{plainSprite: true}])
-       // config.module.rule('svg').exclude.add(dir)
-     }
-   };
+// config.module
+//   .rule('svg-sprite')
+//   .test(/\.(svg)(\?.*)?$/)
+//   .include.add(dir).end()
+//   .use('svg-sprite-loader-mod').loader('svg-sprite-loader-mod').options({extract: false}).end()
+//   .use('svgo-loader').loader('svgo-loader')
+//   .tap(options =&gt; ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]}))
+//   .end()
+// config.plugin('svg-sprite').use(require('svg-sprite-loader-mod/plugin'), [{plainSprite: true}])
+// config.module.rule('svg').exclude.add(dir)
+}
+};
 </code></pre>
 
 <p>然后安装这个 loader： 命令行运行 yarn add &ndash;dev svgo-loader</p>
 
-<p>重新运行 yarn serve 预览效果</p>
+<p>重新运行 yarn serve 预览效果</p></li>
 
-<ol>
-<li>还有一个 bug，但是视频里又说已经解决了，先不说这个问题了，遇到再加这部分内容吧。</li>
+<li><p>还有一个 bug，但是视频里又说已经解决了，先不说这个问题了，遇到再加这部分内容吧。</p></li>
 </ol>
 <ul class="pa0">
   
