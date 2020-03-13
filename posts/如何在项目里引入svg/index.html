@@ -43,7 +43,7 @@ const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, ch
 
 <meta itemprop="datePublished" content="2020-03-12T11:53:11&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-12T11:53:11&#43;08:00" />
-<meta itemprop="wordCount" content="211">
+<meta itemprop="wordCount" content="313">
 
 
 
@@ -226,13 +226,57 @@ console.log(error);
 
 <p>但是这种方法不好，当你有 100 个 svg 文件时，难道你要修改 100 次么？</p>
 
-<p>因此正确的方法是使用一个 loader，即修改 vue.config.js 文件：</p>
+<p>因此正确的方法是使用一个 loader，即修改 vue.config.js 文件（上边第 6 步已经修改过了，这次是增加两行代码）：</p>
 
 <pre><code class="language-javaScript">   .use('svgo-loader').loader('svgo-loader')
      .tap(options =&gt; ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]})).end()
 </code></pre>
 
+<p>最终代码为：<img src="/images/svg-4.png" alt="" /></p>
+
+<pre><code class="language-javascript">   const path = require(&quot;path&quot;);
+   module.exports = {
+     lintOnSave: false,
+     chainWebpack: config =&gt; {
+       const dir = path.resolve(__dirname, &quot;src/assets/icons&quot;);
+       config.module
+         .rule(&quot;svg-sprite&quot;)
+         .test(/\.svg$/)
+         .include.add(dir)
+         .end() // 包含 icons 目录
+         .use(&quot;svg-sprite-loader&quot;)
+         .loader(&quot;svg-sprite-loader&quot;)
+         .options({ extract: false })
+         .end()
+         .use(&quot;svgo-loader&quot;)
+         .loader(&quot;svgo-loader&quot;)
+         .tap(options =&gt; ({
+           ...options,
+           plugins: [{ removeAttrs: { attrs: &quot;fill&quot; } }]
+         }))
+         .end();
+       config
+         .plugin(&quot;svg-sprite&quot;)
+         .use(require(&quot;svg-sprite-loader/plugin&quot;), [{ plainSprite: true }]);
+       config.module.rule(&quot;svg&quot;).exclude.add(dir); // 其他 svg loader 排除 icons 目录
+
+       // config.module
+       //   .rule('svg-sprite')
+       //   .test(/\.(svg)(\?.*)?$/)
+       //   .include.add(dir).end()
+       //   .use('svg-sprite-loader-mod').loader('svg-sprite-loader-mod').options({extract: false}).end()
+       //   .use('svgo-loader').loader('svgo-loader')
+       //   .tap(options =&gt; ({...options, plugins: [{removeAttrs: {attrs: 'fill'}}]}))
+       //   .end()
+       // config.plugin('svg-sprite').use(require('svg-sprite-loader-mod/plugin'), [{plainSprite: true}])
+       // config.module.rule('svg').exclude.add(dir)
+     }
+   };
+</code></pre>
+
 <p>然后安装这个 loader： 命令行运行 yarn add &ndash;dev svgo-loader</p>
+
+<p>重新运行 yarn serve 预览效果</p>
 
 <ol>
 <li>还有一个 bug，但是视频里又说已经解决了，先不说这个问题了，遇到再加这部分内容吧。</li>
