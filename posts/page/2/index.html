@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-12T11:53:11+08:00" />
+<meta property="og:updated_time" content="2020-03-26T18:06:11+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,34 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/vue/" class="link black dim">
+        Vue
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      英文文档：https://vuejs.org/index.html
+中文文档：https://cn.vuejs.org/index.html
+Vue 的中英文文档都是尤雨溪写的
+Vue 有完整版和只包含运行时版（非完整版），这两种版本的区别概括如下图所示：
+术语：
+完整版：同时包含编译器和运行时的版本。
+编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。
+运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。
+运行时+编译器 vs.只包含运行时：
+如果你需要在客户端编译模板 (比如传入一个字符串给 template 选项，或挂载到一个元素上并以其 DOM 内部的 HTML 作为模板)，就将需要加上编译器，即完整版：
+// 需要编译器 new Vue({ template: &quot;&lt;div&gt;{{ hi }}&lt;/div&gt;&quot; }); // 不需要编译器 new Vue({ render(h) { return h(&quot;div&quot;, this.hi); } });  当使用 vue-loader 或 vueify 的时候，*.vue 文件内部的模板会在构建时预编译成 JavaScript。你在最终打好的包里实际上是不需要编译器的，所以只用运行时版本即可。
+因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名：
+webpack:
+module.exports = { // ... resolve: { alias: { vue$: &quot;vue/dist/vue.esm.js&quot; // 用 webpack 1 时需用 'vue/dist/vue.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -275,21 +303,6 @@ waiceng : for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       css 小知识 琐碎布局经验  z-index 对没有定位的元素无用，只有定位的元素才可以用z-index: 2; 元素不脱标的情况下margin:0 auto;才有用,即只有标准流才能用marign: 0 atuto;。此外position: relative;并不脱标，保留原坑，所以相对定位的元素可以用margin: 0 auto;居中 插入一张通栏的大图：  方法一：直插法-直接插入图片:  方法二：用背景图片做  绝对定位的盒子已经脱离标准流了，不能自动撑满父亲，因此一定要写宽度; 同一层级后定位的元素会压住先定位的元素； 邵说不要用 margin 踹它的父亲，这样做不好，应该用老爸的 padding 挤走儿子； 绝对定位的元素无视父亲的 padding； display: none;与visibility: hidden的区别：  display: none;会放弃原来的位置，如同标签没有写； visibility: hidden;不会放弃原来的位置，只是把元素隐藏掉；   几种定位的区别  position: static;  默认的定位方式  position: relative;相对定位  适用轻微偏移的场景；比如“图标因为本身的设计问题导致无法居中”； 未脱离标准流，保留原来的位置； 参考点是原来的位置；  position: absolute;绝对定位  适用出现元素重叠，放置任意位置的场景； 脱离普通流，不保留原来的位置； 参考点是向上层找非 static 的定位元素； 不会产生边距合并现象； 绝对定位的元素收缩，需要设置宽度； 给行内元素设置绝对定位后就有了块级的特性，可以设置宽高，类似于浮动的元素；  position: fixed;固定定位  使用需持续固定在浏览器某位置的场景，比如“企业站窗口底部的联系我，某些固定在页面顶部的导航条”； 脱离普通流，不保留原来的位置； 参考点是浏览器屏幕视口； 一定要设置 top/bottom，否则可能无法展示；  position: sticky;  可以理解为相对定位和固定定位的混合，元素在跨越特定阀值前为相对定位，之后为固定定位； 一定要设置 top/bottom，否则可能无法展示；   伪类与伪元素  伪类一个冒号，伪元素两个冒号； 伪元素的样式一定要加上:
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/hugo/" class="link black dim">
-        Hugo
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       hugo 博客生成器  hugo 是世界上最快的博客生成器，用 Go 语言实现；  hugo 网址是: hugo  JS 实现的博客生成器叫做 Hexo，不如 hugo 好用；  
     </div>
   </div>
 </div>

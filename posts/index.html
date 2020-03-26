@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-12T11:53:11+08:00" />
+<meta property="og:updated_time" content="2020-03-26T18:06:11+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -99,6 +99,24 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" class="link black dim">
+        CSS Clearfix类清除浮动
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      为什么要使用 clearfix 类来清除浮动？ 因为在写 html+css 时，如果一个父级元素内部的子元素都是浮动的（float），那么父元素就不能被子元素撑开，如图所示：
+在用 clearfix 类解决这个问题之前，先来看一个简单的使用 clear 清除浮动 的例子： 我们可以看到 footer 的布局方式并不是我们想让它做的，为了让 footer 置于底部，可以给 footer 加上 clear:both; 来清除 footer 两侧的浮动:
+.footer { clear: both; }  如何用 clearfix 类来清除浮动带来的影响？ 首先代码示例：
+&lt;body&gt; &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  .container { width: 500px; background-color: black; } .left { width: 200px; height: 300px; background-color: blue; float: left; } .right { width: 200px; height: 200px; background-color: yellow; float: right; } .
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E9%87%8C%E5%BC%95%E5%85%A5svg/" class="link black dim">
         如何在项目里引入SVG
       </a>
@@ -145,7 +163,7 @@ const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, ch
       项目创建过程： 1. figma 制作设计稿 该项目有四个页面，分别是记账页，标签页，编辑标签页，和统计页。
 2. 前置条件：  全局安装@vue/cli@4.1.2 安装 Node.js v10 版本 VSCode 最新版或者 WebStorm 最新版 能 FQ  3. 安装 Node.js 10 和 @vue/cli@4.1.2 一、安装 Node.js 10
 理论上来说只要你的版本是 10 以上（10、12）都可以，但保险起见，还是保持版本一致比较好。如果你是老手，可以使用 nvm 来安装 Node.js 10，与其他版本共存；新手请按照下面的步骤做
- 运行 node &ndash;versioin 查看版本，如果不是 10，请先卸载当前版本：进入控制面板点击卸载即可（Mac 用户使用 brew uninstall node） 去 Node.js 官网下载第 10 版的安装包 一路点击下一步，注意安装目录可以改，一定不要在路径中出现中文和空格  注意重装 Node.js 后，你以前用 npm 或 yarn 全局安装的命令可能都会消失不见，如果你需要，可以需要重新全局安装这些命令。
+ 运行 node &ndash;versioin 查看版本，如果不是 10，请先卸载当前版本：进入控制面板点击卸载即可（Mac 用户使用 brew uninstall node） 去 Node.js 官网下载第 10 版的安装包  一路点击下一步，注意安装目录可以改，一定不要在路径中出现中文和空格  注意重装 Node.js 后，你以前用 npm 或 yarn 全局安装的命令可能都会消失不见，如果你需要，可以需要重新全局安装这些命令。
 npm install -g nrm --registry=https://registry.npm.taobao.org nrm use taobao  二、安装 @vue/cli@4.
     </div>
   </div>
@@ -274,34 +292,6 @@ Vue 2 通过 Object.defineProperty 来实现数据响应式。
 当把 options.data 传给 Vue 之后：
  data 会被 Vue 监听 data 会被 Vue 实例代理 每次对 data 的读写都会被 Vue 监控 Vue 会在 data 变化时更新 UI  Vue 有 bug，代码示例：
 import Vue from &quot;vue/dist/vue.js&quot;; // import App from &quot;./App.vue&quot;; Vue.config.productionTip = false; new Vue({ data: { obj: { a: 0 } }, template: ` &lt;div&gt; {{obj.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/vue/" class="link black dim">
-        Vue
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      英文文档：https://vuejs.org/index.html
-中文文档：https://cn.vuejs.org/index.html
-Vue 的中英文文档都是尤雨溪写的
-Vue 有完整版和只包含运行时版（非完整版），这两种版本的区别概括如下图所示：
-术语：
-完整版：同时包含编译器和运行时的版本。
-编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。
-运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。
-运行时+编译器 vs.只包含运行时：
-如果你需要在客户端编译模板 (比如传入一个字符串给 template 选项，或挂载到一个元素上并以其 DOM 内部的 HTML 作为模板)，就将需要加上编译器，即完整版：
-// 需要编译器 new Vue({ template: &quot;&lt;div&gt;{{ hi }}&lt;/div&gt;&quot; }); // 不需要编译器 new Vue({ render(h) { return h(&quot;div&quot;, this.hi); } });  当使用 vue-loader 或 vueify 的时候，*.vue 文件内部的模板会在构建时预编译成 JavaScript。你在最终打好的包里实际上是不需要编译器的，所以只用运行时版本即可。
-因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。如果你仍然希望使用完整版，则需要在打包工具里配置一个别名：
-webpack:
-module.exports = { // ... resolve: { alias: { vue$: &quot;vue/dist/vue.esm.js&quot; // 用 webpack 1 时需用 'vue/dist/vue.
     </div>
   </div>
 </div>

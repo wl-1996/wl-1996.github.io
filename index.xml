@@ -6,10 +6,22 @@
     <description>Recent content on 个人学习博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 12 Mar 2020 11:53:11 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 18:06:11 +0800</lastBuildDate>
     
 	<atom:link href="http://wangkuo.monster/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSS Clearfix类清除浮动</title>
+      <link>http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/</link>
+      <pubDate>Thu, 26 Mar 2020 18:06:11 +0800</pubDate>
+      
+      <guid>http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/</guid>
+      <description>为什么要使用 clearfix 类来清除浮动？ 因为在写 html+css 时，如果一个父级元素内部的子元素都是浮动的（float），那么父元素就不能被子元素撑开，如图所示：
+在用 clearfix 类解决这个问题之前，先来看一个简单的使用 clear 清除浮动 的例子： 我们可以看到 footer 的布局方式并不是我们想让它做的，为了让 footer 置于底部，可以给 footer 加上 clear:both; 来清除 footer 两侧的浮动:
+.footer { clear: both; }  如何用 clearfix 类来清除浮动带来的影响？ 首先代码示例：
+&amp;lt;body&amp;gt; &amp;lt;div class=&amp;quot;container&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;right&amp;quot;&amp;gt;right&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;footer&amp;quot;&amp;gt;footer&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  .container { width: 500px; background-color: black; } .left { width: 200px; height: 300px; background-color: blue; float: left; } .right { width: 200px; height: 200px; background-color: yellow; float: right; } .</description>
+    </item>
     
     <item>
       <title>如何在项目里引入SVG</title>
@@ -46,7 +58,7 @@ const path = require(&amp;quot;path&amp;quot;); module.exports = { lintOnSave: f
       <description>项目创建过程： 1. figma 制作设计稿 该项目有四个页面，分别是记账页，标签页，编辑标签页，和统计页。
 2. 前置条件：  全局安装@vue/cli@4.1.2 安装 Node.js v10 版本 VSCode 最新版或者 WebStorm 最新版 能 FQ  3. 安装 Node.js 10 和 @vue/cli@4.1.2 一、安装 Node.js 10
 理论上来说只要你的版本是 10 以上（10、12）都可以，但保险起见，还是保持版本一致比较好。如果你是老手，可以使用 nvm 来安装 Node.js 10，与其他版本共存；新手请按照下面的步骤做
- 运行 node &amp;ndash;versioin 查看版本，如果不是 10，请先卸载当前版本：进入控制面板点击卸载即可（Mac 用户使用 brew uninstall node） 去 Node.js 官网下载第 10 版的安装包 一路点击下一步，注意安装目录可以改，一定不要在路径中出现中文和空格  注意重装 Node.js 后，你以前用 npm 或 yarn 全局安装的命令可能都会消失不见，如果你需要，可以需要重新全局安装这些命令。
+ 运行 node &amp;ndash;versioin 查看版本，如果不是 10，请先卸载当前版本：进入控制面板点击卸载即可（Mac 用户使用 brew uninstall node） 去 Node.js 官网下载第 10 版的安装包  一路点击下一步，注意安装目录可以改，一定不要在路径中出现中文和空格  注意重装 Node.js 后，你以前用 npm 或 yarn 全局安装的命令可能都会消失不见，如果你需要，可以需要重新全局安装这些命令。
 npm install -g nrm --registry=https://registry.npm.taobao.org nrm use taobao  二、安装 @vue/cli@4.</description>
     </item>
     
