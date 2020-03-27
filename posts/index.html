@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-26T18:06:11+08:00" />
+<meta property="og:updated_time" content="2020-03-27T11:12:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -99,6 +99,22 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/%E5%86%99vue%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="link black dim">
+        写Vue组件的三种方式（单文本组件）
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JS 对象写法 &lt;script&gt; export default{ name: 'Money', components: { Tags,Notes,Types,NumberPad }, data(){ return { type: '-' } }, props:['x'], mixins: [xixi], methods:{ add(){ } }, beforeCreate(){ }, created(){ } } &lt;/script&gt;  JS 类写法 &lt;script lang=js&gt; @Component export default class XXX extends Vue{ xxx = 'hi'; } &lt;script&gt;  跟 TS 类写法基本一样，只是不用写编译时的类型而已。
+TS 类写法 &lt;script lang=ts&gt; import Vue from 'vue'; // Component,Prop（外部属性）都是装饰器 // vue-property-decorator是kaorun343写的一个库，他写的比尤雨溪写得好。 // 尤雨溪写的叫vue-class-component,这是vue官方提供的ts支持库，官方的不好用，所以我们用kaorun343写的 import {Component, Prop} from 'vue-property-decorator'; @Component //告诉ts下边是vue组件，然后下边的东西会被自动处理为data,methods,props等选项 export default class Types extends Vue{ // 这个地方不用写类型，ts会自动检测 type = '-'; // 冒号左边是指定运行时类型(告诉vue xxx类型是number)，右边指定编译时类型（告诉ts xxx的类型） // @Prop告诉vue xxx是外部属性，不是data @Prop(Number) xxx: number | undefined; selectedType(type: string){ this.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" class="link black dim">
         CSS Clearfix类清除浮动
       </a>
@@ -155,8 +171,8 @@ const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, ch
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/accounting-items/" class="link black dim">
-        vue项目：Accounting Items落地过程及相关设置
+      <a href="http://wangkuo.monster/posts/%E7%82%B9%E6%BB%B4%E8%AE%B0%E8%B4%A6/" class="link black dim">
+        vue项目：点滴记账落地过程及相关设置
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
@@ -268,30 +284,6 @@ import Vue from &quot;vue&quot;; import App from &quot;./App.vue&quot;; Vue.conf
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       computed 被计算出来的属性就是计算属性
 例 1-用户名展示： // 引入完整版的vue,方便讲解 import Vue from &quot;vue/dist/vue.js&quot;; Vue.config.productionTip = false; new Vue({ data: { user: { email: &quot;741341649@qq.com&quot;, nickname: &quot;wangxiaokuo&quot;, phone: &quot;18790342745&quot; } }, computed: { displayName: { get() { const user = this.user; return user.nickname || user.email || user.phone; }, set(value) { this.user.nickname = value; } } }, template: ` &lt;div&gt; {{displayName}} &lt;div&gt; {{displayName}} &lt;button @click=&quot;displayName='lili'&quot; &gt;点我设置新的名字&lt;/button&gt; &lt;/div&gt; &lt;/div&gt; ` }).$mount(&quot;#app&quot;);  页面：例 2-列表展示： import Vue from &quot;vue/dist/vue.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/vue-%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" class="link black dim">
-        Vue 数据响应式
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      什么是响应式？
-我打你一拳，你会喊疼，那你就是响应式的。也就是说如果一个物体能对外界的刺激做出反应，它就是响应式的。
-Vue 的 data 是响应式的：
-在 vm 示例：const vm = new Vue({data:{n:0}})中，
-我如果修改了 vm.n,那么 UI 中的 n 就会响应我，
-Vue 2 通过 Object.defineProperty 来实现数据响应式。
-数据响应式原理：
-当把 options.data 传给 Vue 之后：
- data 会被 Vue 监听 data 会被 Vue 实例代理 每次对 data 的读写都会被 Vue 监控 Vue 会在 data 变化时更新 UI  Vue 有 bug，代码示例：
-import Vue from &quot;vue/dist/vue.js&quot;; // import App from &quot;./App.vue&quot;; Vue.config.productionTip = false; new Vue({ data: { obj: { a: 0 } }, template: ` &lt;div&gt; {{obj.
     </div>
   </div>
 </div>

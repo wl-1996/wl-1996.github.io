@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-26T18:06:11+08:00" />
+<meta property="og:updated_time" content="2020-03-27T11:12:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,30 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/vue-%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E5%BC%8F/" class="link black dim">
+        Vue 数据响应式
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      什么是响应式？
+我打你一拳，你会喊疼，那你就是响应式的。也就是说如果一个物体能对外界的刺激做出反应，它就是响应式的。
+Vue 的 data 是响应式的：
+在 vm 示例：const vm = new Vue({data:{n:0}})中，
+我如果修改了 vm.n,那么 UI 中的 n 就会响应我，
+Vue 2 通过 Object.defineProperty 来实现数据响应式。
+数据响应式原理：
+当把 options.data 传给 Vue 之后：
+ data 会被 Vue 监听 data 会被 Vue 实例代理 每次对 data 的读写都会被 Vue 监控 Vue 会在 data 变化时更新 UI  Vue 有 bug，代码示例：
+import Vue from &quot;vue/dist/vue.js&quot;; // import App from &quot;./App.vue&quot;; Vue.config.productionTip = false; new Vue({ data: { obj: { a: 0 } }, template: ` &lt;div&gt; {{obj.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -288,21 +312,6 @@ waiceng : for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
        浏览器渲染机制：  解析HTML标签，构建DOM树； 解析CSS，构建CSSOM树； 把DOM和CSSOM合并成一个渲染树； 布局（文档流，盒模型，计算大小和位置）； 绘制（边框颜色，文字颜色，阴影等）； 如图所示：  DOM+BOM+Repaint+Reflow(Relayout)  DOM-文档对象模型  浏览器提供的一系列能操作网页结构的API；  BOM-浏览器对象模型（Browser Object Model）  浏览器提供的一系列和页面结构无关但和浏览器其他功能相关的API； 比如说获取当前浏览器的历史记录/你的地理位置/浏览器类型/窗口大小等；  从URL输入浏览器到页面展现发生了什么？ Repaint:绘制页面发生变化的部分； Reflow/Relayout:重新计算元素的几何尺寸，位置(即重新布局)；  
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/css%E7%90%90%E7%A2%8E%E7%9F%A5%E8%AF%86/" class="link black dim">
-        Css琐碎知识
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      css 小知识 琐碎布局经验  z-index 对没有定位的元素无用，只有定位的元素才可以用z-index: 2; 元素不脱标的情况下margin:0 auto;才有用,即只有标准流才能用marign: 0 atuto;。此外position: relative;并不脱标，保留原坑，所以相对定位的元素可以用margin: 0 auto;居中 插入一张通栏的大图：  方法一：直插法-直接插入图片:  方法二：用背景图片做  绝对定位的盒子已经脱离标准流了，不能自动撑满父亲，因此一定要写宽度; 同一层级后定位的元素会压住先定位的元素； 邵说不要用 margin 踹它的父亲，这样做不好，应该用老爸的 padding 挤走儿子； 绝对定位的元素无视父亲的 padding； display: none;与visibility: hidden的区别：  display: none;会放弃原来的位置，如同标签没有写； visibility: hidden;不会放弃原来的位置，只是把元素隐藏掉；   几种定位的区别  position: static;  默认的定位方式  position: relative;相对定位  适用轻微偏移的场景；比如“图标因为本身的设计问题导致无法居中”； 未脱离标准流，保留原来的位置； 参考点是原来的位置；  position: absolute;绝对定位  适用出现元素重叠，放置任意位置的场景； 脱离普通流，不保留原来的位置； 参考点是向上层找非 static 的定位元素； 不会产生边距合并现象； 绝对定位的元素收缩，需要设置宽度； 给行内元素设置绝对定位后就有了块级的特性，可以设置宽高，类似于浮动的元素；  position: fixed;固定定位  使用需持续固定在浏览器某位置的场景，比如“企业站窗口底部的联系我，某些固定在页面顶部的导航条”； 脱离普通流，不保留原来的位置； 参考点是浏览器屏幕视口； 一定要设置 top/bottom，否则可能无法展示；  position: sticky;  可以理解为相对定位和固定定位的混合，元素在跨越特定阀值前为相对定位，之后为固定定位； 一定要设置 top/bottom，否则可能无法展示；   伪类与伪元素  伪类一个冒号，伪元素两个冒号； 伪元素的样式一定要加上:
     </div>
   </div>
 </div>

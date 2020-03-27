@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-26T18:06:11+08:00" />
+<meta property="og:updated_time" content="2020-03-27T11:12:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,21 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/css%E7%90%90%E7%A2%8E%E7%9F%A5%E8%AF%86/" class="link black dim">
+        Css琐碎知识
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      css 小知识 琐碎布局经验  z-index 对没有定位的元素无用，只有定位的元素才可以用z-index: 2; 元素不脱标的情况下margin:0 auto;才有用,即只有标准流才能用marign: 0 atuto;。此外position: relative;并不脱标，保留原坑，所以相对定位的元素可以用margin: 0 auto;居中 插入一张通栏的大图：  方法一：直插法-直接插入图片:  方法二：用背景图片做  绝对定位的盒子已经脱离标准流了，不能自动撑满父亲，因此一定要写宽度; 同一层级后定位的元素会压住先定位的元素； 邵说不要用 margin 踹它的父亲，这样做不好，应该用老爸的 padding 挤走儿子； 绝对定位的元素无视父亲的 padding； display: none;与visibility: hidden的区别：  display: none;会放弃原来的位置，如同标签没有写； visibility: hidden;不会放弃原来的位置，只是把元素隐藏掉；   几种定位的区别  position: static;  默认的定位方式  position: relative;相对定位  适用轻微偏移的场景；比如“图标因为本身的设计问题导致无法居中”； 未脱离标准流，保留原来的位置； 参考点是原来的位置；  position: absolute;绝对定位  适用出现元素重叠，放置任意位置的场景； 脱离普通流，不保留原来的位置； 参考点是向上层找非 static 的定位元素； 不会产生边距合并现象； 绝对定位的元素收缩，需要设置宽度； 给行内元素设置绝对定位后就有了块级的特性，可以设置宽高，类似于浮动的元素；  position: fixed;固定定位  使用需持续固定在浏览器某位置的场景，比如“企业站窗口底部的联系我，某些固定在页面顶部的导航条”； 脱离普通流，不保留原来的位置； 参考点是浏览器屏幕视口； 一定要设置 top/bottom，否则可能无法展示；  position: sticky;  可以理解为相对定位和固定定位的混合，元素在跨越特定阀值前为相对定位，之后为固定定位； 一定要设置 top/bottom，否则可能无法展示；   伪类与伪元素  伪类一个冒号，伪元素两个冒号； 伪元素的样式一定要加上:
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -253,21 +268,6 @@ var obj = {}  obj.toString()//居然不报错，因为obj的隐藏属性对应�
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       JS 数据类型 相关知识概述  都是一，为什么要分数字 1 和字符串&rsquo;1&rsquo;?  功能不同：  数字是数字，字符串是字符串，要严谨； 数字能加减乘除，字符串不行； 字符串能表示电话号码，数字不行；  存储形式不同：  JS 中，数字是用 64 位浮点数的形式存储的； JS 中，字符串实用类似 UTF8 形式存储的(UCS-2);   如何存数字？  十进制转二进制即可  用 0~127 表示所有符号：  0 表示结束字符； 10 表示换行； 13 表示回车； 32 表示空格； 33-47 表示标点； 48-57 表示数字符号； 65-90 表示大写字母； 97-122 表示小写字母； 127 表示删除键；  Unicode  优点：  已经收录 13 万字符（大于 16 位），全世界通用； 以后还会继续扩充，不会停止； 最新版只添加了一个字&ndash;令和的合体字；  缺点：  两个字节不够用，每个字符都要用三个及以上字节； 这样所有的文件都扩大 50%，不划算；    数字 number  写法：  整数写法：1 小数写法：0.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/js%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="link black dim">
-        JS基本语法
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      JS 基本语法 什么是表达式和语句  表达式：  1+2 表达式的值为 3； add(1,2)表达式的值为函数的返回值； console.log 表达式的值为函数本身； console.log(3)表达式的值为多少?  语句：  var a=1 是一个语句；  表达式和语句的区别？  表达式一般都有值，语句可能有也可能没有值； 语句一般会改变环境(声明、赋值)； 上面两句话并不是绝对的；  大小写敏感：  var a 和 var A 是不同的； object 与 Object 是不同的； function 和 Function 是不同的；  空格：  大部分空格没有实际意义； var a=1 和 var a = 1 没有区别；加回车大部分时候也不影响； 只有一个地方不能加回车，那就是 return 后面；   标识符的规则  规则：  第一个字符，可以是 Unicode 字母或者\$或者_或者中文； 后面的字符，除了上面所说，还可以有数字；  变量名是标识符：  var _=1; var \$=2; var_=6; var 你好=&ldquo;hi&rdquo;;  注释的分类：  不好的注释：  把代码翻译成中文； 过时的注释； 发泄不满的注释；  好的注释：  踩坑注释； 为什么代码会写的这么奇怪，遇到什么 bug；   区块 block
     </div>
   </div>
 </div>

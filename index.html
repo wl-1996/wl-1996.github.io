@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/" />
 
-<meta property="og:updated_time" content="2020-03-26T18:06:11+08:00" />
+<meta property="og:updated_time" content="2020-03-27T11:12:08+08:00" />
 <meta itemprop="name" content="个人学习博客">
 <meta itemprop="description" content="">
 
@@ -125,6 +125,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://wangkuo.monster/posts/%E5%86%99vue%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="color-inherit dim link">
+            写Vue组件的三种方式（单文本组件）
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          JS 对象写法 &lt;script&gt; export default{ name: 'Money', components: { Tags,Notes,Types,NumberPad }, data(){ return { type: '-' } }, props:['x'], mixins: [xixi], methods:{ add(){ } }, beforeCreate(){ }, created(){ } } &lt;/script&gt;  JS 类写法 &lt;script lang=js&gt; @Component export default class XXX extends Vue{ xxx = 'hi'; } &lt;script&gt;  跟 TS 类写法基本一样，只是不用写编译时的类型而已。
+TS 类写法 &lt;script lang=ts&gt; import Vue from 'vue'; // Component,Prop（外部属性）都是装饰器 // vue-property-decorator是kaorun343写的一个库，他写的比尤雨溪写得好。 // 尤雨溪写的叫vue-class-component,这是vue官方提供的ts支持库，官方的不好用，所以我们用kaorun343写的 import {Component, Prop} from 'vue-property-decorator'; @Component //告诉ts下边是vue组件，然后下边的东西会被自动处理为data,methods,props等选项 export default class Types extends Vue{ // 这个地方不用写类型，ts会自动检测 type = '-'; // 冒号左边是指定运行时类型(告诉vue xxx类型是number)，右边指定编译时类型（告诉ts xxx的类型） // @Prop告诉vue xxx是外部属性，不是data @Prop(Number) xxx: number | undefined; selectedType(type: string){ this.
+        </div>
+          <a href="http://wangkuo.monster/posts/%E5%86%99vue%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" class="color-inherit dim link">
             CSS Clearfix类清除浮动
             </a>
@@ -171,35 +196,6 @@ const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, ch
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://wangkuo.monster/posts/webstorm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="color-inherit dim link">
-            WebStorm使用教程
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          配置终端  打开设置，进入 Tools =&gt; Terminal 将 Shell Path 改为你的 bash.exe 的绝对路径，比如我的路径是 C:\自己找路径\cmder\vendor\git-for-windows\bin\bash.exe，如下图（如果找不对路径，可以使用 everything 软件搜索 bash.exe，从搜索结果里找和我的路径近似的）
- 建议 cmder 用户将提示符从 λ 改为 $（Git bash 用户请跳过此步骤），用 VSCode 打开文件 C:\自己找路径\cmder\vendor\git-for-windows\etc\profile.d\git-prompt.sh，改其中第 36 行，将 λ 改为 $
- 此时就可以打开 WebStorm 的终端了
-  配置 git  打开设置，进入 Version Control =&gt; Git 将 Path to Git 改为 git.exe 的绝对路径，比如我的路径是 C:\请自己找到对应的目录\cmder\vendor\git-for-windows\bin\git.exe，如下图
-  查看快捷键  按两下 Shift，你会得到一个搜索框，这个搜索框可以搜索任何东西 在搜索框里输入你想要的功能名称，比如 reformat （代码格式化），然后你就看到对应的操作（Action） Action 后面就跟着对应的快捷键
- 不过这个方式的缺点是只能搜英文，所以可以看第二个方式：查看菜单栏，快捷键就写在菜单栏每一项 Action 的后面
-        </div>
-          <a href="http://wangkuo.monster/posts/webstorm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
@@ -208,8 +204,14 @@ const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, ch
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://wangkuo.monster/posts/accounting-items/" class="link black dim">
-              vue项目：Accounting Items落地过程及相关设置
+            <a href="http://wangkuo.monster/posts/webstorm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="link black dim">
+              WebStorm使用教程
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://wangkuo.monster/posts/%E7%82%B9%E6%BB%B4%E8%AE%B0%E8%B4%A6/" class="link black dim">
+              vue项目：点滴记账落地过程及相关设置
             </a>
           </h2>
         
@@ -222,12 +224,6 @@ const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, ch
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-2/" class="link black dim">
               JQuery学习-2
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://wangkuo.monster/posts/vue%E6%A8%A1%E7%89%88template%E8%AF%AD%E6%B3%95/" class="link black dim">
-              Vue模版template语法
             </a>
           </h2>
         
