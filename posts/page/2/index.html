@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-27T11:12:08+08:00" />
+<meta property="og:updated_time" content="2020-03-27T16:52:14+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,22 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/computed%E5%92%8Cwatch/" class="link black dim">
+        Computed和watch
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      computed 被计算出来的属性就是计算属性
+例 1-用户名展示： // 引入完整版的vue,方便讲解 import Vue from &quot;vue/dist/vue.js&quot;; Vue.config.productionTip = false; new Vue({ data: { user: { email: &quot;741341649@qq.com&quot;, nickname: &quot;wangxiaokuo&quot;, phone: &quot;18790342745&quot; } }, computed: { displayName: { get() { const user = this.user; return user.nickname || user.email || user.phone; }, set(value) { this.user.nickname = value; } } }, template: ` &lt;div&gt; {{displayName}} &lt;div&gt; {{displayName}} &lt;button @click=&quot;displayName='lili'&quot; &gt;点我设置新的名字&lt;/button&gt; &lt;/div&gt; &lt;/div&gt; ` }).$mount(&quot;#app&quot;);  页面：例 2-列表展示： import Vue from &quot;vue/dist/vue.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -297,21 +313,6 @@ waiceng : for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.
  JavaScript是有界面效果：不像C语言，黑底白字，很枯燥的。 JavaScript的语法来源于C和Java：有C和Java的经验同学好学很多。 JavaScript是弱变量类型的语言，动态数据类型语言。 JavaScript运行在宿主环境（即浏览器）中，不关心内存，垃圾回收。  不好学的点：
  兼容性问题： IE8是个怪胎，很多东西都不一样，所以就要写兼容写法，不怕造轮子，多写几遍 花式写法很多，抽象：从简单入手，细细品味代码 太多细节：认真写自己的笔记，自己做实验;   学习方法
  要多去“品”程序，多去思考内在逻辑，读懂每一行代码！ JS机械重复性的劳动几乎为0，基本都是创造性的劳动。HTML、CSS都是重复的劳动，margin、padding挤来挤去。 永远不要背程序，每一个程序都必须自己会写。   Hello World 这事儿吧，挺有意思，就是学习任何的语言，我们都喜欢在屏幕上直接输出一点什么，当做最简单、最基本的案例。输出什么大家随意，但是很多人都习惯输出“hello world”，世界你好。感觉自己很有情怀的样子。
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" class="link black dim">
-        浏览器渲染机制
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       浏览器渲染机制：  解析HTML标签，构建DOM树； 解析CSS，构建CSSOM树； 把DOM和CSSOM合并成一个渲染树； 布局（文档流，盒模型，计算大小和位置）； 绘制（边框颜色，文字颜色，阴影等）； 如图所示：  DOM+BOM+Repaint+Reflow(Relayout)  DOM-文档对象模型  浏览器提供的一系列能操作网页结构的API；  BOM-浏览器对象模型（Browser Object Model）  浏览器提供的一系列和页面结构无关但和浏览器其他功能相关的API； 比如说获取当前浏览器的历史记录/你的地理位置/浏览器类型/窗口大小等；  从URL输入浏览器到页面展现发生了什么？ Repaint:绘制页面发生变化的部分； Reflow/Relayout:重新计算元素的几何尺寸，位置(即重新布局)；  
     </div>
   </div>
 </div>

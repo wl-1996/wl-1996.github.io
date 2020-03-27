@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/" />
 
-<meta property="og:updated_time" content="2020-03-27T11:12:08+08:00" />
+<meta property="og:updated_time" content="2020-03-27T16:52:14+08:00" />
 <meta itemprop="name" content="个人学习博客">
 <meta itemprop="description" content="">
 
@@ -125,6 +125,34 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://wangkuo.monster/posts/classprefix%E7%9A%84%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
+            ClassPrefix的使用
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          classPrefix 用于给组件里的元素批量添加类
+下边通过两个组件Money.vue和Layout.vue来说明如何使用classPrefix。
+这是Money.vue组件的代码：
+&lt;template&gt; //这里用到了Layout组件，Layout组件接受一个外部属性 //这里通过传入外部属性class-prefix从而给Layout组件内部的元素批量添加类 //注意，本来Layout接受的外部属性是： classPrefix, //这里怎么是class-prefix? //不要纠结，好像是vue组件等号左边不能有大写字母，所以只能这样写。 &lt;Layout class-prefix=&quot;layout&quot;&gt;&lt;/Layout&gt; &lt;/template&gt; &lt;script lang=&quot;ts&quot;&gt; import Vue from &quot;vue&quot;; import { Component } from &quot;vue-property-decorator&quot;; @Component export default class Money extends Vue {} &lt;/script&gt; &lt;style lang=&quot;scss&quot;&gt; //上边class-prefix已经给Layout组件里的元素批量添加了类，layout-content就是其中一个 //这里通过layout-content类设置样式: .layout-content { display: flex; border: 3px solid red; } &lt;/style&gt;  这是Layout.vue组件的代码：
+&lt;template&gt; //意思是如果外部传了属性classPrefix,那么这个div元素的类就为：classPrefix-wrapper &lt;div :class = ' classPrefix &amp;&amp; `${classPrefix}-wrapper`'&gt; //如果外部传了属性classPrefix,那么这个div元素就有：classPrefix-content 这个类 &lt;div :class = 'classPrefix &amp;&amp; `${classPrefix}-content`'&gt; &lt;slot/&gt; &lt;/div&gt; &lt;/div&gt; &lt;/template&gt; &lt;script lang='ts'&gt; import Vue from 'vue'; import {Component,Prop} from 'vue-property-decorator'; @Component export default class Layout extends Vue{ //该组件接受一个外部属性classPrefix： @Prop(String) classPrefix: string | undefined; } &lt;/script&gt;  也就是说比如有两个组件Money.
+        </div>
+          <a href="http://wangkuo.monster/posts/classprefix%E7%9A%84%E4%BD%BF%E7%94%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://wangkuo.monster/posts/%E5%86%99vue%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="color-inherit dim link">
             写Vue组件的三种方式（单文本组件）
             </a>
@@ -169,39 +197,18 @@ TS 类写法 &lt;script lang=ts&gt; import Vue from 'vue'; // Component,Prop（�
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E9%87%8C%E5%BC%95%E5%85%A5svg/" class="color-inherit dim link">
-            如何在项目里引入SVG
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          去 https://www.iconfont.cn 下载合适的图标,选择 SVG 下载 在 vue 项目 src-assets 目录里新建 icons 目录，把下载的 svg 图片放到这里面(svg 实际就是 xml 文件) 此时在 vue 组件里导入 svg 会报错：import x from '@/assets/icons/label.svg' ,怎么办？接着做： 在 src 目录里的 shims-vue.d.ts（另一个 ts 文件可能也可以）里加上如下代码：
-declare module &quot;*.svg&quot; { const content: string; export default content; }  此时报错会消失，但还不能用，接着命令行运行 yarn add svg-sprite-loader -D 安装一个 loader
- 在 vue.config.js 文件里添加代码(这一步配置的是 webpack)，最终代码为：
-const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, chainWebpack: config =&gt; { const dir = path.
-        </div>
-          <a href="http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E9%87%8C%E5%BC%95%E5%85%A5svg/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E9%87%8C%E5%BC%95%E5%85%A5svg/" class="link black dim">
+              如何在项目里引入SVG
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/webstorm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="link black dim">
@@ -218,12 +225,6 @@ const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, ch
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-3/" class="link black dim">
               JQuery学习-3
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-2/" class="link black dim">
-              JQuery学习-2
             </a>
           </h2>
         

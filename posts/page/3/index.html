@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-27T11:12:08+08:00" />
+<meta property="og:updated_time" content="2020-03-27T16:52:14+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,21 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" class="link black dim">
+        浏览器渲染机制
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       浏览器渲染机制：  解析HTML标签，构建DOM树； 解析CSS，构建CSSOM树； 把DOM和CSSOM合并成一个渲染树； 布局（文档流，盒模型，计算大小和位置）； 绘制（边框颜色，文字颜色，阴影等）； 如图所示：  DOM+BOM+Repaint+Reflow(Relayout)  DOM-文档对象模型  浏览器提供的一系列能操作网页结构的API；  BOM-浏览器对象模型（Browser Object Model）  浏览器提供的一系列和页面结构无关但和浏览器其他功能相关的API； 比如说获取当前浏览器的历史记录/你的地理位置/浏览器类型/窗口大小等；  从URL输入浏览器到页面展现发生了什么？ Repaint:绘制页面发生变化的部分； Reflow/Relayout:重新计算元素的几何尺寸，位置(即重新布局)；  
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -253,21 +268,6 @@ let obj = { 1:'a', 3.2:'b', le2:true, le-2:true, .234:true, 0xFF:true }; Object.
  let p1 = &lsquo;name&rsquo; let obj = {p1:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;p1&rsquo; let obj = {[p1]:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;name&rsquo; 不加[]的属性名会自动变成字符串，加了[]则会当作变量求值，值如果不是字符串，则会自动变成字符串  隐藏属性：
  JS 中每一个对象都有一个隐藏属性 这个隐藏属性储存着其共有属性组成的对象的地址 这个共有属性组成的对象叫做原型 也就是说，隐藏属性储存着原型的地址  隐藏属性代码示例：
 var obj = {}  obj.toString()//居然不报错，因为obj的隐藏属性对应的对象上有toString()   如何删除对象的属性  delete obj.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="link black dim">
-        JS数据类型
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      JS 数据类型 相关知识概述  都是一，为什么要分数字 1 和字符串&rsquo;1&rsquo;?  功能不同：  数字是数字，字符串是字符串，要严谨； 数字能加减乘除，字符串不行； 字符串能表示电话号码，数字不行；  存储形式不同：  JS 中，数字是用 64 位浮点数的形式存储的； JS 中，字符串实用类似 UTF8 形式存储的(UCS-2);   如何存数字？  十进制转二进制即可  用 0~127 表示所有符号：  0 表示结束字符； 10 表示换行； 13 表示回车； 32 表示空格； 33-47 表示标点； 48-57 表示数字符号； 65-90 表示大写字母； 97-122 表示小写字母； 127 表示删除键；  Unicode  优点：  已经收录 13 万字符（大于 16 位），全世界通用； 以后还会继续扩充，不会停止； 最新版只添加了一个字&ndash;令和的合体字；  缺点：  两个字节不够用，每个字符都要用三个及以上字节； 这样所有的文件都扩大 50%，不划算；    数字 number  写法：  整数写法：1 小数写法：0.
     </div>
   </div>
 </div>
