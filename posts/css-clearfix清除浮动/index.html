@@ -43,7 +43,7 @@
 
 <meta itemprop="datePublished" content="2020-03-26T18:06:11&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-26T18:06:11&#43;08:00" />
-<meta itemprop="wordCount" content="132">
+<meta itemprop="wordCount" content="126">
 
 
 
@@ -217,17 +217,14 @@
 
 <p>要解决此问题，我们可以给 container 添加一个类，叫做 clearfix，下面是 clearfix 的实现形式（之一）：</p>
 
-<pre><code class="language-css">.clearfix:after {
-  visibility: hidden;
+<pre><code class="language-css">.clearfix::after {
   display: block;
-  font-size: 0;
   content: &quot;&quot;;
   clear: both;
-  height: 0;
 }
 </code></pre>
 
-<p>上述代码通过伪类 :after 在 container 后添加内容（content），来实现清除浮动。</p>
+<p>上述代码通过伪元素 ::after 在 container 后添加内容（content），来实现清除浮动。</p>
 
 <p><img src="/images/clearfix-5.png" alt="" /></p>
 
