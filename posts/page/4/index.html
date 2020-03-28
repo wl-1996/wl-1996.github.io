@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-27T16:52:14+08:00" />
+<meta property="og:updated_time" content="2020-03-28T10:04:47+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,25 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="link black dim">
+        JS对象基本语法
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      《JS 对象基本用法》 声明对象的两种语法  let obj = {&lsquo;name&rsquo;: &lsquo;frank&rsquo;,&lsquo;age&rsquo;:18} let obj = new Object({&lsquo;name&rsquo;:&lsquo;frank&rsquo;}) console.log({&lsquo;name&rsquo;:&lsquo;frank&rsquo;,&lsquo;age&rsquo;:18}) 细节：  键名是字符串，不是标识符，可以包含任意字符； 引号可以省略，省略之后就只能写标识符； 就算引号省略了，键名还是字符串（重要）；  所有的属性名都会自动变成字符串，即使声明对象时不加引号，属性名也会自动变成字符串：
+let obj = { 1:'a', 3.2:'b', le2:true, le-2:true, .234:true, 0xFF:true }; Object.keys(obj) =&gt;[&quot;1&quot;,&quot;100&quot;,&quot;255&quot;,&quot;3.2&quot;,&quot;0.01&quot;,&quot;0.234&quot;]  如何用变量做属性名，之前都是用常量做属性名：
+ let p1 = &lsquo;name&rsquo; let obj = {p1:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;p1&rsquo; let obj = {[p1]:&lsquo;frank&rsquo;}这样写，属性名为&rsquo;name&rsquo; 不加[]的属性名会自动变成字符串，加了[]则会当作变量求值，值如果不是字符串，则会自动变成字符串  隐藏属性：
+ JS 中每一个对象都有一个隐藏属性 这个隐藏属性储存着其共有属性组成的对象的地址 这个共有属性组成的对象叫做原型 也就是说，隐藏属性储存着原型的地址  隐藏属性代码示例：
+var obj = {}  obj.toString()//居然不报错，因为obj的隐藏属性对应的对象上有toString()   如何删除对象的属性  delete obj.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">

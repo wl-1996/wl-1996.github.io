@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-03-27T16:52:14+08:00" />
+<meta property="og:updated_time" content="2020-03-28T10:04:47+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,24 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/v-model%E7%9A%84%E4%BD%BF%E7%94%A8/" class="link black dim">
+        v-model的使用
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      v-model 指令是一个简写，跟.sync 修饰符类似是一个语法糖。在表单 &lt;input&gt;、&lt;textarea&gt; 及 &lt;select&gt; 元素上创建双向数据绑定。比如在 input 表单元素里用 v-model 写法：
+&lt;input type='text' v-model='x'&gt;  那么等价于：
+&lt;input type='text' :value='x' @input = 'x = $event.target.value'&gt;  v-model 在内部为不同的输入元素使用不同的属性并抛出不同的事件：
+ text 和 textarea 元素使用 value 属性和 input 事件； checkbox 和 radio 使用 checked 属性和 change 事件； select 字段将 value 作为 prop 并将 change 作为事件。  
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -266,27 +284,6 @@ $(&quot;p&quot;).animate({ left: 1000 }, 2000); $(&quot;p&quot;).animate({ top: 
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       模版 template 的三种写法： Vue 完整版，写在 HTML 里 &lt;div id=&quot;xxx&quot;&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt;  new Vue({ el: &quot;#xxx&quot;, data: { n: 0 }, //data可以改成函数 methods: { add() {} } });  Vue 完整版，写在选项里 &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;  new Vue({ template: ` &lt;div&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt; `, //data可以改成函数 data: { n: 0 }, methods: { add() { this.n += 1; } } }).$mount(&quot;#app&quot;); // 注意一个细节：div#app 会被替代  Vue 非完整版，配合 xxx.vue 文件 &lt;template&gt; &lt;div&gt; {{n}} &lt;button @click=&quot;add&quot;&gt;+1&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { data() { return { n: 0 }; }, methods: { add() { this.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/vue%E4%B8%AD%E7%9A%84.sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="link black dim">
-        Vue中的.sync修饰符
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Vue 中的.sync 修饰符有什么用？ 概述： .sync 就是一个语法糖，它会被扩展为一个自动更新父组件属性的 v-on 监听器。
-示例代码：
-&lt;Child :money.sync=&quot;total&quot; /&gt;  会被扩展为：
-&lt;!-- :money=&quot;total&quot; 的意思是把变量total的值赋给money --&gt; &lt;!-- 后半句的意思是 当儿子组件中更新了 money 时，这个变化会同步给父组件的 total ，父组件通过 $event 获取这个儿子组件中的变化--&gt; &lt;Child :money=&quot;total&quot; v-on:update:money=&quot;total = $event&quot;/&gt;  当子组件需要更新 money 的值时，它需要显示地触发一个更新事件：
-&lt;!-- 当按钮被点击时会更新money，这些变化会被父亲组件获取到 --&gt; &lt;button @click=&quot;$emit('update:money', money - 100)&quot;&gt;  例子： 猛一看不明白，下边我么通过一个实例（儿子打电话（触发事件）向爸爸要钱）来说明这个代码到底是怎么运用的。
-main.js 文件：
-import Vue from &quot;vue&quot;; import App from &quot;./App.vue&quot;; Vue.config.productionTip = false; new Vue({ render: h =&gt; h(App) }).$mount(&quot;#app&quot;);  App.vue 文件：
     </div>
   </div>
 </div>

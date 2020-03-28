@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/" />
 
-<meta property="og:updated_time" content="2020-03-27T16:52:14+08:00" />
+<meta property="og:updated_time" content="2020-03-28T10:04:47+08:00" />
 <meta itemprop="name" content="个人学习博客">
 <meta itemprop="description" content="">
 
@@ -125,6 +125,33 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://wangkuo.monster/posts/v-model%E7%9A%84%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
+            v-model的使用
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          v-model 指令是一个简写，跟.sync 修饰符类似是一个语法糖。在表单 &lt;input&gt;、&lt;textarea&gt; 及 &lt;select&gt; 元素上创建双向数据绑定。比如在 input 表单元素里用 v-model 写法：
+&lt;input type='text' v-model='x'&gt;  那么等价于：
+&lt;input type='text' :value='x' @input = 'x = $event.target.value'&gt;  v-model 在内部为不同的输入元素使用不同的属性并抛出不同的事件：
+ text 和 textarea 元素使用 value 属性和 input 事件； checkbox 和 radio 使用 checked 属性和 change 事件； select 字段将 value 作为 prop 并将 change 作为事件。  
+        </div>
+          <a href="http://wangkuo.monster/posts/v-model%E7%9A%84%E4%BD%BF%E7%94%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://wangkuo.monster/posts/classprefix%E7%9A%84%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
             ClassPrefix的使用
             </a>
@@ -170,39 +197,18 @@ TS 类写法 &lt;script lang=ts&gt; import Vue from 'vue'; // Component,Prop（�
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" class="color-inherit dim link">
-            CSS Clearfix类清除浮动
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          为什么要使用 clearfix 类来清除浮动？ 因为在写 html+css 时，如果一个父级元素内部的子元素都是浮动的（float），那么父元素就不能被子元素撑开，如图所示：
-在用 clearfix 类解决这个问题之前，先来看一个简单的使用 clear 清除浮动 的例子： 我们可以看到 footer 的布局方式并不是我们想让它做的，为了让 footer 置于底部，可以给 footer 加上 clear:both; 来清除 footer 两侧的浮动:
-.footer { clear: both; }  如何用 clearfix 类来清除浮动带来的影响？ 首先代码示例：
-&lt;body&gt; &lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  .container { width: 500px; background-color: black; } .left { width: 200px; height: 300px; background-color: blue; float: left; } .right { width: 200px; height: 200px; background-color: yellow; float: right; } .
-        </div>
-          <a href="http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" class="link black dim">
+              CSS Clearfix类清除浮动
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E9%87%8C%E5%BC%95%E5%85%A5svg/" class="link black dim">
@@ -219,12 +225,6 @@ TS 类写法 &lt;script lang=ts&gt; import Vue from 'vue'; // Component,Prop（�
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/%E7%82%B9%E6%BB%B4%E8%AE%B0%E8%B4%A6/" class="link black dim">
               vue项目：点滴记账落地过程及相关设置
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-3/" class="link black dim">
-              JQuery学习-3
             </a>
           </h2>
         
