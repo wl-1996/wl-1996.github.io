@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/" />
 
-<meta property="og:updated_time" content="2020-04-07T20:49:39+08:00" />
+<meta property="og:updated_time" content="2020-03-28T10:04:47+08:00" />
 <meta itemprop="name" content="个人学习博客">
 <meta itemprop="description" content="">
 
@@ -125,32 +125,6 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://wangkuo.monster/posts/html%E8%AF%AD%E4%B9%89%E5%8C%96/" class="color-inherit dim link">
-            HTML语义化
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-           你对 HTML 语义化的理解？ HTML 语义化就是指 HTML 的标签都是带有语义的，因此写页面时应该用合适的标签构建页面，而不应该 div 一把梭。
-比如段落就用 p 标签，标题就用 h 标签，文章就写 article 标签，导航栏就用 nav 等等。
-HTML 语义化的优点？  在去掉或样式丢失时让页面呈现清晰的结构 对搜索引擎友好，利于 SEO 便于团队开发与维护  
-        </div>
-          <a href="http://wangkuo.monster/posts/html%E8%AF%AD%E4%B9%89%E5%8C%96/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://wangkuo.monster/posts/v-model%E7%9A%84%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
             v-model的使用
             </a>
@@ -198,18 +172,37 @@ HTML 语义化的优点？  在去掉或样式丢失时让页面呈现清晰的�
 
           </div>
         
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://wangkuo.monster/posts/%E5%86%99vue%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="color-inherit dim link">
+            写Vue组件的三种方式（单文本组件）
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          JS 对象写法 &lt;script&gt; export default{ name: 'Money', components: { Tags,Notes,Types,NumberPad }, data(){ return { type: '-' } }, props:['x'], mixins: [xixi], methods:{ add(){ } }, beforeCreate(){ }, created(){ } } &lt;/script&gt;  JS 类写法 &lt;script lang=js&gt; @Component export default class XXX extends Vue{ xxx = 'hi'; } &lt;script&gt;  跟 TS 类写法基本一样，只是不用写编译时的类型而已。
+TS 类写法 &lt;script lang=ts&gt; import Vue from 'vue'; // Component,Prop（外部属性）都是装饰器 // vue-property-decorator是kaorun343写的一个库，他写的比尤雨溪写得好。 // 尤雨溪写的叫vue-class-component,这是vue官方提供的ts支持库，官方的不好用，所以我们用kaorun343写的 import {Component, Prop} from 'vue-property-decorator'; @Component //告诉ts下边是vue组件，然后下边的东西会被自动处理为data,methods,props等选项 export default class Types extends Vue{ // 这个地方不用写类型，ts会自动检测 type = '-'; // 冒号左边是指定运行时类型(告诉vue xxx类型是number)，右边指定编译时类型（告诉ts xxx的类型） // @Prop告诉vue xxx是外部属性，不是data @Prop(Number) xxx: number | undefined; selectedType(type: string){ this.
+        </div>
+          <a href="http://wangkuo.monster/posts/%E5%86%99vue%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://wangkuo.monster/posts/%E5%86%99vue%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="link black dim">
-              写Vue组件的三种方式（单文本组件）
-            </a>
-          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/css-clearfix%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/" class="link black dim">
@@ -226,6 +219,12 @@ HTML 语义化的优点？  在去掉或样式丢失时让页面呈现清晰的�
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/webstorm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="link black dim">
               WebStorm使用教程
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://wangkuo.monster/posts/%E7%82%B9%E6%BB%B4%E8%AE%B0%E8%B4%A6/" class="link black dim">
+              vue项目：点滴记账落地过程及相关设置
             </a>
           </h2>
         

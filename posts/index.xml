@@ -6,21 +6,10 @@
     <description>Recent content in Posts on 个人学习博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 07 Apr 2020 20:49:39 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 10:04:47 +0800</lastBuildDate>
     
 	<atom:link href="http://wangkuo.monster/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>HTML语义化</title>
-      <link>http://wangkuo.monster/posts/html%E8%AF%AD%E4%B9%89%E5%8C%96/</link>
-      <pubDate>Tue, 07 Apr 2020 20:49:39 +0800</pubDate>
-      
-      <guid>http://wangkuo.monster/posts/html%E8%AF%AD%E4%B9%89%E5%8C%96/</guid>
-      <description> 你对 HTML 语义化的理解？ HTML 语义化就是指 HTML 的标签都是带有语义的，因此写页面时应该用合适的标签构建页面，而不应该 div 一把梭。
-比如段落就用 p 标签，标题就用 h 标签，文章就写 article 标签，导航栏就用 nav 等等。
-HTML 语义化的优点？  在去掉或样式丢失时让页面呈现清晰的结构 对搜索引擎友好，利于 SEO 便于团队开发与维护  </description>
-    </item>
     
     <item>
       <title>v-model的使用</title>
