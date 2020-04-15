@@ -35,13 +35,10 @@ Model/View/Controller/EventHub
  转译代码（ES6 转为 ES5，SCSS 转为 CSS） 构建 build 代码压缩 代码分析  查看 webpack 信息和版本：
 命令行运行 npm info webpack
 要安装最新版本或特定版本，请运行以下命令之一：
-npm install &ndash;save-dev webpack
-npm install &ndash;save-dev webpack@
+npm install --save-dev webpack或者yarn add webpack --dev
+npm install --save-dev webpack@&lt;version&gt;或者yarn add webpack@&lt;version&gt; --dev
 如果你使用 webpack 4&#43; 版本，你还需要安装 CLI:
-npm install &ndash;save-dev webpack-cli
-全局安装：
-npm install &ndash;global webpack
-webpack-dev-server 用于本地预览" />
+npm install --save-dev webpack-cli或者yarn add webpack-cli --dev" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://wangkuo.monster/posts/webpack-%E4%B8%8A/" />
 <meta property="article:published_time" content="2019-12-27T11:43:37+08:00" />
@@ -56,18 +53,15 @@ Model/View/Controller/EventHub
  转译代码（ES6 转为 ES5，SCSS 转为 CSS） 构建 build 代码压缩 代码分析  查看 webpack 信息和版本：
 命令行运行 npm info webpack
 要安装最新版本或特定版本，请运行以下命令之一：
-npm install &ndash;save-dev webpack
-npm install &ndash;save-dev webpack@
+npm install --save-dev webpack或者yarn add webpack --dev
+npm install --save-dev webpack@&lt;version&gt;或者yarn add webpack@&lt;version&gt; --dev
 如果你使用 webpack 4&#43; 版本，你还需要安装 CLI:
-npm install &ndash;save-dev webpack-cli
-全局安装：
-npm install &ndash;global webpack
-webpack-dev-server 用于本地预览">
+npm install --save-dev webpack-cli或者yarn add webpack-cli --dev">
 
 
 <meta itemprop="datePublished" content="2019-12-27T11:43:37&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-27T11:43:37&#43;08:00" />
-<meta itemprop="wordCount" content="604">
+<meta itemprop="wordCount" content="779">
 
 
 
@@ -83,13 +77,10 @@ Model/View/Controller/EventHub
  转译代码（ES6 转为 ES5，SCSS 转为 CSS） 构建 build 代码压缩 代码分析  查看 webpack 信息和版本：
 命令行运行 npm info webpack
 要安装最新版本或特定版本，请运行以下命令之一：
-npm install &ndash;save-dev webpack
-npm install &ndash;save-dev webpack@
+npm install --save-dev webpack或者yarn add webpack --dev
+npm install --save-dev webpack@&lt;version&gt;或者yarn add webpack@&lt;version&gt; --dev
 如果你使用 webpack 4&#43; 版本，你还需要安装 CLI:
-npm install &ndash;save-dev webpack-cli
-全局安装：
-npm install &ndash;global webpack
-webpack-dev-server 用于本地预览"/>
+npm install --save-dev webpack-cli或者yarn add webpack-cli --dev"/>
 
   </head>
 
@@ -229,21 +220,21 @@ webpack-dev-server 用于本地预览"/>
 
 <p>要安装最新版本或特定版本，请运行以下命令之一：</p>
 
-<p>npm install &ndash;save-dev webpack</p>
+<p><code>npm install --save-dev webpack</code>或者<code>yarn add webpack --dev</code></p>
 
-<p>npm install &ndash;save-dev webpack@<version></p>
+<p><code>npm install --save-dev webpack@&lt;version&gt;</code>或者<code>yarn add webpack@&lt;version&gt; --dev</code></p>
 
 <hr />
 
 <p>如果你使用 webpack 4+ 版本，你还需要安装 CLI:</p>
 
-<p>npm install &ndash;save-dev webpack-cli</p>
+<p><code>npm install --save-dev webpack-cli</code>或者<code>yarn add webpack-cli --dev</code></p>
 
 <hr />
 
 <p>全局安装：</p>
 
-<p>npm install &ndash;global webpack</p>
+<p><code>npm install --global webpack</code>或者<code>yarn global add webpack</code></p>
 
 <hr />
 
@@ -401,8 +392,8 @@ webpack-dev-server 用于本地预览"/>
 <p>先下载 style-loader 和 css-loader:</p>
 
 <ol>
-<li>npm install &ndash;save-dev css-loader</li>
-<li>npm install &ndash;save-dev style-loader</li>
+<li><code>yarn add css-loader --dev</code></li>
+<li><code>yarn add style-loader --dev</code></li>
 </ol>
 
 <hr />
@@ -421,7 +412,7 @@ webpack-dev-server 用于本地预览"/>
 
 <ol>
 <li>首先把配置改为开发环境（development）</li>
-<li>安装：npm install &ndash;save-dev webpack-dev-server</li>
+<li>安装：<code>yarn add webpack-dev-server --dev</code></li>
 <li>修改配置：<img src="/images/webpack-9.png" alt="" /></li>
 <li>修改 package.json 文件：<img src="/images/webpack-10.png" alt="" /></li>
 <li>命令行运行 yarn start 即可自动打开浏览器进行预览</li>
@@ -432,7 +423,7 @@ webpack-dev-server 用于本地预览"/>
 <p>但是这样引入的 css 是写到 sytle 标签里的 <img src="/images/webpack-11.png" alt="" />，怎么引入一个文件 css 呢？</p>
 
 <ol>
-<li>下载插件 npm install &ndash;save-dev mini-css-extract-plugin</li>
+<li>下载插件 <code>yarn add mini-css-extract-plugin --dev</code></li>
 
 <li><p>修改配置：</p>
 
@@ -522,9 +513,120 @@ rules: [
 
 <h3 id="目标六-用-webpack-引入-less-和-stylus">目标六：用 webpack 引入 LESS 和 Stylus</h3>
 
+<p>引入LESS：</p>
+
+<ol>
+<li>先本地下载less和less-loader加载器： <code>yarn add less less-loader --dev</code></li>
+
+<li><p>配置webpack-config.js:</p>
+
+<pre><code class="language-js">// webpack.config.js
+module.exports = {
+ ...
+ module: {
+   rules: [{
+     test: /\.less$/,
+     use: [{
+       loader: 'style-loader' // creates     style nodes from JS strings
+     }, {
+       loader: 'css-loader' // translates CSS    into CommonJS
+     }, {
+       loader: 'less-loader' // compiles Less    to CSS
+     }]
+   }]
+ }
+</code></pre></li>
+</ol>
+
+<hr />
+
+<p>引入Stylus:</p>
+
+<ol>
+<li>先本地下载 stylus 和 stylus-loader 加载器： <code>yarn add stylus stylus-loader --dev</code></li>
+
+<li><p>配置webpack-config.js:</p>
+
+<pre><code class="language-js">// webpack.config.js
+module.exports = {
+ ...
+ module: {
+   rules: [{
+     test: /\.styl$/,
+     use: [&quot;style-loader&quot;,&quot;css-loader&quot;,&quot;stylus-loader&quot;]
+   }]
+ }
+</code></pre></li>
+</ol>
+
 <h3 id="目标七-用-webpack-引入图片">目标七：用 webpack 引入图片</h3>
 
+<ol>
+<li>下载file-loader加载器：<code>yarn add file-loader --dev</code>;</li>
+
+<li><p>修改webpack.config.js：</p>
+
+<pre><code class="language-js">const path = require('path');
+
+module.exports = {
+  module: {
+    rules: [
++       {
++         test: /\.(png|svg|jpg|gif)$/,
++         use: [
++           'file-loader',
++         ],
++       },
+    ],
+  },
+};
+</code></pre></li>
+
+<li><p>怎么使用？</p>
+
+<ol>
+<li>第一 将png下载到本地；</li>
+<li>第二 <img src="/images/webpack-14.png" alt="" /></li>
+</ol></li>
+</ol>
+
 <h3 id="目标八-使用懒加载">目标八：使用懒加载</h3>
+
+<p>面试经常会问</p>
+
+<p>懒是什么意思，就是该做的时候不做，等到不得不做的时候才去做。</p>
+
+<p>为什么要懒加载？</p>
+
+<p>因为有的时候页面的js文件会很大，比如有100个模块，一开始就加载会很慢，用户体验不好。因此就可以懒加载，一开始只加载必要的模块，当用户点击的时候或者需要加载的时候再加载另外的模块。</p>
+
+<p>代码示例：</p>
+
+<p>入口文件index.js里：</p>
+
+<pre><code class="language-js">const button = document.createElement('button');
+button.innerText = '懒加载';
+div.appendChild(button);
+button.onclick = function () {
+    //import的动态语法，返回一个Promise对象
+    const promise = import('./src/lazy.js');
+    promise.then((module) =&gt; {
+            module.default();
+        },
+        () =&gt; {
+            console.log(&quot;模块加载错误&quot;);
+        });
+};
+</code></pre>
+
+<p>引入的文件lazy.js里：</p>
+
+<pre><code class="language-js">// 默认导出一个函数，加default和不加的效果是不一样的；
+// 如果不加default，那么index.js里的代码就需要把module.default()改为module.lazy()
+export default function lazy(){
+    console.log('我是一个懒加载的模块')
+}
+</code></pre>
 
 <h3 id="目标九-部署到-github-pages">目标九：部署到 Github Pages</h3>
 
