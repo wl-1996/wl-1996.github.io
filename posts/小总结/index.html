@@ -49,7 +49,7 @@ function f1() { let n = 110; function f2() { alert(n); } return f2; } let haha =
 
 <meta itemprop="datePublished" content="2019-12-25T11:51:29&#43;08:00" />
 <meta itemprop="dateModified" content="2019-12-25T11:51:29&#43;08:00" />
-<meta itemprop="wordCount" content="1856">
+<meta itemprop="wordCount" content="1850">
 
 
 
@@ -426,31 +426,9 @@ function unique(arr) {
   return arr;
 }
 
-let arr = [
-  1,
-  1,
-  &quot;true&quot;,
-  &quot;true&quot;,
-  true,
-  true,
-  15,
-  15,
-  false,
-  false,
-  undefined,
-  undefined,
-  null,
-  null,
-  NaN,
-  NaN,
-  &quot;NaN&quot;,
-  0,
-  0,
-  &quot;a&quot;,
-  &quot;a&quot;,
-  {},
-  {}
-];
+let arr = [1, 1, &quot;true&quot;, &quot;true&quot;, true, true, 15,
+    15, false, false, undefined, undefined, null,
+    null, NaN, NaN, &quot;NaN&quot;, 0, 0, &quot;a&quot;, &quot;a&quot;, {}, {}];
 console.log(unique(arr)); //输出 [1, &quot;true&quot;, 15, false, undefined, NaN, NaN, &quot;NaN&quot;, &quot;a&quot;, {…}, {…}]
 </code></pre>
 
@@ -468,31 +446,10 @@ function unique(arr) {
   // 或者 return [...new Set(arr)]
 }
 
-let arr = [
-  1,
-  1,
-  &quot;true&quot;,
-  &quot;true&quot;,
-  true,
-  true,
-  15,
-  15,
-  false,
-  false,
-  undefined,
-  undefined,
-  null,
-  null,
-  NaN,
-  NaN,
-  &quot;NaN&quot;,
-  0,
-  0,
-  &quot;a&quot;,
-  &quot;a&quot;,
-  {},
-  {}
-];
+let arr = [1, 1, &quot;true&quot;, &quot;true&quot;, true, true, 15,
+    15, false, false, undefined, undefined, null,
+    null, NaN, NaN, &quot;NaN&quot;, 0, 0, &quot;a&quot;, &quot;a&quot;, {}, {}];
+
 console.log(unique(arr)); //输出：[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {…}, {…}]
 </code></pre>
 
@@ -521,31 +478,9 @@ function unique(arr) {
   return array;
 }
 
-let arr = [
-  1,
-  1,
-  &quot;true&quot;,
-  &quot;true&quot;,
-  true,
-  true,
-  15,
-  15,
-  false,
-  false,
-  undefined,
-  undefined,
-  null,
-  null,
-  NaN,
-  NaN,
-  &quot;NaN&quot;,
-  0,
-  0,
-  &quot;a&quot;,
-  &quot;a&quot;,
-  {},
-  {}
-];
+let arr = [1, 1, &quot;true&quot;, &quot;true&quot;, true, true, 15,
+    15, false, false, undefined, undefined, null,
+    null, NaN, NaN, &quot;NaN&quot;, 0, 0, &quot;a&quot;, &quot;a&quot;, {}, {}];
 console.log(unique(arr)); //输出  [1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {…}, {…}]
 </code></pre>
 
