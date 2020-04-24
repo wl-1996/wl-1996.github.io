@@ -6,10 +6,19 @@
     <description>Recent content on 个人学习博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sat, 28 Mar 2020 10:04:47 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 24 Apr 2020 22:23:04 +0800</lastBuildDate>
     
 	<atom:link href="http://wangkuo.monster/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>配置8080端口</title>
+      <link>http://wangkuo.monster/posts/%E9%85%8D%E7%BD%AE8080%E7%AB%AF%E5%8F%A3/</link>
+      <pubDate>Fri, 24 Apr 2020 22:23:04 +0800</pubDate>
+      
+      <guid>http://wangkuo.monster/posts/%E9%85%8D%E7%BD%AE8080%E7%AB%AF%E5%8F%A3/</guid>
+      <description> 做项目想在手机端打开本地80端口链接预览如何设置？  打开控制面板 打开防火墙设置 进入高级设置  点击入站规则 点击新建规则 设置规则类型：端口 设置协议和端口：  设置操作：允许连接 设置配置文件：全部勾选（域 专用 公用） 设置名称 写上 8000-8888  点击完成  </description>
+    </item>
     
     <item>
       <title>v-model的使用</title>
