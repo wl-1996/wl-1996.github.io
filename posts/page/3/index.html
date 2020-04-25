@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-04-24T22:23:04+08:00" />
+<meta property="og:updated_time" content="2020-04-25T16:34:04+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,24 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/javascript%E5%AD%A6%E4%B9%A0-3/" class="link black dim">
+        JavaScript学习-3
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      循环语句后续，函数等知识 for 循环里的 break语句 break语句的用途就是：我已经找到我要的答案了，我不需要进行更多的循环了的时候用。代码示例如下：
+for(var i = 1; i&lt;=10; i++){ console.log(i); if(i == 5){ break; //找到5，然后终止for循环。 } }  break语句只能中断最内层循环，外层循环还在继续，代码示例：
+for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.log(i,j) if(j == 5){ break; //当 j == 5 的时候，终止内层for循环，外层继续。 } } }  如果你就想用 break 终止外层的 for 循环，那么要给外层for循环加标签，代码示例：
+waiceng : for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.log(i,j) if(j == 5){ break waiceng; //此时中断的就是外层的for循环 } } }  上边的语法虽然有，但是工作中很少用到，非常偏门，了解即可。
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -259,21 +277,6 @@ jQuery 如何获取元素 使用 jQuery 的第一步，往往就是将一个选�
  选择表达式可以是 CSS 选择器：
 $(document) //选择整个文档对象 $('#myId') //选择ID为myID的网页元素 $('.myClass') //选择class为myClass的元素 $('input[name=first]') //选择name属性等于first的input元素  选择表达式也可以是 jQuery 特有的表达式：
 $('a:first') //选择第一个a元素 $('a:last') //选择最后一个a元素 $('tr:odd') //选择表格下标是奇数的行 $('p:even') //选择下标为偶数的p $('#myForm:input') //选择表单中的input元素 $('div:animated') //选择当前处于动画状态的div元素 $('div:eq(3)') //选择下标为3的div元素 $('div:gt(3)') //选择下标大于3的div元素 $('div:lt(3)') //选择下标小于3的div元素   改变结果集 jQuery设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，从而缩小选择的结果
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/dom/" class="link black dim">
-        DOM
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      基本概念  学习 DOM 需要什么知识？  理解简单的 JS 语法，如变量、if else、循环 会背 JS 的其中数据类型-四基两空一对象：number,string,bool,symbol,null,undefined,object 知道 JS 的五个 falsy 值：0、NaN、null、undefined、&rdquo;&rdquo; 知道函数是对象，数组也是对象 会用 div 和 span 标签 会简单的 CSS 布局  网页其实就是一棵树-DOM（文档对象模型）树  例如这段代码 对应的 DOM 树就是：  JS 如何操作这棵树？  浏览器往 window 上加一个 document 即可 JS 用 document 操作网页，这就是 Document Object Model 文档对象模型  DOM 获取元素，也叫标签  window.id 或者直接 id document.getElementById(&lsquo;div&rsquo;) document.getElementsByTagName(&lsquo;div&rsquo;)[0] document.getElementsByClassName(&lsquo;red&rsquo;)[0] document.querySelector(&lsquo;#div&rsquo;) document.querySelectorAll(&lsquo;.red&rsquo;)[0]  注意  工作中用 document.querySelector 和 document.
     </div>
   </div>
 </div>

@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-04-24T22:23:04+08:00" />
+<meta property="og:updated_time" content="2020-04-25T16:34:04+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,25 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/vue%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E5%88%B0github%E6%B5%81%E7%A8%8B/" class="link black dim">
+        Vue项目发布到github流程
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      项目做好了如何发布到github？  运行rm -rf dist 目的是清空dist目录 运行yarn build 进行打包构建 运行yarn global add serve 全局安装预览工具，下次就不用再安装了 运行serve -s dist 预览dist目录，看打包后的dist目录是否正常显示,测试后就可以关了。
+ github上新建第一个仓库accounting-items-2用来存放源码（该仓库忽略dist），并提交本地代码
+ github上新建第二个仓库accounting-items-2-website（用来存放dist里的打包后的项目）
+ 配置vue.config.js文件：  根目录下新建deploy.sh文件，其内容为：
+#!/usr/bin/env sh # 当发生错误时中止脚本 set -e # 构建 yarn build # cd 到构建输出的目录下 cd dist # 部署到自定义域域名 # echo 'www.example.com' &gt; CNAME git init git add -A git commit -m 'deploy' # 部署到 https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt; # 下边的需要根据上边新建的仓库进行修改： # git push -f git@github.com:&lt;USERNAME&gt;/&lt;REPO&gt;.git master:gh-pages cd -  命令行运行 sh deploy.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -261,29 +280,6 @@ stop(是否清除队列, 是否瞬间完成当前动画);  如果没有写 true 
 10：DTD
 代码示例：
 &lt;!-- 注意下边代码不能换行，否则有兼容性问题，下节节点关系再说 --&gt; &lt;div id=&quot;box&gt;文本&lt;p&gt;&lt;/p&gt;&lt;!-- 这是注释 --&gt;&lt;/div&gt;  let box = document.getElementById(&quot;box&quot;) alert(box.nodeType) //1 alert(box.childNodes[0].nodeType) //3 alert(box.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-2/" class="link black dim">
-        JQuery学习-2
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      CSS 函数 CSS 函数可以读样式，也可以设样式。
-读样式，可以读取计算后样式，写一个参数，是不是驼峰都可以，但是必须加引号：
-$(&quot;p:first&quot;).css(&quot;background-color&quot;); $(&quot;p:first&quot;).css(&quot;backgroundColor&quot;);  设置样式，有两种语法，如果你只想设置一个样式，逗号隔开 k 和 v：
-$(&quot;p:odd&quot;).css(&quot;backgroundColor&quot;, &quot;blue&quot;);  如果想设置很多样式，就写 JSON：javascript $(&quot;p:odd&quot;).css(JSON);
-$(&quot;p:lt(4)&quot;).css({ width: 20, height: 20, backgroundColor: &quot;red&quot; });  特别的，还支持+=写法：$(&quot;p:eq(5)&quot;).css(&quot;width&quot;,&quot;+=20px&quot;)
-animate 函数 animate 函数负责处理动画，语法是：$(&quot;选择器&quot;).animate(终点JSON,动画时间,回调函数);
-$(&quot;p&quot;).animate({ left: 1000 }, 2000, function() { $(this).css(&quot;background-color&quot;, &quot;red&quot;); });  jQuery 默认有一个处理机制，叫做动画排队。当一个元素接收到了两个 animate 命令之后，后面的 animate 函数会排队等待执行：
-$(&quot;p&quot;).animate({ left: 1000 }, 2000); $(&quot;p&quot;).animate({ top: 400 }, 2000);  上边代码的顺序是：先 2000 毫秒横着跑，然后 2000 毫秒竖着跑。动画总时长 4000。
-如果想让元素斜着跑，就是同时变化 left 和 top ，就写在同一个 JSON 里面：$(&quot;p&quot;).
     </div>
   </div>
 </div>

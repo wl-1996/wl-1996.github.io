@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-04-24T22:23:04+08:00" />
+<meta property="og:updated_time" content="2020-04-25T16:34:04+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,29 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-2/" class="link black dim">
+        JQuery学习-2
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      CSS 函数 CSS 函数可以读样式，也可以设样式。
+读样式，可以读取计算后样式，写一个参数，是不是驼峰都可以，但是必须加引号：
+$(&quot;p:first&quot;).css(&quot;background-color&quot;); $(&quot;p:first&quot;).css(&quot;backgroundColor&quot;);  设置样式，有两种语法，如果你只想设置一个样式，逗号隔开 k 和 v：
+$(&quot;p:odd&quot;).css(&quot;backgroundColor&quot;, &quot;blue&quot;);  如果想设置很多样式，就写 JSON：javascript $(&quot;p:odd&quot;).css(JSON);
+$(&quot;p:lt(4)&quot;).css({ width: 20, height: 20, backgroundColor: &quot;red&quot; });  特别的，还支持+=写法：$(&quot;p:eq(5)&quot;).css(&quot;width&quot;,&quot;+=20px&quot;)
+animate 函数 animate 函数负责处理动画，语法是：$(&quot;选择器&quot;).animate(终点JSON,动画时间,回调函数);
+$(&quot;p&quot;).animate({ left: 1000 }, 2000, function() { $(this).css(&quot;background-color&quot;, &quot;red&quot;); });  jQuery 默认有一个处理机制，叫做动画排队。当一个元素接收到了两个 animate 命令之后，后面的 animate 函数会排队等待执行：
+$(&quot;p&quot;).animate({ left: 1000 }, 2000); $(&quot;p&quot;).animate({ top: 400 }, 2000);  上边代码的顺序是：先 2000 毫秒横着跑，然后 2000 毫秒竖着跑。动画总时长 4000。
+如果想让元素斜着跑，就是同时变化 left 和 top ，就写在同一个 JSON 里面：$(&quot;p&quot;).
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -285,24 +308,6 @@ function fn(){ var a = 1;// 定义在一个函数里面的变量，局部变量�
 如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：
 var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义： function fn(){ console.log(&quot;我是函数里面的语句，我认识全局变量 a 值为 &quot; + a); } fn(); console.log(&quot;函数外面的语句也认识 a 值为 &quot; + a);  总结一下：
  定义在 function 里面的变量叫做局部变量； 定义在全局范围内的，没有写在任何 function 里面的，叫做全局变量。   作用域链 当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例：
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/javascript%E5%AD%A6%E4%B9%A0-3/" class="link black dim">
-        JavaScript学习-3
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      循环语句后续，函数等知识 for 循环里的 break语句 break语句的用途就是：我已经找到我要的答案了，我不需要进行更多的循环了的时候用。代码示例如下：
-for(var i = 1; i&lt;=10; i++){ console.log(i); if(i == 5){ break; //找到5，然后终止for循环。 } }  break语句只能中断最内层循环，外层循环还在继续，代码示例：
-for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.log(i,j) if(j == 5){ break; //当 j == 5 的时候，终止内层for循环，外层继续。 } } }  如果你就想用 break 终止外层的 for 循环，那么要给外层for循环加标签，代码示例：
-waiceng : for(var i = 1; i&lt;=10; i++){ for(var j = 1; j&lt;=10; j++){ console.log(i,j) if(j == 5){ break waiceng; //此时中断的就是外层的for循环 } } }  上边的语法虽然有，但是工作中很少用到，非常偏门，了解即可。
     </div>
   </div>
 </div>

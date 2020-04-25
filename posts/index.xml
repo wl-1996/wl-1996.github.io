@@ -6,10 +6,23 @@
     <description>Recent content in Posts on 个人学习博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 24 Apr 2020 22:23:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2020 16:34:04 +0800</lastBuildDate>
     
 	<atom:link href="http://wangkuo.monster/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Vue项目发布到github流程</title>
+      <link>http://wangkuo.monster/posts/vue%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E5%88%B0github%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Sat, 25 Apr 2020 16:34:04 +0800</pubDate>
+      
+      <guid>http://wangkuo.monster/posts/vue%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E5%88%B0github%E6%B5%81%E7%A8%8B/</guid>
+      <description>项目做好了如何发布到github？  运行rm -rf dist 目的是清空dist目录 运行yarn build 进行打包构建 运行yarn global add serve 全局安装预览工具，下次就不用再安装了 运行serve -s dist 预览dist目录，看打包后的dist目录是否正常显示,测试后就可以关了。
+ github上新建第一个仓库accounting-items-2用来存放源码（该仓库忽略dist），并提交本地代码
+ github上新建第二个仓库accounting-items-2-website（用来存放dist里的打包后的项目）
+ 配置vue.config.js文件：  根目录下新建deploy.sh文件，其内容为：
+#!/usr/bin/env sh # 当发生错误时中止脚本 set -e # 构建 yarn build # cd 到构建输出的目录下 cd dist # 部署到自定义域域名 # echo &#39;www.example.com&#39; &amp;gt; CNAME git init git add -A git commit -m &#39;deploy&#39; # 部署到 https://&amp;lt;USERNAME&amp;gt;.github.io/&amp;lt;REPO&amp;gt; # 下边的需要根据上边新建的仓库进行修改： # git push -f git@github.com:&amp;lt;USERNAME&amp;gt;/&amp;lt;REPO&amp;gt;.git master:gh-pages cd -  命令行运行 sh deploy.</description>
+    </item>
     
     <item>
       <title>配置8080端口</title>

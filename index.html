@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/" />
 
-<meta property="og:updated_time" content="2020-04-24T22:23:04+08:00" />
+<meta property="og:updated_time" content="2020-04-25T16:34:04+08:00" />
 <meta itemprop="name" content="个人学习博客">
 <meta itemprop="description" content="">
 
@@ -125,6 +125,34 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="http://wangkuo.monster/posts/vue%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E5%88%B0github%E6%B5%81%E7%A8%8B/" class="color-inherit dim link">
+            Vue项目发布到github流程
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          项目做好了如何发布到github？  运行rm -rf dist 目的是清空dist目录 运行yarn build 进行打包构建 运行yarn global add serve 全局安装预览工具，下次就不用再安装了 运行serve -s dist 预览dist目录，看打包后的dist目录是否正常显示,测试后就可以关了。
+ github上新建第一个仓库accounting-items-2用来存放源码（该仓库忽略dist），并提交本地代码
+ github上新建第二个仓库accounting-items-2-website（用来存放dist里的打包后的项目）
+ 配置vue.config.js文件：  根目录下新建deploy.sh文件，其内容为：
+#!/usr/bin/env sh # 当发生错误时中止脚本 set -e # 构建 yarn build # cd 到构建输出的目录下 cd dist # 部署到自定义域域名 # echo 'www.example.com' &gt; CNAME git init git add -A git commit -m 'deploy' # 部署到 https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt; # 下边的需要根据上边新建的仓库进行修改： # git push -f git@github.com:&lt;USERNAME&gt;/&lt;REPO&gt;.git master:gh-pages cd -  命令行运行 sh deploy.
+        </div>
+          <a href="http://wangkuo.monster/posts/vue%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E5%88%B0github%E6%B5%81%E7%A8%8B/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="http://wangkuo.monster/posts/%E9%85%8D%E7%BD%AE8080%E7%AB%AF%E5%8F%A3/" class="color-inherit dim link">
             配置8080端口
             </a>
@@ -168,40 +196,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="http://wangkuo.monster/posts/classprefix%E7%9A%84%E4%BD%BF%E7%94%A8/" class="color-inherit dim link">
-            ClassPrefix的使用
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          classPrefix 用于给组件里的元素批量添加类
-下边通过两个组件Money.vue和Layout.vue来说明如何使用classPrefix。
-这是Money.vue组件的代码：
-&lt;template&gt; //这里用到了Layout组件，Layout组件接受一个外部属性 //这里通过传入外部属性class-prefix从而给Layout组件内部的元素批量添加类 //注意，本来Layout接受的外部属性是： classPrefix, //这里怎么是class-prefix? //不要纠结，好像是vue组件等号左边不能有大写字母，所以只能这样写。 &lt;Layout class-prefix=&quot;layout&quot;&gt;&lt;/Layout&gt; &lt;/template&gt; &lt;script lang=&quot;ts&quot;&gt; import Vue from &quot;vue&quot;; import { Component } from &quot;vue-property-decorator&quot;; @Component export default class Money extends Vue {} &lt;/script&gt; &lt;style lang=&quot;scss&quot;&gt; //上边class-prefix已经给Layout组件里的元素批量添加了类，layout-content就是其中一个 //这里通过layout-content类设置样式: .layout-content { display: flex; border: 3px solid red; } &lt;/style&gt;  这是Layout.vue组件的代码：
-&lt;template&gt; //意思是如果外部传了属性classPrefix,那么这个div元素的类就为：classPrefix-wrapper &lt;div :class = ' classPrefix &amp;&amp; `${classPrefix}-wrapper`'&gt; //如果外部传了属性classPrefix,那么这个div元素就有：classPrefix-content 这个类 &lt;div :class = 'classPrefix &amp;&amp; `${classPrefix}-content`'&gt; &lt;slot/&gt; &lt;/div&gt; &lt;/div&gt; &lt;/template&gt; &lt;script lang='ts'&gt; import Vue from 'vue'; import {Component,Prop} from 'vue-property-decorator'; @Component export default class Layout extends Vue{ //该组件接受一个外部属性classPrefix： @Prop(String) classPrefix: string | undefined; } &lt;/script&gt;  也就是说比如有两个组件Money.
-        </div>
-          <a href="http://wangkuo.monster/posts/classprefix%E7%9A%84%E4%BD%BF%E7%94%A8/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="http://wangkuo.monster/posts/classprefix%E7%9A%84%E4%BD%BF%E7%94%A8/" class="link black dim">
+              ClassPrefix的使用
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/%E5%86%99vue%E7%BB%84%E4%BB%B6%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="link black dim">
@@ -218,12 +224,6 @@
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="http://wangkuo.monster/posts/%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B9%E7%9B%AE%E9%87%8C%E5%BC%95%E5%85%A5svg/" class="link black dim">
               如何在项目里引入SVG
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="http://wangkuo.monster/posts/webstorm%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="link black dim">
-              WebStorm使用教程
             </a>
           </h2>
         
