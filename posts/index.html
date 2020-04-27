@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-04-25T16:34:04+08:00" />
+<meta property="og:updated_time" content="2020-04-26T22:50:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,40 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/vue%E8%AE%B0%E8%B4%A6%E7%90%90%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9/" class="link black dim">
+        Vue记账琐碎知识点
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      git reset --hard HEAD 回到最开始的状态，会撤销所有更改，慎用。
+&lt;router-view/&gt;标签将路由指向的文件内容渲染出来。
+&lt;router-link to=&quot;&quot;&gt;&lt;/router-link&gt;标签就是一个a标签，点击后会跳转到to属性指定的网址。
+导航栏不要放到App.vue组件里，因为放到这里的话所有的页面都会有导航栏，导航栏成为了全局导航。应该把导航栏单独封装成一个组件，比如Nav.vue，然后每个页面单独引用这个Nav.vue组件。
+方建议不要在手机端用fixed定位导航栏，坑多难排。但我觉得还好，导航栏不用fixed的话内容多的话会被挤到最下面。
+导航栏制作过程中遇到的问题：
+首先我将导航栏在App.vue组件里引入使用，但是我发现如果在App.vue组件引入使用的话所有页面都会有这个导航栏，比如说404页面，我并不希望404页面有导航栏。
+于是我就将导航栏在不同的页面单独引入使用，但是我又发现这样每次单独引入很麻烦。
+然后我就将导航栏在main.ts入口文件里全局引入，然后其他页面如果需要使用的话就只需使用即可，无需再重复引入。
+下边代码里的scoped有什么用？
+&lt;style lang=&quot;scss&quot; scoped&gt; .nav{ border: 1px solid red; } &lt;/style&gt;  限制css样式只在本组件生效，不会影响其他组件的同名选择器的样式（比如其他组件也有nav类就不会受到影响）。
+slot插槽用于复用组件。
+用阴影的诀窍，不能让别人看出来你用了阴影，但我不这样认为。
+下面代码中的active-class=&quot;selected&quot;什么用？
+&lt;router-link class=&quot;item&quot; active-class=&quot;selected&quot; to=&quot;/money&quot;&gt; &lt;Icon name=&quot;money&quot;/&gt; &lt;span&gt;记账&lt;/span&gt; &lt;/router-link&gt;  作用就是该路由被激活时，给这个a标签添加一个selected的类，然后css样式就会生效。
+svgo-loader加载器用来去掉svg文件的默认颜色（fill属性）,先下载，然后修改配置：vue.config.js。
+使用：@import '~@/assets/styles/test.scss'这个语法引入scss文件时需要对webStorm进行webpack的配置：
+一个文件如果超过150行，那么我们就把它拆分为多个文件，这就是模块化。
+scss文件里可以使用变量，例如：
+$font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, &quot;Nimbus Sans L&quot;, Arial, &quot;Liberation Sans&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Noto Sans CJK SC&quot;, &quot;Source Han Sans SC&quot;, &quot;Source Han Sans CN&quot;, &quot;Microsoft YaHei&quot;, &quot;Wenquanyi Micro Hei&quot;, &quot;WenQuanYi Zen Hei&quot;, &quot;ST Heiti&quot;, SimHei, &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif;  helper.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -252,34 +286,6 @@ const path = require(&quot;path&quot;); module.exports = { lintOnSave: false, ch
 理论上来说只要你的版本是 10 以上（10、12）都可以，但保险起见，还是保持版本一致比较好。如果你是老手，可以使用 nvm 来安装 Node.js 10，与其他版本共存；新手请按照下面的步骤做
  运行 node &ndash;versioin 查看版本，如果不是 10，请先卸载当前版本：进入控制面板点击卸载即可（Mac 用户使用 brew uninstall node） 去 Node.js 官网下载第 10 版的安装包  一路点击下一步，注意安装目录可以改，一定不要在路径中出现中文和空格  注意重装 Node.js 后，你以前用 npm 或 yarn 全局安装的命令可能都会消失不见，如果你需要，可以需要重新全局安装这些命令。
 npm install -g nrm --registry=https://registry.npm.taobao.org nrm use taobao  二、安装 @vue/cli@4.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-3/" class="link black dim">
-        JQuery学习-3
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      stop()方法 表示停止当前的 animate 动画，但是不清除队列，立即执行后面的 animate 动画：
-$(&quot;div&quot;).stop(); //等价于$(“div”).stop(false,false);  停止当前的 animate 动画，并且清除队列，盒子留在了此时的位置：
-$(&quot;div&quot;).stop(true); //等价于$(“div”).stop(true,false);  瞬间完成当前的 animate 动画，并且清除队列：
-$(&quot;div&quot;).stop(true, true);  瞬间完成当前的 animate 动画，但是不清楚队列，立即执行后面的动画：
-$(&quot;div&quot;).stop(false, true);  公式：
-stop(是否清除队列, 是否瞬间完成当前动画);  如果没有写 true 或者 false，默认是 false
-节点 节点类型 任何 HTML 元素，都有 nodeType 属性，值有 1~11 个，但是我们只要记住 5 个常用的即可：
-1：元素节点
-3：文本节点
-8：注释节点
-9：document 节点
-10：DTD
-代码示例：
-&lt;!-- 注意下边代码不能换行，否则有兼容性问题，下节节点关系再说 --&gt; &lt;div id=&quot;box&gt;文本&lt;p&gt;&lt;/p&gt;&lt;!-- 这是注释 --&gt;&lt;/div&gt;  let box = document.getElementById(&quot;box&quot;) alert(box.nodeType) //1 alert(box.childNodes[0].nodeType) //3 alert(box.
     </div>
   </div>
 </div>

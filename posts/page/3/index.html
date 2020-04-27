@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-04-25T16:34:04+08:00" />
+<meta property="og:updated_time" content="2020-04-26T22:50:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,25 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/javascript%E5%AD%A6%E4%B9%A0-4/" class="link black dim">
+        JavaScript学习-4
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      作用域 函数能封闭住定义域 一个变量如果定义在了一个 function 里面，那么这个变量就是一个局部变量，只有这个 function 里面有定义。出了这个 function ，就如同没有定义过一样。代码示例：
+function fn(){ var a = 1;// 定义在一个函数里面的变量，局部变量，只有在函数里面有定义。 console.log(&quot;我是函数里面的语句，我认识 a 值为 &quot; + a); } fn(); console.log(&quot;我是函数里面的语句，我不认识 a &quot; + a);// 这行会报错，因为 a 作用于函数内部，这里提取不到 a 的值。  a 被var在了 function 里面，所以现在这个 a 变量只有在红框范围内有定义：JavaScript 变量作用域非常的简单，没有块级作用域，管理作用域的只有一个东西：函数。
+如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：
+var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义： function fn(){ console.log(&quot;我是函数里面的语句，我认识全局变量 a 值为 &quot; + a); } fn(); console.log(&quot;函数外面的语句也认识 a 值为 &quot; + a);  总结一下：
+ 定义在 function 里面的变量叫做局部变量； 定义在全局范围内的，没有写在任何 function 里面的，叫做全局变量。   作用域链 当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例：
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -256,27 +275,6 @@ function f1(){ } function f2(fn) { fn() } f2(f1)     分析：  我调用 f1 没
       AJAX-Asynchronous JavaScript And XML 简介：  用 JS 发请求和收响应，这就是 AJAX 的全部内容 AJAX 是浏览器上的功能：  浏览器可以发请求，收响应 浏览器在 window 上加了一个 XMLHttpRequest 函数 用这个构造函数（类）可以构造出一个对象 JS 通过它实现发请求，收响应    使用方法：  准备一个服务器：  使用 server.js 作为我们的服务器 下载或复制代码即可用 node server.js 8888 启动 添加 index.html/man.js 两个路由  加载 html/css/js/xml 的四个标准步骤：
  创建 HttpRequest 对象（全称是 XMLHttpRequest） 调用对象的 open 方法 监听对象的 onreadystatechange 事件——在事件处理函数里操作 HTML 文件内容/CSS 文件内容/JS 文件内容/responseXML 调用对象的 send 方法（发送请求）——具体代码请打开 MDN 用 CRM 大法，或者看我的个人博客：https://github.com/wl-1996/ajax-1 代码如下：
 getHTML.onclick = () =&gt; { const request = new XMLHttpRequest();//创建对象 request.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-1/" class="link black dim">
-        JQuery学习-1
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      jQuery 要知道的重要一件事是jQuery 只是一个 JavaScript 库。jQuery 的所有功能都可以通过 JavaScript 进行访问，因此对 JavaScript 的深入了解对于理解，构建和调试代码至关重要。随着时间的流逝，定期使用 jQuery 可以提高您对 JavaScript 的熟练程度。
-目前，互联网上最好的 jQuery 入门教材，是 Rebecca Murphey 写的《jQuery 基础》（jQuery Fundamentals）。在 Google 里搜索&rdquo;jQuery 培训&rdquo;，此书排在第一位。jQuery 官方团队已经同意，把此书作为官方教程的基础。
-jQuery 的基本设计思想和主要用法，就是&rdquo;选择某个网页元素，然后对其进行某种操作&ldquo;。_这是它区别于其他 Javascript 库的根本特点_。
-jQuery 如何获取元素 使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
- 选择表达式可以是 CSS 选择器：
-$(document) //选择整个文档对象 $('#myId') //选择ID为myID的网页元素 $('.myClass') //选择class为myClass的元素 $('input[name=first]') //选择name属性等于first的input元素  选择表达式也可以是 jQuery 特有的表达式：
-$('a:first') //选择第一个a元素 $('a:last') //选择最后一个a元素 $('tr:odd') //选择表格下标是奇数的行 $('p:even') //选择下标为偶数的p $('#myForm:input') //选择表单中的input元素 $('div:animated') //选择当前处于动画状态的div元素 $('div:eq(3)') //选择下标为3的div元素 $('div:gt(3)') //选择下标大于3的div元素 $('div:lt(3)') //选择下标小于3的div元素   改变结果集 jQuery设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，从而缩小选择的结果
     </div>
   </div>
 </div>

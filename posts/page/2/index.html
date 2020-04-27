@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-04-25T16:34:04+08:00" />
+<meta property="og:updated_time" content="2020-04-26T22:50:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,34 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-3/" class="link black dim">
+        JQuery学习-3
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      stop()方法 表示停止当前的 animate 动画，但是不清除队列，立即执行后面的 animate 动画：
+$(&quot;div&quot;).stop(); //等价于$(“div”).stop(false,false);  停止当前的 animate 动画，并且清除队列，盒子留在了此时的位置：
+$(&quot;div&quot;).stop(true); //等价于$(“div”).stop(true,false);  瞬间完成当前的 animate 动画，并且清除队列：
+$(&quot;div&quot;).stop(true, true);  瞬间完成当前的 animate 动画，但是不清楚队列，立即执行后面的动画：
+$(&quot;div&quot;).stop(false, true);  公式：
+stop(是否清除队列, 是否瞬间完成当前动画);  如果没有写 true 或者 false，默认是 false
+节点 节点类型 任何 HTML 元素，都有 nodeType 属性，值有 1~11 个，但是我们只要记住 5 个常用的即可：
+1：元素节点
+3：文本节点
+8：注释节点
+9：document 节点
+10：DTD
+代码示例：
+&lt;!-- 注意下边代码不能换行，否则有兼容性问题，下节节点关系再说 --&gt; &lt;div id=&quot;box&gt;文本&lt;p&gt;&lt;/p&gt;&lt;!-- 这是注释 --&gt;&lt;/div&gt;  let box = document.getElementById(&quot;box&quot;) alert(box.nodeType) //1 alert(box.childNodes[0].nodeType) //3 alert(box.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -289,25 +317,6 @@ var arr = []; //空数组 // 用循环语句去填充数组里面的每个项 fo
 所以在调用的时候，i 已经变为了11，所以每个函数都弹出11了。
 解决办法：
 for(var i = 0; i&lt;=10; i++){ (function(m){ arr[m] = function(){ alert(m) } })(i) }  每个arr在赋值的时候，都是在一个IIFE里面，IIFE里面是作用域隔离的，所以即使变量名都是 m ，但是视为“不同国家的m”，每个arr里面的小函数，都只能看见自己的m值。m值纵然改变，那也察觉不到
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/javascript%E5%AD%A6%E4%B9%A0-4/" class="link black dim">
-        JavaScript学习-4
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      作用域 函数能封闭住定义域 一个变量如果定义在了一个 function 里面，那么这个变量就是一个局部变量，只有这个 function 里面有定义。出了这个 function ，就如同没有定义过一样。代码示例：
-function fn(){ var a = 1;// 定义在一个函数里面的变量，局部变量，只有在函数里面有定义。 console.log(&quot;我是函数里面的语句，我认识 a 值为 &quot; + a); } fn(); console.log(&quot;我是函数里面的语句，我不认识 a &quot; + a);// 这行会报错，因为 a 作用于函数内部，这里提取不到 a 的值。  a 被var在了 function 里面，所以现在这个 a 变量只有在红框范围内有定义：JavaScript 变量作用域非常的简单，没有块级作用域，管理作用域的只有一个东西：函数。
-如果一个变量，没有定义在任何的 function 中，那么他将在全部程序范围内都有定义：
-var a = 1;// 定义在全局范围内的一个变量，全局变量，在程序任何一个角落都有定义： function fn(){ console.log(&quot;我是函数里面的语句，我认识全局变量 a 值为 &quot; + a); } fn(); console.log(&quot;函数外面的语句也认识 a 值为 &quot; + a);  总结一下：
- 定义在 function 里面的变量叫做局部变量； 定义在全局范围内的，没有写在任何 function 里面的，叫做全局变量。   作用域链 当遇见一个变量时，JS引擎会从其所在的作用域依次向外层查找，查找会在找到第一个匹配的标识符的时候停止。代码示例：
     </div>
   </div>
 </div>

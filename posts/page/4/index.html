@@ -35,7 +35,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://wangkuo.monster/posts/" />
 
-<meta property="og:updated_time" content="2020-04-25T16:34:04+08:00" />
+<meta property="og:updated_time" content="2020-04-26T22:50:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -94,6 +94,27 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="http://wangkuo.monster/posts/jquery%E5%AD%A6%E4%B9%A0-1/" class="link black dim">
+        JQuery学习-1
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      jQuery 要知道的重要一件事是jQuery 只是一个 JavaScript 库。jQuery 的所有功能都可以通过 JavaScript 进行访问，因此对 JavaScript 的深入了解对于理解，构建和调试代码至关重要。随着时间的流逝，定期使用 jQuery 可以提高您对 JavaScript 的熟练程度。
+目前，互联网上最好的 jQuery 入门教材，是 Rebecca Murphey 写的《jQuery 基础》（jQuery Fundamentals）。在 Google 里搜索&rdquo;jQuery 培训&rdquo;，此书排在第一位。jQuery 官方团队已经同意，把此书作为官方教程的基础。
+jQuery 的基本设计思想和主要用法，就是&rdquo;选择某个网页元素，然后对其进行某种操作&ldquo;。_这是它区别于其他 Javascript 库的根本特点_。
+jQuery 如何获取元素 使用 jQuery 的第一步，往往就是将一个选择表达式，放进构造函数 jQuery()（简写为$），然后得到被选中的元素。
+ 选择表达式可以是 CSS 选择器：
+$(document) //选择整个文档对象 $('#myId') //选择ID为myID的网页元素 $('.myClass') //选择class为myClass的元素 $('input[name=first]') //选择name属性等于first的input元素  选择表达式也可以是 jQuery 特有的表达式：
+$('a:first') //选择第一个a元素 $('a:last') //选择最后一个a元素 $('tr:odd') //选择表格下标是奇数的行 $('p:even') //选择下标为偶数的p $('#myForm:input') //选择表单中的input元素 $('div:animated') //选择当前处于动画状态的div元素 $('div:eq(3)') //选择下标为3的div元素 $('div:gt(3)') //选择下标大于3的div元素 $('div:lt(3)') //选择下标小于3的div元素   改变结果集 jQuery设计思想之二，就是提供各种强大的过滤器，对结果集进行筛选，从而缩小选择的结果
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -238,25 +259,6 @@ var obj = {}  obj.toString()//居然不报错，因为obj的隐藏属性对应�
       hello,好久不见 浏览器渲染原理： 步骤：  根据 HTML 构建 HTML 树（DOM）; 根据 CSS 构建 CSS 树（CSSOM）; 将两棵树合并成一颗渲染树（render tree）; Layout 布局（文档流、盒模型、计算大小和位置）; Paint 绘制（把边框颜色、文字颜色、阴影等画出来）； Compose 合成（根据层叠关系展示画面）;  如何更新样式？&ndash;一般我们用 JS 来更新样式  比如div.style.background='red'; 比如div.style.display='none'; 比如div.classList.add('red'); 比如div.remove()直接删掉节点;  三种更新方式：  JS/CSS&gt;样式&gt;布局&gt;绘制&gt;合成（全走）； JS/CSS&gt;样式&gt;绘制&gt;合成（跳过布局 layout）； JS/CSS&gt;样式&gt;合成（跳过布局 layout 和绘制 paint）；  CSS 动画的两种写法（transition 和 animation）： 第一种是使用 transform 和 transition 属性；  详情见[https://wangkuo.monster/Beating-heart/index.html];  第二种是使用 animation 属性设置；  详情见[https://wangkuo.monster/Beating-heart/index2.html]; @keyframes 的写法有两种：
  from to 写法：
 @keyframes slidein { from { transform: translateX(0%); } to { transform: translateX(100%); } }  百分数写法：
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="http://wangkuo.monster/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
-        HTML常用标签
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       hello,好久不见 今天学习了《HTML全解》HTML重难点这部分视频，最近私事较多，已经落后大家很多了，刚回来学习，要马上跟上进度。
-a标签的用法  属性有href/target/download/rel=noopener； a标签的作用是： 跳转外部页面/跳转内部锚点/跳转到邮箱或者电话； a的href属性取值有四种：  网址：https://google.com，http://google.com，//google.com，第三种写法最简单； 路径：/a/b/c以及a/b/c，index.html以及./index.html; 伪协议：javascript：代码。mailto：邮箱。tel：手机号。 id：href=#xxx  a的target的取值：  内置名字：_blank，_top,_parent,_self; 程序员命名：window的name,iframe的name;  a的download：  作用：不是打开页面，而是下载页面； 问题：不是所有的浏览器都支持，尤其是手机浏览器可能不支持；   img标签的用法  作用：发出get请求，展示一张图片； 属性有alt/height/width/src; 时间有onload/onerror； 图片过大时候如何在手机端实现自适应？——在css样式里加上:
-img{ max-width:100%; }   table标签的用法  相关的标签有table/thead/tbody/tfoot/tr(行)/td(数据)/th(标题); 相关的样式有table-layout（调整列宽）/border-collapse（设置单元格之间有无缝隙）/border-spacing（设置单元格之间缝隙大小）;  input标签的用法  有以下属性：text-文本框/color-颜色/password-密码框/radio-单选框/checkbox-复选框/file-上传文件/hidden-表示看不见的输入； 其中单选框属性(radio)需要设置相同的名字才是单选，否则就是可以都选中：
-&lt;input name=&quot;gender&quot; type=&quot;radio&quot; /&gt;男 &lt;input name=&quot;gender&quot; type=&quot;radio&quot; /&gt;女  上传文件属性（file），如果向上传多个文件需要加上multiple：
-&lt;input type=&quot;file&quot; multiple /&gt;   
     </div>
   </div>
 </div>
