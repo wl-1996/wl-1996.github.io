@@ -75,7 +75,7 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 
 <meta itemprop="datePublished" content="2020-04-26T22:50:08&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-26T22:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="90">
+<meta itemprop="wordCount" content="115">
 
 
 
@@ -268,6 +268,52 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 <hr />
 
 <p>helper.scss里面只能放变量，方法（函数），mixin，不要放别的东西。因为这些东西最后会消失，放别的不会消失，代码会臃肿。</p>
+
+<hr />
+
+<p>button元素的字体不会继承父元素，除非你设置：</p>
+
+<pre><code class="language-css">font: inherit;
+</code></pre>
+
+<hr />
+
+<p>下面代码中的<code>.native</code>和<code>$router.back()</code>是干什么的？</p>
+
+<pre><code class="language-html">&lt;header&gt;
+  &lt;Icon @click.native=&quot;$router.back()&quot; class=&quot;left&quot; name=&quot;left&quot;/&gt;
+  &lt;span&gt;编辑标签&lt;/span&gt;
+  &lt;span&gt;&lt;/span&gt;
+&lt;/header&gt;
+</code></pre>
+
+<p>路由回退，就是说当点击这个icon图标时浏览器会回退到上个页面。</p>
+
+<hr />
+
+<p>如何将一个日期对象变为字符串？-用<code>toISOString()</code></p>
+
+<pre><code class="language-js">new Date().toISOString()
+</code></pre>
+
+<p>注意：用这个API转化的时间是<strong>零时区</strong>的时间，不是东八区北京时间。</p>
+
+<p>将<code>new Date()</code>出来的日期对象变为时间字符串就用<code>toISOString()</code>这个API；</p>
+
+<p>将<code>toISOString()</code>后的日期字符串重新变为日期对象用两个API：</p>
+
+<ol>
+<li><code>Date.parse(&quot;日期字符串&quot;)</code></li>
+<li><code>new Date(第一步的值)</code></li>
+</ol>
+
+<p>获取日期对象的小时用<code>getHours()</code>这个API</p>
+
+<p>如图所示：<img src="/images/ISO-8001.png" alt="" /></p>
+
+<hr />
+
+<p>我们不用原生日期相关的API，我们用<code>moment.js</code>或者<code>day.js</code>;建议用<code>day.js</code>，因为体积更小。</p>
 <ul class="pa0">
   
 </ul>
