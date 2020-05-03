@@ -75,7 +75,7 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 
 <meta itemprop="datePublished" content="2020-04-26T22:50:08&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-26T22:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="115">
+<meta itemprop="wordCount" content="256">
 
 
 
@@ -265,8 +265,6 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
  &quot;WenQuanYi Zen Hei Sharp&quot;, sans-serif;
 </code></pre>
 
-<hr />
-
 <p>helper.scss里面只能放变量，方法（函数），mixin，不要放别的东西。因为这些东西最后会消失，放别的不会消失，代码会臃肿。</p>
 
 <hr />
@@ -274,6 +272,15 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 <p>button元素的字体不会继承父元素，除非你设置：</p>
 
 <pre><code class="language-css">font: inherit;
+</code></pre>
+
+<hr />
+
+<p>按钮元素点击时不想出现轮廓怎么办？——加样式即可：</p>
+
+<pre><code class="language-css">:focus{
+  outline: none;
+}
 </code></pre>
 
 <hr />
@@ -314,6 +321,117 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 <hr />
 
 <p>我们不用原生日期相关的API，我们用<code>moment.js</code>或者<code>day.js</code>;建议用<code>day.js</code>，因为体积更小。</p>
+
+<hr />
+
+<p>template模版里好像无法访问ts里的this，也就是模版里用到ts里的属性的话，直接写这个属性，前边不要加this。</p>
+
+<p><img src="/images/ts-3.png" alt="" /></p>
+
+<hr />
+
+<p>vue-property-decorator是kaorun343写的一个ts支持库库，这个库比尤雨溪写的库要好，所以用这个库。尤雨溪写的库叫vue-class-component,这是vue官方提供的一个ts的支持库。</p>
+
+<p>其中@component装饰器用的就是vue官方的，所以看用法时看官方@component的用法即可。这个装饰器的作用是告诉vue这是一个类组件。</p>
+
+<p>用ts组件时必须用class类写法。</p>
+
+<hr />
+
+<p>外部属性写法：</p>
+
+<pre><code class="language-ts">@Prop(Number) xxx: number | undefined;
+</code></pre>
+
+<p>左边的Number指定运行时类型（运行时浏览器报错），右边的指定编译时类型（编译时控制台报错）。</p>
+
+<p><img src="/images/ts-4.png" alt="" /></p>
+
+<hr />
+
+<p>TS本质：<img src="/images/ts-5.png" alt="" /></p>
+
+<p>如图所示，谁在做检查呢？——tsc（TypeScript Compiler）在检查；</p>
+
+<p>谁在检查完后将TS变为JS呢？——也是tsc；当然除了tsc，babel也可以将TS变为JS。</p>
+
+<p>检查TS有错误时，也可能妥协继续将TS编译为JS。为什么要妥协呢？举个例子，比如有一大片TS代码，有100个错误，如果不妥协的话只能在改完所有错误的情况下才能看到运行结果，这就让人很沮丧，所以要妥协。妥协后即使有很多错误也能看到运行结果，然后慢慢改，这样更容易让人接受。</p>
+
+<p>当然可以配置，让ts不妥协，配置tsconfig.json文件，但是视频没有成功，这个不重要。</p>
+
+<hr />
+
+<p>写Vue组件的三种方式（单文件组件）</p>
+
+<p>已经写过了博客，这三种方式分别是：</p>
+
+<ol>
+<li>用JS对象；</li>
+<li>用TS类；</li>
+<li>用JS类；</li>
+</ol>
+
+<hr />
+
+<p>强制指定类型：</p>
+
+<pre><code class="language-ts">inputContent(e: MouseEvent) {
+    //强制指定类型
+    //意思就是强制告诉你这是一个按钮
+    //如果不指定，代码会提示button可能不存在，
+    // 并且会提示EventTarget类型里没有textContent属性：
+    const button = e.targetHTMLButtonElement;
+    const value = button.textContent!;
+    if (this.output.length === 16) {
+        return;
+    }
+    if (this.output === '0') {
+        // 如果点击的是0123456789等任一个
+        if ('0123456789'.ind(value) &gt; -1) {
+            this.output = value;
+        } else if (value === '.') {
+            this.output = '0' + value;
+        }
+    } else {
+        if (this.output.indexOf('.'-1 &amp;&amp; value === '.') {
+            return;
+        } else {
+            this.output += value;
+        }
+    }
+}
+</code></pre>
+
+<p>不得已的情况下才需要强制指定类型，这里是因为Vue和TS的结合不够好。</p>
+
+<hr />
+
+<p>v-model双向数据绑定：</p>
+
+<pre><code class="language-vue">&lt;template&gt;
+    &lt;div class=&quot;notes&quot;&gt;
+        &lt;label&gt;
+            &lt;span class=&quot;name&quot;&gt;备注：&lt;/span&gt;
+            // 下边的表单元素用到了双向数据绑定：
+            &lt;input v-model=&quot;value&quot; type=&quot;text&quot; placeholder=&quot;请输入备注&quot;&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<pre><code class="language-ts">  import Vue from 'vue';
+  import {Component} from'vue-property-decorator';
+
+  @Component
+  export default class Notes extends Vue {
+      value = '你好吗';
+  }
+</code></pre>
+
+<p>v-model的完成写法是：</p>
+
+<pre><code class="language-html">&lt;input :value='value' @input=&quot;value = event.target.value&quot; type=&quot;text&quot;&gt;
+</code></pre>
 <ul class="pa0">
   
 </ul>
