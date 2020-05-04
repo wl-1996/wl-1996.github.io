@@ -75,7 +75,7 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 
 <meta itemprop="datePublished" content="2020-04-26T22:50:08&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-26T22:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="256">
+<meta itemprop="wordCount" content="353">
 
 
 
@@ -431,6 +431,97 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 <p>v-model的完成写法是：</p>
 
 <pre><code class="language-html">&lt;input :value='value' @input=&quot;value = event.target.value&quot; type=&quot;text&quot;&gt;
+</code></pre>
+
+<hr />
+
+<p>@watch作用？监听一个属性的变化，当这个属性发生变化时执行一个函数。</p>
+
+<p>@watch用法：</p>
+
+<pre><code class="language-ts">export default class Notes extends Vue {
+    value = '';
+    // 监听value属性的变化：
+    @Watch('value')
+    // value变化时执行一个函数：
+    // 注意第一个参数是新的值，第二个参数是旧的值
+    onValueChanged(newValue: string,oldValue: string){
+        this.$emit('update:notes',newValue)
+    }
+}
+</code></pre>
+
+<hr />
+
+<p>如何在ts里声明一个类型？</p>
+
+<pre><code class="language-ts">// 声明一个类型recordItem，里面有四个属性，每个属性的类型声明好：
+type recordItem = {
+    tags: string[];
+    notes: string;
+    type: string;
+    amount: number;
+}
+</code></pre>
+
+<hr />
+
+<p>类型和类不同，类型有7种：4基2空1对象；其中对象又可以划分为类，比如Date类。</p>
+
+<pre><code class="language-ts">type recordItem = {
+    tags: string[];
+    notes: string;
+    type: string;
+    amount: number;
+    time?: Date
+}
+</code></pre>
+
+<hr />
+
+<p>数据库迁移策略：遇到再研究吧。在localStorage这一部分最后一节。</p>
+
+<hr />
+
+<p>MVC：</p>
+
+<ol>
+<li>M-数据层；</li>
+<li>V-视图层；</li>
+<li>C-业务逻辑层；</li>
+</ol>
+
+<hr />
+
+<p>ts和js配合的话导入模块要用require，不能用默认导入。而且不要ts和js混用，既然用了ts就都用ts啊！！！</p>
+
+<p>require导入默认导出的模块时需要加default，例如：</p>
+
+<p>导出模块model.js：(使用的是默认导出)</p>
+
+<pre><code class="language-js">const model = {
+    fetch() {
+        return JSON.parse(window.localStorage.getItem('recordList') || '[]');
+    },
+    save(recordList) {
+        window.localStorage.setItem('recordList', JSON.stringify(recordList));
+    }
+};
+// 使用的默认导出：
+export default model;
+</code></pre>
+
+<p>导入模块Money.vue：（需要加default，否则无法成功使用导入的内容）</p>
+
+<pre><code class="language-ts">// 需要加default：
+const model = require('@/model.js').default;
+</code></pre>
+
+<hr />
+
+<p>本地存储只支持字符串，所以要通过JSON序列化：</p>
+
+<pre><code class="language-ts">window.localStorage.setItem('recordList', JSON.stringify(this.recordList));
 </code></pre>
 <ul class="pa0">
   
