@@ -75,7 +75,7 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 
 <meta itemprop="datePublished" content="2020-04-26T22:50:08&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-26T22:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="353">
+<meta itemprop="wordCount" content="356">
 
 
 
@@ -523,6 +523,18 @@ const model = require('@/model.js').default;
 
 <pre><code class="language-ts">window.localStorage.setItem('recordList', JSON.stringify(this.recordList));
 </code></pre>
+
+<hr />
+
+<p>把所有的类型都放到src目录里的custom.d.ts文件里，这样全局都可以访问到这里的类型（src目录里无需引入就可以使用这些类型）。只要TypeScript发现是以d.ts结尾的，就知道这个文件是类型声明。</p>
+
+<p>当然了，后缀只要以d.ts结尾就可以了，前面的名字可以任意。也可以叫haha.d.ts。</p>
+
+<p><img src="/images/ts-6.png" alt="" /></p>
+
+<hr />
+
+<p>Vue单文件组件必须首字母大写。</p>
 <ul class="pa0">
   
 </ul>
