@@ -75,7 +75,7 @@ $font-hei: -apple-system, &quot;Noto Sans&quot;, &quot;Helvetica Neue&quot;, Hel
 
 <meta itemprop="datePublished" content="2020-04-26T22:50:08&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-26T22:50:08&#43;08:00" />
-<meta itemprop="wordCount" content="356">
+<meta itemprop="wordCount" content="661">
 
 
 
@@ -535,6 +535,237 @@ const model = require('@/model.js').default;
 <hr />
 
 <p>Vue单文件组件必须首字母大写。</p>
+
+<hr />
+
+<p>custom.d.ts里的类型声明都用大写字母开头比较好，大神方的做法就是如此。</p>
+
+<hr />
+
+<p>filter方法返回一个符合条件的新数组：</p>
+
+<pre><code class="language-ts">// 最后边加[0]表示返回数组的第一项
+const tags = tagList.filter(i=&gt;i.id === id)[0]
+</code></pre>
+
+<hr />
+
+<p>如何通过路由跳转到某个页面：</p>
+
+<pre><code class="language-ts">// 意思就是跳转到路径为404的页面
+this.$router.replace('/404')
+</code></pre>
+
+<hr />
+
+<p>.native用法：</p>
+
+<p>子组件：Button.vue</p>
+
+<pre><code class="language-vue">&lt;template&gt;
+    &lt;button class=&quot;button&quot;&gt;
+        &lt;slot/&gt;
+    &lt;/button&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p>父组件：Labels.vue</p>
+
+<pre><code class="language-vue">&lt;template&gt;
+    &lt;Layout&gt;
+        &lt;div class=&quot;tagList&quot;&gt;
+            &lt;router-link :to=&quot;`/labels/edit/${tag.id}`&quot;
+                         class=&quot;tag&quot;
+                         v-for=&quot;tag in tagList&quot; :key=&quot;tag.index&quot;&gt;
+                &lt;span&gt;{{tag.name}}&lt;/span&gt;
+                &lt;Icon name=&quot;right&quot;/&gt;
+            &lt;/router-link&gt;
+        &lt;/div&gt;
+        // 父组件用到了子组件：Button.vue
+        // 但是监听点击事件以后不能触发createTag函数，怎么办，加.native就可以啦：
+        &lt;Button @click.native=&quot;createTag&quot;&gt;
+            新建标签
+        &lt;/Button&gt;
+    &lt;/Layout&gt;
+&lt;/template&gt;
+
+&lt;script lang=&quot;ts&quot;&gt;
+    import Vue from 'vue';
+    import {Component} from 'vue-property-decorator';
+    import Layout from '@/components/Layout.vue';
+    import Icon from '@/components/Icon.vue';
+    import tagListModel from '@/models/tagListModel';
+    import Button from '@/components/Button.vue';
+
+    @Component({
+        components: {Button, Icon, Layout}
+    })
+    export default class Labels extends Vue {
+        tagList = tagListModel.tagList;
+
+        beforeCreate() {
+            tagListModel.fetch();
+        }
+
+        //上边用到了.native，这里才可以触发该函数：
+        createTag() {
+            tagListModel.create();
+        }
+
+    }
+&lt;/script&gt;
+</code></pre>
+
+<p>上面暴漏的问题是：你点击时点击的是子组件里的小button元素，但是点击事件是给了父组件大Button，所以无法触发大Button的点击事件。</p>
+
+<p>解决方法就是通过.native，或者子组件的小button元素里点击时发布一个点击事件，然后父组件大Button监听这个点击事件。</p>
+
+<hr />
+
+<p>ID的原则：
+1. 一旦给了id，就不要修改；
+2. id不能重复；</p>
+
+<hr />
+
+<p>Vue项目中如何给Window加一个全局属性？</p>
+
+<p>custom.d.ts文件：</p>
+
+<pre><code class="language-TS">type Tag = {
+    id: number;
+    name: string;
+}
+
+// 这就给window加了一个tagList属性：
+interface Window{
+    tagList: Tag[]
+}
+</code></pre>
+
+<p>然后就可以在main.ts里使用：</p>
+
+<pre><code class="language-ts">window.tagList = tagListModel.fetch();
+</code></pre>
+
+<p>再然后其他页面就可以使用window.tagList了：(下面是Money.vue组件)</p>
+
+<pre><code class="language-Vue">export default class Money extends Vue {
+    tagList = window.tagList;
+}
+</code></pre>
+
+<hr />
+
+<p>如何在webStorm里搜索时排除某个目录：</p>
+
+<p><img src="/images/WebStorm-setting-7.png" alt="" /></p>
+
+<hr />
+
+<p>ts里赋值时，<strong>简单类型保存的是值，引用类型保存的是地址</strong>：</p>
+
+<p>Money.vue组件：</p>
+
+<pre><code class="language-Vue">&lt;template&gt;
+    &lt;Layout class-prefix=&quot;layout&quot;&gt;
+        {{count}}
+        // 点击按按钮，逻辑上是count会加1，但是并不会，因为count保存的是简单类型的值，而不是复杂类型的地址： 
+        &lt;button @click=&quot;add&quot;&gt;
+            点击我count+1
+        &lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script lang=&quot;ts&quot;&gt;
+    import Vue from 'vue';
+    import {Component} from 'vue-property-decorator';
+    import tagListModel from '@/models/tagListModel';
+
+    @Component({
+        components: {FormItem, Layout, NumberPad, Types, Tags}
+    })
+
+
+    export default class Money extends Vue {
+        add() {
+            tagListModel.add();
+        }
+        // tagListModel里的count是一个简单类型number（值为0），
+        // 所以这个地方count属性保存的是这个值，而不是引    用地址。
+        // 也就是说视图里点击button按钮时不会导致count加1，因为count保存的是tagListModel里的0，不是地   址。两者互不影响：
+        count = tagListModel.count;
+    }
+&lt;/script&gt;
+</code></pre>
+
+<p>tagListModel.ts文件：</p>
+
+<pre><code class="language-ts">const tagListModel: TagListModel = {
+    count: 0,
+    &lt;!-- 这也是一个闭包 --&gt;
+    add() {
+        this.count++;
+    }
+}
+</code></pre>
+
+<p>那怎么办？用computed计算属性：</p>
+
+<p>Money.vue组件：</p>
+
+<pre><code class="language-Vue">&lt;template&gt;
+    &lt;Layout class-prefix=&quot;layout&quot;&gt;
+        {{count}}
+        &lt;button @click=&quot;add&quot;&gt;
+            点击我count+1
+        &lt;/button&gt;
+&lt;/template&gt;
+
+&lt;script lang=&quot;ts&quot;&gt;
+    import Vue from 'vue';
+    import {Component} from 'vue-property-decorator';
+    import tagListModel from '@/models/tagListModel';
+
+    @Component({
+        components: {FormItem, Layout, NumberPad, Types, Tags},
+        // 第一个改的地方，把count属性改为计算属性：
+        computed: {
+            count() {
+                return tagListModel.count;
+            }
+        }
+
+    })
+
+
+    export default class Money extends Vue {
+        add() {
+            tagListModel.add();
+        }
+        // 第二个改的地方，监听tagListModel的变化：
+        // 为什么要这样？因为如果不这样tagListModel变化时Vue就监听不到；目的就是告诉我Vue监听tagListModel的变化：
+        // 当然也可以把这句代码放到最外面：App.vue组件里：
+        tagListModel = tagListModel
+    }
+&lt;/script&gt;
+</code></pre>
+
+<p>把上边的那句代码写到App.vue里：</p>
+
+<pre><code class="language-vue">// 我试了ts的写法，但是不行，不知道为啥
+&lt;script&gt;
+    import tagListModel from '@/models/tagListModel';
+
+    export default {
+        data() {
+            return{
+                tagListModel : tagListModel
+            }
+        }
+    };
+&lt;/script&gt;
+
+</code></pre>
 <ul class="pa0">
   
 </ul>
